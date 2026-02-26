@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "cable",
+  "id": "0158",
+  "name": "cable decline fly",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Adjust the cable machine to a decline position.",
+    "Stand facing away from the machine with your feet shoulder-width apart.",
+    "Hold the handles with your palms facing forward and your arms extended straight out in front of you.",
+    "Keeping a slight bend in your elbows, open your arms out to the sides in a controlled motion.",
+    "Pause for a moment at the fully extended position, then slowly return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable decline fly is an isolation exercise targeting the pectoral muscles using a cable machine set to a decline angle. It emphasizes the lower chest and involves controlled arm movement to stretch and contract the chest muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

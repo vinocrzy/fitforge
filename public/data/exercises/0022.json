@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "barbell",
+  "id": "0022",
+  "name": "barbell pullover to press",
+  "target": "lats",
+  "secondaryMuscles": [
+    "triceps",
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie flat on a bench with your head at one end and your feet on the ground.",
+    "Hold the barbell with a pronated grip (palms facing away from you) and extend your arms straight above your chest.",
+    "Keeping your arms straight, lower the barbell behind your head in an arc-like motion until you feel a stretch in your lats.",
+    "Pause for a moment, then reverse the motion and press the barbell back to the starting position above your chest.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell pullover to press is a compound exercise that targets the lats and also works the triceps, chest, and shoulders. It involves lowering a barbell behind your head while lying on a bench, then pressing it back up over your chest.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

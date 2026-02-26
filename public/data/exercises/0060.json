@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "0060",
+  "name": "barbell lying triceps extension skull crusher",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie flat on a bench with your feet flat on the ground and your head at the end of the bench.",
+    "Hold the barbell with an overhand grip, hands shoulder-width apart, and extend your arms straight up over your chest.",
+    "Keeping your upper arms stationary, slowly lower the barbell towards your forehead by bending your elbows.",
+    "Pause for a moment when the barbell is just above your forehead, then extend your arms back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell lying triceps extension, also known as the skull crusher, is a strength exercise that targets the triceps. Performed lying on a bench, it involves lowering a barbell to the forehead and extending the arms back up, requiring control and proper form to avoid injury.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

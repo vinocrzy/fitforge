@@ -1,0 +1,23 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "0213",
+  "name": "cable seated high row (v-bar)",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "rhomboids",
+    "rear deltoids"
+  ],
+  "instructions": [
+    "Sit on the cable machine with your feet flat on the floor and your knees slightly bent.",
+    "Grasp the v-bar attachment with an overhand grip, palms facing each other, and your hands shoulder-width apart.",
+    "Keep your back straight and lean slightly forward from the hips.",
+    "Pull the v-bar towards your torso by retracting your shoulder blades and squeezing your back muscles.",
+    "Pause for a moment at the peak of the contraction, then slowly release the tension and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable seated high row (v-bar) is a compound exercise targeting the latissimus dorsi, performed on a cable machine using a v-bar attachment. It also engages the biceps, rhomboids, and rear deltoids, making it effective for developing upper back strength and muscle definition.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -4,24 +4,44 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npx ts-node --esm scripts/generate-exercise-manifest.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup:gifs": "npx tsx scripts/process-gifs.ts",
+    "process-gifs": "npx tsx scripts/process-gifs.ts",
+    "generate:manifest": "npx ts-node --esm scripts/generate-exercise-manifest.ts"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@phosphor-icons/react": "^2.1.10",
+    "@tanstack/react-query": "^5.90.21",
+    "framer-motion": "^12.34.3",
     "next": "16.1.6",
+    "pouchdb": "^9.0.0",
+    "pouchdb-find": "^9.0.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-body-highlighter": "^2.0.5",
+    "react-dom": "19.2.3",
+    "recharts": "^3.7.0",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
+    "@ducanh2912/next-pwa": "^10.2.9",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pouchdb": "^6.4.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/sharp": "^0.31.1",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

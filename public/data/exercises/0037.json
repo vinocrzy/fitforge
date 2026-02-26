@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "barbell",
+  "id": "0037",
+  "name": "barbell decline wide-grip pullover",
+  "target": "lats",
+  "secondaryMuscles": [
+    "triceps",
+    "chest"
+  ],
+  "instructions": [
+    "Lie on a decline bench with your head lower than your hips and your feet secured.",
+    "Hold a barbell with a wide grip and extend your arms straight above your chest.",
+    "Lower the barbell behind your head in a controlled manner, keeping your arms straight.",
+    "Pause for a moment, then raise the barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell decline wide-grip pullover is a compound exercise performed on a decline bench, targeting the lats while also engaging the triceps and chest. It requires a barbell and involves lowering the weight behind the head with straight arms, then returning to the starting position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

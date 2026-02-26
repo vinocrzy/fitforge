@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "0159",
+  "name": "cable decline seated wide-grip row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on the decline bench facing the cable machine with your feet securely placed on the footrests.",
+    "Grasp the cable attachment with a wide overhand grip, palms facing down.",
+    "Lean back slightly, keeping your back straight and your core engaged.",
+    "Pull the cable towards your lower chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the peak of the contraction, then slowly release the cable back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable decline seated wide-grip row is a strength exercise targeting the upper back, performed on a decline bench using a cable machine. It also engages the biceps and forearms as secondary muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

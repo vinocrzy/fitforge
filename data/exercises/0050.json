@@ -1,0 +1,23 @@
+{
+  "bodyPart": "chest",
+  "equipment": "barbell",
+  "id": "0050",
+  "name": "barbell incline shoulder raise",
+  "target": "serratus anterior",
+  "secondaryMuscles": [
+    "deltoids",
+    "trapezius"
+  ],
+  "instructions": [
+    "Set up an incline bench at a 45-degree angle.",
+    "Sit on the bench with your back against the pad and feet flat on the ground.",
+    "Hold a barbell with an overhand grip, slightly wider than shoulder-width apart.",
+    "Lift the barbell up to shoulder height, keeping your elbows slightly bent.",
+    "Slowly raise the barbell overhead, extending your arms fully.",
+    "Pause for a moment at the top, then slowly lower the barbell back to shoulder height.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell incline shoulder raise is performed on an incline bench and targets the serratus anterior, with secondary emphasis on the deltoids and trapezius. The movement involves raising a barbell overhead from shoulder height while seated on an incline bench.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

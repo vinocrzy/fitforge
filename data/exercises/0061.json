@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "0061",
+  "name": "barbell lying triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie flat on a bench with your feet flat on the ground and your head at the end of the bench.",
+    "Hold the barbell with an overhand grip, hands shoulder-width apart, and extend your arms straight up over your chest.",
+    "Keeping your upper arms stationary, slowly lower the barbell towards your forehead by bending your elbows.",
+    "Pause for a moment at the bottom, then extend your arms back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell lying triceps extension is a strength exercise targeting the triceps, performed by lying on a bench and lowering a barbell towards the forehead before extending the arms back up.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "barbell",
+  "id": "0082",
+  "name": "barbell reverse wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "brachialis"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a barbell with an overhand grip, palms facing down.",
+    "Rest your forearms on your thighs, allowing your wrists to hang off the edge.",
+    "Slowly curl your wrists upward, bringing the barbell towards your body.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell reverse wrist curl is an isolation exercise targeting the forearms, specifically the wrist extensors. It is performed seated, with the forearms resting on the thighs and the wrists curling a barbell upward using an overhand grip.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

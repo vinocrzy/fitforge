@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0137",
+  "name": "body-up",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start by placing your hands on a raised surface, such as a bench or parallel bars, with your palms facing down and fingers pointing forward.",
+    "Extend your legs out in front of you, keeping your heels on the ground and your body straight.",
+    "Lower your body by bending your elbows, keeping them close to your sides, until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push through your palms to straighten your arms and lift your body back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The body-up is a bodyweight exercise targeting the triceps, with secondary emphasis on the chest and shoulders. It involves lowering and raising your body using your arms while keeping your body straight, similar to a triceps dip but with feet on the ground.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "cable",
+  "id": "0190",
+  "name": "cable one arm curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand facing the cable machine with your feet shoulder-width apart.",
+    "Grasp the cable handle with an underhand grip, palm facing up.",
+    "Keep your elbow close to your side and slowly curl your forearm up towards your shoulder.",
+    "Pause for a moment at the top, then slowly lower your forearm back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable one arm curl is an isolation exercise targeting the biceps using a cable machine. It allows for constant tension throughout the movement, making it effective for muscle growth and strength development in the biceps and forearms.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

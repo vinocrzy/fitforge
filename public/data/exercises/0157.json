@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "cable",
+  "id": "0157",
+  "name": "cable deadlift",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hamstrings",
+    "quadriceps",
+    "lower back"
+  ],
+  "instructions": [
+    "Stand facing the cable machine with your feet shoulder-width apart.",
+    "Bend at the hips and knees, lowering your torso until your back is parallel to the ground.",
+    "Grasp the cable handles with an overhand grip, keeping your arms straight and your shoulders back.",
+    "Engage your glutes and hamstrings to lift the cable handles, extending your hips and standing up straight.",
+    "Pause for a moment at the top, then slowly lower the cable handles back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable deadlift is a compound exercise targeting the glutes, with secondary emphasis on the hamstrings, quadriceps, and lower back. It involves lifting a cable from a lowered position by hinging at the hips and extending the body to a standing position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

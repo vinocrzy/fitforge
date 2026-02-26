@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "0110",
+  "name": "barbell standing reverse grip curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand up straight with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing up.",
+    "Keep your elbows close to your torso and your upper arms stationary.",
+    "Exhale and curl the weights while contracting your biceps, bringing the barbell as close to your shoulders as possible.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly lower the barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell standing reverse grip curl is an exercise targeting the biceps and forearms. It is performed by holding a barbell with an underhand grip, curling the weight up while keeping the elbows close to the torso, and then lowering it back down.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

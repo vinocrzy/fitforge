@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "barbell",
+  "id": "0036",
+  "name": "barbell decline wide-grip press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie on a decline bench with your feet secured and your head lower than your hips.",
+    "Grasp the barbell with a wide grip, slightly wider than shoulder-width apart.",
+    "Lower the barbell to your chest, keeping your elbows out to the sides.",
+    "Push the barbell back up to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell decline wide-grip press is a compound chest exercise performed on a decline bench using a barbell with a wide grip. It targets the lower portion of the pectoral muscles and also engages the triceps and shoulders.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

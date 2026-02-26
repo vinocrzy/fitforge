@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "0042",
+  "name": "barbell front squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves",
+    "core"
+  ],
+  "instructions": [
+    "Start by standing with your feet shoulder-width apart, toes slightly turned out.",
+    "Hold the barbell in front of your shoulders, resting it on your collarbone and shoulders.",
+    "Engage your core and keep your chest up as you lower your body down into a squat position, pushing your hips back and bending your knees.",
+    "Lower until your thighs are parallel to the ground, or as low as you can comfortably go.",
+    "Pause for a moment at the bottom, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell front squat is a compound lower body exercise that targets the glutes, quadriceps, and hamstrings, while also engaging the core for stability. The barbell is held in front of the shoulders, requiring good mobility and core strength to maintain proper posture throughout the movement.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

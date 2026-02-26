@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "barbell",
+  "id": "0100",
+  "name": "barbell skier",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a barbell in front of your thighs with an overhand grip.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight and chest up.",
+    "Simultaneously lift the barbell up towards your shoulders while jumping slightly off the ground.",
+    "As you reach the top of the movement, quickly reverse the motion and lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell skier is a dynamic shoulder exercise that involves lifting a barbell while performing a small jump, targeting the deltoids and engaging the triceps and core for stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "0038",
+  "name": "barbell drag curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing up.",
+    "Let the barbell hang at arm's length in front of your thighs.",
+    "Keeping your upper arms stationary, curl the barbell up towards your chest by contracting your biceps.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell drag curl is a biceps-focused exercise that involves curling a barbell while keeping the elbows pulled back, emphasizing the contraction of the biceps and minimizing shoulder involvement. It also engages the forearms as secondary muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "barbell",
+  "id": "0120",
+  "name": "barbell upright row",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "biceps"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a barbell with an overhand grip, hands slightly wider than shoulder-width apart.",
+    "Let the barbell hang in front of your thighs, arms fully extended.",
+    "Keeping your back straight and core engaged, exhale and lift the barbell straight up towards your chin, leading with your elbows.",
+    "Pause for a moment at the top, then inhale and slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell upright row is a compound exercise that targets the deltoids and also works the traps and biceps. It involves lifting a barbell from the thighs to the upper chest, leading with the elbows.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "0097",
+  "name": "barbell side split squat v. 2",
+  "target": "quads",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet wider than shoulder-width apart, toes pointing slightly outwards.",
+    "Hold a barbell across your upper back, resting it on your shoulders.",
+    "Take a big step to the side with your right foot, keeping your left foot planted.",
+    "Bend your right knee and lower your body down into a squat position, keeping your chest up and your back straight.",
+    "Push through your right heel to return to the starting position.",
+    "Repeat on the other side, stepping out with your left foot.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The barbell side split squat v. 2 is a lower body exercise that targets the quadriceps while also engaging the glutes, hamstrings, and calves. It involves stepping laterally into a squat position while holding a barbell across the upper back, requiring strength, balance, and coordination.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

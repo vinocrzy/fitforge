@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "barbell",
+  "id": "0104",
+  "name": "barbell standing back wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand up straight with your feet shoulder-width apart and hold a barbell with an overhand grip.",
+    "Rest the barbell on the back of your hands with your palms facing down and your fingers pointing towards your body.",
+    "Keeping your upper arms stationary, exhale and curl your wrists upwards as far as possible.",
+    "Hold the contracted position for a brief pause, then inhale and slowly lower the barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell standing back wrist curl is an isolation exercise targeting the forearms, specifically the wrist extensors. It involves curling the barbell upwards using only the wrists while standing.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

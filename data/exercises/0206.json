@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "cable",
+  "id": "0206",
+  "name": "cable reverse curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Attach a straight bar to a low pulley cable machine.",
+    "Stand facing the machine with your feet shoulder-width apart and your knees slightly bent.",
+    "Grasp the bar with an underhand grip, hands shoulder-width apart.",
+    "Keep your elbows close to your sides and your upper arms stationary throughout the exercise.",
+    "Exhale and curl the bar up towards your shoulders, contracting your biceps.",
+    "Pause for a moment at the top, squeezing your biceps.",
+    "Inhale and slowly lower the bar back to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable reverse curl is an isolation exercise targeting the biceps and forearms using a cable machine. It emphasizes the brachialis and brachioradialis muscles due to the reverse grip.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

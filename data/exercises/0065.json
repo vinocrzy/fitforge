@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "0065",
+  "name": "barbell one arm floor press",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie flat on your back on the floor with your knees bent and feet flat on the ground.",
+    "Hold the barbell with one hand, palm facing up, and extend your arm straight up over your chest.",
+    "Slowly lower the barbell towards your chest, keeping your elbow close to your body.",
+    "Pause for a moment at the bottom, then push the barbell back up to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The barbell one arm floor press is a unilateral pressing exercise that targets the triceps while also engaging the chest and shoulders. It requires the lifter to stabilize the barbell with one arm while lying on the floor, which increases the demand on core stability and coordination.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

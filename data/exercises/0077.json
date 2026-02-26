@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "0077",
+  "name": "barbell rear lunge v. 2",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a barbell across your upper back.",
+    "Take a step backward with your right foot, landing on the ball of your foot.",
+    "Bend both knees to lower your body until your left thigh is parallel to the ground.",
+    "Push through your left heel to return to the starting position.",
+    "Repeat with the other leg."
+  ],
+  "description": "The barbell rear lunge v. 2 is a lower body exercise that targets the glutes and also engages the quadriceps, hamstrings, and calves. It involves stepping backward into a lunge position while holding a barbell across your upper back, then returning to the starting position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

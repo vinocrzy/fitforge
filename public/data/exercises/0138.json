@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0138",
+  "name": "bottoms-up",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and your arms by your sides.",
+    "Bend your knees and bring them towards your chest, keeping your feet off the ground.",
+    "Engaging your abs, lift your hips off the ground, bringing your knees towards your head.",
+    "Pause for a moment at the top, then slowly lower your hips back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The bottoms-up exercise is a bodyweight movement targeting the abdominal muscles. It involves lying on your back, bringing your knees toward your chest, and lifting your hips off the ground to engage your core.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

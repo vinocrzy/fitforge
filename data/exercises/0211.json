@@ -1,0 +1,22 @@
+{
+  "bodyPart": "waist",
+  "equipment": "cable",
+  "id": "0211",
+  "name": "cable russian twists (on stability ball)",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "lower back"
+  ],
+  "instructions": [
+    "Sit on a stability ball with your feet flat on the ground and your knees bent at a 90-degree angle.",
+    "Hold the cable handle with both hands and extend your arms straight out in front of you.",
+    "Lean back slightly while keeping your back straight and your core engaged.",
+    "Twist your torso to the right, bringing the cable handle towards your right hip.",
+    "Pause for a moment, then twist your torso to the left, bringing the cable handle towards your left hip.",
+    "Continue alternating twists for the desired number of repetitions."
+  ],
+  "description": "Cable Russian Twists (on stability ball) are a core exercise that targets the abs, obliques, and lower back. The use of a stability ball increases the balance and coordination required, while the cable adds resistance for strength development.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

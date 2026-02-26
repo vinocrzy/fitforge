@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "0044",
+  "name": "barbell good morning",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "lower back"
+  ],
+  "instructions": [
+    "Start by standing with your feet shoulder-width apart and the barbell resting on your upper back.",
+    "Keeping your back straight and your core engaged, hinge forward at the hips, pushing your buttocks back as if you were trying to touch the wall behind you with your glutes.",
+    "Lower your torso until it is parallel to the ground, feeling a stretch in your hamstrings.",
+    "Pause for a moment, then return to the starting position by squeezing your glutes and pushing your hips forward.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell good morning is a compound exercise that targets the hamstrings and lower back. It involves hinging at the hips with a barbell on your upper back, requiring good form and core stability to perform safely.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

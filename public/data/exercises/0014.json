@@ -1,0 +1,22 @@
+{
+  "bodyPart": "waist",
+  "equipment": "medicine ball",
+  "id": "0014",
+  "name": "assisted motion russian twist",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "lower back"
+  ],
+  "instructions": [
+    "Sit on the ground with your knees bent and feet flat on the floor.",
+    "Hold the medicine ball with both hands in front of your chest.",
+    "Lean back slightly, engaging your abs and keeping your back straight.",
+    "Slowly twist your torso to the right, bringing the medicine ball towards the right side of your body.",
+    "Pause for a moment, then twist your torso to the left, bringing the medicine ball towards the left side of your body.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The assisted motion Russian twist is a core exercise performed with a medicine ball. It targets the abdominal muscles and also engages the obliques and lower back. The movement involves twisting the torso from side to side while holding a medicine ball, which adds resistance and helps build core strength and stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

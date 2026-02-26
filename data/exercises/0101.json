@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "0101",
+  "name": "barbell speed squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, toes slightly turned out.",
+    "Hold the barbell across your upper back, resting it on your traps or rear delts.",
+    "Engage your core and keep your chest up as you lower your hips back and down, as if sitting into a chair.",
+    "Lower until your thighs are parallel to the ground, or as low as you can comfortably go.",
+    "Drive through your heels to stand back up, squeezing your glutes at the top.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell speed squat is a dynamic variation of the traditional squat, performed with a focus on explosive movement and speed. This exercise targets the glutes as the primary muscle group, with significant involvement from the quadriceps, hamstrings, and calves. It requires good technique, balance, and strength to perform safely, especially with added weight.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

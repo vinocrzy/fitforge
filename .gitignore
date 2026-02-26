@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# FitForge — generated / cached assets
+public/data/gifs/
+public/data/previews/
+public/data/exercise-manifest.json
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map

@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "0051",
+  "name": "barbell jefferson squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and toes slightly turned out.",
+    "Hold the barbell with an overhand grip, resting it on the front of your body, just below your waist.",
+    "Step your left foot forward and your right foot back, keeping your feet shoulder-width apart.",
+    "Bend your knees and lower your body down into a squat position, keeping your back straight and chest up.",
+    "Push through your heels to stand back up to the starting position.",
+    "Repeat the movement, alternating your forward and back foot with each repetition."
+  ],
+  "description": "The barbell Jefferson squat is a compound lower body exercise that targets the glutes, quadriceps, hamstrings, and calves. It involves holding a barbell between the legs and performing a squat with a staggered stance, alternating foot positions with each repetition.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

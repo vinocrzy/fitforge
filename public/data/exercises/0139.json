@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0139",
+  "name": "biceps narrow pull-ups",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms",
+    "shoulders"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with your palms facing towards you and your hands shoulder-width apart.",
+    "Engage your core and pull yourself up towards the bar, focusing on using your biceps to lift your body.",
+    "Pause for a moment at the top, then slowly lower yourself back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Biceps narrow pull-ups are a bodyweight exercise that primarily targets the biceps, with secondary emphasis on the forearms and shoulders. The movement involves pulling your body up to a bar with a narrow, underhand grip, requiring significant upper body strength and coordination.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

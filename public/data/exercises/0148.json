@@ -1,0 +1,23 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "cable",
+  "id": "0148",
+  "name": "cable alternate shoulder press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and grasp the handles of the cable machine with an overhand grip.",
+    "Position your hands at shoulder height, with your palms facing forward.",
+    "Keep your core engaged and your back straight.",
+    "Press one handle up and forward until your arm is fully extended.",
+    "Pause for a moment at the top, then slowly lower the handle back to the starting position.",
+    "Repeat with the other arm.",
+    "Alternate between arms for the desired number of repetitions."
+  ],
+  "description": "The cable alternate shoulder press is a strength exercise targeting the deltoid muscles. It involves pressing one cable handle overhead at a time, alternating arms, and requires stability and coordination.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}
