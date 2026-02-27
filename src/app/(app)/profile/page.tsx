@@ -4,12 +4,14 @@
 
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { springGentle } from '@/lib/motion/springs';
+import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { Icon } from '@/components/ui/Icon';
 import { useProfileStore } from '@/store/useProfileStore';
 
 export default function ProfilePage() {
+  const router = useRouter();
   const { level, xp, streakDays, unitPreference, weightKg, experienceLevel } =
     useProfileStore();
   const displayWeight =
@@ -99,6 +101,66 @@ export default function ProfilePage() {
             </div>
           ))}
         </div>
+
+        {/* Edit Profile */}
+        <motion.button
+          onClick={() => router.push('/onboarding/profile')}
+          whileTap={{ scale: 0.97 }}
+          transition={springSnappy}
+          className="w-full h-12 rounded-[14px] flex items-center justify-center gap-2 mt-2"
+          style={{
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <Icon name="pencil" size={16} color="rgba(245,245,245,0.60)" />
+          <span
+            className="text-[15px] font-semibold"
+            style={{ color: 'rgba(245,245,245,0.70)' }}
+          >
+            Edit Profile
+          </span>
+        </motion.button>
+
+        {/* Browse Exercises */}
+        <motion.button
+          onClick={() => router.push('/exercises')}
+          whileTap={{ scale: 0.97 }}
+          transition={springSnappy}
+          className="w-full h-12 rounded-[14px] flex items-center justify-center gap-2"
+          style={{
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <Icon name="figure.strengthtraining.traditional" size={16} color="rgba(245,245,245,0.60)" weight="fill" />
+          <span
+            className="text-[15px] font-semibold"
+            style={{ color: 'rgba(245,245,245,0.70)' }}
+          >
+            Browse Exercises
+          </span>
+        </motion.button>
+
+        {/* View History */}
+        <motion.button
+          onClick={() => router.push('/history')}
+          whileTap={{ scale: 0.97 }}
+          transition={springSnappy}
+          className="w-full h-12 rounded-[14px] flex items-center justify-center gap-2"
+          style={{
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <Icon name="clock.arrow.circlepath" size={16} color="rgba(245,245,245,0.60)" />
+          <span
+            className="text-[15px] font-semibold"
+            style={{ color: 'rgba(245,245,245,0.70)' }}
+          >
+            View Workout History
+          </span>
+        </motion.button>
       </motion.div>
     </div>
   );

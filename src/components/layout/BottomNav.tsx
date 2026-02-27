@@ -14,6 +14,7 @@ import { Icon } from '@/components/ui/Icon';
 const tabs = [
   { id: 'home', icon: 'house.fill', href: '/' },
   { id: 'routines', icon: 'list.bullet.clipboard.fill', href: '/routines' },
+  { id: 'exercises', icon: 'figure.strengthtraining.traditional', href: '/exercises' },
   { id: 'history', icon: 'clock.arrow.circlepath', href: '/history' },
   { id: 'profile', icon: 'person.crop.circle.fill', href: '/profile' },
 ] as const;

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3200",
     "prebuild": "npx tsx scripts/process-gifs.ts && npx ts-node --esm scripts/generate-exercise-manifest.ts",
     "build": "next build",
     "start": "next start",

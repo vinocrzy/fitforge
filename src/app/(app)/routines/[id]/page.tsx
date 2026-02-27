@@ -247,9 +247,10 @@ export default function RoutineDetailPage({
                   >
                     <div className="mt-2 flex flex-col gap-1">
                       {exercises.map((config, i) => (
-                        <div
+                        <button
                           key={i}
-                          className="flex items-center justify-between py-2.5"
+                          onClick={() => router.push(`/exercises/${config.exerciseId}`)}
+                          className="flex items-center justify-between py-2.5 w-full text-left"
                           style={{
                             borderBottom:
                               i < exercises.length - 1
@@ -269,13 +270,20 @@ export default function RoutineDetailPage({
                               {getExerciseName(config)}
                             </span>
                           </div>
-                          <span
-                            className="text-[15px] tabular-nums"
-                            style={{ color: 'rgba(245,245,245,0.55)' }}
-                          >
-                            {formatConfig(config, phase)}
-                          </span>
-                        </div>
+                          <div className="flex items-center gap-2">
+                            <span
+                              className="text-[15px] tabular-nums"
+                              style={{ color: 'rgba(245,245,245,0.55)' }}
+                            >
+                              {formatConfig(config, phase)}
+                            </span>
+                            <Icon
+                              name="chevron.right"
+                              size={12}
+                              color="rgba(245,245,245,0.25)"
+                            />
+                          </div>
+                        </button>
                       ))}
                     </div>
                   </motion.div>

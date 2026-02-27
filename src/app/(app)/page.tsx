@@ -13,7 +13,7 @@ import { staggerContainer, fadeUpItem } from '@/lib/motion/variants';
 import { Icon } from '@/components/ui/Icon';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { useProfileStore } from '@/store/useProfileStore';
-import { useRoutines, useWorkoutHistory } from '@/hooks/useDatabase';
+import { useRoutines, useWorkoutHistory, useExercises } from '@/hooks/useDatabase';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
 
@@ -120,6 +120,7 @@ export default function DashboardPage() {
   const { level, xp, streakDays } = useProfileStore();
   const { data: routines = [] } = useRoutines();
   const { data: workouts = [] } = useWorkoutHistory();
+  const { data: libraryExercises = [] } = useExercises();
 
   // Recovery score (mock — will be real in Phase 5)
   const recoveryScore = useMemo(() => {
@@ -304,13 +305,39 @@ export default function DashboardPage() {
         {/* Weekly Activity */}
         <motion.div
           variants={fadeUpItem}
-          className="rounded-[20px] p-5"
+          onClick={() => router.push('/history')}
+          className="rounded-[20px] p-5 cursor-pointer"
           style={{ background: '#141414' }}
         >
-          <SectionLabel text="WEEKLY ACTIVITY" />
+          <div className="flex items-center justify-between">
+            <SectionLabel text="WEEKLY ACTIVITY" />
+            <Icon name="chevron.right" size={14} color="rgba(245,245,245,0.30)" />
+          </div>
           <div className="mt-3">
             <WeeklyActivity workoutDates={workoutDates} />
           </div>
+        </motion.div>
+
+        {/* Browse Exercises */}
+        <motion.div
+          variants={fadeUpItem}
+          onClick={() => router.push('/exercises')}
+          className="rounded-[20px] p-4 flex items-center justify-between cursor-pointer"
+          style={{ background: '#141414', border: '1px solid rgba(255,255,255,0.06)' }}
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: 'rgba(197,247,79,0.12)' }}
+            >
+              <Icon name="figure.strengthtraining.traditional" size={20} color="#C5F74F" weight="fill" />
+            </div>
+            <div>
+              <p className="text-[15px] font-semibold" style={{ color: '#F5F5F5' }}>Browse Exercises</p>
+              <p className="text-[13px]" style={{ color: 'rgba(245,245,245,0.50)' }}>{libraryExercises.length}+ exercises with guides</p>
+            </div>
+          </div>
+          <Icon name="chevron.right" size={16} color="rgba(245,245,245,0.30)" />
         </motion.div>
 
         {/* Quick Stats Grid */}

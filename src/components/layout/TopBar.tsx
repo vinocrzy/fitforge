@@ -29,14 +29,14 @@ export function TopBar({
     <header
       className={`
         fixed top-0 left-0 right-0 z-40
-        safe-top
         ${transparent ? '' : 'glass-nav-bar'}
       `}
       style={{
         height: 'calc(44px + env(safe-area-inset-top, 0px))',
+        paddingTop: 'env(safe-area-inset-top, 0px)',
       }}
     >
-      <div className="flex items-center justify-between h-11 px-4 mt-[env(safe-area-inset-top,0px)]">
+      <div className="flex items-center justify-between h-11 px-4">
         {/* Left: back button or spacer */}
         <div className="w-10">
           {showBack && (
