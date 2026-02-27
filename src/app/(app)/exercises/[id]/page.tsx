@@ -16,6 +16,7 @@ import { DifficultyDots } from '@/components/ui/DifficultyDots';
 import { CategoryBadge } from '@/components/ui/CategoryBadge';
 import { Icon } from '@/components/ui/Icon';
 import { useExercise } from '@/hooks/useDatabase';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 
 export default function ExerciseDetailPage({
   params,
@@ -101,7 +102,7 @@ export default function ExerciseDetailPage({
           animate={{ y: 0, opacity: 1 }}
           transition={{ ...springGentle, delay: 0.05 }}
         >
-          {exercise.name}
+          {toTitleCase(exercise.name)}
         </motion.h1>
 
         <motion.div
@@ -148,7 +149,7 @@ export default function ExerciseDetailPage({
                 style={{ background: '#C5F74F' }}
               />
               <span className="text-[15px]" style={{ color: '#F5F5F5' }}>
-                {exercise.target} <span style={{ color: 'rgba(245,245,245,0.45)' }}>(primary)</span>
+                {toTitleCase(exercise.target)} <span style={{ color: 'rgba(245,245,245,0.45)' }}>(primary)</span>
               </span>
             </div>
             {exercise.secondaryMuscles.length > 0 && (
@@ -158,7 +159,7 @@ export default function ExerciseDetailPage({
                   style={{ background: 'rgba(197,247,79,0.40)' }}
                 />
                 <span className="text-[15px]" style={{ color: 'rgba(245,245,245,0.70)' }}>
-                  {exercise.secondaryMuscles.join(', ')}
+                  {exercise.secondaryMuscles.map(m => toTitleCase(m)).join(', ')}
                 </span>
               </div>
             )}
@@ -207,7 +208,7 @@ export default function ExerciseDetailPage({
         >
           <SectionHeader title="Equipment" />
           <div className="mt-3 flex flex-wrap gap-2">
-            <EquipmentChip label={exercise.equipment} />
+            <EquipmentChip label={toTitleCase(exercise.equipment)} />
           </div>
         </motion.div>
       </div>

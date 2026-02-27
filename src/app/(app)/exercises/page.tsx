@@ -9,13 +9,13 @@ import { useState, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { springSnappy, springGentle } from '@/lib/motion/springs';
-import { staggerContainer, fadeUpItem } from '@/lib/motion/variants';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { FilterChipBar } from '@/components/ui/FilterChip';
 import { DifficultyDots } from '@/components/ui/DifficultyDots';
 import { ExerciseGif } from '@/components/ui/ExerciseGif';
 import { TopBar } from '@/components/layout/TopBar';
 import { useExercises } from '@/hooks/useDatabase';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type { ExerciseDoc } from '@/types';
 
 const BODY_PARTS = [
@@ -27,7 +27,6 @@ const BODY_PARTS = [
   'upper arms',
   'lower arms',
   'waist',
-  'cardio',
 ];
 
 export default function ExerciseLibraryPage() {
@@ -111,18 +110,14 @@ export default function ExerciseLibraryPage() {
 
         {/* Exercise List */}
         {!isLoading && (
-          <motion.div
-            className="flex flex-col pb-28"
-            variants={staggerContainer}
-            initial="initial"
-            animate="animate"
-          >
+          <div className="flex flex-col pb-28">
             {filtered.map((ex, index) => (
               <motion.button
                 key={ex._id}
-                variants={fadeUpItem}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ...springGentle, delay: Math.min(index * 0.03, 0.3) }}
                 whileTap={{ scale: 0.98 }}
-                transition={springSnappy}
                 onClick={() => handleExerciseTap(ex)}
                 className="flex items-center gap-3 py-2 text-left"
                 style={{
@@ -147,13 +142,13 @@ export default function ExerciseLibraryPage() {
                     className="text-[17px] font-semibold truncate"
                     style={{ color: '#F5F5F5' }}
                   >
-                    {ex.name}
+                    {toTitleCase(ex.name)}
                   </div>
                   <div
                     className="text-[14px] mt-0.5"
                     style={{ color: 'rgba(245,245,245,0.50)' }}
                   >
-                    {ex.bodyPart} • {ex.equipment}
+                    {toTitleCase(ex.bodyPart)} • {toTitleCase(ex.equipment)}
                   </div>
                 </div>
 
@@ -186,7 +181,7 @@ export default function ExerciseLibraryPage() {
                 </p>
               </motion.div>
             )}
-          </motion.div>
+          </div>
         )}
       </div>
     </div>

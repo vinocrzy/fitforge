@@ -88,11 +88,10 @@ export function RestTimer({
           animate={{ y: 0 }}
           exit={{ y: '100%' }}
           transition={springGentle}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center glass-sheet"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center"
           style={{
             borderRadius: 0,
-            backdropFilter: 'blur(60px)',
-            WebkitBackdropFilter: 'blur(60px)',
+            background: 'linear-gradient(180deg, #0B0B0B 0%, #141414 40%, #1A1A1A 100%)',
           }}
         >
           {/* Drag handle */}
@@ -193,8 +192,8 @@ export function RestTimer({
               onClick={() => adjustTime(-30)}
               whileTap={{ scale: 0.95 }}
               transition={springSnappy}
-              className="h-10 px-5 rounded-full glass"
-              style={{ color: '#C5F74F' }}
+              className="h-10 px-5 rounded-full"
+              style={{ color: '#C5F74F', background: 'rgba(255,255,255,0.08)' }}
             >
               <span className="text-[15px] font-semibold">−30s</span>
             </motion.button>
@@ -202,8 +201,8 @@ export function RestTimer({
               onClick={() => adjustTime(30)}
               whileTap={{ scale: 0.95 }}
               transition={springSnappy}
-              className="h-10 px-5 rounded-full glass"
-              style={{ color: '#C5F74F' }}
+              className="h-10 px-5 rounded-full"
+              style={{ color: '#C5F74F', background: 'rgba(255,255,255,0.08)' }}
             >
               <span className="text-[15px] font-semibold">+30s</span>
             </motion.button>

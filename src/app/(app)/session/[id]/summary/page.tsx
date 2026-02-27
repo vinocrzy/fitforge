@@ -10,8 +10,6 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  springGentle,
-  springCelebration,
   springSnappy,
 } from '@/lib/motion/springs';
 import { formatTimeLong } from '@/lib/calculations/time';
@@ -24,6 +22,7 @@ import {
 import { useProfileStore } from '@/store/useProfileStore';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { Icon } from '@/components/ui/Icon';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type {
   ExerciseRecord,
   PersonalRecord,
@@ -137,7 +136,8 @@ function PRBadge({
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: [0, 1.2, 1], opacity: 1 }}
       transition={{
-        ...springCelebration,
+        duration: 0.5,
+        ease: 'easeOut',
         delay: 1.2 + index * 0.12,
       }}
     >
@@ -193,7 +193,7 @@ function RpeDonut({ rpe, delay }: { rpe: number; delay: number }) {
             strokeDasharray={circumference}
             initial={{ strokeDashoffset: circumference }}
             animate={{ strokeDashoffset: offset }}
-            transition={{ ...springGentle, delay: delay + 0.2, duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: delay + 0.2 }}
             transform="rotate(-90 48 48)"
           />
         </svg>
@@ -276,7 +276,7 @@ export default function PostWorkoutSummaryPage({
   }, [libraryExercises, customExercises]);
 
   const getExerciseName = (exerciseId: string): string =>
-    exerciseRecordMap.get(exerciseId)?.name ?? 'Unknown Exercise';
+    toTitleCase(exerciseRecordMap.get(exerciseId)?.name ?? 'Unknown Exercise');
 
   if (!session) {
     return (
@@ -373,7 +373,7 @@ export default function PostWorkoutSummaryPage({
           style={{ background: '#141414' }}
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ ...springGentle, delay: 0.2 }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
         >
           <div
             className="absolute inset-0"
@@ -386,7 +386,7 @@ export default function PostWorkoutSummaryPage({
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: [0, 1.3, 1] }}
-              transition={{ ...springCelebration, delay: 0.15 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
             >
               <span className="text-[40px]">🎉</span>
             </motion.div>
@@ -417,9 +417,9 @@ export default function PostWorkoutSummaryPage({
                     width: `${Math.round(xpProgress.pct * 100)}%`,
                   }}
                   transition={{
-                    ...springGentle,
-                    delay: 0.5,
                     duration: 0.8,
+                    ease: 'easeOut',
+                    delay: 0.5,
                   }}
                 />
               </div>
@@ -462,7 +462,7 @@ export default function PostWorkoutSummaryPage({
         <motion.div
           initial={{ y: 16, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ ...springGentle, delay: 1.0 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 1.0 }}
         >
           <SectionLabel text="Phase Breakdown" />
           <div className="space-y-2 mt-3">
@@ -527,7 +527,7 @@ export default function PostWorkoutSummaryPage({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ ...springGentle, delay: 1.6 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 1.6 }}
           >
             <SectionLabel text="Muscles Worked" />
             <div
@@ -585,7 +585,7 @@ export default function PostWorkoutSummaryPage({
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ ...springGentle, delay: 2.0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 2.0 }}
           >
             <SectionLabel text="Intensity" />
             <div
@@ -604,7 +604,7 @@ export default function PostWorkoutSummaryPage({
             style={{ background: '#141414' }}
             initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ ...springGentle, delay: 2.2 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 2.2 }}
           >
             <Icon
               name="flame.fill"
@@ -634,7 +634,7 @@ export default function PostWorkoutSummaryPage({
           className="pt-2"
           initial={{ y: 16, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ ...springGentle, delay: 2.4 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 2.4 }}
         >
           <PrimaryButton onClick={() => router.push('/')}>DONE</PrimaryButton>
         </motion.div>
@@ -673,7 +673,7 @@ function StatCard({
       style={{ background: '#141414' }}
       initial={{ y: 16, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ ...springGentle, delay }}
+      transition={{ duration: 0.4, ease: 'easeOut', delay }}
     >
       <p
         className="text-[28px] font-extrabold tabular-nums"

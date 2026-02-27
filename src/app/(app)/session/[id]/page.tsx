@@ -23,6 +23,7 @@ import { calculatePhaseCalories } from '@/lib/calculations/calories';
 import { detectPRs } from '@/lib/calculations/prs';
 import { calculateSessionXP } from '@/lib/calculations/xp';
 import { Icon } from '@/components/ui/Icon';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import { PhaseProgressBar } from '@/components/workout/PhaseProgressBar';
 import { ActiveSetCard } from '@/components/workout/ActiveSetCard';
 import { RepCounter } from '@/components/workout/RepCounter';
@@ -81,7 +82,6 @@ export default function WorkoutExecutionPage({
     pauseSession,
     resumeSession,
     endSession,
-    reset,
   } = useSessionStore();
 
   // Local state
@@ -140,7 +140,7 @@ export default function WorkoutExecutionPage({
   // Sync rep count & weight when exercise or set changes (state-based comparison)\n  const [prevExerciseKey, setPrevExerciseKey] = useState('');\n  const exerciseKey = currentExercise\n    ? `${currentExercise.exerciseId}_${currentSetIndex}`\n    : '';\n  if (exerciseKey && exerciseKey !== prevExerciseKey) {\n    setPrevExerciseKey(exerciseKey);\n    setRepCount(currentExercise?.targetReps ?? 0);\n    setCurrentWeight(currentExercise?.weightKg ?? 0);\n  }
 
   const getExerciseName = useCallback(
-    (exerciseId: string) => exerciseNameMap[exerciseId] ?? 'Unknown Exercise',
+    (exerciseId: string) => toTitleCase(exerciseNameMap[exerciseId] ?? 'Unknown Exercise'),
     [exerciseNameMap]
   );
 
@@ -323,11 +323,10 @@ export default function WorkoutExecutionPage({
 
     saveWorkout.mutate(workoutSession, {
       onSuccess: () => {
-        reset();
-        router.push(`/session/${id}/summary`);
+        router.replace(`/session/${id}/summary`);
       },
     });
-  }, [sessionId, endSession, id, startedAt, unitPreference, warmUp, workout, stretch, elapsed, calculateCompletionRate, saveWorkout, reset, router, libraryExercises, customExercises]);
+  }, [sessionId, endSession, id, startedAt, unitPreference, warmUp, workout, stretch, elapsed, calculateCompletionRate, saveWorkout, router, libraryExercises, customExercises]);
 
   // ─── Handle Phase Completion ───────────────────────────────────
   const handlePhaseComplete = useCallback(() => {
@@ -340,25 +339,33 @@ export default function WorkoutExecutionPage({
       return;
     }
 
-    // Skip to next phase if it has no exercises
-    const nextPhase = phaseOrder[currentIdx + 1];
-    const nextPhaseExercises =
-      nextPhase === 'warmUp'
-        ? warmUp
-        : nextPhase === 'workout'
-          ? workout
-          : stretch;
+    // Find next phase that has exercises
+    const phaseExerciseMap: Record<SessionPhase, ActiveExercise[]> = {
+      warmUp,
+      workout,
+      stretch,
+    };
 
-    if (nextPhaseExercises.length === 0) {
-      // Skip empty phases
-      advancePhase();
+    let nextNonEmptyIdx = -1;
+    for (let i = currentIdx + 1; i < phaseOrder.length; i++) {
+      if (phaseExerciseMap[phaseOrder[i]].length > 0) {
+        nextNonEmptyIdx = i;
+        break;
+      }
+    }
+
+    if (nextNonEmptyIdx === -1) {
+      // All remaining phases are empty — end session
+      doEndSession();
       return;
     }
 
+    // Advance store to that phase (skip empty ones in between)
+    // We'll advance through each one so the store stays consistent
     setCompletedPhaseForTransition(currentPhase);
     setPhaseElapsedSec(Math.round((Date.now() - phaseStartTime) / 1000));
     setShowTransition(true);
-  }, [currentPhase, warmUp, workout, stretch, phaseStartTime, advancePhase, doEndSession]);
+  }, [currentPhase, warmUp, workout, stretch, phaseStartTime, doEndSession]);
 
   // ─── Handle Set Completion ─────────────────────────────────────
   const handleCompleteSet = useCallback(() => {
@@ -415,9 +422,24 @@ export default function WorkoutExecutionPage({
   // ─── Phase transition handlers ─────────────────────────────────
   const handleTransitionContinue = useCallback(() => {
     setShowTransition(false);
-    advancePhase();
+    // Advance past any empty phases
+    const phaseOrder: SessionPhase[] = ['warmUp', 'workout', 'stretch'];
+    const phaseExerciseMap: Record<SessionPhase, ActiveExercise[]> = {
+      warmUp,
+      workout,
+      stretch,
+    };
+    const currentIdx = phaseOrder.indexOf(currentPhase);
+    let advances = 0;
+    for (let i = currentIdx + 1; i < phaseOrder.length; i++) {
+      advances++;
+      if (phaseExerciseMap[phaseOrder[i]].length > 0) break;
+    }
+    for (let i = 0; i < advances; i++) {
+      advancePhase();
+    }
     setPhaseStartTime(Date.now());
-  }, [advancePhase]);
+  }, [advancePhase, currentPhase, warmUp, workout, stretch]);
 
   // ─── Rest complete handler ─────────────────────────────────────
   const handleRestComplete = useCallback(() => {

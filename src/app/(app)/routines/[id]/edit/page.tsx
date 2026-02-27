@@ -34,6 +34,7 @@ import { ExercisePickerSheet } from '@/components/routine/ExercisePickerSheet';
 import { CustomExerciseForm } from '@/components/routine/CustomExerciseForm';
 import { Icon } from '@/components/ui/Icon';
 import { useRoutine, useSaveRoutine, useExercises, useCustomExercises } from '@/hooks/useDatabase';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type {
   SessionPhase,
   Routine,
@@ -148,7 +149,7 @@ export default function RoutineBuilderPage({
   }, [libraryExercises, customExercises]);
 
   const getExerciseName = (config: RoutineExerciseConfig) =>
-    exerciseNameMap[config.exerciseId] ?? 'Unknown Exercise';
+    toTitleCase(exerciseNameMap[config.exerciseId] ?? 'Unknown Exercise');
 
   // Current phase data
   const phaseData = activePhase === 'warmUp' ? warmUp : activePhase === 'workout' ? workout : stretch;

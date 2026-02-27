@@ -15,6 +15,7 @@ import { DifficultyDots } from '@/components/ui/DifficultyDots';
 import { ExerciseGif } from '@/components/ui/ExerciseGif';
 import { Icon } from '@/components/ui/Icon';
 import { useExercises, useCustomExercises } from '@/hooks/useDatabase';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type { ExerciseDoc, CustomExercise, SessionPhase } from '@/types';
 
 type ExerciseItem = (ExerciseDoc | CustomExercise) & { _isCustom?: boolean };
@@ -170,7 +171,7 @@ export function ExercisePickerSheet({
                 className="text-[16px] font-semibold truncate"
                 style={{ color: '#F5F5F5' }}
               >
-                {ex.name}
+                {toTitleCase(ex.name)}
               </div>
               <div
                 className="text-[13px]"

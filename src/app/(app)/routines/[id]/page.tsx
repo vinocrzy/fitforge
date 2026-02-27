@@ -19,6 +19,7 @@ import {
   useDeleteRoutine,
   useSaveRoutine,
 } from '@/hooks/useDatabase';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type { RoutineExerciseConfig, SessionPhase } from '@/types';
 
 const PHASE_META: Record<
@@ -62,7 +63,7 @@ export default function RoutineDetailPage({
     setCollapsedSections((prev) => ({ ...prev, [key]: !prev[key] }));
 
   const getExerciseName = (config: RoutineExerciseConfig) =>
-    exerciseNameMap[config.exerciseId] ?? 'Unknown Exercise';
+    toTitleCase(exerciseNameMap[config.exerciseId] ?? 'Unknown Exercise');
 
   const formatConfig = (config: RoutineExerciseConfig, phase: SessionPhase) => {
     if (phase === 'stretch') {

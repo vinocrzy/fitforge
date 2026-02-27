@@ -19,6 +19,7 @@ import {
   useRoutines,
 } from '@/hooks/useDatabase';
 import { Icon } from '@/components/ui/Icon';
+import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type {
   ExerciseRecord,
   PersonalRecord,
@@ -188,7 +189,8 @@ export default function HistoryDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = use(params);
+  const rawId = use(params).id;
+  const id = decodeURIComponent(rawId);
   const router = useRouter();
   const { data: workouts = [] } = useWorkoutHistory();
   const { data: libraryExercises = [] } = useExercises();
@@ -220,7 +222,7 @@ export default function HistoryDetailPage({
   }, [libraryExercises, customExercises]);
 
   const getExerciseName = (exerciseId: string): string =>
-    exerciseRecordMap.get(exerciseId)?.name ?? 'Unknown Exercise';
+    toTitleCase(exerciseRecordMap.get(exerciseId)?.name ?? 'Unknown Exercise');
 
   const routineName = useMemo(() => {
     if (!session?.routineId) return 'Freestyle';
