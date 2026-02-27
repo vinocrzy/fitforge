@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npx ts-node --esm scripts/generate-exercise-manifest.ts",
+    "prebuild": "npx tsx scripts/process-gifs.ts && npx ts-node --esm scripts/generate-exercise-manifest.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
