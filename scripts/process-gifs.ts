@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════════
 // FitForge — Build Script: Process Exercise GIFs
 //
-// 1. Copies GIFs from  ../../data/gifs/  →  public/data/gifs/
+// 1. Copies GIFs from  data/gifs/  →  public/data/gifs/
 // 2. Extracts first frame of each GIF and converts to WebP preview
 //    saved at  public/data/previews/<id>.webp
 //
@@ -16,7 +16,7 @@ import sharp from 'sharp';
 // ─── Paths ────────────────────────────────────────────────────────
 
 const ROOT = path.resolve(__dirname, '..');
-const SOURCE_DIR = path.resolve(ROOT, '..', 'data', 'gifs');
+const SOURCE_DIR = path.join(ROOT, 'data', 'gifs');
 const GIF_DEST = path.join(ROOT, 'public', 'data', 'gifs');
 const PREVIEW_DEST = path.join(ROOT, 'public', 'data', 'previews');
 
@@ -48,7 +48,7 @@ async function main() {
   // Validate source
   if (!fs.existsSync(SOURCE_DIR)) {
     console.error(`❌ Source directory not found: ${SOURCE_DIR}`);
-    console.error('   Expected GIF files at: ../../data/gifs/');
+    console.error('   Expected GIF files at: data/gifs/');
     process.exit(1);
   }
 
