@@ -15,6 +15,7 @@ const ROUTE_ORDER: string[] = [
   '/history',
   '/profile',
   '/session',
+  '/session/summary',
 ];
 
 let previousPathIndex = -1;

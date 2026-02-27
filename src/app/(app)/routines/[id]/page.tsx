@@ -295,8 +295,7 @@ export default function RoutineDetailPage({
       >
         <PrimaryButton
           onClick={() => {
-            /* Phase 3 will handle session start */
-            router.push(`/session/${id}/warmup`);
+            router.push(`/session/${id}`);
           }}
         >
           START WORKOUT

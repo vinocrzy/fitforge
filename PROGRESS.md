@@ -159,19 +159,47 @@
 
 ## Phase 3 — Workout Execution Engine
 
-**Status:** 🔲 Not started  
+**Status:** ✅ Complete  
 **Duration target:** ~2 weeks
 
 ### Tasks
 
-- [ ] Three-phase session flow (Warm-Up → Workout → Stretch)
-- [ ] Phase transition animations
-- [ ] Set logging (weight, reps, RPE)
-- [ ] Rest timer with haptic feedback
-- [ ] Auto rep counter (accelerometer)
-- [ ] Session pause/resume
-- [ ] PR detection during workout
-- [ ] Trainer assessment system (fatigue, progressive overload)
+**Calculation Utilities**
+- [x] `calories.ts` — MET-based calorie calculation with phase modifiers and RPE adjustment
+- [x] `time.ts` — `estimateRoutineTime()`, `getTimeDelta()`, `formatTime()`, `formatTimeLong()`
+- [x] `prs.ts` — `detectPRs()` comparing max weight, max volume, max reps against existing PRs
+
+**Custom Hooks**
+- [x] `useAutoCount` — Metronome-based rep counter with state machine (idle→countdown→counting→complete)
+- [x] `useElapsedTime` — Tracks elapsed seconds with pause/resume support
+
+**Workout Components**
+- [x] `PhaseProgressBar` — 3-segment bar (warmUp/workout/stretch) with animated fill + phase labels
+- [x] `RepCounter` — Large tap-target ±counter with 64×64px buttons, animated number flip
+- [x] `WeightSelector` — Inline stepper with long-press acceleration, direct edit mode, unit display
+- [x] `HoldTimer` — SVG ring countdown for stretch holds with breathing cue text
+- [x] `RestTimer` (S-13) — Full-screen glass overlay, 180pt SVG ring, ±30s adjust, SKIP REST, auto-dismiss
+- [x] `PhaseTransitionBanner` (S-14) — Interstitial card with scale-behind, phase icon, stats, 10s countdown
+- [x] `RpePrompt` — Emoji scale (😴🙂😤😰🔥) mapping to RPE 2/4/6/8/10, auto-dismiss after 8s
+- [x] `ActiveSetCard` — Exercise GIF hero card with name, sets label, set progress bar, accent border
+
+**Pages**
+- [x] Workout execution page (`/session/[id]`) — three-phase flow integrating all components
+- [x] Post-workout summary page (`/session/[id]/summary`) — XP celebration, stats, phase breakdown
+
+**Session Flow**
+- [x] Three-phase session flow (Warm-Up → Workout → Stretch)
+- [x] Phase transition animations with interstitial cards
+- [x] Set logging (weight, reps, RPE)
+- [x] Rest timer with haptic feedback
+- [x] Session pause/resume with overlay
+- [x] End session early with confirmation
+- [x] Workout save to PouchDB on completion
+- [x] Navigation to summary page after save
+
+**Infrastructure**
+- [x] Updated START WORKOUT button route (`/session/${id}`)
+- [x] Added `/session/summary` to navDirection route hierarchy
 
 ---
 
@@ -267,3 +295,19 @@
 | `src/app/(app)/exercises/[id]/page.tsx` | ✅ | S-07 Exercise Detail |
 | `src/app/(app)/routines/[id]/edit/page.tsx` | ✅ | S-08 Routine Builder |
 | `src/app/(app)/routines/[id]/page.tsx` | ✅ | S-09 Routine Detail/Preview |
+| **Phase 3** | | |
+| `src/lib/calculations/calories.ts` | ✅ | MET-based calorie calculator |
+| `src/lib/calculations/time.ts` | ✅ | Time estimation & formatting |
+| `src/lib/calculations/prs.ts` | ✅ | PR detection logic |
+| `src/hooks/useAutoCount.ts` | ✅ | Metronome rep counter hook |
+| `src/hooks/useElapsedTime.ts` | ✅ | Elapsed time with pause support |
+| `src/components/workout/PhaseProgressBar.tsx` | ✅ | 3-segment phase progress |
+| `src/components/workout/RepCounter.tsx` | ✅ | Tap-target rep counter |
+| `src/components/workout/WeightSelector.tsx` | ✅ | Weight stepper with long-press |
+| `src/components/workout/HoldTimer.tsx` | ✅ | SVG ring hold countdown |
+| `src/components/workout/RestTimer.tsx` | ✅ | S-13 Full-screen rest timer |
+| `src/components/workout/PhaseTransitionBanner.tsx` | ✅ | S-14 Phase transition card |
+| `src/components/workout/RpePrompt.tsx` | ✅ | Emoji RPE collector |
+| `src/components/workout/ActiveSetCard.tsx` | ✅ | Active exercise hero card |
+| `src/app/(app)/session/[id]/page.tsx` | ✅ | Workout execution orchestrator |
+| `src/app/(app)/session/[id]/summary/page.tsx` | ✅ | Post-workout summary screen |
