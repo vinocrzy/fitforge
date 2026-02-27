@@ -138,6 +138,44 @@ export function useWorkoutHistory() {
   });
 }
 
+/** Workouts within last N days */
+export function useRecentWorkouts(days: number) {
+  return useQuery({
+    queryKey: ['workouts', 'recent', days],
+    queryFn: async () => {
+      const result = await workoutDb.allDocs({
+        include_docs: true,
+        descending: true,
+      });
+      const cutoff = new Date();
+      cutoff.setDate(cutoff.getDate() - days);
+      return result.rows
+        .filter((row) => !row.id.startsWith('_'))
+        .map((row) => row.doc as unknown as WorkoutSession)
+        .filter((w) => new Date(w.completedAt) >= cutoff);
+    },
+  });
+}
+
+/** Workouts for a specific month (year, month 0-indexed) */
+export function useMonthWorkouts(year: number, month: number) {
+  return useQuery({
+    queryKey: ['workouts', 'month', year, month],
+    queryFn: async () => {
+      const result = await workoutDb.allDocs({
+        include_docs: true,
+      });
+      return result.rows
+        .filter((row) => !row.id.startsWith('_'))
+        .map((row) => row.doc as unknown as WorkoutSession)
+        .filter((w) => {
+          const d = new Date(w.completedAt);
+          return d.getFullYear() === year && d.getMonth() === month;
+        });
+    },
+  });
+}
+
 export function useWorkout(id: string) {
   return useQuery({
     queryKey: ['workout', id],

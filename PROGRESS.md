@@ -259,7 +259,57 @@
 
 ## Phase 5 — Dashboard & Analytics
 
-**Status:** 🔲 Not started
+**Status:** ✅ Complete  
+**Duration target:** ~1 week
+
+### Tasks
+
+**Animation Bug Fixes**
+- [x] Dashboard: replaced broken `staggerContainer`/`fadeUpItem` variant propagation with direct `initial`/`animate`/`transition` props
+- [x] Dashboard & Profile: replaced `{ ...springGentle, delay }` (broken in FM 12.x) with tween transitions
+- [x] Updated animations across all new components to use safe tween pattern
+
+**Type & Store Extensions**
+- [x] Added `manualFeelScore`, `lastFeelPromptDate`, `fatigueThresholdPercent` to `UserProfile` interface
+- [x] Added `setManualFeelScore(score)` and `setFatigueThreshold(percent)` actions to `useProfileStore`
+
+**Database Hooks**
+- [x] `useRecentWorkouts(days)` — filter workouts within last N days
+- [x] `useMonthWorkouts(year, month)` — filter workouts for a specific month
+
+**Calculation Utilities**
+- [x] `analytics.ts` — `sessionVolume()`, `weeklyVolume()`, `rollingBaselineVolume()`, `averageRecentRpe()`
+- [x] `analytics.ts` — `volumeTrend()` (8-week buckets), `bodyPartFrequency()`
+- [x] `analytics.ts` — `calculateOverloadTarget()` (linear/double/undulating schemes)
+- [x] `analytics.ts` — `detectDeloadSignals()` (volume_overload, high_rpe, plateau, streak_long)
+
+**Custom Hooks**
+- [x] `useFatigueWarnings` — muscle group overlap (48h), volume (>130% baseline), RPE, frequency warnings
+- [x] `useDeloadDetector` — monitors training patterns, suggests deload weeks with volume reduction
+
+**Dashboard Components**
+- [x] `WorkoutCalendar` — monthly heatmap with intensity coloring, month navigation, today highlight
+- [x] `DailyFeelPrompt` — once-daily 1-5 emoji self-report for recovery meter input
+- [x] `VolumeTrendChart` — 8-week Recharts bar chart with lime bars and dark tooltip
+- [x] `BodyPartChart` — horizontal bar chart showing muscle group training frequency
+- [x] `FatigueWarningBanner` — severity-based banner (info/warning/danger) with dismiss
+- [x] `DeloadSuggestionCard` — orange gradient card with volume reduction and duration suggestions
+
+**Dashboard Page (S-05) Rewrite**
+- [x] Real recovery scoring via `calculateEnergyScore()` pipeline (replaces mock data)
+- [x] Score-based RecoveryMeter color (lime/blue/orange/red at 75/50/25 thresholds)
+- [x] Integrated DailyFeelPrompt, DeloadSuggestionCard, WorkoutCalendar
+- [x] Integrated VolumeTrendChart and BodyPartChart
+- [x] Quick Stats with real data from workout history
+
+**Profile & Stats Page (S-18) Rewrite**
+- [x] Avatar circle with initials, lime gradient ring
+- [x] XP progress bar with level thresholds and animated fill
+- [x] Goals progress rings (SVG radial) per selected fitness goal
+- [x] Monthly stats bar chart (Recharts) — 6-month workout count
+- [x] Personal Records list with exercise name, weight/reps, date
+- [x] Settings rows: Units toggle, Bodyweight, Experience, Fatigue Threshold, Edit Profile
+- [x] Quick links: Exercises, History
 
 ---
 
@@ -358,3 +408,18 @@
 | `src/app/(app)/history/[id]/page.tsx` | ✅ | S-17 History session detail |
 | `src/hooks/useDatabase.ts` | 🔄 | Added useWorkout(id) hook |
 | `src/types/index.ts` | 🔄 | Added prsAchieved, avgRpe to WorkoutSummary |
+| **Phase 5** | | |
+| `src/lib/calculations/analytics.ts` | ✅ | Volume trends, body part frequency, overload, deload detection |
+| `src/hooks/useFatigueWarnings.ts` | ✅ | Fatigue warning analysis hook |
+| `src/hooks/useDeloadDetector.ts` | ✅ | Deload recommendation hook |
+| `src/components/dashboard/WorkoutCalendar.tsx` | ✅ | Monthly workout heatmap calendar |
+| `src/components/dashboard/DailyFeelPrompt.tsx` | ✅ | Once-daily feel score prompt |
+| `src/components/dashboard/VolumeTrendChart.tsx` | ✅ | 8-week volume bar chart (Recharts) |
+| `src/components/dashboard/BodyPartChart.tsx` | ✅ | Body part frequency horizontal bars |
+| `src/components/dashboard/FatigueWarningBanner.tsx` | ✅ | Severity-based fatigue warning banner |
+| `src/components/dashboard/DeloadSuggestionCard.tsx` | ✅ | Deload suggestion card |
+| `src/app/(app)/page.tsx` | 🔄 | Full S-05 rewrite with real analytics |
+| `src/app/(app)/profile/page.tsx` | 🔄 | Full S-18 rewrite with avatar, XP bar, charts, PRs, settings |
+| `src/hooks/useDatabase.ts` | 🔄 | Added useRecentWorkouts, useMonthWorkouts hooks |
+| `src/types/index.ts` | 🔄 | Added manualFeelScore, lastFeelPromptDate, fatigueThresholdPercent |
+| `src/store/useProfileStore.ts` | 🔄 | Added feel score & fatigue threshold actions |

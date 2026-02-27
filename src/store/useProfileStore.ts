@@ -22,6 +22,9 @@ interface ProfileState {
   lastWorkoutDate: string | null;
   prs: Record<string, PersonalRecord>;
   onboardingComplete: boolean;
+  manualFeelScore: number;
+  lastFeelPromptDate: string | null;
+  fatigueThresholdPercent: number;
 
   // Actions
   setWeight: (kg: number) => void;
@@ -32,6 +35,8 @@ interface ProfileState {
   updatePR: (exerciseId: string, pr: PersonalRecord) => void;
   completeOnboarding: () => void;
   incrementStreak: () => void;
+  setManualFeelScore: (score: number) => void;
+  setFatigueThreshold: (percent: number) => void;
 }
 
 const LEVEL_THRESHOLDS = [
@@ -57,6 +62,9 @@ export const useProfileStore = create<ProfileState>()(
       lastWorkoutDate: null,
       prs: {},
       onboardingComplete: false,
+      manualFeelScore: 3,
+      lastFeelPromptDate: null,
+      fatigueThresholdPercent: 30,
 
       setWeight: (kg) => set({ weightKg: kg }),
 
@@ -84,6 +92,15 @@ export const useProfileStore = create<ProfileState>()(
           streakDays: state.streakDays + 1,
           lastWorkoutDate: new Date().toISOString(),
         })),
+
+      setManualFeelScore: (score) =>
+        set({
+          manualFeelScore: score,
+          lastFeelPromptDate: new Date().toISOString().split('T')[0],
+        }),
+
+      setFatigueThreshold: (percent) =>
+        set({ fatigueThresholdPercent: percent }),
     }),
     {
       name: 'fitforge-profile',

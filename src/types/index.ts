@@ -181,6 +181,10 @@ export interface UserProfile {
   createdAt: string;
   updatedAt: string;
   pendingCoachingNotes?: CoachingNote[];
+  // Phase 5 additions
+  manualFeelScore?: number; // 1-5 self-report
+  lastFeelPromptDate?: string; // ISO date
+  fatigueThresholdPercent?: number; // 0-100 threshold for fatigue warnings
 }
 
 // ─── Coaching Notes ───────────────────────────────────────────────

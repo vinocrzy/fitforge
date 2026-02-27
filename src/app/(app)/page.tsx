@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════
-// FitForge — S-05 Dashboard (Home)
-// Recovery meter, today's workout hero, weekly activity, quick stats
+// FitForge — S-05 Dashboard (Home) — Phase 5 Enhanced
+// Real recovery meter, workout calendar, analytics, deload detection
 // ═══════════════════════════════════════════════════════════════════
 
 'use client';
@@ -8,12 +8,23 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { springGentle, springSnappy } from '@/lib/motion/springs';
-import { staggerContainer, fadeUpItem } from '@/lib/motion/variants';
+import { springSnappy } from '@/lib/motion/springs';
 import { Icon } from '@/components/ui/Icon';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useRoutines, useWorkoutHistory, useExercises } from '@/hooks/useDatabase';
+import { useDeloadDetector } from '@/hooks/useDeloadDetector';
+import { calculateEnergyScore, calculateVolumeLoadRatio } from '@/lib/calculations/energyMeter';
+import {
+  weeklyVolume,
+  rollingBaselineVolume,
+  averageRecentRpe,
+} from '@/lib/calculations/analytics';
+import { WorkoutCalendar } from '@/components/dashboard/WorkoutCalendar';
+import { DailyFeelPrompt } from '@/components/dashboard/DailyFeelPrompt';
+import { VolumeTrendChart } from '@/components/dashboard/VolumeTrendChart';
+import { BodyPartChart } from '@/components/dashboard/BodyPartChart';
+import { DeloadSuggestionCard } from '@/components/dashboard/DeloadSuggestionCard';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
 
@@ -21,6 +32,15 @@ function RecoveryMeter({ score }: { score: number }) {
   const r = 52;
   const circumference = 2 * Math.PI * r;
   const offset = circumference * (1 - score / 100);
+
+  const color =
+    score >= 75
+      ? '#C5F74F'
+      : score >= 50
+        ? '#64D2FF'
+        : score >= 25
+          ? '#FF9F0A'
+          : '#FF453A';
 
   return (
     <div className="relative flex items-center justify-center" style={{ width: 120, height: 120 }}>
@@ -38,20 +58,20 @@ function RecoveryMeter({ score }: { score: number }) {
           cy="60"
           r={r}
           fill="none"
-          stroke="#C5F74F"
+          stroke={color}
           strokeWidth={8}
           strokeLinecap="round"
           strokeDasharray={circumference}
           initial={{ strokeDashoffset: circumference }}
           animate={{ strokeDashoffset: offset }}
-          transition={{ ...springGentle, delay: 0.3 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
           transform="rotate(-90 60 60)"
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span
           className="text-[32px] font-extrabold tabular-nums"
-          style={{ color: '#C5F74F' }}
+          style={{ color }}
         >
           {score}
         </span>
@@ -117,27 +137,38 @@ function WeeklyActivity({ workoutDates }: { workoutDates: string[] }) {
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { level, xp, streakDays } = useProfileStore();
+  const { streakDays, manualFeelScore } = useProfileStore();
   const { data: routines = [] } = useRoutines();
   const { data: workouts = [] } = useWorkoutHistory();
   const { data: libraryExercises = [] } = useExercises();
 
-  // Recovery score (mock — will be real in Phase 5)
+  // Real recovery score using calculateEnergyScore
   const recoveryScore = useMemo(() => {
     if (workouts.length === 0) return 100;
     const lastWorkout = workouts[0];
     if (!lastWorkout?.completedAt) return 85;
+
     const hoursSince =
       (Date.now() - new Date(lastWorkout.completedAt).getTime()) / 3600000;
-    return Math.min(100, Math.round(50 + hoursSince * 2));
-  }, [workouts]);
+    const wkVol = weeklyVolume(workouts);
+    const baseline = rollingBaselineVolume(workouts);
+    const volRatio = calculateVolumeLoadRatio(wkVol, baseline);
+    const avgRpe = averageRecentRpe(workouts, 3);
+
+    return calculateEnergyScore(hoursSince, volRatio, avgRpe, manualFeelScore);
+  }, [workouts, manualFeelScore]);
 
   const recoveryLabel =
-    recoveryScore >= 80
-      ? 'Great — train hard today'
+    recoveryScore >= 75
+      ? 'Ready to crush it'
       : recoveryScore >= 50
-        ? 'Moderate — consider lighter work'
-        : 'Low — rest or light stretching';
+        ? 'Good to train — monitor RPE'
+        : recoveryScore >= 25
+          ? 'Take it easy today'
+          : 'Rest day recommended';
+
+  // Deload detection
+  const deloadRecommendation = useDeloadDetector(workouts, streakDays);
 
   // Workout dates for weekly strip
   const workoutDates = useMemo(
@@ -170,7 +201,7 @@ export default function DashboardPage() {
       <motion.div
         initial={{ y: 14, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={springGentle}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         <h1
           className="text-[34px] font-extrabold tracking-tight leading-tight"
@@ -193,13 +224,21 @@ export default function DashboardPage() {
 
       <motion.div
         className="mt-6 flex flex-col gap-4"
-        variants={staggerContainer}
-        initial="initial"
-        animate="animate"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
       >
+        {/* Daily Feel Prompt */}
+        <DailyFeelPrompt />
+
+        {/* Deload Suggestion */}
+        <DeloadSuggestionCard recommendation={deloadRecommendation} />
+
         {/* Recovery Meter Card */}
         <motion.div
-          variants={fadeUpItem}
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
           className="rounded-[20px] p-5 flex items-center gap-5"
           style={{ background: '#141414' }}
         >
@@ -207,7 +246,16 @@ export default function DashboardPage() {
           <div className="flex-1">
             <p
               className="text-[15px] font-semibold"
-              style={{ color: '#C5F74F' }}
+              style={{
+                color:
+                  recoveryScore >= 75
+                    ? '#C5F74F'
+                    : recoveryScore >= 50
+                      ? '#64D2FF'
+                      : recoveryScore >= 25
+                        ? '#FF9F0A'
+                        : '#FF453A',
+              }}
             >
               Recovery Score
             </p>
@@ -223,7 +271,9 @@ export default function DashboardPage() {
         {/* Today's Workout Hero Card */}
         {latestRoutine ? (
           <motion.div
-            variants={fadeUpItem}
+            initial={{ y: 16, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.16 }}
             onClick={() => router.push(`/routines/${latestRoutine._id}`)}
             className="relative w-full rounded-[20px] overflow-hidden cursor-pointer"
             style={{ height: 200, background: '#141414' }}
@@ -283,7 +333,9 @@ export default function DashboardPage() {
           </motion.div>
         ) : (
           <motion.div
-            variants={fadeUpItem}
+            initial={{ y: 16, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.16 }}
             className="rounded-[20px] p-6"
             style={{ background: '#141414' }}
           >
@@ -304,7 +356,9 @@ export default function DashboardPage() {
 
         {/* Weekly Activity */}
         <motion.div
-          variants={fadeUpItem}
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.22 }}
           onClick={() => router.push('/history')}
           className="rounded-[20px] p-5 cursor-pointer"
           style={{ background: '#141414' }}
@@ -318,30 +372,21 @@ export default function DashboardPage() {
           </div>
         </motion.div>
 
-        {/* Browse Exercises */}
+        {/* Workout Calendar (Monthly Heatmap) */}
         <motion.div
-          variants={fadeUpItem}
-          onClick={() => router.push('/exercises')}
-          className="rounded-[20px] p-4 flex items-center justify-between cursor-pointer"
-          style={{ background: '#141414', border: '1px solid rgba(255,255,255,0.06)' }}
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.28 }}
         >
-          <div className="flex items-center gap-3">
-            <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{ background: 'rgba(197,247,79,0.12)' }}
-            >
-              <Icon name="figure.strengthtraining.traditional" size={20} color="#C5F74F" weight="fill" />
-            </div>
-            <div>
-              <p className="text-[15px] font-semibold" style={{ color: '#F5F5F5' }}>Browse Exercises</p>
-              <p className="text-[13px]" style={{ color: 'rgba(245,245,245,0.50)' }}>{libraryExercises.length}+ exercises with guides</p>
-            </div>
-          </div>
-          <Icon name="chevron.right" size={16} color="rgba(245,245,245,0.30)" />
+          <WorkoutCalendar workouts={workouts} />
         </motion.div>
 
         {/* Quick Stats Grid */}
-        <motion.div variants={fadeUpItem}>
+        <motion.div
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.34 }}
+        >
           <SectionLabel text="QUICK STATS" />
           <div className="grid grid-cols-2 gap-3 mt-2">
             <StatCard
@@ -369,6 +414,48 @@ export default function DashboardPage() {
               color="#C5F74F"
             />
           </div>
+        </motion.div>
+
+        {/* Volume Trend Chart */}
+        <motion.div
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.4 }}
+        >
+          <VolumeTrendChart workouts={workouts} />
+        </motion.div>
+
+        {/* Body Part Frequency Chart */}
+        <motion.div
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.46 }}
+        >
+          <BodyPartChart workouts={workouts} exercises={libraryExercises} />
+        </motion.div>
+
+        {/* Browse Exercises */}
+        <motion.div
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.52 }}
+          onClick={() => router.push('/exercises')}
+          className="rounded-[20px] p-4 flex items-center justify-between cursor-pointer"
+          style={{ background: '#141414', border: '1px solid rgba(255,255,255,0.06)' }}
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: 'rgba(197,247,79,0.12)' }}
+            >
+              <Icon name="figure.strengthtraining.traditional" size={20} color="#C5F74F" weight="fill" />
+            </div>
+            <div>
+              <p className="text-[15px] font-semibold" style={{ color: '#F5F5F5' }}>Browse Exercises</p>
+              <p className="text-[13px]" style={{ color: 'rgba(245,245,245,0.50)' }}>{libraryExercises.length}+ exercises with guides</p>
+            </div>
+          </div>
+          <Icon name="chevron.right" size={16} color="rgba(245,245,245,0.30)" />
         </motion.div>
       </motion.div>
     </div>
