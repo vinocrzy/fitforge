@@ -108,6 +108,8 @@ export interface WorkoutSummary {
   exerciseCount?: number;
   completionRate?: number;
   streakDay?: number;
+  prsAchieved?: PersonalRecord[];
+  avgRpe?: number;
 }
 
 export interface WorkoutSession {

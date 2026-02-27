@@ -138,6 +138,17 @@ export function useWorkoutHistory() {
   });
 }
 
+export function useWorkout(id: string) {
+  return useQuery({
+    queryKey: ['workout', id],
+    queryFn: async () => {
+      const doc = await workoutDb.get(id);
+      return doc as unknown as WorkoutSession;
+    },
+    enabled: !!id,
+  });
+}
+
 export function useSaveWorkout() {
   const queryClient = useQueryClient();
   return useMutation({

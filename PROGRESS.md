@@ -205,18 +205,55 @@
 
 ## Phase 4 — Post-Workout Insights & Rewards ← MVP
 
-**Status:** 🔲 Not started  
+**Status:** ✅ Complete  
 **Duration target:** ~1.5 weeks
 
 ### Tasks
 
-- [ ] Workout summary screen
-- [ ] Calorie calculation
-- [ ] XP/level/gamification system
-- [ ] PR celebration animations
-- [ ] Coaching notes
-- [ ] Streak tracking
-- [ ] Save completed session to PouchDB
+**Calculation Utilities**
+- [x] `xp.ts` — `calculateSessionXP()` with formula: 0.5×cal + 10×exercises + completionRate×50 + PRs×100 + time bonus + streak bonus
+- [x] `energyMeter.ts` — `calculateEnergyScore()` composite 0-100 from time recovery, volume load ratio, avg RPE, manual feel
+- [x] `muscleMap.ts` — Maps exercise bodyPart/target to react-body-highlighter muscles, `exercisesToHighlighterData()`, frequency heatmap
+
+**Type Enhancements**
+- [x] Added `prsAchieved?: PersonalRecord[]` and `avgRpe?: number` to `WorkoutSummary` interface
+
+**Session End Flow**
+- [x] Wired real calorie calculation via `calculatePhaseCalories()` in `doEndSession()`
+- [x] PR detection via `detectPRs()` comparing against profile PRs
+- [x] XP calculation via `calculateSessionXP()` with full formula
+- [x] Profile updates: streak increment, PR records, XP addition
+- [x] Full `WorkoutSession` document saved to PouchDB with computed summary
+
+**Post-Workout Summary (S-15)**
+- [x] 7-step celebration choreography (confetti → hero → XP bar → stats → PRs → heatmap → RPE)
+- [x] ConfettiParticles — 30 reactive particles with 5 accent colors
+- [x] PR badges with trophy icons and spring-stagger entry
+- [x] Muscle heatmap — anterior + posterior body models via `react-body-highlighter`
+- [x] RPE donut chart — animated SVG strokeDashoffset fill
+- [x] XP progress bar with level thresholds
+- [x] Streak indicator card with flame icon and bonus XP display
+
+**Workout History (S-16)**
+- [x] Chronological workout list grouped by week ("This Week", "Last Week", "N Weeks Ago")
+- [x] Filter segmented control (All | Week | Month)
+- [x] Session cards with date, routine name, duration/calories/sets, muscle chips, PR indicator
+- [x] Tap to navigate to session detail
+
+**History Session Detail (S-17)**
+- [x] Read-only session breakdown with nav bar (date + workout name)
+- [x] Stats grid (duration, calories, sets, reps)
+- [x] XP earned + avg RPE display
+- [x] PR badges for records achieved in session
+- [x] Muscle heatmap (anterior + posterior)
+- [x] Expandable exercise rows with per-set logs (weight × reps, RPE, PR markers)
+- [x] Share Workout (Web Share API) + Repeat Workout action buttons
+
+**Database Hooks**
+- [x] `useWorkout(id)` — fetch single workout by ID
+
+**Dependencies**
+- [x] Installed `react-body-highlighter` for muscle visualization
 
 ---
 
@@ -311,3 +348,13 @@
 | `src/components/workout/ActiveSetCard.tsx` | ✅ | Active exercise hero card |
 | `src/app/(app)/session/[id]/page.tsx` | ✅ | Workout execution orchestrator |
 | `src/app/(app)/session/[id]/summary/page.tsx` | ✅ | Post-workout summary screen |
+| **Phase 4** | | |
+| `src/lib/calculations/xp.ts` | ✅ | XP calculation with formula |
+| `src/lib/calculations/energyMeter.ts` | ✅ | Energy/recovery score (0-100) |
+| `src/lib/calculations/muscleMap.ts` | ✅ | Exercise→muscle heatmap mapper |
+| `src/app/(app)/session/[id]/page.tsx` | 🔄 | Enhanced with real calcs in doEndSession |
+| `src/app/(app)/session/[id]/summary/page.tsx` | 🔄 | Full S-15 with 7-step celebration choreography |
+| `src/app/(app)/history/page.tsx` | 🔄 | S-16 Chronological history with filters |
+| `src/app/(app)/history/[id]/page.tsx` | ✅ | S-17 History session detail |
+| `src/hooks/useDatabase.ts` | 🔄 | Added useWorkout(id) hook |
+| `src/types/index.ts` | 🔄 | Added prsAchieved, avgRpe to WorkoutSummary |

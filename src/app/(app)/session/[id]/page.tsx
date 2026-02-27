@@ -19,6 +19,9 @@ import {
 } from '@/hooks/useDatabase';
 import { useElapsedTime } from '@/hooks/useElapsedTime';
 import { formatTimeLong } from '@/lib/calculations/time';
+import { calculatePhaseCalories } from '@/lib/calculations/calories';
+import { detectPRs } from '@/lib/calculations/prs';
+import { calculateSessionXP } from '@/lib/calculations/xp';
 import { Icon } from '@/components/ui/Icon';
 import { PhaseProgressBar } from '@/components/workout/PhaseProgressBar';
 import { ActiveSetCard } from '@/components/workout/ActiveSetCard';
@@ -34,6 +37,7 @@ import type {
   ActiveExercise,
   WorkoutSession,
   SessionExercise,
+  ExerciseRecord,
 } from '@/types';
 
 const PHASE_ACCENT: Record<SessionPhase, string> = {
@@ -192,6 +196,8 @@ export default function WorkoutExecutionPage({
     if (!sessionId) return;
 
     const summary = endSession();
+    const profileState = useProfileStore.getState();
+    const userWeightKg = profileState.weightKg;
 
     // Build workout session document
     const buildSessionExercises = (exercises: ActiveExercise[]): SessionExercise[] =>
@@ -200,6 +206,106 @@ export default function WorkoutExecutionPage({
         isCustom: ex.isCustom,
         sets: ex.completedSets,
       }));
+
+    // ─── Calculate real calories ─────────────────────────────────
+    const exerciseRecordMap = new Map<string, ExerciseRecord>();
+    libraryExercises.forEach((ex) => exerciseRecordMap.set(ex.id, ex));
+    customExercises.forEach((ex) => {
+      exerciseRecordMap.set(ex._id, {
+        id: ex._id,
+        name: ex.name,
+        bodyPart: ex.bodyPart,
+        equipment: ex.equipment,
+        target: ex.target,
+        secondaryMuscles: ex.secondaryMuscles,
+        instructions: ex.instructions,
+        description: ex.description,
+        difficulty: ex.difficulty,
+        category: ex.category,
+      });
+    });
+
+    const allCalorieInput = [
+      ...warmUp.map((ex) => ({
+        exerciseRecord: exerciseRecordMap.get(ex.exerciseId) ?? null,
+        sets: ex.completedSets,
+        phase: 'warmUp' as SessionPhase,
+      })),
+      ...workout.map((ex) => ({
+        exerciseRecord: exerciseRecordMap.get(ex.exerciseId) ?? null,
+        sets: ex.completedSets,
+        phase: 'workout' as SessionPhase,
+      })),
+      ...stretch.map((ex) => ({
+        exerciseRecord: exerciseRecordMap.get(ex.exerciseId) ?? null,
+        sets: ex.completedSets,
+        phase: 'stretch' as SessionPhase,
+      })),
+    ];
+
+    // Average RPE from workout sets
+    const allWorkoutRpes = workout
+      .flatMap((ex) => ex.completedSets)
+      .map((s) => s.rpe)
+      .filter((r): r is number => r !== undefined);
+    const avgRpe = allWorkoutRpes.length > 0
+      ? allWorkoutRpes.reduce((a, b) => a + b, 0) / allWorkoutRpes.length
+      : undefined;
+
+    const phaseCalories = calculatePhaseCalories(allCalorieInput, userWeightKg, avgRpe);
+
+    // ─── Detect PRs ──────────────────────────────────────────────
+    const completedSetData = workout
+      .flatMap((ex) =>
+        ex.completedSets.map((s) => ({
+          exerciseId: ex.exerciseId,
+          weightKg: s.weightKg ?? 0,
+          actualReps: s.actualReps ?? 0,
+        }))
+      )
+      .filter((s) => s.weightKg > 0 && s.actualReps > 0);
+
+    const newPRs = detectPRs(completedSetData, profileState.prs);
+
+    // ─── Update profile: streak, PRs, XP ─────────────────────────
+    profileState.incrementStreak();
+
+    newPRs.forEach((pr) => {
+      useProfileStore.getState().updatePR(pr.exerciseId, pr);
+    });
+
+    const exerciseCount =
+      warmUp.filter((e) => e.completedSets.length > 0).length +
+      workout.filter((e) => e.completedSets.length > 0).length +
+      stretch.filter((e) => e.completedSets.length > 0).length;
+    const completionRate = calculateCompletionRate();
+    const streakDay = useProfileStore.getState().streakDays;
+
+    const intensityScore = avgRpe
+      ? Math.round(avgRpe * completionRate * 10)
+      : 0;
+
+    const fullSummary = {
+      ...summary,
+      totalTimeSec: elapsed,
+      totalCalories: phaseCalories.total,
+      warmUpCalories: phaseCalories.warmUp,
+      workoutCalories: phaseCalories.workout,
+      stretchCalories: phaseCalories.stretch,
+      exerciseCount,
+      completionRate,
+      streakDay,
+      intensityScore,
+      avgRpe: avgRpe ? Math.round(avgRpe * 10) / 10 : undefined,
+      prsAchieved: newPRs,
+      xpEarned: 0, // placeholder, calculated below
+    };
+
+    const xpEarned = calculateSessionXP(fullSummary, newPRs);
+    fullSummary.xpEarned = xpEarned;
+
+    // Add XP to profile
+    useProfileStore.getState().addXP(xpEarned);
 
     const workoutSession: WorkoutSession = {
       _id: `workout_${new Date().toISOString()}_${Math.random().toString(36).slice(2, 8)}`,
@@ -212,15 +318,7 @@ export default function WorkoutExecutionPage({
       warmUp: buildSessionExercises(warmUp),
       workout: buildSessionExercises(workout),
       stretch: buildSessionExercises(stretch),
-      summary: {
-        ...summary,
-        totalTimeSec: elapsed,
-        exerciseCount:
-          warmUp.filter((e) => e.completedSets.length > 0).length +
-          workout.filter((e) => e.completedSets.length > 0).length +
-          stretch.filter((e) => e.completedSets.length > 0).length,
-        completionRate: calculateCompletionRate(),
-      },
+      summary: fullSummary,
     };
 
     saveWorkout.mutate(workoutSession, {
@@ -229,7 +327,7 @@ export default function WorkoutExecutionPage({
         router.push(`/session/${id}/summary`);
       },
     });
-  }, [sessionId, endSession, id, startedAt, unitPreference, warmUp, workout, stretch, elapsed, calculateCompletionRate, saveWorkout, reset, router]);
+  }, [sessionId, endSession, id, startedAt, unitPreference, warmUp, workout, stretch, elapsed, calculateCompletionRate, saveWorkout, reset, router, libraryExercises, customExercises]);
 
   // ─── Handle Phase Completion ───────────────────────────────────
   const handlePhaseComplete = useCallback(() => {
