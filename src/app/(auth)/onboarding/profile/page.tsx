@@ -91,7 +91,7 @@ export default function OnboardingProfilePage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ ...springGentle, delay: 0.1 }}
       >
-        About you
+        About You
       </motion.h1>
 
       <motion.p

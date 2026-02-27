@@ -92,9 +92,9 @@ export default function OnboardingGoalsPage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ ...springGentle, delay: 0.1 }}
       >
-        What&apos;s your
+        What&apos;s Your
         <br />
-        main goal?
+        Main Goal?
       </motion.h1>
 
       <motion.p
