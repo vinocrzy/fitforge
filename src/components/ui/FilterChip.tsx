@@ -72,3 +72,47 @@ export function FilterChipBar({
     </div>
   );
 }
+
+// Multi-category filter section
+interface FilterSection {
+  label: string;
+  options: string[];
+  selected: string | null;
+  onSelect: (value: string | null) => void;
+}
+
+interface MultiFilterSectionProps {
+  sections: FilterSection[];
+}
+
+export function MultiFilterSection({ sections }: MultiFilterSectionProps) {
+  return (
+    <div className="flex flex-col gap-3 py-2">
+      {sections.map((section) => (
+        <div key={section.label}>
+          <div
+            className="text-[12px] font-semibold uppercase tracking-wide px-1 mb-2"
+            style={{ color: 'rgba(245,245,245,0.45)' }}
+          >
+            {section.label}
+          </div>
+          <div className="flex gap-2 overflow-x-auto hide-scrollbar">
+            <FilterChip
+              label="All"
+              active={section.selected === null}
+              onToggle={() => section.onSelect(null)}
+            />
+            {section.options.map((opt) => (
+              <FilterChip
+                key={opt}
+                label={opt.charAt(0).toUpperCase() + opt.slice(1)}
+                active={section.selected === opt}
+                onToggle={() => section.onSelect(section.selected === opt ? null : opt)}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

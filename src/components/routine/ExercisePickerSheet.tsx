@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import { springSnappy } from '@/lib/motion/springs';
 import { BottomSheet } from '@/components/ui/BottomSheet';
 import { SearchBar } from '@/components/ui/SearchBar';
-import { FilterChipBar } from '@/components/ui/FilterChip';
+import { MultiFilterSection } from '@/components/ui/FilterChip';
 import { DifficultyDots } from '@/components/ui/DifficultyDots';
 import { ExerciseGif } from '@/components/ui/ExerciseGif';
 import { Icon } from '@/components/ui/Icon';
@@ -23,6 +23,19 @@ type ExerciseItem = (ExerciseDoc | CustomExercise) & { _isCustom?: boolean };
 const BODY_PARTS = [
   'chest', 'back', 'upper legs', 'lower legs',
   'shoulders', 'upper arms', 'lower arms', 'waist', 'cardio',
+];
+
+const EQUIPMENT = [
+  'barbell',
+  'dumbbell',
+  'body weight',
+  'cable',
+  'leverage machine',
+  'ez barbell',
+  'assisted',
+  'medicine ball',
+  'stability ball',
+  'rope',
 ];
 
 interface ExercisePickerSheetProps {
@@ -46,6 +59,7 @@ export function ExercisePickerSheet({
   const [source, setSource] = useState<'library' | 'custom'>('library');
   const [search, setSearch] = useState('');
   const [bodyPartFilter, setBodyPartFilter] = useState<string | null>(null);
+  const [equipmentFilter, setEquipmentFilter] = useState<string | null>(null);
 
   const exercises: ExerciseItem[] = useMemo(() => {
     const pool: ExerciseItem[] =
@@ -61,6 +75,12 @@ export function ExercisePickerSheet({
       );
     }
 
+    if (equipmentFilter) {
+      result = result.filter(
+        (ex) => ex.equipment.toLowerCase() === equipmentFilter.toLowerCase()
+      );
+    }
+
     if (search.trim()) {
       const q = search.toLowerCase();
       result = result.filter(
@@ -72,7 +92,7 @@ export function ExercisePickerSheet({
     }
 
     return result;
-  }, [libraryExercises, customExercises, source, search, bodyPartFilter]);
+  }, [libraryExercises, customExercises, source, search, bodyPartFilter, equipmentFilter]);
 
   return (
     <BottomSheet
@@ -105,10 +125,21 @@ export function ExercisePickerSheet({
       <SearchBar value={search} onChange={setSearch} />
 
       {/* Filters */}
-      <FilterChipBar
-        options={BODY_PARTS}
-        selected={bodyPartFilter}
-        onSelect={setBodyPartFilter}
+      <MultiFilterSection
+        sections={[
+          {
+            label: 'Body Part',
+            options: BODY_PARTS,
+            selected: bodyPartFilter,
+            onSelect: setBodyPartFilter,
+          },
+          {
+            label: 'Equipment',
+            options: EQUIPMENT,
+            selected: equipmentFilter,
+            onSelect: setEquipmentFilter,
+          },
+        ]}
       />
 
       {/* Create Custom Button (in custom tab) */}

@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { springSnappy, springGentle } from '@/lib/motion/springs';
 import { SearchBar } from '@/components/ui/SearchBar';
-import { FilterChipBar } from '@/components/ui/FilterChip';
+import { MultiFilterSection } from '@/components/ui/FilterChip';
 import { DifficultyDots } from '@/components/ui/DifficultyDots';
 import { ExerciseGif } from '@/components/ui/ExerciseGif';
 import { TopBar } from '@/components/layout/TopBar';
@@ -29,12 +29,26 @@ const BODY_PARTS = [
   'waist',
 ];
 
+const EQUIPMENT = [
+  'barbell',
+  'dumbbell',
+  'body weight',
+  'cable',
+  'leverage machine',
+  'ez barbell',
+  'assisted',
+  'medicine ball',
+  'stability ball',
+  'rope',
+];
+
 export default function ExerciseLibraryPage() {
   const router = useRouter();
   const { data: exercises = [], isLoading } = useExercises();
 
   const [search, setSearch] = useState('');
   const [bodyPartFilter, setBodyPartFilter] = useState<string | null>(null);
+  const [equipmentFilter, setEquipmentFilter] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     let result = exercises;
@@ -43,6 +57,13 @@ export default function ExerciseLibraryPage() {
     if (bodyPartFilter) {
       result = result.filter(
         (ex) => ex.bodyPart.toLowerCase() === bodyPartFilter.toLowerCase()
+      );
+    }
+
+    // Equipment filter
+    if (equipmentFilter) {
+      result = result.filter(
+        (ex) => ex.equipment.toLowerCase() === equipmentFilter.toLowerCase()
       );
     }
 
@@ -59,7 +80,7 @@ export default function ExerciseLibraryPage() {
     }
 
     return result;
-  }, [exercises, search, bodyPartFilter]);
+  }, [exercises, search, bodyPartFilter, equipmentFilter]);
 
   const handleExerciseTap = useCallback(
     (ex: ExerciseDoc) => {
@@ -78,11 +99,22 @@ export default function ExerciseLibraryPage() {
           <SearchBar value={search} onChange={setSearch} />
         </div>
 
-        {/* Filter Chips */}
-        <FilterChipBar
-          options={BODY_PARTS}
-          selected={bodyPartFilter}
-          onSelect={setBodyPartFilter}
+        {/* Filter Sections */}
+        <MultiFilterSection
+          sections={[
+            {
+              label: 'Body Part',
+              options: BODY_PARTS,
+              selected: bodyPartFilter,
+              onSelect: setBodyPartFilter,
+            },
+            {
+              label: 'Equipment',
+              options: EQUIPMENT,
+              selected: equipmentFilter,
+              onSelect: setEquipmentFilter,
+            },
+          ]}
         />
 
         {/* Results Count */}
