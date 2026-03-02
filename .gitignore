@@ -41,6 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # FitForge — generated / cached assets
+public/data/exercises/
 public/data/gifs/
 public/data/previews/
 public/data/exercise-manifest.json
