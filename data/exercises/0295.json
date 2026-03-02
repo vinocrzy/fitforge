@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "dumbbell",
+  "id": "0295",
+  "name": "dumbbell clean",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hamstrings",
+    "quadriceps",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand with an overhand grip.",
+    "Bend your knees and lower your hips into a squat position, keeping your back straight and chest up.",
+    "Explosively extend your hips and knees, driving through your heels to jump off the ground.",
+    "As you jump, shrug your shoulders and pull the dumbbells up towards your shoulders, keeping them close to your body.",
+    "Catch the dumbbells at shoulder height, with your elbows pointing forward and your palms facing up.",
+    "Lower the dumbbells back down to the starting position by reversing the movement.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell clean is a compound exercise that targets the glutes and also works the hamstrings, quadriceps, and calves. It involves explosive movement, coordination, and proper technique to safely lift the dumbbells from the ground to the shoulders.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

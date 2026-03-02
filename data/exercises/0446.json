@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "ez barbell",
+  "id": "0446",
+  "name": "ez barbell close-grip curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand up straight with your feet shoulder-width apart and hold the ez barbell with an underhand grip, hands shoulder-width apart.",
+    "Keep your elbows close to your torso and your upper arms stationary throughout the movement.",
+    "Curl the barbell up towards your shoulders, contracting your biceps.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The EZ barbell close-grip curl is a biceps-focused exercise performed with an EZ barbell using a close, underhand grip. It targets the biceps and also engages the forearms as secondary muscles. The movement involves curling the barbell towards the shoulders while keeping the elbows close to the torso.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0423",
+  "name": "dumbbell standing one arm extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in one hand.",
+    "Raise the dumbbell overhead, fully extending your arm.",
+    "Keep your upper arm close to your head and perpendicular to the ground.",
+    "Slowly lower the dumbbell behind your head, bending your elbow.",
+    "Pause for a moment, then raise the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell standing one arm extension is an isolation exercise targeting the triceps. It involves holding a dumbbell overhead with one arm and extending the elbow to lift the weight, focusing on triceps engagement.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

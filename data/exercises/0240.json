@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "cable",
+  "id": "0240",
+  "name": "cable supine reverse fly",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Attach a D-handle to a low pulley cable machine and lie face down on a flat bench.",
+    "Grasp the D-handle with each hand, palms facing down, and extend your arms straight out in front of you.",
+    "Keeping your arms straight, raise them out to the sides until they are parallel to the floor.",
+    "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable supine reverse fly is an isolation exercise targeting the rear deltoids, performed lying face down on a bench while using a cable machine. It emphasizes shoulder strength and stability, with secondary activation of the trapezius and rhomboids.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

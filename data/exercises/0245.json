@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "0245",
+  "name": "cable underhand pulldown",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Adjust the cable machine so that the pulldown bar is at a height above your head.",
+    "Sit down on the seat and grab the pulldown bar with an underhand grip, hands slightly wider than shoulder-width apart.",
+    "Keep your back straight and lean back slightly.",
+    "Pull the bar down towards your chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the bottom of the movement, then slowly release the bar back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable underhand pulldown is a strength exercise targeting the latissimus dorsi (lats) with secondary emphasis on the biceps and forearms. It involves pulling a cable bar down towards the chest using an underhand grip, which can help improve back strength and muscle definition.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

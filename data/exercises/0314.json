@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "0314",
+  "name": "dumbbell incline bench press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Set up an incline bench at a 45-degree angle.",
+    "Sit on the bench with your feet flat on the ground and your back pressed firmly against the bench.",
+    "Hold a dumbbell in each hand, palms facing forward, and lift them to shoulder height.",
+    "Slowly lower the dumbbells to the sides of your chest, keeping your elbows at a 90-degree angle.",
+    "Push the dumbbells back up to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell incline bench press is a compound upper body exercise that targets the upper portion of the pectoral muscles, with additional emphasis on the shoulders and triceps. It is performed on an incline bench using dumbbells, requiring stability and control throughout the movement.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

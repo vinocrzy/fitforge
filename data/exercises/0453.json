@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "ez barbell",
+  "id": "0453",
+  "name": "ez barbell seated triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bench with your back straight and feet flat on the ground.",
+    "Hold the ez barbell with an overhand grip, hands shoulder-width apart.",
+    "Raise the barbell overhead, fully extending your arms.",
+    "Keeping your upper arms stationary, lower the barbell behind your head by bending your elbows.",
+    "Pause for a moment, then raise the barbell back to the starting position by extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The EZ barbell seated triceps extension is an isolation exercise targeting the triceps, performed while seated with an EZ barbell. It emphasizes triceps strength and development, with some involvement of the shoulders for stabilization.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

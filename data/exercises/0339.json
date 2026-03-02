@@ -1,0 +1,19 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "dumbbell",
+  "id": "0339",
+  "name": "dumbbell lying femoral",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "glutes"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and a dumbbell resting on your lower abdomen.",
+    "Bend your knees and bring the dumbbell towards your glutes, keeping your feet flat on the ground.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell lying femoral exercise targets the hamstrings and also works the glutes. It involves lying on your back, bending your knees, and using a dumbbell for resistance as you bring your feet towards your glutes.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

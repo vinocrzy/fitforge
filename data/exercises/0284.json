@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "body weight",
+  "id": "0284",
+  "name": "donkey calf raise",
+  "target": "calves",
+  "secondaryMuscles": [
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Stand with your toes on an elevated surface, such as a step or block.",
+    "Place your hands on a stable support, such as a wall or railing, for balance.",
+    "Raise your heels as high as possible, lifting your body weight onto the balls of your feet.",
+    "Pause for a moment at the top, then slowly lower your heels back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The donkey calf raise is a bodyweight exercise that targets the calves. It involves standing with your toes on an elevated surface and raising your heels as high as possible to work the calf muscles.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

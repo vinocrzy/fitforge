@@ -1,0 +1,23 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "cable",
+  "id": "0247",
+  "name": "cable wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "brachialis"
+  ],
+  "instructions": [
+    "Attach a straight bar to a low pulley cable machine.",
+    "Stand facing the machine with your feet shoulder-width apart.",
+    "Grasp the bar with an underhand grip, palms facing up, and your hands shoulder-width apart.",
+    "Rest your forearms on a bench or pad, with your wrists hanging off the edge.",
+    "Keeping your forearms stationary, exhale and curl your wrists upward as far as possible.",
+    "Pause for a moment at the top, then inhale and slowly lower the bar back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable wrist curl is an isolation exercise targeting the forearm muscles, particularly the wrist flexors. It is performed using a cable machine and a straight bar, focusing on curling the wrists upward while keeping the forearms stationary.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

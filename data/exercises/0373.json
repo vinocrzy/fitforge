@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0373",
+  "name": "dumbbell pronate-grip triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a bench or chair with your back straight and feet flat on the ground.",
+    "Hold a dumbbell with both hands, palms facing down, and extend your arms straight up overhead.",
+    "Keeping your upper arms close to your head and elbows pointing forward, slowly lower the dumbbell behind your head by bending your elbows.",
+    "Pause for a moment, then extend your arms back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell pronate-grip triceps extension is an upper arm exercise that targets the triceps using a dumbbell with a pronated (palms-down) grip. It is performed seated, with the dumbbell extended overhead and lowered behind the head.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "ez barbell",
+  "id": "0445",
+  "name": "ez barbell anti gravity press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "chest"
+  ],
+  "instructions": [
+    "Start by standing with your feet shoulder-width apart and holding the ez barbell with an overhand grip.",
+    "Raise the barbell to shoulder height, keeping your elbows slightly bent and your palms facing forward.",
+    "Press the barbell overhead, extending your arms fully.",
+    "Lower the barbell back to shoulder height and repeat for the desired number of repetitions."
+  ],
+  "description": "The EZ barbell anti gravity press is a shoulder exercise performed with an EZ barbell. It targets the deltoids and also works the triceps and chest. The movement involves pressing the barbell overhead from shoulder height while standing.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

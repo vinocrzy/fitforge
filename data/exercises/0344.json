@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0344",
+  "name": "dumbbell lying one arm pronated triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie flat on a bench with your back and head supported, and your feet flat on the ground.",
+    "Hold a dumbbell in one hand with your palm facing down, and extend your arm straight up above your shoulder.",
+    "Keeping your upper arm stationary, slowly lower the dumbbell behind your head by bending your elbow.",
+    "Pause for a moment at the bottom, then extend your arm back up to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell lying one arm pronated triceps extension is an isolation exercise targeting the triceps, performed lying on a bench with a single dumbbell in a pronated (palm down) grip. It emphasizes triceps strength and stability, with some involvement of the shoulders.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

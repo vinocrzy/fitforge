@@ -1,0 +1,22 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0383",
+  "name": "dumbbell reverse fly",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in each hand.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight.",
+    "Extend your arms straight down in front of you, palms facing each other.",
+    "Keeping a slight bend in your elbows, raise your arms out to the sides until they are parallel to the ground.",
+    "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell reverse fly is an exercise that targets the rear deltoids, with secondary emphasis on the trapezius and rhomboids. It is performed by hinging at the hips, keeping the back straight, and lifting dumbbells out to the sides in a controlled manner.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

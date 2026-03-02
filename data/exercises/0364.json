@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "dumbbell",
+  "id": "0364",
+  "name": "dumbbell one arm wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "brachialis"
+  ],
+  "instructions": [
+    "Sit on a bench or chair with your feet flat on the ground.",
+    "Hold a dumbbell in one hand with an underhand grip, resting your forearm on your thigh.",
+    "Allow your wrist to extend, letting the dumbbell roll down towards your fingers.",
+    "Slowly curl your wrist back up, bringing the dumbbell towards your forearm.",
+    "Repeat for the desired number of repetitions, then switch to the other hand."
+  ],
+  "description": "The dumbbell one arm wrist curl is an isolation exercise targeting the forearm muscles, particularly the wrist flexors. It is performed seated, with the forearm supported and the wrist curling a dumbbell upward.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

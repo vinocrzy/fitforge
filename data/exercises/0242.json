@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "cable",
+  "id": "0242",
+  "name": "cable tuck reverse crunch",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Attach a cable to a low pulley and lie down on a mat facing up.",
+    "Hold the cable with both hands and extend your arms straight up above your chest.",
+    "Bend your knees and lift your legs up, bringing your knees towards your chest.",
+    "At the same time, curl your pelvis up towards your chest, lifting your hips off the ground.",
+    "Pause for a moment at the top, then slowly lower your legs and hips back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable tuck reverse crunch is an abdominal exercise performed with a cable machine. It targets the abs and also works the hip flexors. The movement involves curling the pelvis up and bringing the knees toward the chest while lying on your back, using the resistance of the cable for added intensity.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

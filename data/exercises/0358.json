@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "dumbbell",
+  "id": "0358",
+  "name": "dumbbell one arm reverse wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrist extensors"
+  ],
+  "instructions": [
+    "Sit on a bench or chair with your feet flat on the ground.",
+    "Hold a dumbbell in one hand with an overhand grip, palm facing down.",
+    "Rest your forearm on your thigh, with your wrist hanging off the edge.",
+    "Slowly lower the dumbbell towards the ground by flexing your wrist.",
+    "Pause for a moment at the bottom, then slowly curl your wrist back up towards your body.",
+    "Repeat for the desired number of repetitions, then switch to the other arm."
+  ],
+  "description": "The dumbbell one arm reverse wrist curl targets the forearms and wrist extensors by requiring the lifter to curl a dumbbell upward using only the wrist, with the forearm supported on the thigh. This exercise helps build forearm strength and endurance.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0299",
+  "name": "dumbbell cuban press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder height with your palms facing down.",
+    "Keeping your core engaged and your elbows slightly bent, press the dumbbells up and overhead until your arms are fully extended.",
+    "Rotate your wrists so that your palms are facing forward.",
+    "Slowly lower the dumbbells back to the starting position, rotating your wrists back to the starting position as you do so.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell Cuban press is a shoulder exercise that combines external rotation and pressing to target the deltoids, triceps, and upper back. It is often used to improve shoulder strength and stability, as well as to promote healthy shoulder movement patterns.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

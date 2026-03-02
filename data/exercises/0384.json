@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0384",
+  "name": "dumbbell reverse preacher curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a preacher bench with your upper arms resting on the pad and your chest against the support.",
+    "Hold a dumbbell in each hand with an underhand grip, palms facing up.",
+    "Keeping your upper arms stationary, exhale and curl the dumbbells as you contract your biceps.",
+    "Continue to curl the dumbbells until your biceps are fully contracted and the dumbbells are at shoulder level.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell reverse preacher curl is an isolation exercise targeting the biceps and forearms. It is performed seated on a preacher bench, with the upper arms resting on the pad and dumbbells held in an underhand grip. The movement involves curling the dumbbells upward while keeping the upper arms stationary, emphasizing the biceps and forearm muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

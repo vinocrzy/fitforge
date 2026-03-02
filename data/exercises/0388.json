@@ -1,0 +1,22 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0388",
+  "name": "dumbbell seated alternate press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "chest"
+  ],
+  "instructions": [
+    "Sit on a bench with a dumbbell in each hand, palms facing forward.",
+    "Raise the dumbbells to shoulder height, with your elbows bent and palms facing forward.",
+    "Press one dumbbell up overhead, fully extending your arm.",
+    "Lower the dumbbell back down to shoulder height.",
+    "Repeat with the other arm.",
+    "Continue alternating arms for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated alternate press is a shoulder exercise performed while seated, pressing one dumbbell overhead at a time in an alternating fashion. This movement targets the deltoid muscles and also engages the triceps and chest as secondary muscles.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

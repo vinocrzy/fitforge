@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "0234",
+  "name": "cable standing row (v-bar)",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand facing the cable machine with your feet shoulder-width apart.",
+    "Grasp the v-bar attachment with an overhand grip, palms facing down.",
+    "Keep your back straight and your core engaged.",
+    "Pull the v-bar towards your body, squeezing your shoulder blades together.",
+    "Pause for a moment at the peak of the movement, then slowly release the tension and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable standing row (v-bar) is a compound exercise that targets the upper back using a cable machine and a v-bar attachment. It also engages the biceps and shoulders as secondary muscles. The movement requires proper posture and core engagement to perform safely and effectively.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

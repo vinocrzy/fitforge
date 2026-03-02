@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0408",
+  "name": "dumbbell side lying one hand raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Lie on your side with your legs extended and your head supported by your arm.",
+    "Hold a dumbbell in your top hand with your palm facing down.",
+    "Keeping your arm straight, raise the dumbbell up to shoulder height.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back down to the starting position.",
+    "Repeat for the desired number of repetitions, then switch sides."
+  ],
+  "description": "The dumbbell side lying one hand raise targets the deltoid muscles and is performed lying on your side, lifting a dumbbell with one arm to shoulder height. This exercise isolates the shoulder muscles and helps improve strength and stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

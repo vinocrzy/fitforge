@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "0301",
+  "name": "dumbbell decline bench press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie down on a decline bench with your feet secured and your head lower than your hips.",
+    "Hold a dumbbell in each hand and extend your arms straight up above your chest, palms facing forward.",
+    "Lower the dumbbells slowly to the sides of your chest, keeping your elbows at a 90-degree angle.",
+    "Push the dumbbells back up to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell decline bench press is a chest exercise performed on a decline bench, targeting the lower pectorals. It also engages the triceps and shoulders as secondary muscles. The movement involves pressing dumbbells upward from a declined position, requiring good form and control.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

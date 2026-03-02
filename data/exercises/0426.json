@@ -1,0 +1,20 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0426",
+  "name": "dumbbell standing overhead press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder level with your palms facing forward.",
+    "Press the dumbbells upward until your arms are fully extended overhead.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back down to shoulder level.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell standing overhead press is a compound exercise targeting the deltoids, performed by pressing dumbbells overhead from shoulder height while standing.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

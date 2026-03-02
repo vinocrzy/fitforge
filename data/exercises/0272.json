@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "stability ball",
+  "id": "0272",
+  "name": "crunch (on stability ball, arms straight)",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Sit on the stability ball with your feet flat on the ground and your knees bent at a 90-degree angle.",
+    "Lie back on the ball until your lower back is supported and your upper body is parallel to the floor.",
+    "Place your hands behind your head or cross them over your chest.",
+    "Engage your abs and lift your upper body off the ball, curling your shoulders towards your hips.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The crunch on a stability ball with arms straight is an abdominal exercise that targets the abs while also engaging the hip flexors. The use of a stability ball increases the challenge to balance and core stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

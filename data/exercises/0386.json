@@ -1,0 +1,22 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0386",
+  "name": "dumbbell rotation reverse fly",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing inwards.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight and chest up.",
+    "Raise your arms out to the sides, keeping a slight bend in your elbows, until they are parallel to the floor.",
+    "Rotate your arms so that your palms are facing downwards.",
+    "Slowly lower your arms back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell rotation reverse fly is a shoulder exercise that targets the deltoids, with secondary emphasis on the trapezius and rhomboids. It involves hinging at the hips and lifting dumbbells out to the sides with a rotational component.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

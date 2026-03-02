@@ -1,0 +1,20 @@
+{
+  "bodyPart": "back",
+  "equipment": "dumbbell",
+  "id": "0406",
+  "name": "dumbbell shrug",
+  "target": "traps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in each hand with your palms facing your body.",
+    "Keep your arms straight and let the dumbbells hang by your sides.",
+    "Raise your shoulders as high as possible, as if you are trying to touch your ears with your shoulders.",
+    "Hold the contraction for a second, then slowly lower your shoulders back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell shrug is an isolation exercise that targets the trapezius muscles. It involves lifting the shoulders towards the ears while holding dumbbells, focusing on building strength and size in the upper back.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

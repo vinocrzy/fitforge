@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0259",
+  "name": "close-grip push-up",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands placed close together, directly under your shoulders.",
+    "Engage your core and lower your body towards the ground, keeping your elbows close to your sides.",
+    "Push through your palms to extend your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The close-grip push-up is a bodyweight exercise that primarily targets the triceps, with secondary emphasis on the chest and shoulders. It is performed by placing the hands close together under the shoulders and performing a push-up while keeping the elbows close to the body.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

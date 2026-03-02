@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "dumbbell",
+  "id": "0381",
+  "name": "dumbbell rear lunge",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand.",
+    "Take a step backward with your right foot, lowering your body into a lunge position.",
+    "Bend your left knee and lower your body until your left thigh is parallel to the ground.",
+    "Pause for a moment, then push through your left heel to return to the starting position.",
+    "Repeat on the other side, stepping back with your left foot."
+  ],
+  "description": "The dumbbell rear lunge is a lower body exercise that targets the glutes, with secondary emphasis on the quadriceps, hamstrings, and calves. It involves stepping backward into a lunge while holding dumbbells, challenging balance and unilateral leg strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

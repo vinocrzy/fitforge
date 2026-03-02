@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0251",
+  "name": "chest dip",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself on parallel bars with your arms fully extended and your body straight.",
+    "Lower your body by bending your elbows until your shoulders are below your elbows.",
+    "Push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The chest dip is a bodyweight exercise performed on parallel bars that primarily targets the pectoral muscles, with secondary emphasis on the triceps and shoulders. It requires significant upper body strength, stability, and control.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

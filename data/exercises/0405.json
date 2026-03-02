@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0405",
+  "name": "dumbbell seated shoulder press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Sit on a bench with a dumbbell in each hand, resting on your thighs.",
+    "Raise the dumbbells to shoulder height, palms facing forward.",
+    "Press the dumbbells upward until your arms are fully extended overhead.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back to shoulder height.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated shoulder press is a strength exercise targeting the deltoid muscles of the shoulders. It is performed while seated, pressing dumbbells overhead to build shoulder and upper arm strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0354",
+  "name": "dumbbell one arm kickback",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in your right hand.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight.",
+    "Bring your right elbow up to your side, keeping it bent at a 90-degree angle.",
+    "Extend your right arm straight back, squeezing your triceps at the top of the movement.",
+    "Slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch sides."
+  ],
+  "description": "The dumbbell one arm kickback is an isolation exercise targeting the triceps. It is performed by hinging at the hips, keeping the back straight, and extending the arm back while holding a dumbbell.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

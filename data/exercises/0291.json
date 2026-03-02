@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "dumbbell",
+  "id": "0291",
+  "name": "dumbbell bench squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Place a dumbbell on the ground in front of a bench.",
+    "Stand facing away from the bench with your feet shoulder-width apart.",
+    "Bend at the knees and hips to lower yourself down towards the bench, keeping your chest up and back straight.",
+    "Once your glutes touch the bench, push through your heels to stand back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell bench squat is a lower body exercise that targets the glutes, with secondary emphasis on the quadriceps, hamstrings, and calves. It involves squatting down to a bench while holding a dumbbell, which helps guide depth and form.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

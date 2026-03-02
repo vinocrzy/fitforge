@@ -1,0 +1,19 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0366",
+  "name": "dumbbell over bench one arm neutral wrist curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a bench with a dumbbell in one hand and your arm extended over the bench, palm facing up.",
+    "Keep your upper arm stationary and curl the dumbbell towards your shoulder, keeping your wrist in a neutral position.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell over bench one arm neutral wrist curl is an isolation exercise targeting the biceps and forearms. It is performed seated, with the arm extended over a bench and the wrist in a neutral position, curling the dumbbell towards the shoulder.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0274",
+  "name": "crunch floor",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Place your hands behind your head with your elbows pointing outwards.",
+    "Engage your abs and lift your shoulders off the ground, curling forward towards your knees.",
+    "Pause for a moment at the top, then slowly lower your shoulders back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The crunch floor is a classic abdominal exercise performed lying on your back, focusing on strengthening the abs with minimal equipment.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

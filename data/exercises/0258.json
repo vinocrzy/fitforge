@@ -1,0 +1,23 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0258",
+  "name": "clock push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands directly under your shoulders and your body in a straight line.",
+    "Lower your body towards the ground by bending your elbows, keeping them close to your sides.",
+    "As you lower, rotate your body to the left, extending your left arm straight out to the side.",
+    "Push back up to the starting position, while rotating your body to the center.",
+    "Repeat the push-up, this time rotating your body to the right and extending your right arm out to the side.",
+    "Continue alternating sides with each repetition."
+  ],
+  "description": "The clock push-up is a dynamic bodyweight exercise that targets the chest, triceps, shoulders, and core. It involves a rotational movement where one arm extends out to the side as you lower into a push-up, increasing the challenge to stability and coordination.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

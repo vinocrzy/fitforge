@@ -1,0 +1,23 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0356",
+  "name": "dumbbell one arm lateral raise with support",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "rotator cuff"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in one hand, with your palm facing your body.",
+    "Place your other hand on a stable surface, such as a bench or wall, for support.",
+    "Keep your back straight and engage your core.",
+    "Raise the dumbbell out to the side, keeping your arm straight and your palm facing down.",
+    "Continue lifting until your arm is parallel to the ground.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back down to the starting position.",
+    "Repeat for the desired number of repetitions, then switch sides."
+  ],
+  "description": "The dumbbell one arm lateral raise with support is an isolation exercise targeting the deltoid muscles of the shoulder. By using a support, it allows for better form and focus on the shoulder muscles, reducing the risk of using momentum or improper technique.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

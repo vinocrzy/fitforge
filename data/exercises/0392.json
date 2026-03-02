@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0392",
+  "name": "dumbbell seated front raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "biceps"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and a dumbbell in each hand, resting on your thighs.",
+    "Keep your back straight and core engaged.",
+    "Raise the dumbbells in front of you, with your palms facing down, until they are at shoulder level.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated front raise is a shoulder exercise that targets the deltoid muscles. It is performed while seated, which helps to isolate the shoulders and minimize momentum, making it a controlled movement for building shoulder strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

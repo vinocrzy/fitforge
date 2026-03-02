@@ -1,0 +1,20 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0286",
+  "name": "dumbbell alternate side press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder height.",
+    "Press one dumbbell overhead while keeping the other dumbbell at shoulder height.",
+    "Lower the pressed dumbbell back to shoulder height while pressing the other dumbbell overhead.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The dumbbell alternate side press is a shoulder exercise where you press one dumbbell overhead at a time, alternating sides. This movement targets the deltoids and also engages the triceps and core for stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

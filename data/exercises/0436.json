@@ -1,0 +1,19 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0436",
+  "name": "dumbbell tate press",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a flat bench with a dumbbell in each hand, palms facing each other.",
+    "Raise the dumbbells to shoulder height, then rotate your wrists so that your palms are facing away from you.",
+    "Press the dumbbells up until your arms are fully extended, then lower them back down to shoulder height.",
+    "Rotate your wrists back to the starting position and repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell Tate press is an upper arm exercise primarily targeting the triceps, with secondary involvement of the shoulders. It is performed with dumbbells while seated on a flat bench, involving a unique pressing motion that emphasizes triceps activation.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

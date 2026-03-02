@@ -1,0 +1,22 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "cable",
+  "id": "0246",
+  "name": "cable upright row",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "biceps"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, knees slightly bent, and hold the cable attachment with an overhand grip.",
+    "Keep your back straight and your core engaged throughout the exercise.",
+    "Pull the cable attachment straight up towards your chin, leading with your elbows.",
+    "Pause for a moment at the top, squeezing your shoulder blades together.",
+    "Slowly lower the cable attachment back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable upright row is a strength exercise targeting the deltoids, with secondary emphasis on the traps and biceps. It involves pulling a cable attachment upward towards the chin, leading with the elbows, to engage the shoulder muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0325",
+  "name": "dumbbell incline raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on an incline bench with a dumbbell in each hand, resting on your thighs.",
+    "Lean back on the bench and raise the dumbbells to shoulder height, palms facing forward.",
+    "Keeping your back against the bench, exhale and raise the dumbbells above your head, fully extending your arms.",
+    "Pause for a moment at the top, then inhale and slowly lower the dumbbells back to shoulder height.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell incline raise is a shoulder exercise performed on an incline bench, targeting the deltoid muscles. It also engages the trapezius and triceps as secondary muscles. The movement involves raising dumbbells from shoulder height to overhead while maintaining a stable position on the bench.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

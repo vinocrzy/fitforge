@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "dumbbell",
+  "id": "0401",
+  "name": "dumbbell seated palms up wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a dumbbell in each hand, palms facing up.",
+    "Rest your forearms on your thighs, allowing your wrists to hang off the edge.",
+    "Slowly curl your wrists upward, squeezing your forearms at the top of the movement.",
+    "Pause for a moment, then lower your wrists back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated palms up wrist curl is an isolation exercise targeting the forearm muscles, specifically the wrist flexors. It is performed seated, with the forearms resting on the thighs and the wrists curling the dumbbells upward.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

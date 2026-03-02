@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "0303",
+  "name": "dumbbell decline hammer press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie on a decline bench with your feet secured and your head lower than your hips.",
+    "Hold a dumbbell in each hand with your palms facing each other and your arms extended above your chest.",
+    "Lower the dumbbells to the sides of your chest, keeping your elbows slightly bent.",
+    "Press the dumbbells back up to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell decline hammer press is a chest exercise performed on a decline bench using dumbbells. It targets the lower pectorals and also engages the triceps and shoulders. The hammer grip (palms facing each other) emphasizes the inner chest and triceps while reducing shoulder strain.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

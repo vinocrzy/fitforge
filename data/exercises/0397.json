@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0397",
+  "name": "dumbbell seated neutral wrist curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a dumbbell in each hand, palms facing each other.",
+    "Rest your forearms on your thighs, allowing the dumbbells to hang down.",
+    "Keeping your wrists in a neutral position, curl the dumbbells up towards your shoulders.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated neutral wrist curl targets the biceps and forearms by having the lifter curl dumbbells with a neutral grip while seated, focusing on wrist and forearm strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

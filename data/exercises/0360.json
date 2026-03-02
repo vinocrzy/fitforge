@@ -1,0 +1,20 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0360",
+  "name": "dumbbell one arm shoulder press v. 2",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in one hand at shoulder level, palm facing forward.",
+    "Engage your core and press the dumbbell straight up overhead, fully extending your arm.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to shoulder level.",
+    "Repeat for the desired number of repetitions, then switch to the other arm."
+  ],
+  "description": "The dumbbell one arm shoulder press v. 2 is a unilateral overhead pressing exercise that targets the deltoid muscles, while also engaging the triceps and upper back for stabilization. This movement helps build shoulder strength and stability, and challenges core engagement due to the single-arm nature of the exercise.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

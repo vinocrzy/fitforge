@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0290",
+  "name": "dumbbell bench seated press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "chest"
+  ],
+  "instructions": [
+    "Sit on a bench with a dumbbell in each hand, resting on your thighs.",
+    "Lean back and position the dumbbells to the sides of your chest, palms facing forward.",
+    "Press the dumbbells upward until your arms are fully extended.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell bench seated press is a strength exercise targeting the deltoid muscles of the shoulders, with secondary emphasis on the triceps and chest. It is performed seated on a bench, pressing dumbbells overhead in a controlled manner.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

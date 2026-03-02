@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0320",
+  "name": "dumbbell incline hammer curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on an incline bench with a dumbbell in each hand, palms facing your torso and arms fully extended.",
+    "Keep your back against the bench and your feet flat on the floor.",
+    "While keeping your upper arms stationary, exhale and curl the weights while contracting your biceps.",
+    "Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly begin to lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell incline hammer curl is an upper arm exercise that targets the biceps and also works the forearms. It is performed while sitting on an incline bench, which increases the stretch on the biceps and challenges the muscles through a greater range of motion.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

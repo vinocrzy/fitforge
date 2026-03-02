@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "ez barbell",
+  "id": "0452",
+  "name": "ez barbell reverse grip preacher curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a preacher bench with your chest against the pad and your feet flat on the floor.",
+    "Grasp the ez barbell with an underhand grip, hands shoulder-width apart.",
+    "Rest your upper arms on the pad, allowing your forearms to hang down.",
+    "Keeping your upper arms stationary, exhale and curl the barbell up towards your shoulders.",
+    "Pause for a moment at the top, then inhale and slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The EZ barbell reverse grip preacher curl is an isolation exercise targeting the biceps, with additional activation of the forearms. It is performed seated on a preacher bench, using an EZ barbell with a reverse (underhand) grip.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

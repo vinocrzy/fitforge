@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "0393",
+  "name": "dumbbell seated inner biceps curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a dumbbell in each hand, palms facing up.",
+    "Rest your upper arms on your thighs, allowing the dumbbells to hang down.",
+    "Keeping your upper arms stationary, curl the dumbbells up towards your shoulders by contracting your biceps.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated inner biceps curl targets the biceps and forearms by having the lifter sit on a bench, rest their upper arms on their thighs, and curl dumbbells upward. This isolates the biceps and minimizes momentum, making it an effective strength-building exercise.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

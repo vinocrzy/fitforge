@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "0302",
+  "name": "dumbbell decline fly",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie on a decline bench with your feet secured and your head lower than your hips.",
+    "Hold a dumbbell in each hand with your palms facing each other and your arms extended above your chest.",
+    "Lower the dumbbells out to the sides in a wide arc until you feel a stretch in your chest.",
+    "Pause for a moment, then squeeze your chest muscles to bring the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell decline fly is a chest exercise performed on a decline bench, targeting the lower pectoral muscles. It involves lowering dumbbells out to the sides in a wide arc and then bringing them back together, emphasizing chest muscle stretch and contraction.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

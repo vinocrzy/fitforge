@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0376",
+  "name": "dumbbell raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing your body.",
+    "Keep your back straight and engage your core.",
+    "Raise your arms out to the sides until they are parallel to the floor, keeping a slight bend in your elbows.",
+    "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell raise is a shoulder exercise that targets the deltoid muscles, with secondary emphasis on the traps and rhomboids. It involves lifting dumbbells out to the sides to shoulder height, focusing on controlled movement and proper form.",
+  "difficulty": "beginner",
+  "category": "strength"
+}
