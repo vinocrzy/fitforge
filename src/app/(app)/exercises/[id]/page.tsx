@@ -77,7 +77,7 @@ export default function ExerciseDetailPage({
       />
 
       {/* GIF Hero */}
-      <div className="relative w-full" style={{ height: 280 }}>
+      <div className="relative w-full pt-12 pb-4">
         <ExerciseGif
           exerciseId={exercise.id}
           alt={exercise.name}

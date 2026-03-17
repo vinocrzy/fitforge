@@ -30,7 +30,7 @@ export function ExerciseGif({
 
   return (
     <div
-      className={`relative w-full aspect-square overflow-hidden rounded-xl bg-[#1E1E1E] ${className}`}
+      className={`relative w-full aspect-square overflow-hidden rounded-xl bg-white ${className}`}
     >
       {/* Skeleton shimmer until image loads */}
       <AnimatePresence>
