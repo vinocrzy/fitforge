@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "0651",
+  "name": "pull up (neutral grip)",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with a neutral grip (palms facing each other) and your arms fully extended.",
+    "Engage your core and squeeze your shoulder blades together.",
+    "Pull your body up towards the bar by bending your elbows and driving your elbows down towards your hips.",
+    "Continue pulling until your chin is above the bar.",
+    "Pause for a moment at the top, then slowly lower your body back down to the starting position with control.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The neutral grip pull-up is a bodyweight exercise targeting the latissimus dorsi (lats) and also engaging the biceps and forearms. It is performed by hanging from a pull-up bar with palms facing each other, pulling the chin above the bar, and lowering back down with control.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

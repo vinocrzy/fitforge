@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "leverage machine",
+  "id": "0585",
+  "name": "lever leg extension",
+  "target": "quads",
+  "secondaryMuscles": [
+    "hamstrings"
+  ],
+  "instructions": [
+    "Adjust the seat height and backrest of the machine to fit your body.",
+    "Sit on the machine with your back against the backrest and your feet on the footpad.",
+    "Grasp the handles or sidebars for stability.",
+    "Extend your legs forward by straightening your knees, lifting the weight.",
+    "Pause for a moment at the top, then slowly lower the weight back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever leg extension is an isolation exercise performed on a leverage machine to target the quadriceps. It involves extending the knees to lift a weight, primarily working the front of the thighs.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

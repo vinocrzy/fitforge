@@ -1,0 +1,22 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "leverage machine",
+  "id": "0869",
+  "name": "lever shoulder press v. 2",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "chest"
+  ],
+  "instructions": [
+    "Adjust the seat height and backrest of the leverage machine to a comfortable position.",
+    "Sit on the machine with your back against the backrest and your feet flat on the floor.",
+    "Grasp the handles of the machine with an overhand grip, slightly wider than shoulder-width apart.",
+    "Push the handles upward and forward until your arms are fully extended, but not locked.",
+    "Pause for a moment at the top, then slowly lower the handles back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever shoulder press v. 2 is a machine-based exercise targeting the deltoid muscles, with secondary emphasis on the triceps and chest. It is performed seated on a leverage machine, pressing handles upward and forward to work the shoulders.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

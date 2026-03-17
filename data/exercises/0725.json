@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0725",
+  "name": "single arm push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Start in a push-up position with your hands shoulder-width apart and one hand placed slightly wider than the other.",
+    "Engage your core and lower your body towards the ground by bending your elbows, keeping your back straight.",
+    "As you lower yourself, shift your weight to one side and lift the opposite arm off the ground, extending it straight out to the side.",
+    "Push through your chest and triceps to raise your body back up to the starting position, while simultaneously lowering your extended arm back to the ground.",
+    "Repeat the movement, alternating the arm you extend with each repetition."
+  ],
+  "description": "The single arm push-up is a challenging bodyweight exercise that targets the pectorals while also engaging the triceps, shoulders, and core. It requires significant strength, balance, and coordination, making it suitable for advanced practitioners.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

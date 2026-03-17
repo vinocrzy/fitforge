@@ -1,0 +1,24 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0664",
+  "name": "push-up to side plank",
+  "target": "abs",
+  "secondaryMuscles": [
+    "shoulders",
+    "chest",
+    "triceps"
+  ],
+  "instructions": [
+    "Start in a push-up position with your hands shoulder-width apart and your body in a straight line.",
+    "Lower your body towards the ground by bending your elbows, keeping your core engaged.",
+    "Push back up to the starting position.",
+    "Shift your weight onto your left hand and rotate your body to the right, lifting your right arm towards the ceiling.",
+    "Hold the side plank position for a few seconds, then return to the starting position.",
+    "Repeat the push-up and side plank on the opposite side.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The push-up to side plank is a compound bodyweight exercise that combines a traditional push-up with a rotational movement into a side plank. This exercise targets the abs while also engaging the shoulders, chest, and triceps, and challenges core stability and balance.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "0864",
+  "name": "dumbbell upright shoulder external rotation",
+  "target": "delts",
+  "secondaryMuscles": [
+    "rotator cuff",
+    "trapezius"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in each hand with your palms facing your body.",
+    "Raise your arms out to the sides until they are parallel to the ground, keeping your elbows slightly bent.",
+    "Rotate your arms externally, bringing the dumbbells up towards your head while keeping your elbows in the same position.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell upright shoulder external rotation is an exercise that targets the deltoids and also engages the rotator cuff and trapezius muscles. It involves raising the arms to shoulder height and externally rotating the shoulders while holding dumbbells.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

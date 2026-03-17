@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "dumbbell",
+  "id": "0777",
+  "name": "spell caster",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "lower back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in one hand.",
+    "Bend your knees slightly and hinge forward at the waist, keeping your back straight.",
+    "Extend your arm with the dumbbell towards the opposite foot, rotating your torso as you do so.",
+    "Return to the starting position and repeat on the other side.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The spell caster is a rotational core exercise performed with a dumbbell, targeting the abs and obliques. It involves hinging at the waist and rotating the torso while moving the dumbbell from side to side.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

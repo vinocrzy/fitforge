@@ -1,0 +1,19 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0507",
+  "name": "jackknife sit-up",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and your arms overhead.",
+    "Engage your core and lift your legs and upper body simultaneously, reaching your hands towards your toes.",
+    "Pause for a moment at the top, then slowly lower your legs and upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The jackknife sit-up is a bodyweight exercise targeting the abdominal muscles. It involves simultaneously lifting the legs and upper body to meet in the middle, engaging the core and hip flexors.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

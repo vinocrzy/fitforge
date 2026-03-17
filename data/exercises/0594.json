@@ -1,0 +1,22 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "leverage machine",
+  "id": "0594",
+  "name": "lever seated calf raise",
+  "target": "calves",
+  "secondaryMuscles": [
+    "soleus",
+    "ankle stabilizers"
+  ],
+  "instructions": [
+    "Adjust the seat height so that your knees are slightly bent and your feet are flat on the footplate.",
+    "Place your toes on the footplate with your heels hanging off the edge.",
+    "Grasp the handles or the sides of the seat for stability.",
+    "Push through the balls of your feet to raise your heels as high as possible.",
+    "Pause for a moment at the top, then slowly lower your heels back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever seated calf raise is a machine-based exercise that targets the calf muscles, particularly the gastrocnemius and soleus. It is performed while seated, using a leverage machine to provide resistance as you raise and lower your heels.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

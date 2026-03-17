@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "weighted",
+  "id": "0833",
+  "name": "weighted donkey calf raise",
+  "target": "calves",
+  "secondaryMuscles": [
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Stand on a raised platform with your toes on the edge and your heels hanging off.",
+    "Hold onto a stable object for support.",
+    "Raise your heels as high as possible by extending your ankles.",
+    "Pause for a moment at the top, then slowly lower your heels back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The weighted donkey calf raise is a calf-focused exercise performed on a raised platform, where the lifter raises and lowers their heels while holding additional weight. This movement targets the calves and also engages the hamstrings and glutes as secondary muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

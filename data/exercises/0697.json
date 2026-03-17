@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "0697",
+  "name": "self assisted inverse leg curl",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "glutes",
+    "calves"
+  ],
+  "instructions": [
+    "Lie flat on your back on a mat or bench with your legs extended.",
+    "Place your hands by your sides or under your glutes for support.",
+    "Bend your knees and lift your feet off the ground, bringing your thighs towards your chest.",
+    "Pause for a moment at the top, then slowly lower your legs back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The self assisted inverse leg curl is a bodyweight exercise targeting the hamstrings, with secondary emphasis on the glutes and calves. It involves curling the legs towards the chest while lying on your back, using your hands for support if needed.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

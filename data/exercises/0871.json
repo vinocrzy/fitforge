@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0871",
+  "name": "tuck crunch",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Place your hands behind your head with your elbows pointing outwards.",
+    "Engaging your abs, lift your shoulder blades off the ground and bring your knees towards your chest, simultaneously curling your upper body towards your knees.",
+    "Pause for a moment at the top, then slowly lower your shoulder blades and extend your legs back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The tuck crunch is a bodyweight abdominal exercise that targets the abs and also engages the hip flexors. It involves curling the upper body and bringing the knees toward the chest simultaneously, making it an effective core strengthening movement.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

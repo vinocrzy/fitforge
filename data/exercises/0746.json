@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "smith machine",
+  "id": "0746",
+  "name": "smith back shrug",
+  "target": "traps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and your knees slightly bent.",
+    "Grasp the barbell with an overhand grip, hands slightly wider than shoulder-width apart.",
+    "Keep your arms straight and allow the barbell to hang in front of your thighs.",
+    "Lift your shoulders straight up towards your ears, squeezing your traps at the top.",
+    "Hold for a moment, then lower your shoulders back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith back shrug is a strength exercise targeting the trapezius muscles, performed using a smith machine. It involves lifting the shoulders straight up towards the ears while holding a barbell, focusing on squeezing the traps at the top of the movement.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

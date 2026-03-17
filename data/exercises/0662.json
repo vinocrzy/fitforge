@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0662",
+  "name": "push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "deltoids",
+    "core"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands slightly wider than shoulder-width apart and your feet together.",
+    "Engage your core and lower your body towards the ground by bending your elbows, keeping your body in a straight line.",
+    "Pause for a moment when your chest is just above the ground, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The push-up is a classic bodyweight exercise that targets the pectoral muscles, triceps, deltoids, and core. It is performed by lowering and raising the body using the arms while maintaining a straight line from head to heels.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

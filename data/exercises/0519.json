@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "kettlebell",
+  "id": "0519",
+  "name": "kettlebell alternating press on floor",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Start by lying on your back on the floor with your knees bent and feet flat on the ground.",
+    "Hold a kettlebell in each hand, with your palms facing towards your feet and your arms extended straight up towards the ceiling.",
+    "Lower one kettlebell down towards your shoulder while keeping the other kettlebell extended straight up.",
+    "Press the lowered kettlebell back up to the starting position while simultaneously lowering the other kettlebell down towards your shoulder.",
+    "Continue alternating the press motion with each kettlebell for the desired number of repetitions."
+  ],
+  "description": "The kettlebell alternating press on floor is a chest exercise performed while lying on the floor, pressing kettlebells alternately with each arm. This movement targets the pectorals and also works the shoulders and triceps.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

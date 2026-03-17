@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "0489",
+  "name": "hyperextension",
+  "target": "spine",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Adjust the hyperextension bench so that your upper thighs are resting on the pad and your feet are secured.",
+    "Cross your arms over your chest or place your hands behind your head.",
+    "Lower your upper body towards the ground while keeping your back straight.",
+    "Pause for a moment at the bottom, then raise your upper body back up until it is in line with your legs.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The hyperextension is a bodyweight exercise that targets the spinal erectors and lower back, with secondary emphasis on the glutes and hamstrings. It is performed on a hyperextension bench and involves lowering and raising the upper body while keeping the back straight.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

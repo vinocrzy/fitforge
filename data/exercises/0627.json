@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "0627",
+  "name": "mixed grip chin-up",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Grab the pull-up bar with an underhand grip (palms facing towards you) and your hands slightly wider than shoulder-width apart.",
+    "Hang from the bar with your arms fully extended and your feet off the ground.",
+    "Engage your back muscles and pull your body up towards the bar, leading with your chest.",
+    "Continue pulling until your chin is above the bar.",
+    "Pause for a moment at the top, then slowly lower your body back down to the starting position with control.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The mixed grip chin-up is a bodyweight exercise targeting the lats, with secondary emphasis on the biceps and forearms. It involves pulling your body up to a bar using a mixed grip, which challenges grip strength and upper body pulling power.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

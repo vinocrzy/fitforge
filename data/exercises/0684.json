@@ -1,0 +1,22 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "0684",
+  "name": "run (equipment)",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Start by standing upright with your feet hip-width apart.",
+    "Engage your core and keep your upper body relaxed.",
+    "Begin jogging in place, lifting your knees up towards your chest and landing softly on the balls of your feet.",
+    "Maintain a steady pace and continue jogging for the desired duration or distance.",
+    "Remember to breathe deeply and maintain good posture throughout the exercise."
+  ],
+  "description": "Running in place is a cardiovascular exercise that elevates the heart rate and improves overall endurance. It requires no equipment and can be performed anywhere, making it accessible for most fitness levels.",
+  "difficulty": "beginner",
+  "category": "cardio"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0639",
+  "name": "one arm dip",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand facing away from a bench or chair, with your feet shoulder-width apart.",
+    "Place one hand on the bench or chair behind you, fingers pointing towards your body.",
+    "Extend your legs out in front of you, keeping your heels on the ground.",
+    "Bend your elbows and lower your body towards the ground, keeping your back close to the bench or chair.",
+    "Pause for a moment at the bottom, then push through your palms to straighten your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions, then switch sides and repeat with the other arm."
+  ],
+  "description": "The one arm dip is a challenging bodyweight exercise that targets the triceps, with secondary emphasis on the chest and shoulders. It requires significant upper body strength, balance, and coordination, as you support your body weight with one arm while performing the dip motion.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

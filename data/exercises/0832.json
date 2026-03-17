@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "weighted",
+  "id": "0832",
+  "name": "weighted crunch",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Hold a weight plate or dumbbell on your chest.",
+    "Engage your abs and lift your upper body off the ground, curling forward until your shoulder blades are off the ground.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The weighted crunch is an abdominal exercise that increases resistance to strengthen the abs and obliques. It is performed lying on your back, holding a weight on your chest, and curling your upper body upward.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,23 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0699",
+  "name": "shoulder tap push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands slightly wider than shoulder-width apart and your body in a straight line from head to heels.",
+    "Lower your body towards the ground by bending your elbows, keeping them close to your sides.",
+    "As you push back up, lift your right hand off the ground and tap your left shoulder.",
+    "Return your right hand to the ground and repeat the push-up, this time lifting your left hand and tapping your right shoulder.",
+    "Continue alternating shoulder taps with each push-up repetition.",
+    "Maintain a stable core and avoid excessive hip rotation throughout the exercise.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The shoulder tap push-up is a bodyweight exercise that combines a standard push-up with an alternating shoulder tap at the top of each rep. This movement challenges the chest, triceps, and core while also requiring balance and coordination to stabilize the body during the shoulder tap.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "kettlebell",
+  "id": "0534",
+  "name": "kettlebell goblet squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a kettlebell close to your chest with both hands.",
+    "Keeping your chest up and core engaged, lower your body down into a squat position by bending at the knees and hips.",
+    "Continue lowering until your thighs are parallel to the ground, or as low as you can comfortably go.",
+    "Pause for a moment at the bottom, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The kettlebell goblet squat is a lower body exercise that targets the glutes while also engaging the quadriceps, hamstrings, and calves. It involves holding a kettlebell close to the chest and performing a squat, making it a great movement for building strength and improving squat technique.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

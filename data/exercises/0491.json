@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0491",
+  "name": "incline leg hip raise (leg straight)",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie on an incline bench with your back flat against the bench and your legs extended straight out in front of you.",
+    "Place your hands on the sides of the bench for support.",
+    "Engaging your abs, lift your legs off the bench, raising them as high as you can while keeping them straight.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The incline leg hip raise (leg straight) is an abdominal exercise performed on an incline bench. It targets the abs and also works the hip flexors. The movement requires you to lift your straight legs upward while lying on an incline, emphasizing core control and strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

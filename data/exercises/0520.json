@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "kettlebell",
+  "id": "0520",
+  "name": "kettlebell alternating press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a kettlebell in each hand at shoulder height.",
+    "Press one kettlebell overhead, fully extending your arm.",
+    "Lower the kettlebell back to shoulder height.",
+    "Repeat with the other arm.",
+    "Continue alternating arms for the desired number of repetitions."
+  ],
+  "description": "The kettlebell alternating press is a shoulder exercise where you press one kettlebell overhead at a time, alternating arms. This movement targets the deltoids and also engages the triceps and core for stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

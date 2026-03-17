@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0493",
+  "name": "incline push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Place your hands on an elevated surface, such as a bench or step, slightly wider than shoulder-width apart.",
+    "Extend your legs behind you, resting on the balls of your feet, creating a straight line from your head to your heels.",
+    "Lower your chest towards the elevated surface by bending your elbows, keeping your body in a straight line.",
+    "Pause for a moment at the bottom, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The incline push-up is a bodyweight exercise that targets the pectoral muscles by performing a push-up with the hands elevated on a surface such as a bench or step. This variation reduces the load compared to a standard push-up, making it more accessible for beginners.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

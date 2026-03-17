@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0494",
+  "name": "incline reverse grip push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Place your hands on the edge of a bench or elevated surface, slightly wider than shoulder-width apart.",
+    "Extend your legs behind you, resting on the balls of your feet, creating a straight line from your head to your heels.",
+    "Lower your chest towards the bench by bending your elbows, keeping them close to your sides.",
+    "Pause for a moment at the bottom, then push yourself back up to the starting position by extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The incline reverse grip push-up is a bodyweight exercise targeting the pectorals, performed with hands on an elevated surface and palms facing towards you (reverse grip). It emphasizes the upper chest and triceps while requiring stability and control.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

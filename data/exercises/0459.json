@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "0459",
+  "name": "flutter kicks",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hip flexors",
+    "lower abs"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and your hands by your sides.",
+    "Engage your core and lift your legs off the ground about 6 inches.",
+    "Keeping your legs straight, alternate lifting one leg slightly higher than the other.",
+    "Continue this fluttering motion for the desired number of repetitions."
+  ],
+  "description": "Flutter kicks are a bodyweight exercise performed lying on your back, where you lift your legs off the ground and alternate kicking them up and down in a fluttering motion. This movement primarily targets the glutes, with secondary emphasis on the hip flexors and lower abs.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

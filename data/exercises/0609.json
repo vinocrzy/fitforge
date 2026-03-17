@@ -1,0 +1,24 @@
+{
+  "bodyPart": "back",
+  "equipment": "rope",
+  "id": "0609",
+  "name": "london bridge",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "shoulders",
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Attach the rope to a high anchor point.",
+    "Stand facing away from the anchor point with your feet shoulder-width apart.",
+    "Grasp the rope with an overhand grip, palms facing down.",
+    "Lean forward slightly, keeping your back straight and core engaged.",
+    "Pull the rope towards your body, squeezing your shoulder blades together.",
+    "Pause for a moment at the peak of the movement, then slowly release the tension and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The London Bridge exercise targets the upper back using a rope attached to a high anchor point. It involves pulling the rope towards the body while squeezing the shoulder blades together, engaging the upper back, shoulders, biceps, and forearms.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

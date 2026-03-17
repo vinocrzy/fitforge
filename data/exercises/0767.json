@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "smith machine",
+  "id": "0767",
+  "name": "smith shrug",
+  "target": "traps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and your knees slightly bent.",
+    "Grasp the barbell with an overhand grip, hands slightly wider than shoulder-width apart.",
+    "Keep your arms straight and your shoulders relaxed.",
+    "Lift your shoulders up towards your ears, squeezing your traps at the top.",
+    "Hold for a moment, then slowly lower your shoulders back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith shrug is an exercise performed on a Smith machine to target the trapezius muscles. It involves lifting the shoulders towards the ears while holding a barbell, focusing on squeezing the traps at the top of the movement.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

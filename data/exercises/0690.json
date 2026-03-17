@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "0690",
+  "name": "seated lower back stretch",
+  "target": "lats",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Sit on the edge of a chair with your feet flat on the ground.",
+    "Place your hands on your thighs or on the sides of the chair for support.",
+    "Slowly lean forward from your hips, keeping your back straight.",
+    "Feel the stretch in your lower back and hold for 20-30 seconds.",
+    "Slowly return to the starting position and repeat for the desired number of repetitions."
+  ],
+  "description": "A gentle stretch performed while seated to target the lower back and lats, also engaging the glutes and hamstrings. This exercise is suitable for improving flexibility and relieving tension in the lower back area.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

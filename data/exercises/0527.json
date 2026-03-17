@@ -1,0 +1,24 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "kettlebell",
+  "id": "0527",
+  "name": "kettlebell double jerk",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a kettlebell in each hand at shoulder height.",
+    "Bend your knees slightly and engage your core.",
+    "Press the kettlebells overhead, fully extending your arms.",
+    "Bend your knees and quickly drop into a partial squat.",
+    "Explosively extend your hips and knees, driving the kettlebells overhead.",
+    "Lock out your arms and catch the kettlebells overhead with your knees slightly bent.",
+    "Stand up straight and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The kettlebell double jerk is a dynamic overhead pressing movement that involves using two kettlebells. It requires explosive power, coordination, and proper technique to safely drive the weights overhead using a combination of leg and upper body strength.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

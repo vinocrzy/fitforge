@@ -1,0 +1,23 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "smith machine",
+  "id": "0765",
+  "name": "smith seated shoulder press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Adjust the seat height so that the handles are at shoulder level.",
+    "Sit on the machine with your back against the pad and your feet flat on the floor.",
+    "Grasp the handles with an overhand grip and lift them off the supports, extending your arms fully.",
+    "Lower the handles down to shoulder level, keeping your elbows slightly bent.",
+    "Press the handles up overhead until your arms are fully extended.",
+    "Pause for a moment at the top, then slowly lower the handles back down to shoulder level.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith seated shoulder press is a machine-based exercise targeting the deltoid muscles of the shoulders. It provides stability and support, making it suitable for those looking to build shoulder strength with reduced risk of losing balance. The movement also engages the triceps and upper back as secondary muscles.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

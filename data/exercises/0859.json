@@ -1,0 +1,22 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "weighted",
+  "id": "0859",
+  "name": "wrist rollerer",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "triceps"
+  ],
+  "instructions": [
+    "Attach a weight to one end of a rope or bar.",
+    "Hold the other end of the rope or bar with both hands, palms facing down.",
+    "Stand with your feet shoulder-width apart and your arms fully extended in front of you.",
+    "Slowly roll the weight up towards your hands by flexing your wrists.",
+    "Pause for a moment at the top, then slowly lower the weight back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The wrist roller is an exercise that targets the forearms by using a weighted rope or bar. It involves rolling a weight up and down using wrist flexion and extension, which helps build forearm strength and endurance.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

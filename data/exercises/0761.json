@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "smith machine",
+  "id": "0761",
+  "name": "smith narrow row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "rear deltoids"
+  ],
+  "instructions": [
+    "Adjust the seat height and position yourself on the machine with your feet flat on the floor.",
+    "Grasp the handles with an overhand grip, slightly narrower than shoulder-width apart.",
+    "Keep your back straight and your chest up as you pull the handles towards your body, squeezing your shoulder blades together.",
+    "Pause for a moment at the peak of the movement, then slowly release the handles back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith narrow row is a machine-based rowing exercise targeting the upper back, performed with a narrow grip to emphasize the upper back muscles and rear deltoids. It is performed on a Smith machine, which provides guided movement for added stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0672",
+  "name": "reverse dip",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself between two parallel bars with your arms fully extended and your body straight.",
+    "Lower your body by bending your elbows until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The reverse dip is a bodyweight exercise targeting the triceps, performed between two parallel bars. It also engages the chest and shoulders as secondary muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

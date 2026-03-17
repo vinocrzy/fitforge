@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0689",
+  "name": "seated leg raise",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Sit on a flat bench with your back straight and your feet flat on the ground.",
+    "Place your hands on the sides of the bench for support.",
+    "Keeping your legs straight, slowly raise them up in front of you until they are parallel to the ground.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The seated leg raise is an abdominal exercise performed while sitting on a bench. It primarily targets the abs and also engages the hip flexors. The movement involves raising the legs while keeping them straight, which requires core strength and stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

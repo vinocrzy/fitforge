@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "leverage machine",
+  "id": "0597",
+  "name": "lever seated hip abduction",
+  "target": "abductors",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Adjust the seat height so that your knees are at a 90-degree angle.",
+    "Sit on the machine with your back against the backrest and your feet on the footrests.",
+    "Place your hands on the side handles for stability.",
+    "Engage your abductors and slowly push your legs apart, away from the midline of your body.",
+    "Pause for a moment at the end of the movement, then slowly bring your legs back together to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever seated hip abduction is a machine-based exercise that targets the hip abductor muscles. It is performed while seated, pushing the legs apart against resistance provided by the machine.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "smith machine",
+  "id": "0771",
+  "name": "smith standing back wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "triceps"
+  ],
+  "instructions": [
+    "Stand facing the smith machine with your feet shoulder-width apart.",
+    "Grasp the barbell with an overhand grip, hands shoulder-width apart.",
+    "Keep your back straight and your elbows close to your body.",
+    "Slowly curl your wrists upwards, bringing the barbell towards your body.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith standing back wrist curl is an isolation exercise targeting the forearms, performed using a smith machine. It involves curling the wrists upwards while holding the barbell with an overhand grip, focusing on forearm strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

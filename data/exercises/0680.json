@@ -1,0 +1,25 @@
+{
+  "bodyPart": "back",
+  "equipment": "rope",
+  "id": "0680",
+  "name": "rope climb",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "forearms",
+    "biceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand facing the rope with your feet shoulder-width apart.",
+    "Grab the rope with both hands, palms facing towards you.",
+    "Bend your knees slightly and engage your core.",
+    "Begin pulling yourself up the rope by alternating hand-over-hand movements.",
+    "Use your legs to assist in the upward movement.",
+    "Continue climbing until you reach the desired height or the top of the rope.",
+    "To descend, reverse the hand-over-hand movement while controlling your descent.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The rope climb is a challenging upper body exercise that targets the upper back, forearms, biceps, and shoulders. It requires significant grip strength, coordination, and core stability, as well as the ability to use both the upper and lower body to ascend and descend a rope safely.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

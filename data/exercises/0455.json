@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "barbell",
+  "id": "0455",
+  "name": "finger curls",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrist flexors",
+    "grip muscles"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a barbell with an underhand grip, palms facing up.",
+    "Rest your forearms on your thighs, allowing your wrists to hang off the edge.",
+    "Slowly curl your fingers towards your palms, squeezing the barbell tightly.",
+    "Hold the contraction for a moment, then slowly release your fingers back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Finger curls are an isolation exercise targeting the forearms, specifically the finger flexors and grip muscles. This movement helps improve grip strength and forearm development.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

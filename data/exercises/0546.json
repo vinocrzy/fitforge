@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "kettlebell",
+  "id": "0546",
+  "name": "kettlebell seated press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Sit on a bench with your back straight and feet flat on the ground.",
+    "Hold a kettlebell in each hand at shoulder height, palms facing forward.",
+    "Press the kettlebells overhead, fully extending your arms.",
+    "Lower the kettlebells back to shoulder height.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The kettlebell seated press is a shoulder exercise performed while seated, pressing kettlebells overhead to target the deltoids, with secondary emphasis on the triceps and core.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

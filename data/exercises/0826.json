@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0826",
+  "name": "vertical leg raise (on parallel bars)",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Hang from the parallel bars with your arms fully extended and your body straight.",
+    "Engage your core and lift your legs up in front of you, keeping them straight.",
+    "Continue lifting until your legs are parallel to the ground or slightly higher.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The vertical leg raise (on parallel bars) is an abdominal exercise performed by hanging from parallel bars and lifting the legs up in front of the body, targeting the abs and hip flexors.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

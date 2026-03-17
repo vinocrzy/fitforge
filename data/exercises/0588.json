@@ -1,0 +1,24 @@
+{
+  "bodyPart": "back",
+  "equipment": "leverage machine",
+  "id": "0588",
+  "name": "lever narrow grip seated row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Adjust the seat height and footrests to ensure proper form.",
+    "Sit on the machine with your feet flat on the footrests and your knees slightly bent.",
+    "Grasp the handles with a narrow grip, palms facing each other.",
+    "Keep your back straight and lean slightly forward.",
+    "Pull the handles towards your torso, squeezing your shoulder blades together.",
+    "Pause for a moment at the peak of the movement.",
+    "Slowly release the handles and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever narrow grip seated row is a machine-based exercise targeting the upper back, with secondary emphasis on the biceps and forearms. It involves pulling handles towards the torso while seated, focusing on squeezing the shoulder blades together.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

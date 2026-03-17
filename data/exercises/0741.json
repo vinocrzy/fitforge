@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "sled machine",
+  "id": "0741",
+  "name": "sled closer hack squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the sled machine to a comfortable weight and position yourself with your back against the pad.",
+    "Place your feet shoulder-width apart on the platform, toes slightly pointed outwards.",
+    "Grip the handles on the sides of the machine for stability.",
+    "Engage your core and slowly lower your body by bending your knees and hips, keeping your back straight.",
+    "Continue lowering until your thighs are parallel to the ground or slightly below.",
+    "Pause for a moment at the bottom, then push through your heels to extend your legs and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The sled closer hack squat is a lower body exercise performed on a sled machine, primarily targeting the glutes while also engaging the quadriceps, hamstrings, and calves. It involves squatting with your back against a pad and feet on a platform, moving the weight by extending and flexing the knees and hips.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

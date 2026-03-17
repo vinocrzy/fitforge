@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0620",
+  "name": "lying leg raise flat bench",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on a flat bench with your back pressed against it.",
+    "Place your hands under your glutes for support.",
+    "Keep your legs straight and together, and lift them up towards the ceiling.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lying leg raise flat bench is an abdominal exercise performed on a flat bench using only body weight. It primarily targets the abs and also engages the hip flexors. The movement involves lifting straight legs up towards the ceiling while lying flat, then lowering them back down under control.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

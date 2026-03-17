@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0508",
+  "name": "janda sit-up",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors",
+    "lower back"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Place your hands behind your head with your elbows pointing outwards.",
+    "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The Janda sit-up is an advanced abdominal exercise that emphasizes the abs while minimizing hip flexor involvement. It requires significant core strength and proper technique to perform safely and effectively.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

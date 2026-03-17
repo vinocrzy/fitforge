@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "smith machine",
+  "id": "0749",
+  "name": "smith bent knee good morning",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hamstrings",
+    "lower back"
+  ],
+  "instructions": [
+    "Start by standing with your feet shoulder-width apart, toes pointing forward.",
+    "Place the barbell across your upper back, resting it on your traps.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight.",
+    "Lower your torso until it is parallel to the ground, feeling a stretch in your hamstrings.",
+    "Engage your glutes and hamstrings to raise your torso back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith bent knee good morning is a lower body exercise performed on a Smith machine. It primarily targets the glutes, with secondary emphasis on the hamstrings and lower back. The movement involves hinging at the hips with a slight knee bend, lowering the torso while keeping the back straight, and then returning to the starting position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

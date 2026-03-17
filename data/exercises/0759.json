@@ -1,0 +1,23 @@
+{
+  "bodyPart": "chest",
+  "equipment": "smith machine",
+  "id": "0759",
+  "name": "smith incline shoulder raises",
+  "target": "serratus anterior",
+  "secondaryMuscles": [
+    "deltoids",
+    "trapezius"
+  ],
+  "instructions": [
+    "Adjust the smith machine to an incline position.",
+    "Stand facing the machine with your feet shoulder-width apart.",
+    "Grasp the bar with an overhand grip, slightly wider than shoulder-width apart.",
+    "Keep your back straight and core engaged.",
+    "Raise the barbell up towards the ceiling, leading with your elbows.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Smith incline shoulder raises target the serratus anterior and are performed on a smith machine. The movement involves raising the barbell upwards while standing at an incline, focusing on shoulder and upper chest engagement.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

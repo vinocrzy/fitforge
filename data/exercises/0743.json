@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "sled machine",
+  "id": "0743",
+  "name": "sled hack squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the sled machine to a comfortable position for your height.",
+    "Stand with your feet shoulder-width apart on the platform, toes slightly pointed outwards.",
+    "Hold onto the handles or bars for stability.",
+    "Lower your body by bending your knees and hips, keeping your back straight and chest up.",
+    "Continue lowering until your thighs are parallel to the ground or slightly below.",
+    "Pause for a moment, then push through your heels to raise your body back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The sled hack squat is a lower body strength exercise performed on a sled machine. It primarily targets the glutes, with secondary emphasis on the quadriceps, hamstrings, and calves. The movement involves squatting down with the support of the sled machine, which helps guide the motion and provides stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

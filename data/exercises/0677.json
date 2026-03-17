@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0677",
+  "name": "ring dips",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start by hanging from the rings with your arms fully extended and your body straight.",
+    "Lower your body by bending your elbows until your shoulders are below your elbows.",
+    "Push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Ring dips are a challenging bodyweight exercise performed on gymnastic rings, primarily targeting the triceps, with significant engagement of the chest and shoulders. The instability of the rings requires considerable strength, balance, and coordination.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

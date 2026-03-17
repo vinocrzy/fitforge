@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0475",
+  "name": "hanging straight leg raise",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with your arms fully extended and your palms facing away from you.",
+    "Engage your core and lift your legs up in front of you, keeping them straight.",
+    "Continue lifting until your legs are parallel to the ground or as high as you can comfortably go.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The hanging straight leg raise is an advanced core exercise performed by hanging from a pull-up bar and lifting the legs straight up in front of the body. It primarily targets the abdominal muscles and also engages the hip flexors.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

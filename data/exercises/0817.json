@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0817",
+  "name": "triceps stretch",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand or sit upright with your back straight.",
+    "Extend one arm overhead, bending it at the elbow.",
+    "Place your opposite hand on the bent elbow and gently pull it towards your head.",
+    "Hold the stretch for 15-30 seconds, feeling a gentle stretch in your triceps.",
+    "Release the stretch and repeat on the other arm."
+  ],
+  "description": "A static stretch targeting the triceps and shoulders, performed by extending one arm overhead and gently pulling the elbow with the opposite hand.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0457",
+  "name": "flexion leg sit up (straight arm)",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors",
+    "quadriceps"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and arms straight above your head.",
+    "Engaging your abs, lift your upper body off the ground while simultaneously lifting your legs towards your chest.",
+    "Reach your hands towards your toes as you lift your upper body and legs.",
+    "Pause for a moment at the top, then slowly lower your upper body and legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The flexion leg sit up (straight arm) is an abdominal exercise performed with body weight. It involves lying flat, extending the arms overhead, and simultaneously lifting the upper body and legs to meet in the middle, targeting the abs and engaging the hip flexors and quadriceps.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

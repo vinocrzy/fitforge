@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "smith machine",
+  "id": "0769",
+  "name": "smith sprint lunge",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Set up the smith machine with the barbell at hip height.",
+    "Stand facing away from the machine with your feet shoulder-width apart.",
+    "Step back with your right foot and place it on the barbell, resting the top of your foot on the bar.",
+    "Bend your left knee and lower your body into a lunge position, keeping your back straight.",
+    "Push through your left heel to return to the starting position.",
+    "Repeat on the other side, stepping back with your left foot.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The smith sprint lunge is a lower body exercise performed using a smith machine. It targets the glutes primarily, with secondary emphasis on the quadriceps, hamstrings, and calves. The movement involves stepping back and placing one foot on the barbell, then performing a lunge, which challenges balance, strength, and coordination.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

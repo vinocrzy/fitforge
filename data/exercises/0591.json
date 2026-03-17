@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "leverage machine",
+  "id": "0591",
+  "name": "lever overhand triceps dip",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Adjust the machine to the appropriate height and secure your body in position.",
+    "Grasp the handles with an overhand grip and position your body so that your arms are fully extended.",
+    "Lower your body by bending your elbows, keeping your upper arms close to your sides.",
+    "Continue lowering until your upper arms are parallel to the floor.",
+    "Pause for a moment, then push yourself back up to the starting position by extending your elbows.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever overhand triceps dip is a machine-based exercise targeting the triceps, with secondary emphasis on the chest and shoulders. It involves lowering and raising the body using a leverage machine, which provides stability and controlled resistance.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "0865",
+  "name": "lying leg-hip raise",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and your arms by your sides.",
+    "Place your hands under your glutes for support.",
+    "Engage your core and lift your legs off the ground, raising them towards the ceiling.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lying leg-hip raise is an abdominal exercise performed on the floor using only body weight. It targets the abs and also works the hip flexors. The movement involves lifting the legs and hips off the ground while keeping the core engaged, then lowering them back down with control.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

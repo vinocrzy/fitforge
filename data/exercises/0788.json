@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "barbell",
+  "id": "0788",
+  "name": "standing behind neck press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold the barbell behind your neck with an overhand grip.",
+    "Keep your back straight and core engaged.",
+    "Press the barbell overhead by extending your arms, fully extending your elbows.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The standing behind neck press is a barbell exercise targeting the deltoids, performed by pressing a barbell from behind the neck to overhead while standing. It also engages the triceps and upper back.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

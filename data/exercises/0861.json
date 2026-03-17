@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "0861",
+  "name": "cable seated row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on the cable row machine with your feet flat on the footrests and your knees slightly bent.",
+    "Grasp the handles with an overhand grip, keeping your back straight and your shoulders relaxed.",
+    "Pull the handles towards your body, squeezing your shoulder blades together.",
+    "Pause for a moment at the peak of the movement, then slowly release the handles back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable seated row is a strength exercise that targets the upper back, with secondary emphasis on the biceps and forearms. It is performed using a cable row machine and involves pulling handles towards the torso while maintaining a straight back and squeezing the shoulder blades together.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

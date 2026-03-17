@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0812",
+  "name": "triceps dip (bench leg)",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on the edge of a bench with your hands gripping the edge, fingers pointing forward.",
+    "Walk your feet forward, sliding your butt off the bench, and straighten your arms.",
+    "Bend your elbows and lower your body towards the ground, keeping your back close to the bench.",
+    "Push through your palms to straighten your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The triceps dip (bench leg) is a bodyweight exercise targeting the triceps, performed using a bench for support. It also engages the chest and shoulders as secondary muscles. The movement involves lowering and raising the body using the arms while keeping the legs extended and feet on the ground.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

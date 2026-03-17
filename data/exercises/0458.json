@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "barbell",
+  "id": "0458",
+  "name": "floor fly (with barbell)",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "deltoids",
+    "triceps"
+  ],
+  "instructions": [
+    "Lie flat on your back on the floor with your knees bent and feet flat on the ground.",
+    "Hold a barbell with an overhand grip, arms extended straight up over your chest.",
+    "Slowly lower the barbell out to the sides, keeping a slight bend in your elbows.",
+    "Lower the barbell until your arms are parallel to the floor, feeling a stretch in your chest.",
+    "Pause for a moment, then squeeze your chest muscles to bring the barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The floor fly with barbell is a chest exercise performed lying on the floor, focusing on stretching and contracting the pectoral muscles while using a barbell for resistance.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

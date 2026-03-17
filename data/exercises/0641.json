@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "weighted",
+  "id": "0641",
+  "name": "otis up",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors",
+    "lower back"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Place your hands behind your head with your elbows pointing outwards.",
+    "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The Otis Up is a weighted abdominal exercise that targets the abs, with secondary emphasis on the hip flexors and lower back. It involves curling the torso up from a lying position, requiring core strength and stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

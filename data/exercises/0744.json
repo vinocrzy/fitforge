@@ -1,0 +1,25 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "sled machine",
+  "id": "0744",
+  "name": "sled lying squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the sled machine to a comfortable weight.",
+    "Lie on your back on the sled machine with your feet on the footplate.",
+    "Position your feet shoulder-width apart and slightly angled outwards.",
+    "Grip the handles of the sled machine for stability.",
+    "Engage your glutes and core muscles.",
+    "Push through your heels and extend your legs to lift the sled.",
+    "Lower the sled back down by bending your knees and hips.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The sled lying squat is a lower body exercise performed on a sled machine, targeting the glutes as the primary muscle group. It also engages the quadriceps, hamstrings, and calves. The movement involves lying on your back, pushing the sled upward with your legs, and then lowering it back down in a controlled manner.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "bosu ball",
+  "id": "0653",
+  "name": "push-up (bosu ball)",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Place the bosu ball on the ground with the flat side facing up.",
+    "Position yourself in a push-up position with your hands on the outer edges of the bosu ball.",
+    "Engage your core and lower your body down towards the bosu ball by bending your elbows.",
+    "Push yourself back up to the starting position by extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The push-up (bosu ball) is a variation of the traditional push-up performed with hands on a BOSU ball, increasing instability and engaging more core and stabilizer muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

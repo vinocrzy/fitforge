@@ -1,0 +1,23 @@
+{
+  "bodyPart": "back",
+  "equipment": "leverage machine",
+  "id": "0573",
+  "name": "lever back extension",
+  "target": "spine",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Adjust the machine to fit your body size and range of motion.",
+    "Sit on the machine with your back against the pad and your feet secured.",
+    "Place your hands on the handles or grip bars.",
+    "Engage your core and slowly lean forward, allowing your back to round slightly.",
+    "Pause for a moment at the bottom position, feeling a stretch in your lower back.",
+    "Using your back muscles, slowly raise your torso back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever back extension is a machine-based exercise targeting the muscles of the lower back (spine extensors), with secondary emphasis on the glutes and hamstrings. It is performed by sitting on a leverage machine, securing the feet, and extending the back against resistance.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

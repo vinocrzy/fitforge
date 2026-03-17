@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "sled machine",
+  "id": "0740",
+  "name": "sled 45° leg wide press",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the sled machine to a 45-degree angle.",
+    "Sit on the sled machine with your back against the pad and your feet on the foot platform.",
+    "Position your feet wider than shoulder-width apart.",
+    "Push against the foot platform to extend your legs and straighten your knees.",
+    "Pause for a moment at the end of the movement, then slowly bend your knees to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The sled 45° leg wide press is a compound lower body exercise performed on a sled machine set at a 45-degree angle. It targets the glutes primarily, with significant involvement from the quadriceps, hamstrings, and calves. The wide stance emphasizes the glutes and inner thighs more than a standard leg press.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

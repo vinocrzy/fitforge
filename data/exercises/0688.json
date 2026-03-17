@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "0688",
+  "name": "scapular pull-up",
+  "target": "traps",
+  "secondaryMuscles": [
+    "biceps",
+    "rhomboids",
+    "rear deltoids"
+  ],
+  "instructions": [
+    "Start by hanging from a pull-up bar with your palms facing away from you and your arms fully extended.",
+    "Retract your shoulder blades by pulling them down and back.",
+    "Engage your back muscles and pull your body up towards the bar, focusing on squeezing your shoulder blades together.",
+    "Pause for a moment at the top of the movement, then slowly lower your body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The scapular pull-up is a bodyweight exercise that targets the trapezius muscles and helps improve scapular control and shoulder stability. It is performed by hanging from a pull-up bar and retracting the shoulder blades without bending the elbows.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "smith machine",
+  "id": "0750",
+  "name": "smith chair squat",
+  "target": "quads",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the height of the smith machine bar to a comfortable position.",
+    "Stand with your feet shoulder-width apart, toes slightly turned out.",
+    "Place the barbell across your upper back, resting it on your traps.",
+    "Engage your core and keep your chest up as you slowly lower your body by bending your knees and hips.",
+    "Continue lowering until your thighs are parallel to the ground, or as low as you can comfortably go.",
+    "Pause for a moment, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith chair squat is a lower body exercise performed using a smith machine. It primarily targets the quadriceps, with secondary emphasis on the glutes, hamstrings, and calves. The guided bar path of the smith machine provides stability, making it suitable for those developing squat technique or seeking a safer alternative to free-weight squats.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

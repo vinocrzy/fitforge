@@ -1,0 +1,22 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "0630",
+  "name": "mountain climber",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "core",
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands directly under your shoulders and your body in a straight line.",
+    "Engage your core and bring your right knee towards your chest, then quickly switch and bring your left knee towards your chest.",
+    "Continue alternating legs in a running motion, keeping your hips low and your core engaged.",
+    "Maintain a steady pace and breathe evenly throughout the exercise.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Mountain climbers are a dynamic bodyweight exercise that targets the cardiovascular system while also engaging the core, shoulders, and triceps. The movement mimics a running motion in a plank position, making it effective for both cardio and muscular endurance.",
+  "difficulty": "beginner",
+  "category": "cardio"
+}

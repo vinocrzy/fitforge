@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "0652",
+  "name": "pull-up",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with your palms facing away from you and your arms fully extended.",
+    "Engage your core and squeeze your shoulder blades together.",
+    "Pull your body up towards the bar by bending your elbows and bringing your chest towards the bar.",
+    "Pause at the top of the movement, then slowly lower your body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The pull-up is a bodyweight exercise that primarily targets the latissimus dorsi muscles of the back. It also engages the biceps and forearms as secondary muscles. The movement requires significant upper body strength, coordination, and control, making it a challenging exercise for many individuals.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

@@ -1,0 +1,24 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "kettlebell",
+  "id": "0538",
+  "name": "kettlebell one arm jerk",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a kettlebell in one hand at shoulder height.",
+    "Bend your knees slightly and engage your core.",
+    "Press the kettlebell overhead in a straight line, fully extending your arm.",
+    "As you press the kettlebell overhead, simultaneously dip your knees and quickly straighten them to generate momentum.",
+    "As the kettlebell reaches its highest point, quickly drop underneath it by bending your knees and hips.",
+    "Catch the kettlebell with a slight bend in your knees and hips, and your arm fully extended overhead.",
+    "Stand up straight, fully extending your knees and hips, and stabilize the kettlebell overhead.",
+    "Lower the kettlebell back to the starting position by bending your knees and hips, and repeat for the desired number of repetitions."
+  ],
+  "description": "The kettlebell one arm jerk is a dynamic overhead pressing movement that involves using the legs and hips to help drive a kettlebell overhead with one arm. It requires coordination, timing, and strength, especially in the shoulders, triceps, and core.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

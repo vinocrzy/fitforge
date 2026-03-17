@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "0666",
+  "name": "raise single arm push-up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Start in a push-up position with your hands slightly wider than shoulder-width apart and your feet together.",
+    "Extend one arm straight out to the side, parallel to the ground.",
+    "Lower your body towards the ground by bending your elbows, keeping your back straight and core engaged.",
+    "Push back up to the starting position, using your chest muscles to lift your body.",
+    "Repeat with the other arm extended."
+  ],
+  "description": "The raise single arm push-up is a challenging bodyweight exercise that targets the pectorals while also engaging the triceps, shoulders, and core. It requires significant strength, balance, and coordination as one arm is extended out to the side while performing a push-up.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

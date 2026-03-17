@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "leverage machine",
+  "id": "0586",
+  "name": "lever lying leg curl",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the machine to fit your body and select the desired weight.",
+    "Lie face down on the machine with your legs straight and your heels against the padded lever.",
+    "Grasp the handles or the sides of the machine for stability.",
+    "Keeping your upper body stationary, exhale and curl your legs up as far as possible without lifting your hips off the pad.",
+    "Hold the contracted position for a brief pause as you squeeze your hamstrings.",
+    "Inhale and slowly lower the lever back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever lying leg curl is an isolation exercise targeting the hamstrings, performed on a leverage machine. It involves curling the legs upward against resistance while lying face down, emphasizing hamstring contraction and control.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

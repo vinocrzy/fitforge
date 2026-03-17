@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "0813",
+  "name": "triceps dip (between benches)",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bench with your hands gripping the edge of the bench, fingers pointing forward.",
+    "Slide your butt off the bench, supporting your weight with your hands.",
+    "Bend your elbows and lower your body towards the ground, keeping your back close to the bench.",
+    "Pause for a moment at the bottom, then push yourself back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The triceps dip (between benches) is a bodyweight exercise targeting the triceps, performed by supporting your weight on your hands between two benches and lowering and raising your body.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}
