@@ -11,14 +11,22 @@ import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { staggerContainer, fadeUpItem } from '@/lib/motion/variants';
 import { Icon } from '@/components/ui/Icon';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
-import { useRoutines } from '@/hooks/useDatabase';
+import { useRoutines, useWorkoutHistory } from '@/hooks/useDatabase';
+import { calculateDayType, DAY_TYPE_CONFIG, hasUndulatingExercises } from '@/lib/coaching/undulatingDayType';
 
 export default function RoutinesPage() {
   const router = useRouter();
   const { data: routines = [], isLoading } = useRoutines();
+  const { data: workouts = [] } = useWorkoutHistory();
 
   const exerciseCount = (r: (typeof routines)[number]) =>
     (r.warmUp?.length ?? 0) + (r.workout?.length ?? 0) + (r.stretch?.length ?? 0);
+
+  // Calculate day type for each routine
+  const getDayType = (routine: (typeof routines)[number]) => {
+    if (!hasUndulatingExercises(routine)) return null;
+    return calculateDayType(routine, workouts.slice(0, 30));
+  };
 
   return (
     <div className="min-h-screen px-4 pt-16 pb-28 bg-[#0B0B0B]">
@@ -98,12 +106,31 @@ export default function RoutinesPage() {
 
                 {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <p
-                    className="text-[17px] font-semibold truncate"
-                    style={{ color: '#F5F5F5' }}
-                  >
-                    {routine.name}
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <p
+                      className="text-[17px] font-semibold truncate"
+                      style={{ color: '#F5F5F5' }}
+                    >
+                      {routine.name}
+                    </p>
+                    {(() => {
+                      const dayType = getDayType(routine);
+                      if (!dayType) return null;
+                      const config = DAY_TYPE_CONFIG[dayType];
+                      return (
+                        <div
+                          className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase flex items-center gap-1 shrink-0"
+                          style={{
+                            background: `${config.color}15`,
+                            color: config.color,
+                          }}
+                        >
+                          <span>{config.emoji}</span>
+                          <span>{config.label}</span>
+                        </div>
+                      );
+                    })()}
+                  </div>
                   <p
                     className="text-[13px] mt-0.5"
                     style={{ color: 'rgba(245,245,245,0.50)' }}

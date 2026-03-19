@@ -333,15 +333,15 @@
 - [x] `DeloadRoutineWizard` — 3-step bottom sheet wizard
 - [x] Deload routine generator — reduces sets + weight, saves with `isDeload: true`
 - [x] "Plan Deload Week" button opens wizard
-- [ ] `DeloadWeekView` — active deload progress tracker
-- [ ] `DeloadCompleteCard` — celebration with XP bonus
+- [x] `DeloadWeekView` — active deload progress tracker replaces hero card on dashboard
+- [x] `DeloadCompleteCard` — celebration with +200 XP bonus
 - [x] `WorkoutCalendar` deload visualization — muted teal color coding
 
 **PT Feature 3 — Undulating Periodization**
 - [x] `DayTypeBanner` component — Heavy/Moderate/Light day indicator
 - [x] Dashboard integration with gradient backgrounds
-- [x] Day type calculation from 3-day cycle
-- [ ] Routine list badge showing current day type
+- [x] Day type calculation from 3-day cycle (shared utility)
+- [x] Routine list badge showing current day type (emoji + label)
 
 **Web Push Notifications**
 - [ ] Service worker push event listener
@@ -467,4 +467,8 @@
 | `src/app/(app)/routines/[id]/page.tsx` | 🔄 | Integrated routine-filtered coaching notes |
 | `src/types/index.ts` | 🔄 | Enhanced CoachingNote, added NotificationPreferences, isDeload to Routine |
 | `src/store/useProfileStore.ts` | 🔄 | Added coaching note & notification actions |
+| `src/lib/coaching/undulatingDayType.ts` | ✅ | Shared day type calculation utility + config |
+| `src/components/deload/DeloadWeekView.tsx` | ✅ | Active deload progress tracker, replaces hero card |
+| `src/components/deload/DeloadCompleteCard.tsx` | ✅ | Deload celebration modal with +200 XP bonus |
+| `src/app/(app)/routines/page.tsx` | 🔄 | Added undulating day type badge to routine cards |
 

@@ -28,6 +28,7 @@ import { DeloadSuggestionCard } from '@/components/dashboard/DeloadSuggestionCar
 import { CoachingNoteCard } from '@/components/coaching/CoachingNoteCard';
 import { useRpeAdvisor } from '@/hooks/useRpeAdvisor';
 import { DayTypeBanner } from '@/components/coaching/DayTypeBanner';
+import { DeloadWeekView } from '@/components/deload/DeloadWeekView';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
 
@@ -205,6 +206,31 @@ export default function DashboardPage() {
   // Most recent routine
   const latestRoutine = routines[0] ?? null;
 
+  // Active deload detection
+  const activeDeload = useMemo(() => {
+    // Find deload routines
+    const deloadRoutines = routines.filter((r) => r.isDeload);
+    if (deloadRoutines.length === 0) return null;
+
+    // Check each deload routine for recent activity (last 7 days)
+    for (const routine of deloadRoutines) {
+      const recentSessions = workouts.filter((w) => {
+        if (w.routineId !== routine._id) return false;
+        const daysSince = (Date.now() - new Date(w.completedAt).getTime()) / (1000 * 60 * 60 * 24);
+        return daysSince <= 7;
+      });
+
+      if (recentSessions.length > 0 && recentSessions.length < 7) {
+        return {
+          routine,
+          sessions: recentSessions,
+          targetDuration: 7, // Default 7-day deload
+        };
+      }
+    }
+    return null;
+  }, [routines, workouts]);
+
   // Quick stats
   const thisMonthWorkouts = useMemo(() => {
     const now = new Date();
@@ -309,8 +335,14 @@ export default function DashboardPage() {
         {/* Undulating Day Type Banner (PT Feature 3) */}
         <DayTypeBanner routine={latestRoutine} recentWorkouts={workouts.slice(0, 30)} />
 
-        {/* Today's Workout Hero Card */}
-        {latestRoutine ? (
+        {/* Active Deload Week View OR Hero Workout Card */}
+        {activeDeload ? (
+          <DeloadWeekView
+            deloadRoutine={activeDeload.routine}
+            completedSessions={activeDeload.sessions}
+            targetDuration={activeDeload.targetDuration}
+          />
+        ) : latestRoutine ? (
           <motion.div
             initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -394,8 +426,6 @@ export default function DashboardPage() {
             </div>
           </motion.div>
         )}
-
-        {/* Weekly Activity */}
         <motion.div
           initial={{ y: 16, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
