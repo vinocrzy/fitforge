@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
@@ -20,6 +20,7 @@ import { springSnappy } from '@/lib/motion/springs';
 import { Icon } from '@/components/ui/Icon';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useWorkoutHistory } from '@/hooks/useDatabase';
+import { useNotificationScheduler } from '@/hooks/useNotificationScheduler';
 import type { WorkoutSession, PersonalRecord, FitnessGoal } from '@/types';
 
 // ─── Level thresholds (mirrors store) ─────────────────────────────
@@ -83,9 +84,14 @@ export default function ProfilePage() {
     goals,
     prs,
     fatigueThresholdPercent,
+    notificationPreferences,
     setUnitPreference,
     setFatigueThreshold,
+    updateNotificationPref,
   } = useProfileStore();
+
+  const { requestPermission, permission } = useNotificationScheduler();
+  const [requestingPermission, setRequestingPermission] = useState(false);
 
   const { data: workouts = [] } = useWorkoutHistory();
 
@@ -412,12 +418,131 @@ export default function ProfilePage() {
           </div>
         </motion.div>
 
+        {/* ── Notifications ──────────────────────────────────── */}
+        <motion.div
+          initial={{ y: 12, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.28 }}
+        >
+          <SectionLabel>Notifications</SectionLabel>
+          
+          {/* Request Permission banner */}
+          {permission !== 'granted' && (
+            <motion.div
+              className="rounded-[16px] p-4 mt-3 flex items-center gap-3"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,159,10,0.12), rgba(255,159,10,0.06))',
+                border: '1px solid rgba(255,159,10,0.20)',
+              }}
+              initial={{ scale: 0.96, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Icon name="bell.badge.fill" size={22} color="#FF9F0A" weight="fill" />
+              <div className="flex-1">
+                <p className="text-[15px] font-semibold" style={{ color: '#F5F5F5' }}>
+                  Enable Notifications
+                </p>
+                <p className="text-[13px] mt-0.5" style={{ color: 'rgba(245,245,245,0.55)' }}>
+                  Get personalized coaching reminders
+                </p>
+              </div>
+              <motion.button
+                whileTap={{ scale: 0.92 }}
+                transition={springSnappy}
+                onClick={async () => {
+                  setRequestingPermission(true);
+                  const perm = await requestPermission();
+                  setRequestingPermission(false);
+                  if (perm === 'granted') {
+                    updateNotificationPref('enabled', true);
+                  }
+                }}
+                className="px-4 h-10 rounded-full font-semibold text-[14px]"
+                style={{
+                  background: '#FF9F0A',
+                  color: '#0B0B0B',
+                  opacity: requestingPermission ? 0.6 : 1,
+                }}
+                disabled={requestingPermission}
+              >
+                {requestingPermission ? 'Requesting...' : 'Enable'}
+              </motion.button>
+            </motion.div>
+          )}
+
+          <div className="rounded-[14px] mt-3 overflow-hidden" style={{ background: '#141414' }}>
+            {/* Master toggle */}
+            <ToggleRow
+              label="Notifications"
+              enabled={notificationPreferences.enabled && permission === 'granted'}
+              onToggle={(val) => updateNotificationPref('enabled', val)}
+              disabled={permission !== 'granted'}
+            />
+            
+            {/* Rest Day Remindersshow when master is enabled */}
+            {notificationPreferences.enabled && permission === 'granted' && (
+              <>
+                <ToggleRow
+                  label="Rest Day Reminders"
+                  enabled={notificationPreferences.restDayReminders}
+                  onToggle={(val) => updateNotificationPref('restDayReminders', val)}
+                />
+                {notificationPreferences.restDayReminders && (
+                  <SettingsRow
+                    label="After Inactive Days"
+                    value={`${notificationPreferences.restDayThresholdDays ?? 3}`}
+                    onTap={() => {
+                      const current = notificationPreferences.restDayThresholdDays ?? 3;
+                      const next = current >= 7 ? 1 : current + 1;
+                      updateNotificationPref('restDayThresholdDays', next);
+                    }}
+                  />
+                )}
+                
+                <ToggleRow
+                  label="Streak Alerts"
+                  enabled={notificationPreferences.streakAlerts}
+                  onToggle={(val) => updateNotificationPref('streakAlerts', val)}
+                />
+                {notificationPreferences.streakAlerts && (
+                  <SettingsRow
+                    label="Daily Reminder Time"
+                    value={notificationPreferences.streakAlertTime ?? '09:00'}
+                    onTap={() => {
+                      // Cycle through common times
+                      const times = ['07:00', '08:00', '09:00', '10:00', '12:00', '17:00', '18:00', '19:00', '20:00'];
+                      const current = notificationPreferences.streakAlertTime ?? '09:00';
+                      const currentIdx = times.indexOf(current);
+                      const next = times[(currentIdx + 1) % times.length];
+                      updateNotificationPref('streakAlertTime', next);
+                    }}
+                  />
+                )}
+                
+                <ToggleRow
+                  label="Deload Prompts"
+                  enabled={notificationPreferences.deloadPrompts}
+                  onToggle={(val) => updateNotificationPref('deloadPrompts', val)}
+                />
+                
+                <ToggleRow
+                  label="Coaching Notes"
+                  enabled={notificationPreferences.coachingNotes}
+                  onToggle={(val) => updateNotificationPref('coachingNotes', val)}
+                  last
+                />
+              </>
+            )}
+          </div>
+        </motion.div>
+
         {/* ── Quick Links ────────────────────────────────────── */}
         <motion.div
           className="flex gap-3 mt-1"
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.32 }}
         >
           <QuickLink label="Exercises" icon="figure.strengthtraining.traditional" onTap={() => router.push('/exercises')} />
           <QuickLink label="History" icon="clock.arrow.circlepath" onTap={() => router.push('/history')} />
@@ -519,6 +644,54 @@ function SettingsRow({
         )}
       </span>
     </motion.button>
+  );
+}
+
+function ToggleRow({
+  label,
+  enabled,
+  onToggle,
+  disabled,
+  last,
+}: {
+  label: string;
+  enabled: boolean;
+  onToggle: (val: boolean) => void;
+  disabled?: boolean;
+  last?: boolean;
+}) {
+  return (
+    <div
+      className="flex items-center justify-between px-4"
+      style={{
+        height: 52,
+        borderBottom: last ? 'none' : '1px solid rgba(255,255,255,0.06)',
+        opacity: disabled ? 0.5 : 1,
+      }}
+    >
+      <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+        {label}
+      </span>
+      <motion.button
+        whileTap={!disabled ? { scale: 0.93 } : undefined}
+        transition={springSnappy}
+        onClick={() => !disabled && onToggle(!enabled)}
+        disabled={disabled}
+        className="relative w-[51px] h-[31px] rounded-full flex items-center"
+        style={{
+          background: enabled ? '#C5F74F' : 'rgba(255,255,255,0.16)',
+          justifyContent: enabled ? 'flex-end' : 'flex-start',
+          padding: '2px',
+        }}
+      >
+        <motion.div
+          className="w-[27px] h-[27px] rounded-full"
+          style={{ background: enabled ? '#0B0B0B' : '#F5F5F5' }}
+          layout
+          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+        />
+      </motion.button>
+    </div>
   );
 }
 

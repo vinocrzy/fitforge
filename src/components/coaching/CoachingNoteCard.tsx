@@ -14,6 +14,8 @@ import { useProfileStore } from '@/store/useProfileStore';
 import { useQuery } from '@tanstack/react-query';
 import { exerciseDb, customExerciseDb } from '@/lib/db/pouchdb';
 import { applyCoachingNote } from '@/lib/coaching/applyCoachingNote';
+import { ProgressionHistorySheet } from '@/components/coaching/ProgressionHistorySheet';
+import { useWorkoutHistory } from '@/hooks/useDatabase';
 
 interface CoachingNoteCardProps {
   note: CoachingNote;
@@ -23,9 +25,11 @@ interface CoachingNoteCardProps {
 export function CoachingNoteCard({ note, onApply }: CoachingNoteCardProps) {
   const [dismissed, setDismissed] = useState(false);
   const [applying, setApplying] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
   const dismissCoachingNote = useProfileStore((s) => s.dismissCoachingNote);
   const applyCoachingNoteToProfile = useProfileStore((s) => s.applyCoachingNote);
   const unitPreference = useProfileStore((s) => s.unitPreference);
+  const { data: workouts = [] } = useWorkoutHistory();
 
   // Fetch exercise name
   const { data: exercise } = useQuery({
@@ -96,6 +100,7 @@ export function CoachingNoteCard({ note, onApply }: CoachingNoteCardProps) {
   };
 
   return (
+    <>
     <AnimatePresence mode="wait">
       {!dismissed && !note.dismissed && (
         <motion.div
@@ -197,6 +202,21 @@ export function CoachingNoteCard({ note, onApply }: CoachingNoteCardProps) {
           </motion.button>
         </div>
 
+        {/* View History Link */}
+        {note.avgRpe !== undefined && (
+          <motion.button
+            whileTap={{ scale: 0.98 }}
+            transition={springSnappy}
+            onClick={() => setHistoryOpen(true)}
+            className="w-full mt-3 py-2 flex items-center justify-center gap-1.5"
+          >
+            <Icon name="chart.line.uptrend.xyaxis" size={14} color="rgba(245,245,245,0.50)" />
+            <span className="text-[13px] font-medium" style={{ color: 'rgba(245,245,245,0.50)' }}>
+              View Progression History
+            </span>
+          </motion.button>
+        )}
+
         {/* Applied badge */}
         {note.appliedAt && (
           <div className="mt-3 flex items-center gap-1.5">
@@ -209,5 +229,15 @@ export function CoachingNoteCard({ note, onApply }: CoachingNoteCardProps) {
       </motion.div>
       )}
     </AnimatePresence>
+
+    {/* Progression History Sheet */}
+    <ProgressionHistorySheet
+      open={historyOpen}
+      onClose={() => setHistoryOpen(false)}
+      exerciseId={note.exerciseId}
+      exerciseName={exerciseName}
+      workouts={workouts}
+    />
+    </>
   );
 }
