@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { springSnappy } from '@/lib/motion/springs';
 import { Icon } from '@/components/ui/Icon';
 import type { DeloadRecommendation } from '@/hooks/useDeloadDetector';
+import { DeloadRoutineWizard } from '@/components/deload/DeloadRoutineWizard';
 
 interface DeloadSuggestionCardProps {
   recommendation: DeloadRecommendation;
@@ -17,6 +18,7 @@ interface DeloadSuggestionCardProps {
 
 export function DeloadSuggestionCard({ recommendation }: DeloadSuggestionCardProps) {
   const [dismissed, setDismissed] = useState(false);
+  const [wizardOpen, setWizardOpen] = useState(false);
 
   if (!recommendation.shouldDeload || dismissed) return null;
 
@@ -77,7 +79,30 @@ export function DeloadSuggestionCard({ recommendation }: DeloadSuggestionCardPro
             </div>
           ))}
         </div>
+
+        {/* Action button */}
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          transition={springSnappy}
+          onClick={() => setWizardOpen(true)}
+          className="w-full h-[44px] rounded-full font-semibold text-[15px] flex items-center justify-center gap-2 mt-4"
+          style={{
+            background: '#FF9F0A',
+            color: '#0B0B0B',
+          }}
+        >
+          <Icon name="calendar.badge.plus" size={18} color="#0B0B0B" />
+          Plan Deload Week
+        </motion.button>
       </motion.div>
+
+      {/* Deload Wizard */}
+      <DeloadRoutineWizard
+        open={wizardOpen}
+        onClose={() => setWizardOpen(false)}
+        suggestedReduction={volumeReductionPercent}
+        suggestedDuration={suggestedDurationDays}
+      />
     </AnimatePresence>
   );
 }

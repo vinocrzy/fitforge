@@ -76,6 +76,8 @@ export interface Routine {
   warmUp: RoutineExerciseConfig[];
   workout: RoutineExerciseConfig[];
   stretch: RoutineExerciseConfig[];
+  isDeload?: boolean;
+  sourceRoutineId?: string; // For deload routines, reference to original
 }
 
 // ─── Workout Session (completed log) ──────────────────────────────
@@ -185,6 +187,9 @@ export interface UserProfile {
   manualFeelScore?: number; // 1-5 self-report
   lastFeelPromptDate?: string; // ISO date
   fatigueThresholdPercent?: number; // 0-100 threshold for fatigue warnings
+  // Phase 6 additions
+  notificationPreferences?: NotificationPreferences;
+  coachingNoteHistory?: CoachingNote[]; // Applied/dismissed notes archive
 }
 
 // ─── Coaching Notes ───────────────────────────────────────────────
@@ -195,8 +200,25 @@ export interface CoachingNote {
   type: 'reduce_load' | 'increase_load' | 'deload';
   message: string;
   suggestedValue?: number;
+  suggestedReps?: number;
+  currentValue?: number;
+  avgRpe?: number;
   createdAt: string;
   dismissed: boolean;
+  appliedAt?: string;
+  appliedToRoutineId?: string;
+}
+
+// ─── Notification Preferences ─────────────────────────────────────
+
+export interface NotificationPreferences {
+  enabled: boolean;
+  restDayReminders: boolean;
+  restDayThresholdDays: number;
+  streakAlerts: boolean;
+  streakAlertTime: string; // HH:MM format (24h)
+  deloadPrompts: boolean;
+  coachingNotes: boolean;
 }
 
 // ─── Exercise Manifest (build-time generated) ─────────────────────

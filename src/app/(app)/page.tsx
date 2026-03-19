@@ -25,6 +25,9 @@ import { DailyFeelPrompt } from '@/components/dashboard/DailyFeelPrompt';
 import { VolumeTrendChart } from '@/components/dashboard/VolumeTrendChart';
 import { BodyPartChart } from '@/components/dashboard/BodyPartChart';
 import { DeloadSuggestionCard } from '@/components/dashboard/DeloadSuggestionCard';
+import { CoachingNoteCard } from '@/components/coaching/CoachingNoteCard';
+import { useRpeAdvisor } from '@/hooks/useRpeAdvisor';
+import { DayTypeBanner } from '@/components/coaching/DayTypeBanner';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
 
@@ -170,6 +173,29 @@ export default function DashboardPage() {
   // Deload detection
   const deloadRecommendation = useDeloadDetector(workouts, streakDays);
 
+  // RPE-based coaching suggestions (PT Feature 2)
+  const coachingNotes = useRpeAdvisor(workouts);
+  const pendingCoachingNotes = useProfileStore((s) => s.pendingCoachingNotes);
+  const displayedNotes = useMemo(() => {
+    // Combine advisor-generated notes with stored pending notes
+    const allNotes = [...pendingCoachingNotes, ...coachingNotes];
+    // Deduplicate by exerciseId + type
+    const uniqueNotes = allNotes.filter(
+      (note, index, self) =>
+        self.findIndex(
+          (n) => n.exerciseId === note.exerciseId && n.type === note.type
+        ) === index
+    );
+    // Sort by priority: reduce_load (danger) > increase_load
+    const sorted = uniqueNotes.sort((a, b) => {
+      if (a.type === 'reduce_load' && b.type !== 'reduce_load') return -1;
+      if (a.type !== 'reduce_load' && b.type === 'reduce_load') return 1;
+      return 0;
+    });
+    // Show max 3
+    return sorted.slice(0, 3);
+  }, [pendingCoachingNotes, coachingNotes]);
+
   // Workout dates for weekly strip
   const workoutDates = useMemo(
     () => workouts.map((w) => w.completedAt).filter(Boolean),
@@ -234,6 +260,18 @@ export default function DashboardPage() {
         {/* Deload Suggestion */}
         <DeloadSuggestionCard recommendation={deloadRecommendation} />
 
+        {/* Coaching Notes (PT Feature 2) */}
+        {displayedNotes.map((note) => (
+          <motion.div
+            key={note.id}
+            initial={{ y: 16, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.13 }}
+          >
+            <CoachingNoteCard note={note} />
+          </motion.div>
+        ))}
+
         {/* Recovery Meter Card */}
         <motion.div
           initial={{ y: 16, opacity: 0 }}
@@ -267,6 +305,9 @@ export default function DashboardPage() {
             </p>
           </div>
         </motion.div>
+
+        {/* Undulating Day Type Banner (PT Feature 3) */}
+        <DayTypeBanner routine={latestRoutine} recentWorkouts={workouts.slice(0, 30)} />
 
         {/* Today's Workout Hero Card */}
         {latestRoutine ? (

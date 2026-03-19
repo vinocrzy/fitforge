@@ -25,12 +25,18 @@ export function WorkoutCalendar({ workouts }: WorkoutCalendarProps) {
     'July', 'August', 'September', 'October', 'November', 'December',
   ];
 
-  // Map workout dates to intensity (number of workouts on that date)
-  const dateIntensity = useMemo(() => {
-    const map = new Map<string, number>();
+  // Map workout dates to intensity (number of workouts on that date) + deload flag
+  const dateData = useMemo(() => {
+    const map = new Map<string, { regular: number; deload: number }>();
     for (const w of workouts) {
       const dateStr = new Date(w.completedAt).toISOString().split('T')[0];
-      map.set(dateStr, (map.get(dateStr) ?? 0) + 1);
+      const current = map.get(dateStr) ?? { regular: 0, deload: 0 };
+      if (w.isDeload) {
+        current.deload += 1;
+      } else {
+        current.regular += 1;
+      }
+      map.set(dateStr, current);
     }
     return map;
   }, [workouts]);
@@ -138,16 +144,28 @@ export function WorkoutCalendar({ workouts }: WorkoutCalendarProps) {
             }
 
             const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            const intensity = dateIntensity.get(dateStr) ?? 0;
+            const data = dateData.get(dateStr) ?? { regular: 0, deload: 0 };
+            const hasRegular = data.regular > 0;
+            const hasDeload = data.deload > 0;
             const isToday = dateStr === today;
 
-            // Intensity → color
-            const bg =
-              intensity >= 2
-                ? 'rgba(197,247,79,0.70)'
-                : intensity === 1
-                  ? 'rgba(197,247,79,0.35)'
-                  : 'rgba(255,255,255,0.04)';
+            // Determine background color based on workout type
+            let bg = 'rgba(255,255,255,0.04)'; // Empty
+            let textColor = 'rgba(245,245,245,0.35)';
+
+            if (hasRegular && hasDeload) {
+              // Mixed day: diagonal split gradient
+              bg = 'linear-gradient(135deg, rgba(197,247,79,0.50) 50%, rgba(94,210,223,0.40) 50%)';
+              textColor = '#0B0B0B';
+            } else if (hasDeload) {
+              // Deload only: muted teal
+              bg = data.deload >= 2 ? 'rgba(94,210,223,0.60)' : 'rgba(94,210,223,0.40)';
+              textColor = '#0B0B0B';
+            } else if (hasRegular) {
+              // Regular training: lime intensity
+              bg = data.regular >= 2 ? 'rgba(197,247,79,0.70)' : 'rgba(197,247,79,0.35)';
+              textColor = data.regular >= 2 ? '#0B0B0B' : '#F5F5F5';
+            }
 
             return (
               <div
@@ -160,14 +178,7 @@ export function WorkoutCalendar({ workouts }: WorkoutCalendarProps) {
               >
                 <span
                   className="text-[12px] tabular-nums font-medium"
-                  style={{
-                    color:
-                      intensity >= 2
-                        ? '#0B0B0B'
-                        : intensity === 1
-                          ? '#F5F5F5'
-                          : 'rgba(245,245,245,0.35)',
-                  }}
+                  style={{ color: textColor }}
                 >
                   {day}
                 </span>
@@ -176,6 +187,18 @@ export function WorkoutCalendar({ workouts }: WorkoutCalendarProps) {
           })}
         </motion.div>
       </AnimatePresence>
+
+      {/* Legend */}
+      <div className="flex items-center justify-center gap-4 mt-4 pt-3 border-t" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
+        <div className="flex items-center gap-1.5">
+          <div className="w-3 h-3 rounded" style={{ background: 'rgba(197,247,79,0.60)' }} />
+          <span className="text-[11px]" style={{ color: 'rgba(245,245,245,0.50)' }}>Training</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-3 h-3 rounded" style={{ background: 'rgba(94,210,223,0.50)' }} />
+          <span className="text-[11px]" style={{ color: 'rgba(245,245,245,0.50)' }}>Deload</span>
+        </div>
+      </div>
     </div>
   );
 }

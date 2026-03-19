@@ -9,6 +9,8 @@ import type {
   ExperienceLevel,
   FitnessGoal,
   PersonalRecord,
+  CoachingNote,
+  NotificationPreferences,
 } from '@/types';
 
 interface ProfileState {
@@ -25,6 +27,9 @@ interface ProfileState {
   manualFeelScore: number;
   lastFeelPromptDate: string | null;
   fatigueThresholdPercent: number;
+  pendingCoachingNotes: CoachingNote[];
+  coachingNoteHistory: CoachingNote[];
+  notificationPreferences: NotificationPreferences;
 
   // Actions
   setWeight: (kg: number) => void;
@@ -37,6 +42,10 @@ interface ProfileState {
   incrementStreak: () => void;
   setManualFeelScore: (score: number) => void;
   setFatigueThreshold: (percent: number) => void;
+  addCoachingNote: (note: CoachingNote) => void;
+  dismissCoachingNote: (id: string) => void;
+  applyCoachingNote: (id: string, routineId: string) => void;
+  updateNotificationPref: (key: keyof NotificationPreferences, value: boolean | number | string) => void;
 }
 
 const LEVEL_THRESHOLDS = [
@@ -65,6 +74,17 @@ export const useProfileStore = create<ProfileState>()(
       manualFeelScore: 3,
       lastFeelPromptDate: null,
       fatigueThresholdPercent: 30,
+      pendingCoachingNotes: [],
+      coachingNoteHistory: [],
+      notificationPreferences: {
+        enabled: false,
+        restDayReminders: true,
+        restDayThresholdDays: 2,
+        streakAlerts: true,
+        streakAlertTime: '18:00',
+        deloadPrompts: true,
+        coachingNotes: true,
+      },
 
       setWeight: (kg) => set({ weightKg: kg }),
 
@@ -101,6 +121,54 @@ export const useProfileStore = create<ProfileState>()(
 
       setFatigueThreshold: (percent) =>
         set({ fatigueThresholdPercent: percent }),
+
+      addCoachingNote: (note) =>
+        set((state) => {
+          // Prevent duplicates - check if note for same exercise + type already exists
+          const exists = state.pendingCoachingNotes.some(
+            (n) => n.exerciseId === note.exerciseId && n.type === note.type && !n.dismissed
+          );
+          if (exists) return state;
+          return {
+            pendingCoachingNotes: [...state.pendingCoachingNotes, note],
+          };
+        }),
+
+      dismissCoachingNote: (id) =>
+        set((state) => {
+          const note = state.pendingCoachingNotes.find((n) => n.id === id);
+          if (!note) return state;
+          return {
+            pendingCoachingNotes: state.pendingCoachingNotes.filter((n) => n.id !== id),
+            coachingNoteHistory: [
+              ...state.coachingNoteHistory,
+              { ...note, dismissed: true },
+            ],
+          };
+        }),
+
+      applyCoachingNote: (id, routineId) =>
+        set((state) => {
+          const note = state.pendingCoachingNotes.find((n) => n.id === id);
+          if (!note) return state;
+          const appliedNote: CoachingNote = {
+            ...note,
+            appliedAt: new Date().toISOString(),
+            appliedToRoutineId: routineId,
+          };
+          return {
+            pendingCoachingNotes: state.pendingCoachingNotes.filter((n) => n.id !== id),
+            coachingNoteHistory: [...state.coachingNoteHistory, appliedNote],
+          };
+        }),
+
+      updateNotificationPref: (key, value) =>
+        set((state) => ({
+          notificationPreferences: {
+            ...state.notificationPreferences,
+            [key]: value,
+          },
+        })),
     }),
     {
       name: 'fitforge-profile',

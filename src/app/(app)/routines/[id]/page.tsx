@@ -18,9 +18,13 @@ import {
   useCustomExercises,
   useDeleteRoutine,
   useSaveRoutine,
+  useWorkoutHistory,
 } from '@/hooks/useDatabase';
 import { toTitleCase } from '@/lib/utils/toTitleCase';
 import type { RoutineExerciseConfig, SessionPhase } from '@/types';
+import { CoachingNoteCard } from '@/components/coaching/CoachingNoteCard';
+import { useRpeAdvisor } from '@/hooks/useRpeAdvisor';
+import { useProfileStore } from '@/store/useProfileStore';
 
 const PHASE_META: Record<
   SessionPhase,
@@ -41,8 +45,35 @@ export default function RoutineDetailPage({
   const { data: routine, isLoading } = useRoutine(id);
   const { data: libraryExercises = [] } = useExercises();
   const { data: customExercises = [] } = useCustomExercises();
+  const { data: workouts = [] } = useWorkoutHistory();
   const deleteMutation = useDeleteRoutine();
   const saveMutation = useSaveRoutine();
+
+  // Coaching notes filtered to this routine
+  const coachingNotes = useRpeAdvisor(workouts);
+  const pendingCoachingNotes = useProfileStore((s) => s.pendingCoachingNotes);
+  const routineExerciseIds = useMemo(() => {
+    if (!routine) return new Set<string>();
+    return new Set([
+      ...routine.warmUp.map((e) => e.exerciseId),
+      ...routine.workout.map((e) => e.exerciseId),
+      ...routine.stretch.map((e) => e.exerciseId),
+    ]);
+  }, [routine]);
+
+  const relevantCoachingNotes = useMemo(() => {
+    const allNotes = [...pendingCoachingNotes, ...coachingNotes];
+    // Filter to exercises in this routine
+    const filtered = allNotes.filter((note) => routineExerciseIds.has(note.exerciseId));
+    // Deduplicate
+    const unique = filtered.filter(
+      (note, index, self) =>
+        self.findIndex(
+          (n) => n.exerciseId === note.exerciseId && n.type === note.type
+        ) === index
+    );
+    return unique;
+  }, [pendingCoachingNotes, coachingNotes, routineExerciseIds]);
 
   const [collapsedSections, setCollapsedSections] = useState<
     Record<string, boolean>
@@ -197,6 +228,15 @@ export default function RoutineDetailPage({
             danger
           />
         </div>
+
+        {/* Coaching Notes (filtered to this routine) */}
+        {relevantCoachingNotes.length > 0 && (
+          <div className="mt-4 flex flex-col gap-3">
+            {relevantCoachingNotes.map((note) => (
+              <CoachingNoteCard key={note.id} note={note} />
+            ))}
+          </div>
+        )}
 
         {/* Phase Sections */}
         {(['warmUp', 'workout', 'stretch'] as SessionPhase[]).map((phase) => {

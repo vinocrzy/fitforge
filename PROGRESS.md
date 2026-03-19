@@ -315,7 +315,39 @@
 
 ## Phase 6 — Advanced Coaching
 
-**Status:** 🔲 Not started
+**Status:** � In Progress (10/16 tasks complete)  
+**Duration target:** ~1 week
+
+### Tasks
+
+**PT Feature 2 — RPE & Adaptive Set Scaling**
+- [x] `useRpeAdvisor` hook — analyzes last 14 days per-exercise RPE trends
+- [x] `CoachingNoteCard` component — apply/dismiss CTAs, current vs suggested comparison
+- [x] Dashboard integration — shows max 3 notes with priority sorting
+- [x] Routine detail page integration — filtered to exercises in viewed routine
+- [ ] `ProgressionHistorySheet` — bottom sheet with sparkline visualization
+- [x] Apply coaching note flow — updates routines via PouchDB
+- [ ] RPE trend mini-sparkline on coaching cards
+
+**PT Feature 5 — Deload & Recovery Week Scheduler**
+- [x] `DeloadRoutineWizard` — 3-step bottom sheet wizard
+- [x] Deload routine generator — reduces sets + weight, saves with `isDeload: true`
+- [x] "Plan Deload Week" button opens wizard
+- [ ] `DeloadWeekView` — active deload progress tracker
+- [ ] `DeloadCompleteCard` — celebration with XP bonus
+- [x] `WorkoutCalendar` deload visualization — muted teal color coding
+
+**PT Feature 3 — Undulating Periodization**
+- [x] `DayTypeBanner` component — Heavy/Moderate/Light day indicator
+- [x] Dashboard integration with gradient backgrounds
+- [x] Day type calculation from 3-day cycle
+- [ ] Routine list badge showing current day type
+
+**Web Push Notifications**
+- [ ] Service worker push event listener
+- [ ] `pushManager.ts` utility
+- [ ] `useNotificationScheduler` hook
+- [ ] Notification preferences UI
 
 ---
 
@@ -423,3 +455,16 @@
 | `src/hooks/useDatabase.ts` | 🔄 | Added useRecentWorkouts, useMonthWorkouts hooks |
 | `src/types/index.ts` | 🔄 | Added manualFeelScore, lastFeelPromptDate, fatigueThresholdPercent |
 | `src/store/useProfileStore.ts` | 🔄 | Added feel score & fatigue threshold actions |
+| **Phase 6** | | |
+| `src/hooks/useRpeAdvisor.ts` | ✅ | RPE trend analysis, generates coaching notes |
+| `src/components/coaching/CoachingNoteCard.tsx` | ✅ | Coaching suggestion card with apply/dismiss |
+| `src/components/coaching/DayTypeBanner.tsx` | ✅ | Undulating day type indicator |
+| `src/lib/coaching/applyCoachingNote.ts` | ✅ | Updates routines from coaching suggestions |
+| `src/components/deload/DeloadRoutineWizard.tsx` | ✅ | 3-step deload routine generator |
+| `src/components/dashboard/DeloadSuggestionCard.tsx` | 🔄 | Enhanced with Plan Deload Week button + wizard integration |
+| `src/components/dashboard/WorkoutCalendar.tsx` | 🔄 | Enhanced with deload color-coding (muted teal) + legend |
+| `src/app/(app)/page.tsx` | 🔄 | Integrated coaching notes + day type banner |
+| `src/app/(app)/routines/[id]/page.tsx` | 🔄 | Integrated routine-filtered coaching notes |
+| `src/types/index.ts` | 🔄 | Enhanced CoachingNote, added NotificationPreferences, isDeload to Routine |
+| `src/store/useProfileStore.ts` | 🔄 | Added coaching note & notification actions |
+
