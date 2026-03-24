@@ -7,7 +7,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { springGentle, springSnappy } from '@/lib/motion/springs';
@@ -15,6 +15,7 @@ import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { Icon } from '@/components/ui/Icon';
 import { useAuthStore } from '@/store/useAuthStore';
 import { testCouchDbConnection, type ConnectionResult } from '@/lib/db/testCouchConnection';
+import { hashPin } from '@/lib/auth/pin';
 import type { CloudAccount } from '@/types';
 
 const MANAGED_SERVER = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
@@ -25,6 +26,7 @@ type TestState = 'idle' | 'testing' | 'ok' | 'fail';
 export default function RegisterPage() {
   const router = useRouter();
   const login = useAuthStore((s) => s.login);
+  const accounts = useAuthStore((s) => s.accounts);
 
   // ── App identity (shown in the UI, not used for CouchDB auth) ──
   const [displayName, setDisplayName] = useState('');
@@ -34,6 +36,11 @@ export default function RegisterPage() {
   const [couchUsername, setCouchUsername] = useState('');
   const [couchPassword, setCouchPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  // ── App PIN (optional device protection) ──
+  const [appPin, setAppPin] = useState('');
+  const [confirmPin, setConfirmPin] = useState('');
+  const [appPinError, setAppPinError] = useState<string | null>(null);
 
   // ── Server selection ──
   const [useOwnServer, setUseOwnServer] = useState(!HAS_MANAGED_SERVER);
@@ -73,26 +80,91 @@ export default function RegisterPage() {
 
   const handleRegister = async () => {
     setError(null);
+    setAppPinError(null);
+
     if (!passwordsMatch) {
       setError('Passwords do not match');
       return;
     }
+
+    // Validate PIN if provided
+    if (appPin) {
+      if (appPin.length < 4 || appPin.length > 6 || !/^\d+$/.test(appPin)) {
+        setAppPinError('PIN must be 4–6 digits');
+        return;
+      }
+      if (appPin !== confirmPin) {
+        setAppPinError('PINs do not match');
+        return;
+      }
+    }
+
     setLoading(true);
     try {
       const trimmedUrl = resolvedUrl.trim().replace(/\/$/, '');
       const urlObj = new URL(trimmedUrl);
       const couchDbUrl = `${urlObj.protocol}//${encodeURIComponent(couchUsername.trim())}:${encodeURIComponent(couchPassword)}@${urlObj.host}${urlObj.pathname}`;
 
+      // Detect if this couchUsername + server already exists on the device.
+      // CouchDB usernames are unique per server, so same username + same host = same account.
+      const existingAccount = accounts.find((a) => {
+        try {
+          return (
+            decodeURIComponent(new URL(a.couchDbUrl).username) === couchUsername.trim() &&
+            new URL(a.couchDbUrl).host === urlObj.host
+          );
+        } catch { return false; }
+      });
+
+      if (existingAccount) {
+        setError(
+          `@${couchUsername.trim()} on ${urlObj.host} is already added as "${existingAccount.displayName}". Use Sign In instead to update credentials.`
+        );
+        setLoading(false);
+        return;
+      }
+
+      // Privacy guard: detect if this password is already used by another account on the same host.
+      // Sharing a CouchDB password means that person can access your remote databases directly
+      // via the HTTP API — bypassing the app's PIN and profile isolation.
+      const sharedPasswordAccount = accounts.find((a) => {
+        try {
+          const u = new URL(a.couchDbUrl);
+          return (
+            u.host === urlObj.host &&
+            decodeURIComponent(u.username) !== couchUsername.trim() &&
+            decodeURIComponent(u.password) === couchPassword
+          );
+        } catch { return false; }
+      });
+
+      if (sharedPasswordAccount) {
+        setError(
+          `This password is already used by "${sharedPasswordAccount.displayName}" on this server. ` +
+          `Each person must have their own unique password — sharing passwords allows cross-access to private workout data.`
+        );
+        setLoading(false);
+        return;
+      }
+
+      // Generate a stable unique ID for this account
+      const userId = crypto.randomUUID();
+
+      // Hash PIN if provided (PBKDF2)
+      const appPinHash = appPin ? await hashPin(appPin, userId) : undefined;
+
       const account: CloudAccount = {
+        userId,
         displayName: displayName.trim() || couchUsername.trim(),
         email: email.trim() || undefined,
         couchUsername: couchUsername.trim(),
         couchDbUrl,
         createdAt: new Date().toISOString(),
+        ...(appPinHash ? { appPinHash } : {}),
       };
 
       login(account);
-      router.push('/profile');
+      router.push('/restore');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Invalid server URL — check the format');
     } finally {
@@ -145,6 +217,28 @@ export default function RegisterPage() {
           </p>
         </div>
 
+        {/* Privacy notice — shown when other accounts already exist on this device */}
+        {accounts.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-start gap-3 p-4 rounded-[16px]"
+            style={{ background: 'rgba(255,159,10,0.08)', border: '1px solid rgba(255,159,10,0.20)' }}
+          >
+            <Icon name="lock.shield.fill" size={18} color="#FF9F0A" />
+            <div className="flex flex-col gap-1">
+              <p className="text-[13px] font-semibold" style={{ color: '#FF9F0A' }}>
+                Each person needs a unique password
+              </p>
+              <p className="text-[12px] leading-relaxed" style={{ color: 'rgba(245,245,245,0.50)' }}>
+                Your data is isolated from other profiles on the CouchDB server — but only if
+                everyone uses a different password. Sharing a password lets that person access
+                your workout history directly via the CouchDB API, bypassing the app.
+              </p>
+            </div>
+          </motion.div>
+        )}
+
         {/* Form */}
         <div className="flex flex-col gap-3">
 
@@ -194,6 +288,11 @@ export default function RegisterPage() {
             autoComplete="new-password"
             hasError={confirmPassword.length > 0 && !passwordsMatch}
           />
+          {accounts.length > 0 && (
+            <p className="text-[11px] -mt-1" style={{ color: 'rgba(255,159,10,0.70)' }}>
+              ⚠️ Must be different from every other profile’s password on this server.
+            </p>
+          )}
 
           {/* ── Server ── */}
           <SectionDivider label="Server" />
@@ -305,6 +404,37 @@ export default function RegisterPage() {
             {useOwnServer
               ? 'Test your connection before enabling sync.'
               : 'Your data will sync to the shared app server.'}
+          </p>
+
+          {/* ── App PIN ── */}
+          <SectionDivider label="Device Security (optional)" />
+          <FormField
+            label="App PIN (4–6 digits)"
+            type="password"
+            value={appPin}
+            onChange={(v) => { setAppPin(v.replace(/\D/g, '').slice(0, 6)); setAppPinError(null); }}
+            placeholder="Leave blank for no PIN"
+            autoComplete="off"
+            inputMode="numeric"
+            hasError={!!appPinError}
+          />
+          {appPin.length > 0 && (
+            <FormField
+              label="Confirm PIN"
+              type="password"
+              value={confirmPin}
+              onChange={(v) => { setConfirmPin(v.replace(/\D/g, '').slice(0, 6)); setAppPinError(null); }}
+              placeholder="Repeat your PIN"
+              autoComplete="off"
+              inputMode="numeric"
+              hasError={!!appPinError && confirmPin.length > 0}
+            />
+          )}
+          {appPinError && (
+            <p className="text-[12px] -mt-1" style={{ color: '#FF453A' }}>{appPinError}</p>
+          )}
+          <p className="text-[12px] -mt-1" style={{ color: 'rgba(245,245,245,0.30)' }}>
+            Required when switching between profiles on a shared device.
           </p>
         </div>
 
@@ -441,10 +571,11 @@ interface FormFieldProps {
   onChange: (v: string) => void;
   placeholder?: string;
   autoComplete?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>['inputMode'];
   hasError?: boolean;
 }
 
-function FormField({ label, type, value, onChange, placeholder, autoComplete, hasError }: FormFieldProps) {
+function FormField({ label, type, value, onChange, placeholder, autoComplete, inputMode, hasError }: FormFieldProps) {
   return (
     <div className="flex flex-col gap-1.5">
       <label
@@ -459,6 +590,7 @@ function FormField({ label, type, value, onChange, placeholder, autoComplete, ha
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         autoComplete={autoComplete}
+        inputMode={inputMode}
         className="h-[52px] rounded-[14px] px-4 text-[17px] outline-none"
         style={{
           background: 'rgba(255,255,255,0.07)',

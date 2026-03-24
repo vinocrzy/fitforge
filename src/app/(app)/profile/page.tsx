@@ -104,6 +104,7 @@ export default function ProfilePage() {
 
   const account = useAuthStore((s) => s.account);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const accounts = useAuthStore((s) => s.accounts);
   const logout = useAuthStore((s) => s.logout);
   const updateDisplayName = useAuthStore((s) => s.updateDisplayName);
   const { syncStatus } = useSyncManager();
@@ -613,18 +614,45 @@ export default function ProfilePage() {
                   <Icon name="chevron.right" size={13} color="rgba(245,245,245,0.35)" />
                 </motion.button>
 
-                {/* Sign out */}
+                {/* Switch User */}
                 <motion.button
                   className="w-full flex items-center justify-between px-4"
                   style={{ height: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
                   whileTap={{ scale: 0.98 }}
                   transition={springSnappy}
-                  onClick={logout}
+                  onClick={() => { logout(); router.push('/user-select'); }}
                 >
-                  <span className="text-[17px]" style={{ color: '#FF453A' }}>
-                    Sign Out
-                  </span>
-                  <Icon name="rectangle.portrait.and.arrow.right" size={16} color="#FF453A" />
+                  <div className="flex items-center gap-2.5">
+                    <Icon name="person.2.fill" size={16} color="rgba(245,245,245,0.55)" />
+                    <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+                      Switch Profile
+                    </span>
+                  </div>
+                  {accounts.length > 1 && (
+                    <span
+                      className="text-[12px] font-semibold px-2 py-0.5 rounded-full"
+                      style={{ background: 'rgba(255,255,255,0.10)', color: 'rgba(245,245,245,0.55)' }}
+                    >
+                      {accounts.length}
+                    </span>
+                  )}
+                </motion.button>
+
+                {/* Add Account */}
+                <motion.button
+                  className="w-full flex items-center justify-between px-4"
+                  style={{ height: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={springSnappy}
+                  onClick={() => router.push('/register')}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Icon name="person.badge.plus" size={16} color="rgba(245,245,245,0.55)" />
+                    <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+                      Add Account
+                    </span>
+                  </div>
+                  <Icon name="chevron.right" size={13} color="rgba(245,245,245,0.35)" />
                 </motion.button>
               </>
             ) : (

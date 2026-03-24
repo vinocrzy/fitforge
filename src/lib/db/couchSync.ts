@@ -65,7 +65,7 @@ export function startSync(config: SyncConfig): void {
   emitStatus({ state: 'syncing', errorMessage: null });
 
   for (const dbName of SYNCABLE_DBS) {
-    const remoteUrl = buildRemoteUrl(config.couchDbUrl, dbName);
+    const remoteUrl = buildRemoteUrl(config.couchDbUrl, dbName, config.couchUsername);
     const local = new PouchDB(dbName);
     const remote = new PouchDB(remoteUrl);
 
@@ -109,7 +109,7 @@ export function startSync(config: SyncConfig): void {
   }
 
   // Detect conflicts in routines (user-authored documents worth merging)
-  detectConflicts(config.couchDbUrl, config.onConflict);
+  detectConflicts(config, config.onConflict);
 }
 
 /**
@@ -136,7 +136,7 @@ export function getSyncStatus(): SyncStatus {
 // ─── Conflict Detection ─────────────────────────────────────────────
 
 async function detectConflicts(
-  couchDbUrl: string,
+  config: SyncConfig,
   onConflict: (c: RoutineConflict) => void
 ): Promise<void> {
   try {
@@ -147,7 +147,7 @@ async function detectConflicts(
       const doc = row.doc as (typeof row.doc & { _conflicts?: string[] });
       if (doc._conflicts && doc._conflicts.length > 0) {
         // Fetch the conflicting rev from remote
-        const remoteUrl = buildRemoteUrl(couchDbUrl, 'fitforge_routines');
+        const remoteUrl = buildRemoteUrl(config.couchDbUrl, 'fitforge_routines', config.couchUsername);
         const remoteDb = new PouchDB(remoteUrl);
 
         for (const conflictRev of doc._conflicts) {
@@ -205,9 +205,20 @@ export async function resolveConflictKeepRemote(conflict: RoutineConflict): Prom
 
 // ─── Internals ──────────────────────────────────────────────────────
 
-function buildRemoteUrl(baseUrl: string, dbName: string): string {
-  // Remove trailing slash, append db name
-  return `${baseUrl.replace(/\/$/, '')}/${dbName}`;
+/**
+ * Build the remote CouchDB URL for a given database.
+ * The database name is prefixed with the CouchDB username so that
+ * each family member gets isolated databases on the same server:
+ *   alice_fitforge_routines, bob_fitforge_routines, etc.
+ *
+ * CouchDB database name rules: lowercase a-z, 0-9, _ $ ( ) + -
+ * Username chars outside that range are replaced with _.
+ */
+function buildRemoteUrl(baseUrl: string, dbName: string, couchUsername: string): string {
+  const safePrefix = couchUsername
+    .toLowerCase()
+    .replace(/[^a-z0-9_$()+-]/g, '_');
+  return `${baseUrl.replace(/\/$/, '')}/${safePrefix}_${dbName}`;
 }
 
 function scheduleRetry(config: SyncConfig): void {

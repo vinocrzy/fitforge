@@ -5,9 +5,9 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { getNavDirection } from '@/lib/motion/navDirection';
 import {
   pushVariants,
@@ -15,6 +15,7 @@ import {
   sheetBackgroundVariants,
 } from '@/lib/motion/variants';
 import { useSheetStore } from '@/store/useSheetStore';
+import { useAuthStore } from '@/store/useAuthStore';
 import { useStartupSync } from '@/hooks/useStartupSync';
 import { useSyncManager } from '@/hooks/useSyncManager';
 import { ConflictResolverSheet } from '@/components/sync/ConflictResolverSheet';
@@ -26,6 +27,25 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
+  const router = useRouter();
+  const accounts = useAuthStore((s) => s.accounts);
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+
+  // Auth guard: redirect unauthenticated users before rendering app content.
+  // We gate on a hydration flag so we don’t redirect during SSR or before
+  // Zustand’s persisted state has been loaded from localStorage.
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => { setHydrated(true); }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    if (accounts.length === 0) {
+      router.replace('/register');
+    } else if (!isAuthenticated) {
+      router.replace('/user-select');
+    }
+  }, [hydrated, accounts.length, isAuthenticated, router]);
+
   // Seed / delta-sync exercise library from static JSON on first mount
   useStartupSync();
 
@@ -44,6 +64,11 @@ export function AppLayout({ children }: AppLayoutProps) {
   const direction = getNavDirection(pathname);
   const variants = direction === 'pop' ? popVariants : pushVariants;
   const sheetOpen = useSheetStore((s) => s.isOpen);
+
+  // Render nothing until hydrated and authenticated to avoid content flash
+  if (!hydrated || !isAuthenticated) {
+    return <div className="min-h-screen bg-[#0B0B0B]" />;
+  }
 
   return (
     <div className="relative min-h-screen bg-[#0B0B0B]">

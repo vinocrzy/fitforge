@@ -27,7 +27,8 @@ export function BottomNav() {
   if (
     pathname.startsWith('/splash') ||
     pathname.startsWith('/onboarding') ||
-    pathname.startsWith('/session')
+    pathname.startsWith('/session') ||
+    pathname.startsWith('/restore')
   ) {
     return null;
   }

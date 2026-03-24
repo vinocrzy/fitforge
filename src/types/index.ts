@@ -258,6 +258,8 @@ export interface SyncStatus {
 }
 
 export interface CloudAccount {
+  /** Stable UUID generated at account creation — never changes, used as PouchDB partition key. */
+  userId: string;
   /** App-level identity — shown in the UI (not used for CouchDB auth). */
   displayName: string;
   /** Optional app email — shown in the UI only. */
@@ -267,6 +269,8 @@ export interface CloudAccount {
   /** Full CouchDB URL with embedded Basic-Auth credentials. Never display raw. */
   couchDbUrl: string;
   createdAt: string;
+  /** PBKDF2-SHA256 hash of the user's 4–6-digit app PIN. Undefined = no PIN. */
+  appPinHash?: string;
 }
 
 export interface RoutineConflict {
