@@ -39,6 +39,13 @@ export interface AuthState {
    */
   justLoggedIn: boolean;
 
+  /**
+   * True when the user explicitly chose to skip cloud sync setup.
+   * Allows them to use the app in local-only mode without an account.
+   * Persisted — cleared automatically when they later call login().
+   */
+  skippedAuth: boolean;
+
   // ── Actions ─────────────────────────────────────────────────────
   /**
    * Add (or replace) an account and set it as active.
@@ -75,6 +82,9 @@ export interface AuthState {
 
   /** Clear the justLoggedIn flag once the restore screen has acknowledged it. */
   clearJustLoggedIn: () => void;
+
+  /** Mark the user as local-only ("Skip for now"). Cleared on next login(). */
+  skipAuth: () => void;
 }
 
 // ─── Helper ────────────────────────────────────────────────────────
@@ -97,6 +107,7 @@ export const useAuthStore = create<AuthState>()(
       account: null,
       isAuthenticated: false,
       justLoggedIn: false,
+      skippedAuth: false,
 
       login: (account) =>
         set((state) => {
@@ -110,6 +121,7 @@ export const useAuthStore = create<AuthState>()(
             accounts,
             activeUserId: account.userId,
             justLoggedIn: true,
+            skippedAuth: false,
             ...deriveActive(accounts, account.userId),
           };
         }),
@@ -167,6 +179,8 @@ export const useAuthStore = create<AuthState>()(
         }),
 
       clearJustLoggedIn: () => set({ justLoggedIn: false }),
+
+      skipAuth: () => set({ skippedAuth: true }),
     }),
     {
       name: 'fitforge-auth',
@@ -177,6 +191,7 @@ export const useAuthStore = create<AuthState>()(
         activeUserId: state.activeUserId,
         account: state.account,
         isAuthenticated: state.isAuthenticated,
+        skippedAuth: state.skippedAuth,
         // justLoggedIn is intentionally excluded — session-only
       }),
       // Migrate old single-account format (v1) → multi-account accounts[]

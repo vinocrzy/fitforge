@@ -26,6 +26,7 @@ type TestState = 'idle' | 'testing' | 'ok' | 'fail';
 export default function RegisterPage() {
   const router = useRouter();
   const login = useAuthStore((s) => s.login);
+  const skipAuth = useAuthStore((s) => s.skipAuth);
   const accounts = useAuthStore((s) => s.accounts);
 
   // ── App identity (shown in the UI, not used for CouchDB auth) ──
@@ -478,7 +479,7 @@ export default function RegisterPage() {
         <motion.button
           whileTap={{ scale: 0.96 }}
           transition={springSnappy}
-          onClick={() => router.push('/profile')}
+          onClick={() => { skipAuth(); router.replace('/'); }}
           className="text-center text-[14px]"
           style={{ color: 'rgba(245,245,245,0.35)' }}
         >

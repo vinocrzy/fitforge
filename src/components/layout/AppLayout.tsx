@@ -30,6 +30,7 @@ export function AppLayout({ children }: AppLayoutProps) {
   const router = useRouter();
   const accounts = useAuthStore((s) => s.accounts);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const skippedAuth = useAuthStore((s) => s.skippedAuth);
 
   // Auth guard: redirect unauthenticated users before rendering app content.
   // We gate on a hydration flag so we don’t redirect during SSR or before
@@ -39,12 +40,13 @@ export function AppLayout({ children }: AppLayoutProps) {
 
   useEffect(() => {
     if (!hydrated) return;
+    if (skippedAuth) return;           // local-only mode — no redirect
     if (accounts.length === 0) {
       router.replace('/register');
     } else if (!isAuthenticated) {
       router.replace('/user-select');
     }
-  }, [hydrated, accounts.length, isAuthenticated, router]);
+  }, [hydrated, skippedAuth, accounts.length, isAuthenticated, router]);
 
   // Seed / delta-sync exercise library from static JSON on first mount
   useStartupSync();
@@ -65,8 +67,8 @@ export function AppLayout({ children }: AppLayoutProps) {
   const variants = direction === 'pop' ? popVariants : pushVariants;
   const sheetOpen = useSheetStore((s) => s.isOpen);
 
-  // Render nothing until hydrated and authenticated to avoid content flash
-  if (!hydrated || !isAuthenticated) {
+  // Render nothing until hydrated and auth state resolved to avoid content flash
+  if (!hydrated || (!isAuthenticated && !skippedAuth)) {
     return <div className="min-h-screen bg-[#0B0B0B]" />;
   }
 
