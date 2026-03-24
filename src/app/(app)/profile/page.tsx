@@ -24,8 +24,9 @@ import { useNotificationScheduler } from '@/hooks/useNotificationScheduler';
 import { useAuthStore } from '@/store/useAuthStore';
 import { useSyncManager } from '@/hooks/useSyncManager';
 import { SyncStatusBadge } from '@/components/sync/SyncStatusBadge';
+import { BottomSheet } from '@/components/ui/BottomSheet';
 import { exportAllDataAsJSON, exportWorkoutsAsCSV } from '@/lib/utils/exportData';
-import type { WorkoutSession, PersonalRecord, FitnessGoal } from '@/types';
+import type { WorkoutSession, PersonalRecord, FitnessGoal, CloudAccount } from '@/types';
 
 // ─── Level thresholds (mirrors store) ─────────────────────────────
 const LEVEL_THRESHOLDS = [
@@ -98,10 +99,12 @@ export default function ProfilePage() {
   const [requestingPermission, setRequestingPermission] = useState(false);
   const [exportingJson, setExportingJson] = useState(false);
   const [exportingCsv, setExportingCsv] = useState(false);
+  const [editSyncOpen, setEditSyncOpen] = useState(false);
 
   const account = useAuthStore((s) => s.account);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const logout = useAuthStore((s) => s.logout);
+  const updateDisplayName = useAuthStore((s) => s.updateDisplayName);
   const { syncStatus } = useSyncManager();
 
   const { data: workouts = [] } = useWorkoutHistory();
@@ -180,20 +183,37 @@ export default function ProfilePage() {
         >
           {/* Avatar */}
           <div
-            className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[26px] font-bold"
+            className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[26px] font-bold relative"
             style={{
               background: 'linear-gradient(135deg, #C5F74F, #8BC34A)',
-              border: '2px solid #C5F74F',
+              border: `2px solid ${isAuthenticated ? '#64D2FF' : '#C5F74F'}`,
               color: '#0B0B0B',
             }}
           >
-            {/* Initials fallback */}
-            FF
+            {isAuthenticated && account ? getInitials(account) : 'FF'}
+            {/* Sync connected dot */}
+            {isAuthenticated && (
+              <span
+                className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full flex items-center justify-center"
+                style={{ background: '#0B0B0B', border: '1.5px solid #0B0B0B' }}
+              >
+                <Icon name="checkmark.icloud.fill" size={13} color="#64D2FF" />
+              </span>
+            )}
           </div>
 
           {/* Name */}
-          <div className="text-[22px] font-extrabold" style={{ color: '#F5F5F5' }}>
-            FitForge Athlete
+          <div className="text-center">
+            <div className="text-[22px] font-extrabold" style={{ color: '#F5F5F5' }}>
+              {isAuthenticated && account
+                ? (account.displayName ?? account.email.split('@')[0])
+                : 'FitForge Athlete'}
+            </div>
+            {isAuthenticated && account && (
+              <div className="text-[13px] mt-0.5" style={{ color: 'rgba(245,245,245,0.40)' }}>
+                {account.email}
+              </div>
+            )}
           </div>
 
           {/* Level / XP */}
@@ -568,15 +588,29 @@ export default function ProfilePage() {
                     <Icon name="icloud.fill" size={18} color="#64D2FF" />
                     <div className="flex flex-col">
                       <span className="text-[15px] font-medium" style={{ color: '#F5F5F5' }}>
-                        {account.displayName ?? account.email}
+                        {account.displayName ?? account.email.split('@')[0]}
                       </span>
                       <span className="text-[11px]" style={{ color: 'rgba(245,245,245,0.40)' }}>
-                        {account.email}
+                        {maskServerUrl(account.couchDbUrl)}
                       </span>
                     </div>
                   </div>
                   <SyncStatusBadge status={syncStatus} />
                 </div>
+
+                {/* Edit sync settings */}
+                <motion.button
+                  className="w-full flex items-center justify-between px-4"
+                  style={{ height: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={springSnappy}
+                  onClick={() => setEditSyncOpen(true)}
+                >
+                  <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+                    Edit Sync Settings
+                  </span>
+                  <Icon name="chevron.right" size={13} color="rgba(245,245,245,0.35)" />
+                </motion.button>
 
                 {/* Sign out */}
                 <motion.button
@@ -660,6 +694,18 @@ export default function ProfilePage() {
           <QuickLink label="History" icon="clock.arrow.circlepath" onTap={() => router.push('/history')} />
         </motion.div>
       </div>
+
+      {/* Edit Sync Settings sheet */}
+      {isAuthenticated && account && (
+        <EditSyncSheet
+          open={editSyncOpen}
+          account={account}
+          onClose={() => setEditSyncOpen(false)}
+          onDisplayNameSave={(name) => updateDisplayName(name)}
+          onChangeCredentials={() => { setEditSyncOpen(false); router.push('/login'); }}
+          onSignOut={() => { setEditSyncOpen(false); logout(); }}
+        />
+      )}
     </div>
   );
 }
@@ -667,6 +713,24 @@ export default function ProfilePage() {
 // ═══════════════════════════════════════════════════════════════════
 // Helpers
 // ═══════════════════════════════════════════════════════════════════
+
+/** Derive 2-letter initials from a CloudAccount. */
+function getInitials(account: CloudAccount): string {
+  const name = (account.displayName ?? account.email).trim();
+  const parts = name.split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return name.slice(0, 2).toUpperCase();
+}
+
+/** Strip embedded Basic Auth credentials from CouchDB URL for display. */
+function maskServerUrl(couchDbUrl: string): string {
+  try {
+    const u = new URL(couchDbUrl);
+    return `${u.protocol}//${u.host}${u.pathname === '/' ? '' : u.pathname}`;
+  } catch {
+    return couchDbUrl;
+  }
+}
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -824,5 +888,169 @@ function QuickLink({ label, icon, onTap }: { label: string; icon: string; onTap:
         {label}
       </span>
     </motion.button>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// EditSyncSheet
+// ═══════════════════════════════════════════════════════════════════
+
+interface EditSyncSheetProps {
+  open: boolean;
+  account: CloudAccount;
+  onClose: () => void;
+  onDisplayNameSave: (name: string) => void;
+  onChangeCredentials: () => void;
+  onSignOut: () => void;
+}
+
+function EditSyncSheet({
+  open,
+  account,
+  onClose,
+  onDisplayNameSave,
+  onChangeCredentials,
+  onSignOut,
+}: EditSyncSheetProps) {
+  const [displayName, setDisplayName] = useState(account.displayName ?? '');
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    onDisplayNameSave(displayName.trim());
+    setSaved(true);
+    setTimeout(() => setSaved(false), 1800);
+  };
+
+  const serverUrl = maskServerUrl(account.couchDbUrl);
+
+  return (
+    <BottomSheet
+      id="edit-sync-settings"
+      open={open}
+      onClose={onClose}
+      title="Sync Settings"
+      fullHeight={false}
+    >
+      <div className="px-4 pb-8 flex flex-col gap-4">
+
+        {/* Account info banner */}
+        <div
+          className="flex items-center gap-3 p-3 rounded-[14px]"
+          style={{ background: 'rgba(100,210,255,0.08)', border: '1px solid rgba(100,210,255,0.15)' }}
+        >
+          <div
+            className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-bold flex-shrink-0"
+            style={{ background: 'linear-gradient(135deg,#C5F74F,#8BC34A)', color: '#0B0B0B' }}
+          >
+            {getInitials(account)}
+          </div>
+          <div className="flex flex-col min-w-0">
+            <span className="text-[15px] font-semibold truncate" style={{ color: '#F5F5F5' }}>
+              {account.email}
+            </span>
+            <span className="text-[12px] truncate" style={{ color: 'rgba(245,245,245,0.45)' }}>
+              {serverUrl}
+            </span>
+          </div>
+          <Icon name="checkmark.icloud.fill" size={20} color="#64D2FF" />
+        </div>
+
+        {/* Display name field */}
+        <div className="flex flex-col gap-1.5">
+          <label
+            className="text-[13px] font-semibold uppercase tracking-[0.06em]"
+            style={{ color: 'rgba(245,245,245,0.45)' }}
+          >
+            Display Name
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={displayName}
+              onChange={(e) => { setDisplayName(e.target.value); setSaved(false); }}
+              placeholder={account.email.split('@')[0]}
+              className="flex-1 h-[52px] rounded-[14px] px-4 text-[17px] outline-none"
+              style={{
+                background: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.10)',
+                color: '#F5F5F5',
+                caretColor: '#C5F74F',
+              }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(197,247,79,0.45)'; }}
+              onBlur={(e)  => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)'; }}
+            />
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              transition={springSnappy}
+              onClick={handleSave}
+              className="h-[52px] px-5 rounded-[14px] font-semibold text-[15px]"
+              style={{
+                background: saved ? 'rgba(48,209,88,0.20)' : '#C5F74F',
+                color: saved ? '#30D158' : '#0B0B0B',
+                minWidth: 72,
+              }}
+            >
+              {saved ? <Icon name="checkmark.circle.fill" size={18} color="#30D158" /> : 'Save'}
+            </motion.button>
+          </div>
+          <p className="text-[12px]" style={{ color: 'rgba(245,245,245,0.35)' }}>
+            Shown in the Profile header instead of your email.
+          </p>
+        </div>
+
+        {/* Server info (read-only) */}
+        <div className="flex flex-col gap-1.5">
+          <label
+            className="text-[13px] font-semibold uppercase tracking-[0.06em]"
+            style={{ color: 'rgba(245,245,245,0.45)' }}
+          >
+            CouchDB Server
+          </label>
+          <div
+            className="h-[52px] rounded-[14px] px-4 flex items-center gap-2"
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <Icon name="icloud" size={16} color="rgba(245,245,245,0.35)" />
+            <span
+              className="text-[15px] truncate"
+              style={{ color: 'rgba(245,245,245,0.55)' }}
+            >
+              {serverUrl}
+            </span>
+          </div>
+          <p className="text-[12px]" style={{ color: 'rgba(245,245,245,0.35)' }}>
+            To change your server or password, re-authenticate below.
+          </p>
+        </div>
+
+        {/* Change credentials */}
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          transition={springSnappy}
+          onClick={onChangeCredentials}
+          className="h-[52px] rounded-full border flex items-center justify-center gap-2 font-semibold text-[15px]"
+          style={{
+            borderColor: 'rgba(100,210,255,0.30)',
+            color: '#64D2FF',
+            background: 'rgba(100,210,255,0.08)',
+          }}
+        >
+          <Icon name="arrow.triangle.2.circlepath" size={16} color="#64D2FF" />
+          Change Credentials
+        </motion.button>
+
+        {/* Sign out */}
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          transition={springSnappy}
+          onClick={() => { onClose(); onSignOut(); }}
+          className="h-[52px] rounded-full flex items-center justify-center gap-2 font-semibold text-[15px]"
+          style={{ color: '#FF453A' }}
+        >
+          <Icon name="rectangle.portrait.and.arrow.right" size={16} color="#FF453A" />
+          Sign Out
+        </motion.button>
+      </div>
+    </BottomSheet>
   );
 }
