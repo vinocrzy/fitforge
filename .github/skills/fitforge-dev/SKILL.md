@@ -683,16 +683,23 @@ const warmUpSets = [
 
 ### Framer Motion Springs
 
-Six calibrated spring presets in `lib/motion/springs.ts`:
+Four calibrated spring presets in `lib/motion/springs.ts`:
 
 ```typescript
-export const springSnappy = { type: "spring", stiffness: 400, damping: 30 };
-export const springDefault = { type: "spring", stiffness: 300, damping: 28 };
-export const springGentle = { type: "spring", stiffness: 200, damping: 24 };
-export const springBouncy = { type: "spring", stiffness: 350, damping: 18 };
-export const springCelebration = { type: "spring", stiffness: 500, damping: 20 };
-export const springSheet = { type: "spring", stiffness: 380, damping: 32 };
+// Fast, snappy — button taps, checkmarks, small state changes
+export const springSnappy: Transition = { type: "spring", stiffness: 500, damping: 36, mass: 1 };
+
+// Default iOS nav feel — push/pop, card reveals
+export const springDefault: Transition = { type: "spring", stiffness: 320, damping: 32, mass: 1 };
+
+// Smooth, gentle — sheet presentations, large entrances
+export const springGentle: Transition = { type: "spring", stiffness: 200, damping: 26, mass: 1 };
+
+// Slow, deliberate — phase transitions, celebration, error shakes
+export const springCelebration: Transition = { type: "spring", stiffness: 120, damping: 16, mass: 1 };
 ```
+
+**No `springBouncy` or `springSheet` — these do NOT exist.** Use `springGentle` for sheets and `springCelebration` for playful/error animations.
 
 **Usage:**
 ```tsx
@@ -705,32 +712,66 @@ export const springSheet = { type: "spring", stiffness: 380, damping: 32 };
 
 ### Reusable Variants
 
-Defined in `lib/motion/variants.ts`:
+Defined in `lib/motion/variants.ts`. All keys are `initial / animate / exit` (not `hidden/visible` or `closed/open`):
 
 ```typescript
-// Page transitions (left/right swipe)
-pushVariants = {
+// iOS push navigation — new page slides in from right
+export const pushVariants: Variants = {
   initial: { x: "100%", opacity: 0 },
-  animate: { x: 0, opacity: 1 },
-  exit: { x: "-40%", opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: springDefault },
+  exit: { x: "-30%", opacity: 0, transition: springDefault },
 };
 
-// Bottom sheets
-sheetVariants = {
-  hidden: { y: "100%" },
-  visible: { y: 0 },
+// iOS pop navigation — page slides back out to right
+export const popVariants: Variants = {
+  initial: { x: "-30%", opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: springDefault },
+  exit: { x: "100%", opacity: 0, transition: springDefault },
 };
 
-// iOS 26 scale-behind when sheet opens
-sheetBackgroundVariants = {
-  closed: { scale: 1, filter: "brightness(1)" },
-  open: { scale: 0.92, filter: "brightness(0.6)" },
+// iOS 26 modal sheet — slides up from bottom
+export const sheetVariants: Variants = {
+  initial: { y: "100%" },
+  animate: { y: 0, transition: springGentle },
+  exit: { y: "100%", transition: springSnappy },
 };
 
-// Tab indicator pill
-tabVariants = {
+// iOS 26 — background scales down while sheet is open
+// States: "normal" and "dimmed" (NOT "closed"/"open")
+export const sheetBackgroundVariants: Variants = {
+  normal: { scale: 1, borderRadius: "0px", filter: "brightness(1)", transition: springGentle },
+  dimmed: { scale: 0.92, borderRadius: "16px", filter: "brightness(0.65)", transition: springGentle },
+};
+
+// Tab switching — cross-fade only (no slide)
+export const tabVariants: Variants = {
   initial: { opacity: 0 },
-  animate: { opacity: 1 },
+  animate: { opacity: 1, transition: { duration: 0.18 } },
+  exit: { opacity: 0, transition: { duration: 0.12 } },
+};
+
+// Coaching banner — slides down from top
+export const bannerVariants: Variants = {
+  initial: { y: -80, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: springSnappy },
+  exit: { y: -80, opacity: 0, transition: springSnappy },
+};
+
+// Phase transition banner — slides up from bottom
+export const phaseTransitionVariants: Variants = {
+  initial: { y: "100%", opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: springGentle },
+  exit: { y: "100%", opacity: 0, transition: springSnappy },
+};
+
+// Staggered lists
+export const staggerContainer: Variants = {
+  animate: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+};
+
+export const fadeUpItem: Variants = {
+  initial: { y: 16, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: springDefault },
 };
 ```
 
@@ -738,12 +779,18 @@ tabVariants = {
 ```tsx
 <motion.div
   variants={sheetVariants}
-  initial="hidden"
-  animate="visible"
-  transition={springSheet}
+  initial="initial"
+  animate="animate"
+  exit="exit"
 >
   {/* Bottom sheet content */}
 </motion.div>
+
+// ✅ CORRECT: sheetBackground uses "normal" / "dimmed"
+<motion.div
+  variants={sheetBackgroundVariants}
+  animate={isSheetOpen ? "dimmed" : "normal"}
+/>
 ```
 
 ### Layout Animations
@@ -1014,8 +1061,11 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 App identity and CouchDB credentials are **completely separate concerns**. Never use email/username as both.
 
 ```typescript
-// src/types/index.ts
+// src/types/index.ts  (v2 — multi-account)
 export interface CloudAccount {
+  /** Stable device identity. crypto.randomUUID() at registration. NEVER changes.
+   *  Used as PBKDF2 salt for PIN hashing. Partitions this user's remote databases. */
+  userId: string;
   /** App-level identity — displayed in UI. NOT used for CouchDB auth. */
   displayName: string;
   /** Optional app email — shown in UI only. Never used for CouchDB auth. */
@@ -1025,41 +1075,78 @@ export interface CloudAccount {
   /** Full CouchDB URL with embedded Basic-Auth. NEVER display raw. */
   couchDbUrl: string;   // format: https://user:pass@host/db
   createdAt: string;
+  /** PBKDF2-SHA-256 hash of user's 4-6 digit PIN. Stored on-device only. Never synced. */
+  appPinHash?: string;
 }
 ```
 
-**Key rule:** A user named "Alex Smith" might use CouchDB username `"admin"`. These are independent. Always derive UI display from `displayName`, never from `couchUsername`.
+**Key rules:**
+- `userId` is the partition/identity key — never re-use it from another account, never mutate it
+- `displayName` is for display only — two family members can have the same display name
+- `@couchUsername · serverHost` is the guaranteed-unique identifier (CouchDB enforces username uniqueness per server)
+- `appPinHash` is device-local only — not synced to CouchDB, not sent over network
 
 ### useAuthStore
 
 ```typescript
-// src/store/useAuthStore.ts
-// Persisted as 'fitforge-auth' in localStorage
+// src/store/useAuthStore.ts — v2 (multi-account)
+// localStorage key: 'fitforge-auth'  |  Zustand persist version: 2
+// Auto-migrates from v1 (single account field) → v2 (accounts array)
 
 interface AuthState {
-  account: CloudAccount | null;
-  isAuthenticated: boolean;
+  // Persisted
+  accounts: CloudAccount[];
+  activeUserId: string | null;
 
-  login: (account: CloudAccount) => void;
-  logout: () => void;
+  // Derived (not stored directly)
+  account: CloudAccount | null;    // accounts.find(a => a.userId === activeUserId)
+  isAuthenticated: boolean;        // account !== null
+
+  // Session-only — excluded from partialize (not written to localStorage)
+  justLoggedIn: boolean;           // true immediately after login/register → drives /restore page
+
+  // Actions
+  login: (account: CloudAccount) => void;          // upserts account, sets activeUserId + justLoggedIn=true
+  logout: () => void;                              // clears activeUserId; keeps accounts[] intact
+  setActiveUser: (userId: string) => void;         // call AFTER PIN is verified externally on /user-select
+  removeAccount: (userId: string) => void;
   updateDisplayName: (name: string) => void;
-  /** Update CouchDB credentials after re-test on settings page. */
   updateCouchCredentials: (couchUsername: string, couchDbUrl: string) => void;
+  updatePinHash: (hash: string) => void;           // called after PIN is set or changed
+  clearJustLoggedIn: () => void;                   // called before navigating away from /restore
 }
 ```
 
 **Usage in components:**
 ```tsx
+// ✅ CORRECT: Select only what you need — avoid re-renders
 const { account, isAuthenticated } = useAuthStore(
   s => ({ account: s.account, isAuthenticated: s.isAuthenticated }),
   shallow
 );
 
-// Display name (never couchUsername for UI)
+// Display name (not couchUsername — it's the CouchDB credential)
 const name = account?.displayName ?? 'FitForge Athlete';
 
-// CouchDB username shown in settings only
-const couchInfo = `CouchDB: ${account?.couchUsername} · ${maskServerUrl(account?.couchDbUrl)}`;
+// CouchDB info shown in settings only — always mask the URL
+const couchInfo = `@${account?.couchUsername} · ${maskServerUrl(account?.couchDbUrl ?? '')}`;
+
+// Check all accounts (e.g. for profile switcher badge)
+const allAccounts = useAuthStore(s => s.accounts);
+```
+
+**v1 → v2 migration** runs automatically on first open after upgrade:
+```typescript
+migrate: (persistedState, version) => {
+  if (version === 1) {
+    const old = persistedState as { account?: CloudAccount };
+    const accounts = old.account
+      ? [{ ...old.account, userId: old.account.userId ?? crypto.randomUUID() }]
+      : [];
+    return { accounts, activeUserId: accounts[0]?.userId ?? null };
+  }
+  return persistedState;
+},
 ```
 
 ### Building the couchDbUrl
@@ -1200,7 +1287,7 @@ useAuthStore (account) → useSyncManager (useEffect) → startSync(SyncConfig) 
 // src/lib/db/couchSync.ts
 export interface SyncConfig {
   couchDbUrl: string;       // Full URL with embedded credentials
-  couchUsername: string;    // For logging/display (not used for auth)
+  couchUsername: string;    // For DB namespacing (NOT display — not logged)
   onStatusChange: (status: SyncStatus) => void;
   onConflict: (conflict: RoutineConflict) => void;
 }
@@ -1210,11 +1297,29 @@ export interface SyncConfig {
 // src/hooks/useSyncManager.ts — auto-starts/stops based on auth state
 startSync({
   couchDbUrl: account.couchDbUrl,
-  couchUsername: account.couchUsername,  // NOT account.email or userId
+  couchUsername: account.couchUsername,  // NOT account.email or account.userId
   onStatusChange: setSyncStatus,
   onConflict: handleConflict,
 });
 ```
+
+### CouchDB Database Namespacing
+
+Each user's remote databases are prefixed with their sanitized CouchDB username so family members on the same CouchDB server never overwrite each other's data:
+
+```typescript
+// src/lib/db/couchSync.ts — internal helper
+function buildRemoteUrl(baseUrl: string, dbName: string, couchUsername: string): string {
+  // Strip characters not allowed in CouchDB database names
+  const safePrefix = couchUsername.toLowerCase().replace(/[^a-z0-9_$()+-]/g, '_');
+  return `${baseUrl.replace(/\/$/, '')}/${safePrefix}_${dbName}`;
+}
+
+// alice's databases: alice_fitforge_routines, alice_fitforge_workouts, alice_fitforge_profile
+// bob's databases:   bob_fitforge_routines,   bob_fitforge_workouts,   bob_fitforge_profile
+```
+
+**CouchDB admin setup required:** Each `{username}_{dbName}` database must exist on the server and the CouchDB user must have read/write access (set via `_security` document). See `docs/02-architecture.md` for the setup guide.
 
 ### Profile Page — Auth-Aware UI
 
@@ -1249,7 +1354,252 @@ Verify with: `npx tsc --project src/worker/tsconfig.json --noEmit`
 
 ---
 
+## Phase 8 — Multi-Account Auth, PIN & Privacy
+
+### Overview
+
+Multiple family members can share one device (or one CouchDB server), each with fully isolated data and an optional PIN to lock their profile. Key files:
+
+| File | Role |
+|---|---|
+| `src/types/index.ts` | `CloudAccount` v2 interface |
+| `src/store/useAuthStore.ts` | Multi-account Zustand store (v2) |
+| `src/lib/auth/pin.ts` | PBKDF2-SHA-256 PIN hashing |
+| `src/lib/db/couchSync.ts` | `buildRemoteUrl` — per-user DB namespacing |
+| `src/app/(auth)/user-select/page.tsx` | "Who's working out?" profile picker |
+| `src/app/(app)/restore/page.tsx` | Cross-device data restore after login |
+| `src/components/layout/AppLayout.tsx` | Auth guard with hydration protection |
+
+### PIN System (`src/lib/auth/pin.ts`)
+
+Web Crypto API — PBKDF2-SHA-256, 100 000 iterations. PIN **never** leaves the device.
+
+```typescript
+export async function hashPin(pin: string, userId: string): Promise<string>
+export async function verifyPin(pin: string, userId: string, storedHash: string): Promise<boolean>
+// salt = userId (stable UUID) — same PIN produces a different hash for each user
+```
+
+**Usage flow:**
+```tsx
+// Setting a PIN during register / first launch:
+const hash = await hashPin(pin, newUserId);
+store.updatePinHash(hash);
+
+// Verifying on user-select page:
+const ok = await verifyPin(enteredPin, selectedAccount.userId, selectedAccount.appPinHash!);
+if (ok) {
+  store.setActiveUser(selectedAccount.userId);
+  router.push('/');
+} else {
+  // shake with springCelebration, clear input
+}
+```
+
+### User-Select Screen (`/user-select`)
+
+Shown whenever `accounts.length > 0 && !isAuthenticated`. On mount: if `accounts.length === 0` redirect immediately to `/register`.
+
+**Account card disambiguation:**
+```tsx
+// ✅ CORRECT: Always show @couchUsername · host — guaranteed unique by CouchDB
+function AccountSubtitle({ account }: { account: CloudAccount }) {
+  return <span>@{account.couchUsername} · {maskServerUrl(account.couchDbUrl)}</span>;
+}
+
+// ❌ WRONG: email may be missing, empty, or shared between family members
+<span>{account.email}</span>
+```
+
+**PIN flow:**
+```tsx
+// Lock icon appears when account.appPinHash is set
+// Tap card → inline 6-dot PIN pad opens
+// On submit → verifyPin() → success: setActiveUser + navigate
+//                          → fail: springCelebration shake, clear input
+```
+
+**Add Account button:** Routes to `/register` — lets a new family member add their profile on the same device.
+
+### Restore Screen (`/restore`)
+
+Shown right after login or register on a new device. Lives in the `(app)` route group so `AppLayout` has already started `useSyncManager`.
+
+```tsx
+// Route: src/app/(app)/restore/page.tsx
+
+// Guard: redirect to '/' immediately if justLoggedIn flag is false
+// (prevents users navigating here manually mid-session)
+const { justLoggedIn, clearJustLoggedIn } = useAuthStore(s => ({...}), shallow);
+useEffect(() => {
+  if (!justLoggedIn) router.replace('/');
+}, [justLoggedIn]);
+
+// Subscribes to sync status
+const { syncStatus } = useSyncManager();
+
+// Auto-navigate when synced:
+useEffect(() => {
+  if (syncStatus.state === 'synced') {
+    clearJustLoggedIn();
+    setTimeout(() => router.replace('/'), 900);
+  }
+}, [syncStatus.state]);
+
+// 45s timeout: show "Continue anyway" button
+// 5s: fade in "Skip for now" button
+```
+
+**After login or register, always redirect to `/restore`:**
+```tsx
+router.push('/restore');  // not '/profile', not '/'
+```
+
+**BottomNav exclusion:** `/restore` is in the hidden routes list — no tab bar during restore:
+```typescript
+pathname.startsWith('/restore')
+```
+
+### Auth Guard in AppLayout
+
+Protects all `(app)` routes. Hydration guard prevents flash of wrong content because Zustand reads localStorage asynchronously.
+
+```tsx
+// src/components/layout/AppLayout.tsx
+const [hydrated, setHydrated] = useState(false);
+useEffect(() => { setHydrated(true); }, []);
+
+const { accounts, isAuthenticated } = useAuthStore(
+  s => ({ accounts: s.accounts, isAuthenticated: s.isAuthenticated }),
+  shallow
+);
+
+useEffect(() => {
+  if (!hydrated) return;
+  if (accounts.length === 0) router.replace('/register');
+  else if (!isAuthenticated) router.replace('/user-select');
+}, [hydrated, accounts.length, isAuthenticated, router]);
+
+// Blank screen until both hydrated AND authenticated — zero content flash
+if (!hydrated || !isAuthenticated) {
+  return <div className="min-h-screen bg-[#0B0B0B]" />;
+}
+```
+
+### Duplicate Account Detection
+
+Both Login and Register detect an existing account by **CouchDB identity** — `(couchUsername + server host)`. This is the only truly unique identifier; `displayName` and `email` can collide.
+
+```typescript
+// Matching logic used in both login.tsx and register.tsx
+const parsedNew = new URL(couchDbUrl);
+const existing = accounts.find(a => {
+  try {
+    const u = new URL(a.couchDbUrl);
+    return decodeURIComponent(u.username) === couchUsername
+        && u.host === parsedNew.host;
+  } catch { return false; }
+});
+
+// Login:    if found → reuse existing.userId (preserves PIN hash + createdAt)
+// Register: if found → hard-block with error ("@alice on host already added as 'Alice Smith'")
+```
+
+**Always use `decodeURIComponent` when reading `.username` or `.password` from a URL object** — credentials are percent-encoded in the stored URL.
+
+### Shared-Password Privacy Check
+
+A shared CouchDB password means anyone on the same server can query all namespaced databases via the HTTP API, bypassing the device PIN entirely.
+
+```typescript
+// Helper — extract decoded password from a stored couchDbUrl
+function extractPassword(url: string): string {
+  try { return decodeURIComponent(new URL(url).password); }
+  catch { return ''; }
+}
+
+// Helper — are two couchDbUrls on the same CouchDB host?
+function sameHost(a: string, b: string): boolean {
+  try { return new URL(a).host === new URL(b).host; }
+  catch { return false; }
+}
+
+// Check: does the entered password match any existing account on the same server?
+const passwordCollision = accounts.some(
+  a => sameHost(a.couchDbUrl, resolvedUrl) && extractPassword(a.couchDbUrl) === couchPassword
+);
+```
+
+| Page | Behavior on collision |
+|---|---|
+| Register | **Hard-block** — cannot proceed. Error explains the security risk. |
+| Login | **Soft amber warning** — non-blocking (may be a legitimate credential update). |
+
+### Profile Page — Multi-Account Actions
+
+The Cloud Sync section exposes three actions after Phase 8:
+
+```
+1. Edit Sync Settings   → opens EditSyncSheet
+2. Switch Profile       → logout() + router.push('/user-select')
+                          badge shows accounts.length when > 1
+3. Add Account          → router.push('/register')
+```
+
+Profile subtitle shows `email ?? '@' + couchUsername` (never just `email` — it may be absent):
+```tsx
+const subtitle = account?.email ?? `@${account?.couchUsername}`;
+```
+
+---
+
 ## Anti-Patterns
+
+### ❌ Don't Use `springBouncy` or `springSheet` — They Don't Exist
+
+```tsx
+// ❌ WRONG: These exports do NOT exist in lib/motion/springs.ts
+transition={springBouncy}
+transition={springSheet}
+
+// ✅ CORRECT: Use the four actual presets
+transition={springSnappy}      // fast, for button taps
+transition={springDefault}     // standard UI, cards
+transition={springGentle}      // sheets, large movements
+transition={springCelebration} // playful, error shakes, celebrations
+```
+
+### ❌ Don't Use Email to Disambiguate Accounts
+
+```tsx
+// ❌ WRONG: email may be missing or identical between family members
+<span>{account.email}</span>
+
+// ✅ CORRECT: @couchUsername · host is always unique (CouchDB enforces it)
+<span>@{account.couchUsername} · {maskServerUrl(account.couchDbUrl)}</span>
+```
+
+### ❌ Don't Forget `decodeURIComponent` on URL Credentials
+
+```typescript
+// ❌ WRONG: u.username and u.password are percent-encoded
+const username = new URL(account.couchDbUrl).username;  // "alice%40example.com" ← wrong
+
+// ✅ CORRECT: Always decode before comparing or displaying
+const username = decodeURIComponent(new URL(account.couchDbUrl).username);
+const password = decodeURIComponent(new URL(account.couchDbUrl).password);
+```
+
+### ❌ Don't Navigate to `/restore` Without Setting `justLoggedIn`
+
+```tsx
+// ❌ WRONG: The restore page guards on justLoggedIn — navigating directly will bounce back to '/'
+router.push('/restore');  // without calling login() first
+
+// ✅ CORRECT: login() / register flow sets justLoggedIn=true before pushing
+store.login(account);     // sets justLoggedIn internally
+router.push('/restore');
+```
 
 ### ❌ Don't Use Email as CouchDB Username
 
@@ -1429,17 +1779,18 @@ Surface:    var(--brand-surface)     #141414
 ### Spring Presets
 
 ```typescript
-springSnappy      // Button press, quick interactions
-springDefault     // General UI, cards
-springGentle      // Large movements, sheets
-springBouncy      // Playful UI (badges, counters)
-springCelebration // Completion animations
-springSheet       // Bottom sheets specifically
+springSnappy      // Button taps, checkmarks, fast state changes
+springDefault     // General UI, cards, push/pop navigation
+springGentle      // Sheets, large entrances, slow movements
+springCelebration // Phase transitions, error shakes, celebrations
 ```
+
+**`springBouncy` and `springSheet` do NOT exist — do not use them.**
 
 ### Core Stores
 
 ```typescript
+useAuthStore      // Multi-account auth (v2), active user, justLoggedIn
 useSessionStore   // Workout execution
 useProfileStore   // User data, XP, PRs
 useSettingsStore  // Preferences
@@ -1458,5 +1809,5 @@ useSheetStore     // Bottom sheet open/close
 
 ---
 
-**Last Updated:** March 23, 2026  
-**Skill Version:** 1.0
+**Last Updated:** July 2025 (Phase 8 — Multi-Account Auth, PIN & Privacy)  
+**Skill Version:** 2.0
