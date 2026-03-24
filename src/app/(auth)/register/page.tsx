@@ -101,7 +101,13 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="fixed inset-0 flex flex-col bg-[#0B0B0B] px-6 pt-safe-top pb-8 overflow-y-auto">
+    <div
+      className="fixed inset-0 flex flex-col bg-[#0B0B0B] px-6 overflow-y-auto"
+      style={{
+        paddingTop: 'env(safe-area-inset-top)',
+        paddingBottom: 'max(32px, env(safe-area-inset-bottom))',
+      }}
+    >
       {/* Back */}
       <div className="pt-4">
         <motion.button
