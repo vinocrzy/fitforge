@@ -353,7 +353,7 @@
 
 ## Phase 7 — Cloud Sync (CouchDB)
 
-**Status:** 🔲 Not started
+**Status:** ✅ Complete
 
 ---
 
@@ -478,4 +478,17 @@
 | `src/hooks/useNotificationScheduler.ts` | ✅ | Scheduling logic for all 4 notification types |
 | `src/worker/index.ts` | ✅ | Custom SW: push event listener + notificationclick routing |
 | `next.config.ts` | 🔄 | Added `customWorkerSrc` to merge push handler into generated SW |
+| **Phase 7** | | |
+| `src/types/index.ts` | 🔄 | Added SyncState, SyncStatus, CloudAccount, RoutineConflict |
+| `src/lib/db/couchSync.ts` | ✅ | CouchDB sync engine: live replication, conflict detection, exponential backoff |
+| `src/store/useAuthStore.ts` | ✅ | Cloud account auth store (persisted to localStorage) |
+| `src/hooks/useSyncManager.ts` | ✅ | Sync orchestrator: auth + online/offline handling |
+| `src/components/sync/SyncStatusBadge.tsx` | ✅ | Animated pill badge for 5 sync states |
+| `src/components/sync/ConflictResolverSheet.tsx` | ✅ | Diff-style merge view for routine conflicts |
+| `src/lib/utils/exportData.ts` | ✅ | JSON + CSV data export utilities |
+| `src/app/(auth)/login/page.tsx` | ✅ | Cloud sync login screen |
+| `src/app/(auth)/register/page.tsx` | ✅ | Cloud sync registration/setup screen |
+| `src/components/layout/AppLayout.tsx` | 🔄 | Wired useSyncManager + ConflictResolverSheet |
+| `src/app/(app)/profile/page.tsx` | 🔄 | Added Cloud Sync section with status badge + export buttons |
+| `src/components/ui/Icon.tsx` | 🔄 | Added 14 new icons for cloud/sync/device UI |
 

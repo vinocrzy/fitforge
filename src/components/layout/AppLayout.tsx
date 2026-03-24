@@ -5,6 +5,7 @@
 
 'use client';
 
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { getNavDirection } from '@/lib/motion/navDirection';
@@ -15,7 +16,10 @@ import {
 } from '@/lib/motion/variants';
 import { useSheetStore } from '@/store/useSheetStore';
 import { useStartupSync } from '@/hooks/useStartupSync';
+import { useSyncManager } from '@/hooks/useSyncManager';
+import { ConflictResolverSheet } from '@/components/sync/ConflictResolverSheet';
 import { BottomNav } from './BottomNav';
+import type { RoutineConflict } from '@/types';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -24,6 +28,17 @@ interface AppLayoutProps {
 export function AppLayout({ children }: AppLayoutProps) {
   // Seed / delta-sync exercise library from static JSON on first mount
   useStartupSync();
+
+  // Start CouchDB sync if authenticated; expose conflicts for resolution
+  const { conflicts, dismissConflict } = useSyncManager();
+  const [activeConflict, setActiveConflict] = useState<RoutineConflict | null>(
+    conflicts[0] ?? null,
+  );
+
+  // When a new conflict arrives and none is shown yet, surface it
+  if (conflicts.length > 0 && !activeConflict) {
+    setActiveConflict(conflicts[0]);
+  }
 
   const pathname = usePathname();
   const direction = getNavDirection(pathname);
@@ -73,6 +88,16 @@ export function AppLayout({ children }: AppLayoutProps) {
       </AnimatePresence>
 
       <BottomNav />
+
+      {/* Conflict resolver — shown when PouchDB sync detects conflicting revisions */}
+      <ConflictResolverSheet
+        conflict={activeConflict}
+        onClose={() => setActiveConflict(null)}
+        onResolved={(id) => {
+          dismissConflict(id);
+          setActiveConflict(null);
+        }}
+      />
     </div>
   );
 }

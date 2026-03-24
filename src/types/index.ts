@@ -245,3 +245,30 @@ export type WorkoutCategory =
   | 'lower'
   | 'core'
   | 'fullbody';
+
+// ─── Cloud Sync (Phase 7) ─────────────────────────────────────────
+
+export type SyncState = 'idle' | 'syncing' | 'synced' | 'error' | 'offline';
+
+export interface SyncStatus {
+  state: SyncState;
+  lastSyncedAt: string | null;   // ISO timestamp
+  errorMessage: string | null;
+  pendingChanges: number;        // Local writes not yet pushed
+}
+
+export interface CloudAccount {
+  userId: string;
+  email: string;
+  displayName?: string;
+  couchDbUrl: string;            // User-configured or provisioned endpoint
+  createdAt: string;
+}
+
+export interface RoutineConflict {
+  id: string;                    // Document _id
+  local: unknown;                // Local version (full doc)
+  remote: unknown;               // Incoming conflicting version
+  detectedAt: string;
+}
+

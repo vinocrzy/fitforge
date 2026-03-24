@@ -44,6 +44,21 @@ import {
   CaretDown,
   SlidersHorizontal,
   ArrowsDownUp,
+  // Phase 7 — Cloud Sync
+  Cloud,
+  CloudCheck,
+  CloudSlash,
+  CloudWarning,
+  ArrowsClockwise,
+  DeviceMobile,
+  Warning,
+  WarningCircle,
+  UserPlus,
+  SignOut,
+  ArrowCircleDown,
+  Table,
+  Bell,
+  BellRinging,
 } from '@phosphor-icons/react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react';
 
@@ -89,6 +104,22 @@ const ICON_MAP: Record<string, PhosphorIcon> = {
   'chevron.down': CaretDown,
   'slider.horizontal.3': SlidersHorizontal,
   'arrow.up.arrow.down': ArrowsDownUp,
+  // Phase 7 — Cloud Sync icons
+  'icloud': Cloud,
+  'icloud.fill': Cloud,
+  'checkmark.icloud.fill': CloudCheck,
+  'icloud.slash.fill': CloudSlash,
+  'exclamationmark.icloud.fill': CloudWarning,
+  'arrow.triangle.2.circlepath': ArrowsClockwise,
+  'iphone': DeviceMobile,
+  'exclamationmark.triangle.fill': Warning,
+  'exclamationmark.circle.fill': WarningCircle,
+  'person.crop.circle.badge.plus': UserPlus,
+  'rectangle.portrait.and.arrow.right': SignOut,
+  'arrow.down.circle': ArrowCircleDown,
+  'tablecells': Table,
+  'bell.fill': Bell,
+  'bell.badge.fill': BellRinging,
 };
 
 export type IconName = keyof typeof ICON_MAP;

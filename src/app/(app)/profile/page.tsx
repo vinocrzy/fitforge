@@ -21,6 +21,10 @@ import { Icon } from '@/components/ui/Icon';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useWorkoutHistory } from '@/hooks/useDatabase';
 import { useNotificationScheduler } from '@/hooks/useNotificationScheduler';
+import { useAuthStore } from '@/store/useAuthStore';
+import { useSyncManager } from '@/hooks/useSyncManager';
+import { SyncStatusBadge } from '@/components/sync/SyncStatusBadge';
+import { exportAllDataAsJSON, exportWorkoutsAsCSV } from '@/lib/utils/exportData';
 import type { WorkoutSession, PersonalRecord, FitnessGoal } from '@/types';
 
 // ─── Level thresholds (mirrors store) ─────────────────────────────
@@ -92,6 +96,13 @@ export default function ProfilePage() {
 
   const { requestPermission, permission } = useNotificationScheduler();
   const [requestingPermission, setRequestingPermission] = useState(false);
+  const [exportingJson, setExportingJson] = useState(false);
+  const [exportingCsv, setExportingCsv] = useState(false);
+
+  const account = useAuthStore((s) => s.account);
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const logout = useAuthStore((s) => s.logout);
+  const { syncStatus } = useSyncManager();
 
   const { data: workouts = [] } = useWorkoutHistory();
 
@@ -534,6 +545,107 @@ export default function ProfilePage() {
                 />
               </>
             )}
+          </div>
+        </motion.div>
+
+        {/* ── Cloud Sync ─────────────────────────────────────── */}
+        <motion.div
+          initial={{ y: 12, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.30 }}
+        >
+          <SectionLabel>Cloud Sync</SectionLabel>
+
+          <div className="mt-3 rounded-[16px] overflow-hidden" style={{ background: '#141414' }}>
+            {isAuthenticated && account ? (
+              <>
+                {/* Sync status row */}
+                <div
+                  className="flex items-center justify-between px-4"
+                  style={{ height: 56, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Icon name="icloud.fill" size={18} color="#64D2FF" />
+                    <div className="flex flex-col">
+                      <span className="text-[15px] font-medium" style={{ color: '#F5F5F5' }}>
+                        {account.displayName ?? account.email}
+                      </span>
+                      <span className="text-[11px]" style={{ color: 'rgba(245,245,245,0.40)' }}>
+                        {account.email}
+                      </span>
+                    </div>
+                  </div>
+                  <SyncStatusBadge status={syncStatus} />
+                </div>
+
+                {/* Sign out */}
+                <motion.button
+                  className="w-full flex items-center justify-between px-4"
+                  style={{ height: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={springSnappy}
+                  onClick={logout}
+                >
+                  <span className="text-[17px]" style={{ color: '#FF453A' }}>
+                    Sign Out
+                  </span>
+                  <Icon name="rectangle.portrait.and.arrow.right" size={16} color="#FF453A" />
+                </motion.button>
+              </>
+            ) : (
+              /* Sign in CTA */
+              <motion.button
+                className="w-full flex items-center justify-between px-4"
+                style={{ height: 56, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                whileTap={{ scale: 0.98 }}
+                transition={springSnappy}
+                onClick={() => router.push('/login')}
+              >
+                <div className="flex items-center gap-2.5">
+                  <Icon name="icloud" size={18} color="rgba(245,245,245,0.40)" />
+                  <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+                    Sign In to Sync
+                  </span>
+                </div>
+                <Icon name="chevron.right" size={13} color="rgba(245,245,245,0.35)" />
+              </motion.button>
+            )}
+
+            {/* Export JSON */}
+            <motion.button
+              className="w-full flex items-center justify-between px-4"
+              style={{ height: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+              whileTap={{ scale: 0.98 }}
+              transition={springSnappy}
+              disabled={exportingJson}
+              onClick={async () => {
+                setExportingJson(true);
+                try { await exportAllDataAsJSON(); } finally { setExportingJson(false); }
+              }}
+            >
+              <span className="text-[17px]" style={{ color: exportingJson ? 'rgba(245,245,245,0.45)' : '#F5F5F5' }}>
+                {exportingJson ? 'Exporting…' : 'Export All Data (JSON)'}
+              </span>
+              <Icon name="arrow.down.circle" size={18} color="rgba(245,245,245,0.40)" />
+            </motion.button>
+
+            {/* Export CSV */}
+            <motion.button
+              className="w-full flex items-center justify-between px-4"
+              style={{ height: 52 }}
+              whileTap={{ scale: 0.98 }}
+              transition={springSnappy}
+              disabled={exportingCsv}
+              onClick={async () => {
+                setExportingCsv(true);
+                try { await exportWorkoutsAsCSV(); } finally { setExportingCsv(false); }
+              }}
+            >
+              <span className="text-[17px]" style={{ color: exportingCsv ? 'rgba(245,245,245,0.45)' : '#F5F5F5' }}>
+                {exportingCsv ? 'Exporting…' : 'Export Workouts (CSV)'}
+              </span>
+              <Icon name="tablecells" size={18} color="rgba(245,245,245,0.40)" />
+            </motion.button>
           </div>
         </motion.div>
 
