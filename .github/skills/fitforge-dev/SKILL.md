@@ -1,6 +1,6 @@
 ---
 name: fitforge-dev
-description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries. CONTAINS: architecture patterns (local-first PouchDB, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management. DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
+description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries, cloud sync / CouchDB auth. CONTAINS: architecture patterns (local-first PouchDB, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management, Phase 7 cloud sync (CloudAccount, useAuthStore, SyncConfig, testCouchDbConnection, EditSyncSheet). DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
 ---
 
 # FitForge PWA Development Guide
@@ -19,7 +19,9 @@ description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness
 6. [Business Logic](#business-logic)
 7. [Animation System](#animation-system)
 8. [TypeScript Patterns](#typescript-patterns)
-9. [Common Tasks](#common-tasks)
+9. [Phase 7 — Cloud Sync (CouchDB)](#phase-7--cloud-sync-couchdb)
+10. [Common Tasks](#common-tasks)
+11. [Anti-Patterns](#anti-patterns)
 
 ---
 
@@ -251,18 +253,36 @@ import { House } from '@phosphor-icons/react';  // Don't do this
 
 ### Safe Area Support
 
-Always apply iOS safe area insets:
+**CRITICAL — Always use inline `style` for safe area, NOT Tailwind utility classes.**  
+Tailwind classes like `pt-safe-top` do NOT exist in this project and will silently have no effect.
 
-```css
-/* Bottom nav */
-padding-bottom: calc(8px + env(safe-area-inset-bottom));
+```tsx
+// ✅ CORRECT: Inline style with env()
+<div
+  className="fixed inset-0 overflow-y-auto bg-[#0B0B0B] px-6"
+  style={{
+    paddingTop: 'env(safe-area-inset-top)',
+    paddingBottom: 'max(32px, env(safe-area-inset-bottom))',
+  }}
+>
 
-/* Top bar */
-padding-top: calc(16px + env(safe-area-inset-top));
+// ❌ WRONG: pt-safe-top is not defined in this project
+<div className="pt-safe-top pb-8">
 
-/* Full-screen overlays */
-inset: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+// ✅ CORRECT: Bottom nav / fixed footers
+<div style={{ paddingBottom: 'calc(8px + env(safe-area-inset-bottom))' }}>
 ```
+
+**Two CSS utility classes exist in `globals.css` (apply as className, not pt-*):**
+```css
+.safe-top    { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+```
+
+**Full-screen auth/onboarding pages checklist:**
+- `overflow-y-auto` — required so tall content can scroll
+- `paddingTop: 'env(safe-area-inset-top)'` — notch/Dynamic Island clearance
+- `paddingBottom: 'max(32px, env(safe-area-inset-bottom))'` — home bar clearance + fallback
 
 ---
 
@@ -987,7 +1007,304 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 
 ---
 
+## Phase 7 — Cloud Sync (CouchDB)
+
+### CloudAccount Type
+
+App identity and CouchDB credentials are **completely separate concerns**. Never use email/username as both.
+
+```typescript
+// src/types/index.ts
+export interface CloudAccount {
+  /** App-level identity — displayed in UI. NOT used for CouchDB auth. */
+  displayName: string;
+  /** Optional app email — shown in UI only. Never used for CouchDB auth. */
+  email?: string;
+  /** CouchDB username — the actual database auth credential. */
+  couchUsername: string;
+  /** Full CouchDB URL with embedded Basic-Auth. NEVER display raw. */
+  couchDbUrl: string;   // format: https://user:pass@host/db
+  createdAt: string;
+}
+```
+
+**Key rule:** A user named "Alex Smith" might use CouchDB username `"admin"`. These are independent. Always derive UI display from `displayName`, never from `couchUsername`.
+
+### useAuthStore
+
+```typescript
+// src/store/useAuthStore.ts
+// Persisted as 'fitforge-auth' in localStorage
+
+interface AuthState {
+  account: CloudAccount | null;
+  isAuthenticated: boolean;
+
+  login: (account: CloudAccount) => void;
+  logout: () => void;
+  updateDisplayName: (name: string) => void;
+  /** Update CouchDB credentials after re-test on settings page. */
+  updateCouchCredentials: (couchUsername: string, couchDbUrl: string) => void;
+}
+```
+
+**Usage in components:**
+```tsx
+const { account, isAuthenticated } = useAuthStore(
+  s => ({ account: s.account, isAuthenticated: s.isAuthenticated }),
+  shallow
+);
+
+// Display name (never couchUsername for UI)
+const name = account?.displayName ?? 'FitForge Athlete';
+
+// CouchDB username shown in settings only
+const couchInfo = `CouchDB: ${account?.couchUsername} · ${maskServerUrl(account?.couchDbUrl)}`;
+```
+
+### Building the couchDbUrl
+
+CouchDB Basic Auth is embedded in the URL (standard CouchDB convention):
+
+```typescript
+// ✅ CORRECT: Build from parts using encodeURIComponent
+const urlObj = new URL(serverUrl.trim().replace(/\/$/, ''));
+const couchDbUrl = `${urlObj.protocol}//${encodeURIComponent(couchUsername)}:${encodeURIComponent(couchPassword)}@${urlObj.host}${urlObj.pathname}`;
+
+// ✅ CORRECT: Extract parts for re-use (e.g. connection test)
+const u = new URL(account.couchDbUrl);
+const username = decodeURIComponent(u.username);
+const password = decodeURIComponent(u.password);
+const baseUrl  = `${u.protocol}//${u.host}${u.pathname === '/' ? '' : u.pathname}`;
+
+// ✅ CORRECT: Safe display (strip credentials)
+function maskServerUrl(couchDbUrl: string): string {
+  try {
+    const u = new URL(couchDbUrl);
+    return `${u.protocol}//${u.host}${u.pathname === '/' ? '' : u.pathname}`;
+  } catch {
+    return couchDbUrl;
+  }
+}
+```
+
+### Testing CouchDB Connection
+
+Use `src/lib/db/testCouchConnection.ts` — always test before saving credentials.
+
+```typescript
+import { testCouchDbConnection, type ConnectionResult } from '@/lib/db/testCouchConnection';
+
+// Returns:
+// { ok: true;  username: string; serverVersion: string }
+// { ok: false; reason: string }
+
+const result = await testCouchDbConnection(serverBaseUrl, couchUsername, couchPassword);
+```
+
+**Test state machine pattern (used on login, register, and EditSyncSheet):**
+```tsx
+type TestState = 'idle' | 'testing' | 'ok' | 'fail';
+const [testState, setTestState]   = useState<TestState>('idle');
+const [testResult, setTestResult] = useState<ConnectionResult | null>(null);
+
+const handleTestConnection = async () => {
+  setTestState('testing');
+  setTestResult(null);
+  const result = await testCouchDbConnection(url, username, password);
+  setTestResult(result);
+  setTestState(result.ok ? 'ok' : 'fail');
+};
+
+// Gate the primary CTA when using own server:
+const isValid = couchUsername.trim().length > 0 &&
+                couchPassword.length >= 1 &&
+                resolvedUrl.trim().length > 0 &&
+                (!useOwnServer || testState === 'ok');
+```
+
+**Test button color states:**
+```tsx
+style={{
+  background:
+    testState === 'ok'   ? 'rgba(48,209,88,0.15)'  :
+    testState === 'fail' ? 'rgba(255,69,58,0.12)'  :
+    'rgba(255,255,255,0.08)',
+  color:
+    testState === 'ok'   ? '#30D158' :
+    testState === 'fail' ? '#FF453A' :
+    'rgba(245,245,245,0.70)',
+}}
+```
+
+### Managed vs Self-Hosted Server Toggle
+
+```typescript
+// Read from env at module level (not inside component)
+const MANAGED_SERVER    = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
+const HAS_MANAGED_SERVER = MANAGED_SERVER.length > 0;
+
+// In component:
+const [useOwnServer, setUseOwnServer] = useState(!HAS_MANAGED_SERVER);
+const resolvedUrl = useOwnServer ? customUrl : MANAGED_SERVER;
+
+// For managed server: test is optional (server is trusted)
+// For own server:     test must pass before CTA is enabled
+const isValid = ... && (!useOwnServer || testState === 'ok');
+```
+
+### Auth Pages Form Structure
+
+Login and Register pages have two visually separated sections:
+
+```tsx
+// 1. App identity (display name, optional email — just for the app UI)
+<SectionDivider label="Your Profile" />
+<FormField label="Display Name" ... />       // stored as account.displayName
+<FormField label="Email (optional)" ... />   // stored as account.email
+
+// 2. CouchDB credentials (used for actual DB auth)
+<SectionDivider label="CouchDB Access" />
+<FormField label="CouchDB Username" ... />   // stored as account.couchUsername
+<FormField label="CouchDB Password" ... />   // embedded in account.couchDbUrl
+
+// 3. Server selection
+<SectionDivider label="Server" />
+{HAS_MANAGED_SERVER && <ServerToggle ... />}
+<AnimatePresence>{useOwnServer && <CustomUrlField + TestButton />}</AnimatePresence>
+```
+
+**`SectionDivider` component pattern:**
+```tsx
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-3 pt-1">
+      <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
+      <span className="text-[11px] font-semibold uppercase tracking-[0.08em]"
+            style={{ color: 'rgba(245,245,245,0.30)' }}>
+        {label}
+      </span>
+      <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
+    </div>
+  );
+}
+```
+
+### Sync Pipeline
+
+```
+useAuthStore (account) → useSyncManager (useEffect) → startSync(SyncConfig) → couchSync.ts
+```
+
+```typescript
+// src/lib/db/couchSync.ts
+export interface SyncConfig {
+  couchDbUrl: string;       // Full URL with embedded credentials
+  couchUsername: string;    // For logging/display (not used for auth)
+  onStatusChange: (status: SyncStatus) => void;
+  onConflict: (conflict: RoutineConflict) => void;
+}
+```
+
+```typescript
+// src/hooks/useSyncManager.ts — auto-starts/stops based on auth state
+startSync({
+  couchDbUrl: account.couchDbUrl,
+  couchUsername: account.couchUsername,  // NOT account.email or userId
+  onStatusChange: setSyncStatus,
+  onConflict: handleConflict,
+});
+```
+
+### Profile Page — Auth-Aware UI
+
+When `isAuthenticated`:
+- Avatar shows `getInitials(account)` derived from `account.displayName`
+- Subtitle shows `account.email ?? '@' + account.couchUsername`
+- Cloud Sync section shows masked server URL + "Edit Sync Settings" row
+- `EditSyncSheet` lets user: edit display name, re-test connection, change credentials (→ /login), sign out
+
+```typescript
+// Initials from displayName (not email)
+function getInitials(account: CloudAccount): string {
+  const parts = account.displayName.trim().split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return account.displayName.slice(0, 2).toUpperCase();
+}
+```
+
+### Worker tsconfig Pitfall
+
+If `src/worker/tsconfig.json` has `"extends": "../../tsconfig.json"` and the root excludes `"src/worker"`, the worker tsconfig inherits that exclusion and TypeScript finds no inputs.
+
+**Fix:** Override `exclude` in the worker tsconfig to break inheritance:
+```json
+{
+  "extends": "../../tsconfig.json",
+  "exclude": ["../../node_modules"]
+}
+```
+
+Verify with: `npx tsc --project src/worker/tsconfig.json --noEmit`
+
+---
+
 ## Anti-Patterns
+
+### ❌ Don't Use Email as CouchDB Username
+
+```typescript
+// ❌ WRONG: Email is app identity, not a CouchDB credential
+const account: CloudAccount = {
+  userId: email,          // Field no longer exists
+  email: email,
+  couchDbUrl: `...${email}:${password}@...`,   // Wrong — email ≠ couchUsername
+};
+
+// ✅ CORRECT: Separate the two
+const account: CloudAccount = {
+  displayName: displayName || couchUsername,
+  email: email || undefined,       // Optional, UI only
+  couchUsername,                   // The actual DB user
+  couchDbUrl: `...${encodeURIComponent(couchUsername)}:${encodeURIComponent(couchPassword)}@...`,
+};
+```
+
+### ❌ Don't Use Tailwind `pt-safe-top`
+
+```tsx
+// ❌ WRONG: pt-safe-top is not defined — has zero effect
+<div className="pt-safe-top">
+
+// ✅ CORRECT: Use inline style
+<div style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+```
+
+### ❌ Don't Forget `overflow-y-auto` on tall auth pages
+
+```tsx
+// ❌ WRONG: Fixed container with no scroll → bottom button unreachable
+<div className="fixed inset-0 flex flex-col">
+
+// ✅ CORRECT: Always scrollable, safe-area-aware
+<div
+  className="fixed inset-0 flex flex-col overflow-y-auto"
+  style={{
+    paddingTop: 'env(safe-area-inset-top)',
+    paddingBottom: 'max(32px, env(safe-area-inset-bottom))',
+  }}
+>
+```
+
+### ❌ Don't Display Raw couchDbUrl
+
+```tsx
+// ❌ WRONG: Exposes embedded username:password in URL
+<span>{account.couchDbUrl}</span>
+
+// ✅ CORRECT: Always mask
+<span>{maskServerUrl(account.couchDbUrl)}</span>
+```
 
 ### ❌ Don't Mix Animation Libraries
 
