@@ -1,20 +1,23 @@
 // ═══════════════════════════════════════════════════════════════════
 // FitForge — Cloud Sync Register Page (Phase 7)
-// Create a new sync account (email + password + CouchDB server URL)
+// Create a new sync account (email + password + CouchDB server URL).
+// When NEXT_PUBLIC_COUCHDB_URL is set the managed server is the
+// default; users can toggle to supply their own CouchDB URL instead.
 // ═══════════════════════════════════════════════════════════════════
 
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { Icon } from '@/components/ui/Icon';
 import { useAuthStore } from '@/store/useAuthStore';
 import type { CloudAccount } from '@/types';
 
-const DEFAULT_SERVER = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
+const MANAGED_SERVER = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
+const HAS_MANAGED_SERVER = MANAGED_SERVER.length > 0;
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -23,17 +26,19 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [serverUrl, setServerUrl] = useState(DEFAULT_SERVER);
+  const [useOwnServer, setUseOwnServer] = useState(!HAS_MANAGED_SERVER);
+  const [customUrl, setCustomUrl] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+  const resolvedUrl = useOwnServer ? customUrl : MANAGED_SERVER;
   const passwordsMatch = password === confirmPassword;
   const isValid =
     email.trim().length > 0 &&
     password.length >= 6 &&
     passwordsMatch &&
-    serverUrl.trim().length > 0;
+    resolvedUrl.trim().length > 0;
 
   const handleRegister = async () => {
     setError(null);
@@ -43,7 +48,7 @@ export default function RegisterPage() {
     }
     setLoading(true);
     try {
-      const trimmedUrl = serverUrl.trim().replace(/\/$/, '');
+      const trimmedUrl = resolvedUrl.trim().replace(/\/$/, '');
       const urlObj = new URL(trimmedUrl);
       const couchDbUrl = `${urlObj.protocol}//${encodeURIComponent(email.trim())}:${encodeURIComponent(password)}@${urlObj.host}${urlObj.pathname}`;
 
@@ -60,7 +65,7 @@ export default function RegisterPage() {
       login(account);
       router.push('/profile');
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Invalid server URL');
+      setError(e instanceof Error ? e.message : 'Invalid server URL — check the format');
     } finally {
       setLoading(false);
     }
@@ -140,17 +145,42 @@ export default function RegisterPage() {
             autoComplete="new-password"
             hasError={confirmPassword.length > 0 && !passwordsMatch}
           />
-          <FormField
-            label="CouchDB Server URL"
-            type="url"
-            value={serverUrl}
-            onChange={setServerUrl}
-            placeholder="https://your-server.com"
-            autoComplete="url"
-          />
+
+          {/* Server selector — only shown when a managed server is configured */}
+          {HAS_MANAGED_SERVER && (
+            <ServerToggle
+              useOwnServer={useOwnServer}
+              onToggle={setUseOwnServer}
+            />
+          )}
+
+          {/* Custom URL field — always shown in self-hosted mode, conditionally in managed mode */}
+          <AnimatePresence initial={false}>
+            {useOwnServer && (
+              <motion.div
+                key="custom-url"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.22, ease: 'easeInOut' }}
+                style={{ overflow: 'hidden' }}
+              >
+                <FormField
+                  label="Your CouchDB Server URL"
+                  type="url"
+                  value={customUrl}
+                  onChange={setCustomUrl}
+                  placeholder="https://my-couch.example.com"
+                  autoComplete="url"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <p className="text-[12px] leading-relaxed" style={{ color: 'rgba(245,245,245,0.35)' }}>
-            Tip: You can self-host CouchDB for free. See{' '}
-            <span style={{ color: 'rgba(197,247,79,0.70)' }}>docs.couchdb.org</span> for setup.
+            {useOwnServer
+              ? 'Tip: You can self-host CouchDB for free. See docs.couchdb.org for setup.'
+              : 'Your data will sync to the shared app server.'}
           </p>
         </div>
 
@@ -201,6 +231,60 @@ export default function RegisterPage() {
           Skip for now
         </motion.button>
       </motion.div>
+    </div>
+  );
+}
+
+// ─── Server Toggle ────────────────────────────────────────────────
+
+function ServerToggle({
+  useOwnServer,
+  onToggle,
+}: {
+  useOwnServer: boolean;
+  onToggle: (v: boolean) => void;
+}) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <p
+        className="text-[13px] font-semibold uppercase tracking-[0.06em]"
+        style={{ color: 'rgba(245,245,245,0.45)' }}
+      >
+        Server
+      </p>
+      <div
+        className="flex rounded-[14px] p-1 gap-1"
+        style={{ background: 'rgba(255,255,255,0.07)' }}
+      >
+        {[
+          { label: 'App Server', value: false, icon: 'icloud.fill' },
+          { label: 'My Server', value: true, icon: 'gear' },
+        ].map((opt) => (
+          <motion.button
+            key={String(opt.value)}
+            whileTap={{ scale: 0.97 }}
+            transition={springSnappy}
+            onClick={() => onToggle(opt.value)}
+            className="flex-1 flex items-center justify-center gap-1.5 h-10 rounded-[10px] text-[14px] font-semibold"
+            style={{
+              background: useOwnServer === opt.value ? 'rgba(255,255,255,0.12)' : 'transparent',
+              color: useOwnServer === opt.value ? '#F5F5F5' : 'rgba(245,245,245,0.45)',
+            }}
+          >
+            <Icon
+              name={opt.icon}
+              size={14}
+              color={useOwnServer === opt.value ? '#C5F74F' : 'rgba(245,245,245,0.35)'}
+            />
+            {opt.label}
+          </motion.button>
+        ))}
+      </div>
+      {!useOwnServer && (
+        <p className="text-[11px]" style={{ color: 'rgba(245,245,245,0.30)' }}>
+          Using the app’s shared CouchDB instance.
+        </p>
+      )}
     </div>
   );
 }
