@@ -6,6 +6,8 @@ const withPWA = withPWAInit({
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
   reloadOnOnline: false,
+  // Merge push-event handler into the generated service worker
+  customWorkerSrc: "src/worker",
   workboxOptions: {
     // Exclude GIFs from SW precache manifest (200MB+ cannot be precached)
     exclude: [/\/data\/gifs\//],

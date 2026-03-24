@@ -471,4 +471,11 @@
 | `src/components/deload/DeloadWeekView.tsx` | ✅ | Active deload progress tracker, replaces hero card |
 | `src/components/deload/DeloadCompleteCard.tsx` | ✅ | Deload celebration modal with +200 XP bonus |
 | `src/app/(app)/routines/page.tsx` | 🔄 | Added undulating day type badge to routine cards |
+| **Phase 6 (completed)** | | |
+| `src/components/coaching/ProgressionHistorySheet.tsx` | ✅ | Recharts dual-axis line chart for weight + RPE history |
+| `src/components/coaching/CoachingNoteCard.tsx` | 🔄 | Added inline RPE mini-sparkline (SVG polyline + area fill) |
+| `src/lib/notifications/pushManager.ts` | ✅ | Browser Notification API: permission, schedule, show, dismiss |
+| `src/hooks/useNotificationScheduler.ts` | ✅ | Scheduling logic for all 4 notification types |
+| `src/worker/index.ts` | ✅ | Custom SW: push event listener + notificationclick routing |
+| `next.config.ts` | 🔄 | Added `customWorkerSrc` to merge push handler into generated SW |
 

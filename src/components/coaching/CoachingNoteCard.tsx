@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from '@/components/ui/Icon';
 import { springSnappy } from '@/lib/motion/springs';
@@ -16,6 +16,80 @@ import { exerciseDb, customExerciseDb } from '@/lib/db/pouchdb';
 import { applyCoachingNote } from '@/lib/coaching/applyCoachingNote';
 import { ProgressionHistorySheet } from '@/components/coaching/ProgressionHistorySheet';
 import { useWorkoutHistory } from '@/hooks/useDatabase';
+
+// ─── Mini RPE Sparkline ──────────────────────────────────────────
+interface RpeSparklineProps {
+  exerciseId: string;
+  color: string;
+}
+
+function RpeSparkline({ exerciseId, color }: RpeSparklineProps) {
+  const { data: workouts = [] } = useWorkoutHistory();
+
+  const rpePoints = useMemo(() => {
+    return workouts
+      .filter((w) => w.workout.some((ex) => ex.exerciseId === exerciseId))
+      .sort((a, b) => new Date(a.completedAt).getTime() - new Date(b.completedAt).getTime())
+      .slice(-6)
+      .map((w) => {
+        const ex = w.workout.find((e) => e.exerciseId === exerciseId);
+        if (!ex) return null;
+        const setsWithRpe = ex.sets.filter((s) => s.rpe !== undefined);
+        if (setsWithRpe.length === 0) return null;
+        return setsWithRpe.reduce((sum, s) => sum + (s.rpe ?? 0), 0) / setsWithRpe.length;
+      })
+      .filter((v): v is number => v !== null);
+  }, [workouts, exerciseId]);
+
+  if (rpePoints.length < 2) return null;
+
+  const W = 100;
+  const H = 28;
+  const pad = 2;
+  const minRpe = Math.max(0, Math.min(...rpePoints) - 0.5);
+  const maxRpe = Math.min(10, Math.max(...rpePoints) + 0.5);
+  const range = maxRpe - minRpe || 1;
+
+  const toX = (i: number) => pad + (i / (rpePoints.length - 1)) * (W - pad * 2);
+  const toY = (v: number) => H - pad - ((v - minRpe) / range) * (H - pad * 2);
+
+  const d = rpePoints
+    .map((v, i) => `${i === 0 ? 'M' : 'L'} ${toX(i).toFixed(1)} ${toY(v).toFixed(1)}`)
+    .join(' ');
+
+  const lastX = toX(rpePoints.length - 1);
+  const lastY = toY(rpePoints[rpePoints.length - 1]);
+
+  return (
+    <div className="mt-3 mb-1">
+      <div className="flex items-center justify-between mb-1">
+        <span className="text-[11px] uppercase font-semibold" style={{ color: 'rgba(245,245,245,0.40)', letterSpacing: '0.5px' }}>
+          RPE Trend
+        </span>
+        <span className="text-[11px] font-semibold tabular-nums" style={{ color }}>
+          {rpePoints[rpePoints.length - 1].toFixed(1)}
+        </span>
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} style={{ overflow: 'visible' }}>
+        {/* Area fill */}
+        <defs>
+          <linearGradient id={`rpe-grad-${exerciseId}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={color} stopOpacity={0.18} />
+            <stop offset="100%" stopColor={color} stopOpacity={0} />
+          </linearGradient>
+        </defs>
+        <path
+          d={`${d} L ${lastX.toFixed(1)} ${H} L ${pad} ${H} Z`}
+          fill={`url(#rpe-grad-${exerciseId})`}
+        />
+        {/* Line */}
+        <path d={d} stroke={color} strokeWidth={1.5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Dot at last point */}
+        <circle cx={lastX} cy={lastY} r={2.5} fill={color} />
+      </svg>
+    </div>
+  );
+}
 
 interface CoachingNoteCardProps {
   note: CoachingNote;
@@ -202,19 +276,25 @@ export function CoachingNoteCard({ note, onApply }: CoachingNoteCardProps) {
           </motion.button>
         </div>
 
-        {/* View History Link */}
+        {/* RPE Mini Sparkline */}
         {note.avgRpe !== undefined && (
-          <motion.button
-            whileTap={{ scale: 0.98 }}
-            transition={springSnappy}
-            onClick={() => setHistoryOpen(true)}
-            className="w-full mt-3 py-2 flex items-center justify-center gap-1.5"
+          <div
+            className="mt-3 px-3 pt-3 pb-1 rounded-[12px]"
+            style={{ background: 'rgba(0,0,0,0.12)' }}
           >
-            <Icon name="chart.line.uptrend.xyaxis" size={14} color="rgba(245,245,245,0.50)" />
-            <span className="text-[13px] font-medium" style={{ color: 'rgba(245,245,245,0.50)' }}>
-              View Progression History
-            </span>
-          </motion.button>
+            <RpeSparkline exerciseId={note.exerciseId} color={iconColor} />
+            <motion.button
+              whileTap={{ scale: 0.98 }}
+              transition={springSnappy}
+              onClick={() => setHistoryOpen(true)}
+              className="w-full pt-2 pb-1 flex items-center justify-center gap-1.5"
+            >
+              <Icon name="chart.line.uptrend.xyaxis" size={13} color="rgba(245,245,245,0.45)" />
+              <span className="text-[12px] font-medium" style={{ color: 'rgba(245,245,245,0.45)' }}>
+                View full history
+              </span>
+            </motion.button>
+          </div>
         )}
 
         {/* Applied badge */}
