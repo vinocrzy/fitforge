@@ -258,10 +258,14 @@ export interface SyncStatus {
 }
 
 export interface CloudAccount {
-  userId: string;
-  email: string;
-  displayName?: string;
-  couchDbUrl: string;            // User-configured or provisioned endpoint
+  /** App-level identity — shown in the UI (not used for CouchDB auth). */
+  displayName: string;
+  /** Optional app email — shown in the UI only. */
+  email?: string;
+  /** CouchDB username — used to authenticate with CouchDB (may differ from displayName). */
+  couchUsername: string;
+  /** Full CouchDB URL with embedded Basic-Auth credentials. Never display raw. */
+  couchDbUrl: string;
   createdAt: string;
 }
 

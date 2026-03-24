@@ -207,12 +207,12 @@ export default function ProfilePage() {
           <div className="text-center">
             <div className="text-[22px] font-extrabold" style={{ color: '#F5F5F5' }}>
               {isAuthenticated && account
-                ? (account.displayName ?? account.email.split('@')[0])
+                ? account.displayName
                 : 'FitForge Athlete'}
             </div>
             {isAuthenticated && account && (
               <div className="text-[13px] mt-0.5" style={{ color: 'rgba(245,245,245,0.40)' }}>
-                {account.email}
+                {account.email ?? `@${account.couchUsername}`}
               </div>
             )}
           </div>
@@ -589,7 +589,7 @@ export default function ProfilePage() {
                     <Icon name="icloud.fill" size={18} color="#64D2FF" />
                     <div className="flex flex-col">
                       <span className="text-[15px] font-medium" style={{ color: '#F5F5F5' }}>
-                        {account.displayName ?? account.email.split('@')[0]}
+                        {account.displayName}
                       </span>
                       <span className="text-[11px]" style={{ color: 'rgba(245,245,245,0.40)' }}>
                         {maskServerUrl(account.couchDbUrl)}
@@ -717,7 +717,7 @@ export default function ProfilePage() {
 
 /** Derive 2-letter initials from a CloudAccount. */
 function getInitials(account: CloudAccount): string {
-  const name = (account.displayName ?? account.email).trim();
+  const name = account.displayName.trim();
   const parts = name.split(/\s+/);
   if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   return name.slice(0, 2).toUpperCase();
@@ -969,10 +969,10 @@ function EditSyncSheet({
           </div>
           <div className="flex flex-col min-w-0">
             <span className="text-[15px] font-semibold truncate" style={{ color: '#F5F5F5' }}>
-              {account.email}
+              {account.displayName}
             </span>
             <span className="text-[12px] truncate" style={{ color: 'rgba(245,245,245,0.45)' }}>
-              {serverUrl}
+              CouchDB: {account.couchUsername} · {serverUrl}
             </span>
           </div>
           <Icon name="checkmark.icloud.fill" size={20} color="#64D2FF" />
@@ -991,7 +991,7 @@ function EditSyncSheet({
               type="text"
               value={displayName}
               onChange={(e) => { setDisplayName(e.target.value); setSaved(false); }}
-              placeholder={account.email.split('@')[0]}
+              placeholder={account.displayName || account.couchUsername}
               className="flex-1 h-[52px] rounded-[14px] px-4 text-[17px] outline-none"
               style={{
                 background: 'rgba(255,255,255,0.07)',

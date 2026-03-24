@@ -26,32 +26,39 @@ export default function RegisterPage() {
   const router = useRouter();
   const login = useAuthStore((s) => s.login);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // ── App identity (shown in the UI, not used for CouchDB auth) ──
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail] = useState(''); // optional app email, not used for CouchDB
+
+  // ── CouchDB credentials (used for actual database auth) ──
+  const [couchUsername, setCouchUsername] = useState('');
+  const [couchPassword, setCouchPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  // ── Server selection ──
   const [useOwnServer, setUseOwnServer] = useState(!HAS_MANAGED_SERVER);
   const [customUrl, setCustomUrl] = useState('');
-  const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  // Connection test
+
+  // ── Connection test ──
   const [testState, setTestState] = useState<TestState>('idle');
   const [testResult, setTestResult] = useState<ConnectionResult | null>(null);
 
   const resolvedUrl = useOwnServer ? customUrl : MANAGED_SERVER;
-  const passwordsMatch = password === confirmPassword;
+  const passwordsMatch = couchPassword === confirmPassword;
 
   const resetTest = () => { setTestState('idle'); setTestResult(null); };
 
   const canTest =
     useOwnServer &&
     customUrl.trim().length > 0 &&
-    email.trim().length > 0 &&
-    password.length >= 6;
+    couchUsername.trim().length > 0 &&
+    couchPassword.length >= 1;
 
   const isValid =
-    email.trim().length > 0 &&
-    password.length >= 6 &&
+    couchUsername.trim().length > 0 &&
+    couchPassword.length >= 1 &&
     passwordsMatch &&
     resolvedUrl.trim().length > 0 &&
     (!useOwnServer || testState === 'ok');
@@ -59,7 +66,7 @@ export default function RegisterPage() {
   const handleTestConnection = async () => {
     setTestState('testing');
     setTestResult(null);
-    const result = await testCouchDbConnection(customUrl.trim(), email.trim(), password);
+    const result = await testCouchDbConnection(customUrl.trim(), couchUsername.trim(), couchPassword);
     setTestResult(result);
     setTestState(result.ok ? 'ok' : 'fail');
   };
@@ -74,12 +81,12 @@ export default function RegisterPage() {
     try {
       const trimmedUrl = resolvedUrl.trim().replace(/\/$/, '');
       const urlObj = new URL(trimmedUrl);
-      const couchDbUrl = `${urlObj.protocol}//${encodeURIComponent(email.trim())}:${encodeURIComponent(password)}@${urlObj.host}${urlObj.pathname}`;
+      const couchDbUrl = `${urlObj.protocol}//${encodeURIComponent(couchUsername.trim())}:${encodeURIComponent(couchPassword)}@${urlObj.host}${urlObj.pathname}`;
 
       const account: CloudAccount = {
-        userId: email.trim(),
-        email: email.trim(),
-        displayName: displayName.trim() || undefined,
+        displayName: displayName.trim() || couchUsername.trim(),
+        email: email.trim() || undefined,
+        couchUsername: couchUsername.trim(),
         couchDbUrl,
         createdAt: new Date().toISOString(),
       };
@@ -134,6 +141,9 @@ export default function RegisterPage() {
 
         {/* Form */}
         <div className="flex flex-col gap-3">
+
+          {/* ── App identity ── */}
+          <SectionDivider label="Your Profile" />
           <FormField
             label="Display Name (optional)"
             type="text"
@@ -143,18 +153,29 @@ export default function RegisterPage() {
             autoComplete="name"
           />
           <FormField
-            label="Email"
+            label="Email (optional)"
             type="email"
             value={email}
             onChange={setEmail}
             placeholder="you@example.com"
             autoComplete="email"
           />
+
+          {/* ── CouchDB credentials ── */}
+          <SectionDivider label="CouchDB Access" />
           <FormField
-            label="Password (min 6 chars)"
+            label="CouchDB Username"
+            type="text"
+            value={couchUsername}
+            onChange={(v) => { setCouchUsername(v); resetTest(); }}
+            placeholder="admin"
+            autoComplete="username"
+          />
+          <FormField
+            label="CouchDB Password"
             type="password"
-            value={password}
-            onChange={setPassword}
+            value={couchPassword}
+            onChange={(v) => { setCouchPassword(v); resetTest(); }}
             placeholder="••••••••"
             autoComplete="new-password"
           />
@@ -167,6 +188,9 @@ export default function RegisterPage() {
             autoComplete="new-password"
             hasError={confirmPassword.length > 0 && !passwordsMatch}
           />
+
+          {/* ── Server ── */}
+          <SectionDivider label="Server" />
 
           {/* Server selector — only shown when a managed server is configured */}
           {HAS_MANAGED_SERVER && (
@@ -325,6 +349,25 @@ export default function RegisterPage() {
           Skip for now
         </motion.button>
       </motion.div>
+    </div>
+  );
+}
+
+// ─── Server Toggle ────────────────────────────────────────────────
+
+// ─── Section Divider ─────────────────────────────────────────────
+
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-3 pt-1">
+      <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
+      <span
+        className="text-[11px] font-semibold uppercase tracking-[0.08em]"
+        style={{ color: 'rgba(245,245,245,0.30)' }}
+      >
+        {label}
+      </span>
+      <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
     </div>
   );
 }

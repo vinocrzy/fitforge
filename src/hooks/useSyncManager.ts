@@ -53,7 +53,7 @@ export function useSyncManager() {
 
     startSync({
       couchDbUrl: account.couchDbUrl,
-      userId: account.userId,
+      couchUsername: account.couchUsername,
       onStatusChange: setSyncStatus,
       onConflict: handleConflict,
     });
@@ -68,7 +68,7 @@ export function useSyncManager() {
       if (isAuthenticated && account) {
         startSync({
           couchDbUrl: account.couchDbUrl,
-          userId: account.userId,
+          couchUsername: account.couchUsername,
           onStatusChange: setSyncStatus,
           onConflict: handleConflict,
         });

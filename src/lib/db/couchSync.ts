@@ -46,7 +46,7 @@ function emitStatus(patch: Partial<SyncStatus>) {
 
 export interface SyncConfig {
   couchDbUrl: string;   // e.g. https://user:pass@my-couch.example.com
-  userId: string;
+  couchUsername: string;
   onStatusChange: (status: SyncStatus) => void;
   onConflict: (conflict: RoutineConflict) => void;
 }
