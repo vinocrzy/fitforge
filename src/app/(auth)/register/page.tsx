@@ -14,10 +14,13 @@ import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { Icon } from '@/components/ui/Icon';
 import { useAuthStore } from '@/store/useAuthStore';
+import { testCouchDbConnection, type ConnectionResult } from '@/lib/db/testCouchConnection';
 import type { CloudAccount } from '@/types';
 
 const MANAGED_SERVER = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
 const HAS_MANAGED_SERVER = MANAGED_SERVER.length > 0;
+
+type TestState = 'idle' | 'testing' | 'ok' | 'fail';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -31,14 +34,35 @@ export default function RegisterPage() {
   const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  // Connection test
+  const [testState, setTestState] = useState<TestState>('idle');
+  const [testResult, setTestResult] = useState<ConnectionResult | null>(null);
 
   const resolvedUrl = useOwnServer ? customUrl : MANAGED_SERVER;
   const passwordsMatch = password === confirmPassword;
+
+  const resetTest = () => { setTestState('idle'); setTestResult(null); };
+
+  const canTest =
+    useOwnServer &&
+    customUrl.trim().length > 0 &&
+    email.trim().length > 0 &&
+    password.length >= 6;
+
   const isValid =
     email.trim().length > 0 &&
     password.length >= 6 &&
     passwordsMatch &&
-    resolvedUrl.trim().length > 0;
+    resolvedUrl.trim().length > 0 &&
+    (!useOwnServer || testState === 'ok');
+
+  const handleTestConnection = async () => {
+    setTestState('testing');
+    setTestResult(null);
+    const result = await testCouchDbConnection(customUrl.trim(), email.trim(), password);
+    setTestResult(result);
+    setTestState(result.ok ? 'ok' : 'fail');
+  };
 
   const handleRegister = async () => {
     setError(null);
@@ -60,8 +84,6 @@ export default function RegisterPage() {
         createdAt: new Date().toISOString(),
       };
 
-      // For self-hosted CouchDB, the user already exists on the server.
-      // We simply persist the credentials and start syncing.
       login(account);
       router.push('/profile');
     } catch (e) {
@@ -165,21 +187,93 @@ export default function RegisterPage() {
                 transition={{ duration: 0.22, ease: 'easeInOut' }}
                 style={{ overflow: 'hidden' }}
               >
-                <FormField
-                  label="Your CouchDB Server URL"
-                  type="url"
-                  value={customUrl}
-                  onChange={setCustomUrl}
-                  placeholder="https://my-couch.example.com"
-                  autoComplete="url"
-                />
+                <div className="flex gap-2 items-end">
+                  <div className="flex-1">
+                    <FormField
+                      label="Your CouchDB Server URL"
+                      type="url"
+                      value={customUrl}
+                      onChange={(v) => { setCustomUrl(v); resetTest(); }}
+                      placeholder="https://my-couch.example.com"
+                      autoComplete="url"
+                    />
+                  </div>
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    transition={springSnappy}
+                    onClick={handleTestConnection}
+                    disabled={!canTest || testState === 'testing'}
+                    className="h-[52px] px-4 rounded-[14px] font-semibold text-[14px] flex-shrink-0 flex items-center gap-1.5"
+                    style={{
+                      background:
+                        testState === 'ok' ? 'rgba(48,209,88,0.15)' :
+                        testState === 'fail' ? 'rgba(255,69,58,0.12)' :
+                        'rgba(255,255,255,0.10)',
+                      color:
+                        testState === 'ok' ? '#30D158' :
+                        testState === 'fail' ? '#FF453A' :
+                        'rgba(245,245,245,0.70)',
+                      border:
+                        testState === 'ok' ? '1px solid rgba(48,209,88,0.30)' :
+                        testState === 'fail' ? '1px solid rgba(255,69,58,0.25)' :
+                        '1px solid rgba(255,255,255,0.10)',
+                      opacity: (!canTest || testState === 'testing') ? 0.5 : 1,
+                    }}
+                  >
+                    {testState === 'testing' && (
+                      <motion.span
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 0.9, ease: 'linear' }}
+                        style={{ display: 'inline-flex' }}
+                      >
+                        <Icon name="arrow.triangle.2.circlepath" size={15} color="rgba(245,245,245,0.70)" />
+                      </motion.span>
+                    )}
+                    {testState === 'ok' && <Icon name="checkmark.circle.fill" size={15} color="#30D158" />}
+                    {testState === 'fail' && <Icon name="exclamationmark.circle.fill" size={15} color="#FF453A" />}
+                    {testState === 'idle' && <Icon name="arrow.triangle.2.circlepath" size={15} color="rgba(245,245,245,0.70)" />}
+                    {testState === 'testing' ? 'Testing…' :
+                     testState === 'ok' ? 'Connected' :
+                     testState === 'fail' ? 'Failed' : 'Test'}
+                  </motion.button>
+                </div>
+
+                {/* Connection result banner */}
+                <AnimatePresence>
+                  {testResult && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      className="mt-2 p-3 rounded-[12px] flex items-start gap-2"
+                      style={{
+                        background: testResult.ok ? 'rgba(48,209,88,0.10)' : 'rgba(255,69,58,0.10)',
+                        border: `1px solid ${testResult.ok ? 'rgba(48,209,88,0.25)' : 'rgba(255,69,58,0.25)'}`,
+                      }}
+                    >
+                      <Icon
+                        name={testResult.ok ? 'checkmark.circle.fill' : 'exclamationmark.circle.fill'}
+                        size={16}
+                        color={testResult.ok ? '#30D158' : '#FF453A'}
+                      />
+                      <div className="flex flex-col gap-0.5">
+                        <p className="text-[13px] font-semibold" style={{ color: testResult.ok ? '#30D158' : '#FF453A' }}>
+                          {testResult.ok ? `Connected as ${testResult.username}` : 'Connection failed'}
+                        </p>
+                        <p className="text-[12px]" style={{ color: 'rgba(245,245,245,0.55)' }}>
+                          {testResult.ok ? testResult.serverVersion : testResult.reason}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             )}
           </AnimatePresence>
 
           <p className="text-[12px] leading-relaxed" style={{ color: 'rgba(245,245,245,0.35)' }}>
             {useOwnServer
-              ? 'Tip: You can self-host CouchDB for free. See docs.couchdb.org for setup.'
+              ? 'Test your connection before enabling sync.'
               : 'Your data will sync to the shared app server.'}
           </p>
         </div>

@@ -14,6 +14,7 @@ import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { Icon } from '@/components/ui/Icon';
 import { useAuthStore } from '@/store/useAuthStore';
+import { testCouchDbConnection, type ConnectionResult } from '@/lib/db/testCouchConnection';
 import type { CloudAccount } from '@/types';
 
 // Set in .env.local — points to a shared/managed CouchDB instance.
@@ -22,23 +23,47 @@ import type { CloudAccount } from '@/types';
 const MANAGED_SERVER = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
 const HAS_MANAGED_SERVER = MANAGED_SERVER.length > 0;
 
+type TestState = 'idle' | 'testing' | 'ok' | 'fail';
+
 export default function LoginPage() {
   const router = useRouter();
   const login = useAuthStore((s) => s.login);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // When a managed server exists default to it; user can switch to own.
   const [useOwnServer, setUseOwnServer] = useState(!HAS_MANAGED_SERVER);
   const [customUrl, setCustomUrl] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  // Connection test
+  const [testState, setTestState] = useState<TestState>('idle');
+  const [testResult, setTestResult] = useState<ConnectionResult | null>(null);
 
   const resolvedUrl = useOwnServer ? customUrl : MANAGED_SERVER;
+
+  // Reset test when credentials change
+  const resetTest = () => { setTestState('idle'); setTestResult(null); };
+
+  const canTest =
+    useOwnServer &&
+    customUrl.trim().length > 0 &&
+    email.trim().length > 0 &&
+    password.length >= 6;
+
   const isValid =
     email.trim().length > 0 &&
     password.length >= 6 &&
-    resolvedUrl.trim().length > 0;
+    resolvedUrl.trim().length > 0 &&
+    // For own server: must pass connection test before saving
+    (!useOwnServer || testState === 'ok');
+
+  const handleTestConnection = async () => {
+    setTestState('testing');
+    setTestResult(null);
+    const result = await testCouchDbConnection(customUrl.trim(), email.trim(), password);
+    setTestResult(result);
+    setTestState(result.ok ? 'ok' : 'fail');
+  };
 
   const handleLogin = async () => {
     setError(null);
@@ -141,16 +166,89 @@ export default function LoginPage() {
                 transition={{ duration: 0.22, ease: 'easeInOut' }}
                 style={{ overflow: 'hidden' }}
               >
-                <FormField
-                  label="Your CouchDB Server URL"
-                  type="url"
-                  value={customUrl}
-                  onChange={setCustomUrl}
-                  placeholder="https://my-couch.example.com"
-                  autoComplete="url"
-                />
+                <div className="flex gap-2 items-end">
+                  <div className="flex-1">
+                    <FormField
+                      label="Your CouchDB Server URL"
+                      type="url"
+                      value={customUrl}
+                      onChange={(v) => { setCustomUrl(v); resetTest(); }}
+                      placeholder="https://my-couch.example.com"
+                      autoComplete="url"
+                    />
+                  </div>
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    transition={springSnappy}
+                    onClick={handleTestConnection}
+                    disabled={!canTest || testState === 'testing'}
+                    className="h-[52px] px-4 rounded-[14px] font-semibold text-[14px] flex-shrink-0 flex items-center gap-1.5"
+                    style={{
+                      background:
+                        testState === 'ok' ? 'rgba(48,209,88,0.15)' :
+                        testState === 'fail' ? 'rgba(255,69,58,0.12)' :
+                        'rgba(255,255,255,0.10)',
+                      color:
+                        testState === 'ok' ? '#30D158' :
+                        testState === 'fail' ? '#FF453A' :
+                        'rgba(245,245,245,0.70)',
+                      border:
+                        testState === 'ok' ? '1px solid rgba(48,209,88,0.30)' :
+                        testState === 'fail' ? '1px solid rgba(255,69,58,0.25)' :
+                        '1px solid rgba(255,255,255,0.10)',
+                      opacity: (!canTest || testState === 'testing') ? 0.5 : 1,
+                    }}
+                  >
+                    {testState === 'testing' && (
+                      <motion.span
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 0.9, ease: 'linear' }}
+                        style={{ display: 'inline-flex' }}
+                      >
+                        <Icon name="arrow.triangle.2.circlepath" size={15} color="rgba(245,245,245,0.70)" />
+                      </motion.span>
+                    )}
+                    {testState === 'ok' && <Icon name="checkmark.circle.fill" size={15} color="#30D158" />}
+                    {testState === 'fail' && <Icon name="exclamationmark.circle.fill" size={15} color="#FF453A" />}
+                    {testState === 'idle' && <Icon name="arrow.triangle.2.circlepath" size={15} color="rgba(245,245,245,0.70)" />}
+                    {testState === 'testing' ? 'Testing…' :
+                     testState === 'ok' ? 'Connected' :
+                     testState === 'fail' ? 'Failed' : 'Test'}
+                  </motion.button>
+                </div>
+
+                {/* Connection result banner */}
+                <AnimatePresence>
+                  {testResult && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      className="mt-2 p-3 rounded-[12px] flex items-start gap-2"
+                      style={{
+                        background: testResult.ok ? 'rgba(48,209,88,0.10)' : 'rgba(255,69,58,0.10)',
+                        border: `1px solid ${testResult.ok ? 'rgba(48,209,88,0.25)' : 'rgba(255,69,58,0.25)'}`,
+                      }}
+                    >
+                      <Icon
+                        name={testResult.ok ? 'checkmark.circle.fill' : 'exclamationmark.circle.fill'}
+                        size={16}
+                        color={testResult.ok ? '#30D158' : '#FF453A'}
+                      />
+                      <div className="flex flex-col gap-0.5">
+                        <p className="text-[13px] font-semibold" style={{ color: testResult.ok ? '#30D158' : '#FF453A' }}>
+                          {testResult.ok ? `Connected as ${testResult.username}` : 'Connection failed'}
+                        </p>
+                        <p className="text-[12px]" style={{ color: 'rgba(245,245,245,0.55)' }}>
+                          {testResult.ok ? testResult.serverVersion : testResult.reason}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 <p className="text-[12px] mt-1.5" style={{ color: 'rgba(245,245,245,0.35)' }}>
-                  Use your own self-hosted or Cloudant instance.
+                  Test the connection before signing in.
                 </p>
               </motion.div>
             )}

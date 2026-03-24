@@ -7,7 +7,7 @@
 
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   BarChart,
   Bar,
@@ -26,6 +26,7 @@ import { useSyncManager } from '@/hooks/useSyncManager';
 import { SyncStatusBadge } from '@/components/sync/SyncStatusBadge';
 import { BottomSheet } from '@/components/ui/BottomSheet';
 import { exportAllDataAsJSON, exportWorkoutsAsCSV } from '@/lib/utils/exportData';
+import { testCouchDbConnection, type ConnectionResult } from '@/lib/db/testCouchConnection';
 import type { WorkoutSession, PersonalRecord, FitnessGoal, CloudAccount } from '@/types';
 
 // ─── Level thresholds (mirrors store) ─────────────────────────────
@@ -914,11 +915,33 @@ function EditSyncSheet({
 }: EditSyncSheetProps) {
   const [displayName, setDisplayName] = useState(account.displayName ?? '');
   const [saved, setSaved] = useState(false);
+  // Connection test
+  type TestState = 'idle' | 'testing' | 'ok' | 'fail';
+  const [testState, setTestState] = useState<TestState>('idle');
+  const [testResult, setTestResult] = useState<ConnectionResult | null>(null);
 
   const handleSave = () => {
     onDisplayNameSave(displayName.trim());
     setSaved(true);
     setTimeout(() => setSaved(false), 1800);
+  };
+
+  const handleTestConnection = async () => {
+    setTestState('testing');
+    setTestResult(null);
+    // Extract credentials from the stored couchDbUrl
+    try {
+      const u = new URL(account.couchDbUrl);
+      const username = decodeURIComponent(u.username);
+      const password = decodeURIComponent(u.password);
+      const baseUrl = `${u.protocol}//${u.host}${u.pathname === '/' ? '' : u.pathname}`;
+      const result = await testCouchDbConnection(baseUrl, username, password);
+      setTestResult(result);
+      setTestState(result.ok ? 'ok' : 'fail');
+    } catch {
+      setTestResult({ ok: false, reason: 'Could not parse stored credentials' });
+      setTestState('fail');
+    }
   };
 
   const serverUrl = maskServerUrl(account.couchDbUrl);
@@ -998,7 +1021,7 @@ function EditSyncSheet({
           </p>
         </div>
 
-        {/* Server info (read-only) */}
+        {/* Server info + test connection */}
         <div className="flex flex-col gap-1.5">
           <label
             className="text-[13px] font-semibold uppercase tracking-[0.06em]"
@@ -1006,20 +1029,89 @@ function EditSyncSheet({
           >
             CouchDB Server
           </label>
-          <div
-            className="h-[52px] rounded-[14px] px-4 flex items-center gap-2"
-            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
-          >
-            <Icon name="icloud" size={16} color="rgba(245,245,245,0.35)" />
-            <span
-              className="text-[15px] truncate"
-              style={{ color: 'rgba(245,245,245,0.55)' }}
+          <div className="flex gap-2">
+            <div
+              className="flex-1 h-[52px] rounded-[14px] px-4 flex items-center gap-2 min-w-0"
+              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
             >
-              {serverUrl}
-            </span>
+              <Icon name="icloud" size={16} color="rgba(245,245,245,0.35)" />
+              <span className="text-[15px] truncate" style={{ color: 'rgba(245,245,245,0.55)' }}>
+                {serverUrl}
+              </span>
+            </div>
+            {/* Test button */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              transition={springSnappy}
+              onClick={handleTestConnection}
+              disabled={testState === 'testing'}
+              className="h-[52px] px-3 rounded-[14px] flex-shrink-0 flex items-center gap-1.5 font-semibold text-[13px]"
+              style={{
+                background:
+                  testState === 'ok' ? 'rgba(48,209,88,0.15)' :
+                  testState === 'fail' ? 'rgba(255,69,58,0.12)' :
+                  'rgba(255,255,255,0.08)',
+                color:
+                  testState === 'ok' ? '#30D158' :
+                  testState === 'fail' ? '#FF453A' :
+                  'rgba(245,245,245,0.70)',
+                border:
+                  testState === 'ok' ? '1px solid rgba(48,209,88,0.30)' :
+                  testState === 'fail' ? '1px solid rgba(255,69,58,0.25)' :
+                  '1px solid rgba(255,255,255,0.10)',
+                opacity: testState === 'testing' ? 0.6 : 1,
+              }}
+            >
+              {testState === 'testing' && (
+                <motion.span
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 0.9, ease: 'linear' }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <Icon name="arrow.triangle.2.circlepath" size={14} color="rgba(245,245,245,0.70)" />
+                </motion.span>
+              )}
+              {testState === 'ok' && <Icon name="checkmark.circle.fill" size={14} color="#30D158" />}
+              {testState === 'fail' && <Icon name="exclamationmark.circle.fill" size={14} color="#FF453A" />}
+              {testState === 'idle' && <Icon name="arrow.triangle.2.circlepath" size={14} color="rgba(245,245,245,0.70)" />}
+              {testState === 'testing' ? 'Testing…' :
+               testState === 'ok' ? 'OK' :
+               testState === 'fail' ? 'Failed' : 'Test'}
+            </motion.button>
           </div>
+
+          {/* Test result banner */}
+          <AnimatePresence>
+            {testResult && (
+              <motion.div
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                className="p-3 rounded-[12px] flex items-start gap-2"
+                style={{
+                  background: testResult.ok ? 'rgba(48,209,88,0.10)' : 'rgba(255,69,58,0.10)',
+                  border: `1px solid ${testResult.ok ? 'rgba(48,209,88,0.25)' : 'rgba(255,69,58,0.25)'}`,
+                }}
+              >
+                <Icon
+                  name={testResult.ok ? 'checkmark.circle.fill' : 'exclamationmark.circle.fill'}
+                  size={15}
+                  color={testResult.ok ? '#30D158' : '#FF453A'}
+                />
+                <div className="flex flex-col gap-0.5">
+                  <p className="text-[13px] font-semibold" style={{ color: testResult.ok ? '#30D158' : '#FF453A' }}>
+                    {testResult.ok ? `Connected as ${testResult.username}` : 'Connection failed'}
+                  </p>
+                  <p className="text-[12px]" style={{ color: 'rgba(245,245,245,0.55)' }}>
+                    {testResult.ok ? testResult.serverVersion : testResult.reason}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <p className="text-[12px]" style={{ color: 'rgba(245,245,245,0.35)' }}>
-            To change your server or password, re-authenticate below.
+            To change your server or password, tap Change Credentials below.
           </p>
         </div>
 
