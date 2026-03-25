@@ -1,11 +1,11 @@
 ---
 name: fitforge-dev
-description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries, cloud sync / CouchDB auth. CONTAINS: architecture patterns (local-first PouchDB, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management, Phase 7 cloud sync (CloudAccount, useAuthStore, SyncConfig, testCouchDbConnection, EditSyncSheet). DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
+description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries, cloud sync, authentication. CONTAINS: architecture patterns (local-first PouchDB, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management, Clerk authentication, CouchDB proxy sync (useSyncConfigStore, useProvisionCouch, /api/couch proxy). DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
 ---
 
 # FitForge PWA Development Guide
 
-> **FitForge** is a Next.js 15 PWA for fitness tracking with local-first offline capability, iOS 26 Liquid Glass design language, and a three-phase workout model (warm-up → workout → stretch).
+> **FitForge** is a Next.js 16 PWA for fitness tracking with local-first offline capability, iOS 26 Liquid Glass design language, Clerk authentication, and a three-phase workout model (warm-up → workout → stretch).
 
 ---
 
@@ -19,9 +19,10 @@ description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness
 6. [Business Logic](#business-logic)
 7. [Animation System](#animation-system)
 8. [TypeScript Patterns](#typescript-patterns)
-9. [Phase 7 — Cloud Sync (CouchDB)](#phase-7--cloud-sync-couchdb)
-10. [Common Tasks](#common-tasks)
-11. [Anti-Patterns](#anti-patterns)
+9. [Authentication (Clerk)](#authentication-clerk)
+10. [Cloud Sync (CouchDB Proxy)](#cloud-sync-couchdb-proxy)
+11. [Common Tasks](#common-tasks)
+12. [Anti-Patterns](#anti-patterns)
 
 ---
 
@@ -1054,502 +1055,325 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 
 ---
 
-## Phase 7 — Cloud Sync (CouchDB)
+## Authentication (Clerk)
 
-### CloudAccount Type
+### Overview
 
-App identity and CouchDB credentials are **completely separate concerns**. Never use email/username as both.
+Authentication is handled entirely by **Clerk** (`@clerk/nextjs`). There is no custom auth system, no PIN, no multi-account store. Clerk manages sign-up, sign-in, session tokens, and user identity.
 
-```typescript
-// src/types/index.ts  (v2 — multi-account)
-export interface CloudAccount {
-  /** Stable device identity. crypto.randomUUID() at registration. NEVER changes.
-   *  Used as PBKDF2 salt for PIN hashing. Partitions this user's remote databases. */
-  userId: string;
-  /** App-level identity — displayed in UI. NOT used for CouchDB auth. */
-  displayName: string;
-  /** Optional app email — shown in UI only. Never used for CouchDB auth. */
-  email?: string;
-  /** CouchDB username — the actual database auth credential. */
-  couchUsername: string;
-  /** Full CouchDB URL with embedded Basic-Auth. NEVER display raw. */
-  couchDbUrl: string;   // format: https://user:pass@host/db
-  createdAt: string;
-  /** PBKDF2-SHA-256 hash of user's 4-6 digit PIN. Stored on-device only. Never synced. */
-  appPinHash?: string;
-}
-```
+**Key files:**
 
-**Key rules:**
-- `userId` is the partition/identity key — never re-use it from another account, never mutate it
-- `displayName` is for display only — two family members can have the same display name
-- `@couchUsername · serverHost` is the guaranteed-unique identifier (CouchDB enforces username uniqueness per server)
-- `appPinHash` is device-local only — not synced to CouchDB, not sent over network
+| File | Role |
+|---|---|
+| `src/middleware.ts` | Clerk route protection (public vs authenticated) |
+| `src/app/layout.tsx` | `ClerkProvider` with dark theme config |
+| `src/app/(auth)/sign-in/[[...sign-in]]/page.tsx` | Clerk `<SignIn />` component |
+| `src/app/(auth)/sign-up/[[...sign-up]]/page.tsx` | Clerk `<SignUp />` component |
 
-### useAuthStore
+### Middleware (`src/middleware.ts`)
+
+Clerk middleware protects all routes by default. Public routes (no auth required):
 
 ```typescript
-// src/store/useAuthStore.ts — v2 (multi-account)
-// localStorage key: 'fitforge-auth'  |  Zustand persist version: 2
-// Auto-migrates from v1 (single account field) → v2 (accounts array)
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-interface AuthState {
-  // Persisted
-  accounts: CloudAccount[];
-  activeUserId: string | null;
+const isPublicRoute = createRouteMatcher([
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+  '/splash(.*)',
+  '/onboarding(.*)',
+  '/api/auth(.*)',
+]);
 
-  // Derived (not stored directly)
-  account: CloudAccount | null;    // accounts.find(a => a.userId === activeUserId)
-  isAuthenticated: boolean;        // account !== null
-
-  // Session-only — excluded from partialize (not written to localStorage)
-  justLoggedIn: boolean;           // true immediately after login/register → drives /restore page
-
-  // Actions
-  login: (account: CloudAccount) => void;          // upserts account, sets activeUserId + justLoggedIn=true
-  logout: () => void;                              // clears activeUserId; keeps accounts[] intact
-  setActiveUser: (userId: string) => void;         // call AFTER PIN is verified externally on /user-select
-  removeAccount: (userId: string) => void;
-  updateDisplayName: (name: string) => void;
-  updateCouchCredentials: (couchUsername: string, couchDbUrl: string) => void;
-  updatePinHash: (hash: string) => void;           // called after PIN is set or changed
-  clearJustLoggedIn: () => void;                   // called before navigating away from /restore
-}
-```
-
-**Usage in components:**
-```tsx
-// ✅ CORRECT: Select only what you need — avoid re-renders
-const { account, isAuthenticated } = useAuthStore(
-  s => ({ account: s.account, isAuthenticated: s.isAuthenticated }),
-  shallow
-);
-
-// Display name (not couchUsername — it's the CouchDB credential)
-const name = account?.displayName ?? 'FitForge Athlete';
-
-// CouchDB info shown in settings only — always mask the URL
-const couchInfo = `@${account?.couchUsername} · ${maskServerUrl(account?.couchDbUrl ?? '')}`;
-
-// Check all accounts (e.g. for profile switcher badge)
-const allAccounts = useAuthStore(s => s.accounts);
-```
-
-**v1 → v2 migration** runs automatically on first open after upgrade:
-```typescript
-migrate: (persistedState, version) => {
-  if (version === 1) {
-    const old = persistedState as { account?: CloudAccount };
-    const accounts = old.account
-      ? [{ ...old.account, userId: old.account.userId ?? crypto.randomUUID() }]
-      : [];
-    return { accounts, activeUserId: accounts[0]?.userId ?? null };
+export default clerkMiddleware(async (auth, request) => {
+  if (!isPublicRoute(request)) {
+    await auth.protect();
   }
-  return persistedState;
-},
+});
 ```
 
-### Building the couchDbUrl
+**Important:** The middleware file MUST live in `src/middleware.ts` (not project root) because FitForge uses the `src/` directory structure.
 
-CouchDB Basic Auth is embedded in the URL (standard CouchDB convention):
+**Route protection:**
+- `/api/couch/*` is NOT public — Clerk auth is required for the CouchDB proxy
+- `/api/auth/*` IS public — the provision endpoint itself checks `auth()` internally
+
+### ClerkProvider Appearance
+
+Root layout wraps the app with `ClerkProvider` using dark theme + lime accent:
 
 ```typescript
-// ✅ CORRECT: Build from parts using encodeURIComponent
-const urlObj = new URL(serverUrl.trim().replace(/\/$/, ''));
-const couchDbUrl = `${urlObj.protocol}//${encodeURIComponent(couchUsername)}:${encodeURIComponent(couchPassword)}@${urlObj.host}${urlObj.pathname}`;
-
-// ✅ CORRECT: Extract parts for re-use (e.g. connection test)
-const u = new URL(account.couchDbUrl);
-const username = decodeURIComponent(u.username);
-const password = decodeURIComponent(u.password);
-const baseUrl  = `${u.protocol}//${u.host}${u.pathname === '/' ? '' : u.pathname}`;
-
-// ✅ CORRECT: Safe display (strip credentials)
-function maskServerUrl(couchDbUrl: string): string {
-  try {
-    const u = new URL(couchDbUrl);
-    return `${u.protocol}//${u.host}${u.pathname === '/' ? '' : u.pathname}`;
-  } catch {
-    return couchDbUrl;
-  }
-}
+<ClerkProvider
+  appearance={{
+    baseTheme: dark,
+    variables: {
+      colorPrimary: "#C5F74F",
+      colorBackground: "#1A1A1A",
+      colorText: "#FFFFFF",
+      colorNeutral: "#FFFFFF",
+      colorInputBackground: "#141414",
+      colorInputText: "#FFFFFF",
+      borderRadius: "0.75rem",
+    },
+    elements: {
+      card: "bg-[#1A1A1A] text-white shadow-xl border border-white/10",
+      headerTitle: "text-white",
+      headerSubtitle: "text-gray-400",
+      formFieldLabel: "text-gray-300",
+      formFieldInput: "bg-[#141414] text-white border-white/10",
+      formButtonPrimary: "bg-[#C5F74F] text-[#0B0B0B] hover:bg-[#d4ff6e]",
+      footerActionLink: "text-[#C5F74F] hover:text-[#d4ff6e]",
+      socialButtonsBlockButton: "bg-[#141414] text-white border-white/10",
+    },
+  }}
+>
 ```
 
-### Testing CouchDB Connection
+### Sign-In / Sign-Up Pages
 
-Use `src/lib/db/testCouchConnection.ts` — always test before saving credentials.
-
-```typescript
-import { testCouchDbConnection, type ConnectionResult } from '@/lib/db/testCouchConnection';
-
-// Returns:
-// { ok: true;  username: string; serverVersion: string }
-// { ok: false; reason: string }
-
-const result = await testCouchDbConnection(serverBaseUrl, couchUsername, couchPassword);
-```
-
-**Test state machine pattern (used on login, register, and EditSyncSheet):**
-```tsx
-type TestState = 'idle' | 'testing' | 'ok' | 'fail';
-const [testState, setTestState]   = useState<TestState>('idle');
-const [testResult, setTestResult] = useState<ConnectionResult | null>(null);
-
-const handleTestConnection = async () => {
-  setTestState('testing');
-  setTestResult(null);
-  const result = await testCouchDbConnection(url, username, password);
-  setTestResult(result);
-  setTestState(result.ok ? 'ok' : 'fail');
-};
-
-// Gate the primary CTA when using own server:
-const isValid = couchUsername.trim().length > 0 &&
-                couchPassword.length >= 1 &&
-                resolvedUrl.trim().length > 0 &&
-                (!useOwnServer || testState === 'ok');
-```
-
-**Test button color states:**
-```tsx
-style={{
-  background:
-    testState === 'ok'   ? 'rgba(48,209,88,0.15)'  :
-    testState === 'fail' ? 'rgba(255,69,58,0.12)'  :
-    'rgba(255,255,255,0.08)',
-  color:
-    testState === 'ok'   ? '#30D158' :
-    testState === 'fail' ? '#FF453A' :
-    'rgba(245,245,245,0.70)',
-}}
-```
-
-### Managed vs Self-Hosted Server Toggle
-
-```typescript
-// Read from env at module level (not inside component)
-const MANAGED_SERVER    = process.env.NEXT_PUBLIC_COUCHDB_URL ?? '';
-const HAS_MANAGED_SERVER = MANAGED_SERVER.length > 0;
-
-// In component:
-const [useOwnServer, setUseOwnServer] = useState(!HAS_MANAGED_SERVER);
-const resolvedUrl = useOwnServer ? customUrl : MANAGED_SERVER;
-
-// For managed server: test is optional (server is trusted)
-// For own server:     test must pass before CTA is enabled
-const isValid = ... && (!useOwnServer || testState === 'ok');
-```
-
-### Auth Pages Form Structure
-
-Login and Register pages have two visually separated sections:
+Minimal wrappers around Clerk components:
 
 ```tsx
-// 1. App identity (display name, optional email — just for the app UI)
-<SectionDivider label="Your Profile" />
-<FormField label="Display Name" ... />       // stored as account.displayName
-<FormField label="Email (optional)" ... />   // stored as account.email
+'use client';
+import { SignIn } from '@clerk/nextjs';
 
-// 2. CouchDB credentials (used for actual DB auth)
-<SectionDivider label="CouchDB Access" />
-<FormField label="CouchDB Username" ... />   // stored as account.couchUsername
-<FormField label="CouchDB Password" ... />   // embedded in account.couchDbUrl
-
-// 3. Server selection
-<SectionDivider label="Server" />
-{HAS_MANAGED_SERVER && <ServerToggle ... />}
-<AnimatePresence>{useOwnServer && <CustomUrlField + TestButton />}</AnimatePresence>
-```
-
-**`SectionDivider` component pattern:**
-```tsx
-function SectionDivider({ label }: { label: string }) {
+export default function SignInPage(): React.ReactElement {
   return (
-    <div className="flex items-center gap-3 pt-1">
-      <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
-      <span className="text-[11px] font-semibold uppercase tracking-[0.08em]"
-            style={{ color: 'rgba(245,245,245,0.30)' }}>
-        {label}
-      </span>
-      <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
+    <div className="flex min-h-screen items-center justify-center bg-[#0B0B0B] px-4">
+      <SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" fallbackRedirectUrl="/" />
     </div>
   );
 }
 ```
 
-### Sync Pipeline
+### Using Clerk in Components
+
+```tsx
+// ✅ CORRECT: Get user info from Clerk hooks
+import { useUser, useClerk } from '@clerk/nextjs';
+
+const { user } = useUser();
+const displayName = user?.fullName ?? user?.firstName ?? 'FitForge Athlete';
+
+// ✅ CORRECT: Sign out via Clerk
+const { signOut } = useClerk();
+await signOut();
+
+// ✅ CORRECT: Server-side auth check in API routes
+import { auth } from '@clerk/nextjs/server';
+const { userId } = await auth();
+
+// ❌ WRONG: Don't use useAuthStore — it no longer exists
+const { account } = useAuthStore(); // DELETED
+```
+
+### Environment Variables
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+COUCHDB_ADMIN_URL=https://admin:password@your-couchdb-host.com
+```
+
+**CRITICAL:** `COUCHDB_ADMIN_URL` contains admin credentials — it's server-side only (no `NEXT_PUBLIC_` prefix). Never expose to the browser.
+
+---
+
+## Cloud Sync (CouchDB Proxy)
+
+### Architecture Overview
+
+All CouchDB sync flows through a Next.js API proxy. **No CouchDB credentials ever reach the browser.**
 
 ```
-useAuthStore (account) → useSyncManager (useEffect) → startSync(SyncConfig) → couchSync.ts
+Browser PouchDB ──> /api/couch/{dbName}/... ──> CouchDB (admin credentials)
+     │                     │                            │
+     │  Clerk session      │  auth() check              │  Authorization header
+     │  cookie             │  DB name validation         │  via COUCHDB_ADMIN_URL
+     └─ same-origin ───────┘  userId → DB prefix ───────┘
 ```
+
+**Data flow:**
+1. PouchDB in browser syncs to `/api/couch/{dbName}`
+2. Next.js proxy authenticates via Clerk session cookie
+3. Maps local DB name → per-user CouchDB DB: `{sanitizedUserId}_{dbName}`
+4. Forwards request to CouchDB with admin Authorization header
+
+### Key Files
+
+| File | Role |
+|---|---|
+| `src/app/api/couch/route.ts` | Root endpoint — CouchDB welcome response for PouchDB connectivity check |
+| `src/app/api/couch/[...path]/route.ts` | Catch-all proxy — forwards PouchDB requests to CouchDB |
+| `src/app/api/auth/provision-couch/route.ts` | Creates per-user CouchDB databases on first login |
+| `src/lib/db/couchSync.ts` | PouchDB sync engine — syncs to proxy URLs |
+| `src/hooks/useSyncManager.ts` | Orchestrates sync lifecycle from AppLayout |
+| `src/hooks/useProvisionCouch.ts` | Auto-provisions CouchDB DBs after Clerk sign-in |
+| `src/store/useSyncConfigStore.ts` | Stores provisioning state (localStorage) |
+
+### CouchDB Proxy (`/api/couch/[...path]`)
+
+The proxy is a catch-all Next.js API route that:
+1. Requires Clerk authentication (middleware enforces this)
+2. Validates the DB name against an allowlist
+3. Maps to per-user CouchDB database
+4. Forwards with admin credentials from `COUCHDB_ADMIN_URL`
 
 ```typescript
-// src/lib/db/couchSync.ts
+const ALLOWED_DBS = new Set([
+  'fitforge_custom_exercises',
+  'fitforge_routines',
+  'fitforge_workouts',
+  'fitforge_profile',
+]);
+
+// URL mapping: /api/couch/fitforge_routines/doc123
+//   → https://couchdb-host/{sanitizedUserId}_fitforge_routines/doc123
+```
+
+**Root endpoint (`/api/couch`):** PouchDB pings the remote root to verify connectivity. Returns a CouchDB-compatible welcome JSON `{ couchdb: "Welcome" }`.
+
+### CouchDB Sync Engine (`couchSync.ts`)
+
+Bidirectional live sync for four databases:
+
+```typescript
 export interface SyncConfig {
-  couchDbUrl: string;       // Full URL with embedded credentials
-  couchUsername: string;    // For DB namespacing (NOT display — not logged)
   onStatusChange: (status: SyncStatus) => void;
   onConflict: (conflict: RoutineConflict) => void;
 }
+
+// No credentials needed — proxy handles auth via Clerk cookies
+export function startSync(config: SyncConfig): void;
+export function stopSync(): void;
+export function getSyncStatus(): SyncStatus;
 ```
 
+**How it works:**
 ```typescript
-// src/hooks/useSyncManager.ts — auto-starts/stops based on auth state
-startSync({
-  couchDbUrl: account.couchDbUrl,
-  couchUsername: account.couchUsername,  // NOT account.email or account.userId
-  onStatusChange: setSyncStatus,
-  onConflict: handleConflict,
+// Proxy URL: /api/couch/{dbName}
+function buildProxyUrl(dbName: string): string {
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  return `${origin}/api/couch/${dbName}`;
+}
+
+// PouchDB remote uses custom fetch for Clerk cookie auth
+const remote = new PouchDB(proxyUrl, {
+  fetch: (url, opts) => fetch(url, { ...opts, credentials: 'same-origin' }),
 });
+
+// Live bidirectional sync with retry
+const handle = local.sync(remote, { live: true, retry: true });
+```
+
+### Provisioning (`useProvisionCouch`)
+
+Runs once after Clerk sign-in. Creates per-user CouchDB databases server-side.
+
+```typescript
+// Called from AppLayout → useProvisionCouch()
+// 1. Check if syncConfig.clerkUserId === user.id → already provisioned
+// 2. POST /api/auth/provision-couch → creates DBs
+// 3. Store { clerkUserId, provisionedAt } in useSyncConfigStore
+```
+
+**The provision route creates databases named:** `{sanitizedUserId}_fitforge_routines`, etc.
+
+### useSyncConfigStore
+
+```typescript
+// Replaces the old useAuthStore. Minimal — no credentials, no multi-account.
+interface SyncConfigState {
+  syncConfig: CouchSyncConfig | null;  // { clerkUserId, provisionedAt }
+  setSyncConfig: (config: CouchSyncConfig) => void;
+  clearSyncConfig: () => void;
+}
+
+// localStorage key: "fitforge-sync"
+```
+
+### useSyncManager
+
+Orchestrates sync lifecycle in AppLayout:
+
+```typescript
+export function useSyncManager() {
+  // Reads: useAuth().isSignedIn, useSyncConfigStore.syncConfig
+  // When both are present → startSync()
+  // On sign-out or offline → stopSync()
+  // Returns: { syncStatus, conflicts, dismissConflict }
+}
 ```
 
 ### CouchDB Database Namespacing
 
-Each user's remote databases are prefixed with their sanitized CouchDB username so family members on the same CouchDB server never overwrite each other's data:
+Each user's remote databases are prefixed with their sanitized Clerk userId:
 
 ```typescript
-// src/lib/db/couchSync.ts — internal helper
-function buildRemoteUrl(baseUrl: string, dbName: string, couchUsername: string): string {
-  // Strip characters not allowed in CouchDB database names
-  const safePrefix = couchUsername.toLowerCase().replace(/[^a-z0-9_$()+-]/g, '_');
-  return `${baseUrl.replace(/\/$/, '')}/${safePrefix}_${dbName}`;
+function sanitizeUserId(userId: string): string {
+  return userId.toLowerCase().replace(/[^a-z0-9_$()+-]/g, '_');
 }
 
-// alice's databases: alice_fitforge_routines, alice_fitforge_workouts, alice_fitforge_profile
-// bob's databases:   bob_fitforge_routines,   bob_fitforge_workouts,   bob_fitforge_profile
+// user_2abc123_fitforge_routines
+// user_2abc123_fitforge_workouts
+// user_2abc123_fitforge_profile
+// user_2abc123_fitforge_custom_exercises
 ```
 
-**CouchDB admin setup required:** Each `{username}_{dbName}` database must exist on the server and the CouchDB user must have read/write access (set via `_security` document). See `docs/02-architecture.md` for the setup guide.
+### Conflict Detection & Resolution
+
+Conflicts in `fitforge_routines` are detected after sync and surfaced via `ConflictResolverSheet`:
+
+```typescript
+export async function resolveConflictKeepLocal(conflict: RoutineConflict): Promise<void>;
+export async function resolveConflictKeepRemote(conflict: RoutineConflict): Promise<void>;
+```
 
 ### Profile Page — Auth-Aware UI
 
-When `isAuthenticated`:
-- Avatar shows `getInitials(account)` derived from `account.displayName`
-- Subtitle shows `account.email ?? '@' + account.couchUsername`
-- Cloud Sync section shows masked server URL + "Edit Sync Settings" row
-- `EditSyncSheet` lets user: edit display name, re-test connection, change credentials (→ /login), sign out
+Uses Clerk hooks for user info:
 
-```typescript
-// Initials from displayName (not email)
-function getInitials(account: CloudAccount): string {
-  const parts = account.displayName.trim().split(/\s+/);
-  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  return account.displayName.slice(0, 2).toUpperCase();
+```tsx
+const { user } = useUser();
+const { signOut } = useClerk();
+
+// Display name from Clerk
+const displayName = user?.fullName ?? user?.firstName ?? 'FitForge Athlete';
+
+// Avatar initials
+const initials = getInitials(displayName);
+```
+
+### AppLayout — No Auth Guard
+
+Auth is handled by Clerk middleware, NOT by AppLayout. AppLayout focuses on:
+1. `useProvisionCouch()` — ensure CouchDB DBs exist
+2. `useStartupSync()` — seed exercise library
+3. `useSyncManager()` — start/stop CouchDB sync
+4. Layout transitions and conflict resolver
+
+```tsx
+export function AppLayout({ children }: AppLayoutProps) {
+  useProvisionCouch();
+  useStartupSync();
+  const { conflicts, dismissConflict } = useSyncManager();
+  // ... layout rendering
 }
 ```
 
-### Worker tsconfig Pitfall
+### Deleted Files (from old auth system)
 
-If `src/worker/tsconfig.json` has `"extends": "../../tsconfig.json"` and the root excludes `"src/worker"`, the worker tsconfig inherits that exclusion and TypeScript finds no inputs.
-
-**Fix:** Override `exclude` in the worker tsconfig to break inheritance:
-```json
-{
-  "extends": "../../tsconfig.json",
-  "exclude": ["../../node_modules"]
-}
-```
-
-Verify with: `npx tsc --project src/worker/tsconfig.json --noEmit`
-
----
-
-## Phase 8 — Multi-Account Auth, PIN & Privacy
-
-### Overview
-
-Multiple family members can share one device (or one CouchDB server), each with fully isolated data and an optional PIN to lock their profile. Key files:
-
-| File | Role |
-|---|---|
-| `src/types/index.ts` | `CloudAccount` v2 interface |
-| `src/store/useAuthStore.ts` | Multi-account Zustand store (v2) |
-| `src/lib/auth/pin.ts` | PBKDF2-SHA-256 PIN hashing |
-| `src/lib/db/couchSync.ts` | `buildRemoteUrl` — per-user DB namespacing |
-| `src/app/(auth)/user-select/page.tsx` | "Who's working out?" profile picker |
-| `src/app/(app)/restore/page.tsx` | Cross-device data restore after login |
-| `src/components/layout/AppLayout.tsx` | Auth guard with hydration protection |
-
-### PIN System (`src/lib/auth/pin.ts`)
-
-Web Crypto API — PBKDF2-SHA-256, 100 000 iterations. PIN **never** leaves the device.
-
-```typescript
-export async function hashPin(pin: string, userId: string): Promise<string>
-export async function verifyPin(pin: string, userId: string, storedHash: string): Promise<boolean>
-// salt = userId (stable UUID) — same PIN produces a different hash for each user
-```
-
-**Usage flow:**
-```tsx
-// Setting a PIN during register / first launch:
-const hash = await hashPin(pin, newUserId);
-store.updatePinHash(hash);
-
-// Verifying on user-select page:
-const ok = await verifyPin(enteredPin, selectedAccount.userId, selectedAccount.appPinHash!);
-if (ok) {
-  store.setActiveUser(selectedAccount.userId);
-  router.push('/');
-} else {
-  // shake with springCelebration, clear input
-}
-```
-
-### User-Select Screen (`/user-select`)
-
-Shown whenever `accounts.length > 0 && !isAuthenticated`. On mount: if `accounts.length === 0` redirect immediately to `/register`.
-
-**Account card disambiguation:**
-```tsx
-// ✅ CORRECT: Always show @couchUsername · host — guaranteed unique by CouchDB
-function AccountSubtitle({ account }: { account: CloudAccount }) {
-  return <span>@{account.couchUsername} · {maskServerUrl(account.couchDbUrl)}</span>;
-}
-
-// ❌ WRONG: email may be missing, empty, or shared between family members
-<span>{account.email}</span>
-```
-
-**PIN flow:**
-```tsx
-// Lock icon appears when account.appPinHash is set
-// Tap card → inline 6-dot PIN pad opens
-// On submit → verifyPin() → success: setActiveUser + navigate
-//                          → fail: springCelebration shake, clear input
-```
-
-**Add Account button:** Routes to `/register` — lets a new family member add their profile on the same device.
-
-### Restore Screen (`/restore`)
-
-Shown right after login or register on a new device. Lives in the `(app)` route group so `AppLayout` has already started `useSyncManager`.
-
-```tsx
-// Route: src/app/(app)/restore/page.tsx
-
-// Guard: redirect to '/' immediately if justLoggedIn flag is false
-// (prevents users navigating here manually mid-session)
-const { justLoggedIn, clearJustLoggedIn } = useAuthStore(s => ({...}), shallow);
-useEffect(() => {
-  if (!justLoggedIn) router.replace('/');
-}, [justLoggedIn]);
-
-// Subscribes to sync status
-const { syncStatus } = useSyncManager();
-
-// Auto-navigate when synced:
-useEffect(() => {
-  if (syncStatus.state === 'synced') {
-    clearJustLoggedIn();
-    setTimeout(() => router.replace('/'), 900);
-  }
-}, [syncStatus.state]);
-
-// 45s timeout: show "Continue anyway" button
-// 5s: fade in "Skip for now" button
-```
-
-**After login or register, always redirect to `/restore`:**
-```tsx
-router.push('/restore');  // not '/profile', not '/'
-```
-
-**BottomNav exclusion:** `/restore` is in the hidden routes list — no tab bar during restore:
-```typescript
-pathname.startsWith('/restore')
-```
-
-### Auth Guard in AppLayout
-
-Protects all `(app)` routes. Hydration guard prevents flash of wrong content because Zustand reads localStorage asynchronously.
-
-```tsx
-// src/components/layout/AppLayout.tsx
-const [hydrated, setHydrated] = useState(false);
-useEffect(() => { setHydrated(true); }, []);
-
-const { accounts, isAuthenticated } = useAuthStore(
-  s => ({ accounts: s.accounts, isAuthenticated: s.isAuthenticated }),
-  shallow
-);
-
-useEffect(() => {
-  if (!hydrated) return;
-  if (accounts.length === 0) router.replace('/register');
-  else if (!isAuthenticated) router.replace('/user-select');
-}, [hydrated, accounts.length, isAuthenticated, router]);
-
-// Blank screen until both hydrated AND authenticated — zero content flash
-if (!hydrated || !isAuthenticated) {
-  return <div className="min-h-screen bg-[#0B0B0B]" />;
-}
-```
-
-### Duplicate Account Detection
-
-Both Login and Register detect an existing account by **CouchDB identity** — `(couchUsername + server host)`. This is the only truly unique identifier; `displayName` and `email` can collide.
-
-```typescript
-// Matching logic used in both login.tsx and register.tsx
-const parsedNew = new URL(couchDbUrl);
-const existing = accounts.find(a => {
-  try {
-    const u = new URL(a.couchDbUrl);
-    return decodeURIComponent(u.username) === couchUsername
-        && u.host === parsedNew.host;
-  } catch { return false; }
-});
-
-// Login:    if found → reuse existing.userId (preserves PIN hash + createdAt)
-// Register: if found → hard-block with error ("@alice on host already added as 'Alice Smith'")
-```
-
-**Always use `decodeURIComponent` when reading `.username` or `.password` from a URL object** — credentials are percent-encoded in the stored URL.
-
-### Shared-Password Privacy Check
-
-A shared CouchDB password means anyone on the same server can query all namespaced databases via the HTTP API, bypassing the device PIN entirely.
-
-```typescript
-// Helper — extract decoded password from a stored couchDbUrl
-function extractPassword(url: string): string {
-  try { return decodeURIComponent(new URL(url).password); }
-  catch { return ''; }
-}
-
-// Helper — are two couchDbUrls on the same CouchDB host?
-function sameHost(a: string, b: string): boolean {
-  try { return new URL(a).host === new URL(b).host; }
-  catch { return false; }
-}
-
-// Check: does the entered password match any existing account on the same server?
-const passwordCollision = accounts.some(
-  a => sameHost(a.couchDbUrl, resolvedUrl) && extractPassword(a.couchDbUrl) === couchPassword
-);
-```
-
-| Page | Behavior on collision |
-|---|---|
-| Register | **Hard-block** — cannot proceed. Error explains the security risk. |
-| Login | **Soft amber warning** — non-blocking (may be a legitimate credential update). |
-
-### Profile Page — Multi-Account Actions
-
-The Cloud Sync section exposes three actions after Phase 8:
-
-```
-1. Edit Sync Settings   → opens EditSyncSheet
-2. Switch Profile       → logout() + router.push('/user-select')
-                          badge shows accounts.length when > 1
-3. Add Account          → router.push('/register')
-```
-
-Profile subtitle shows `email ?? '@' + couchUsername` (never just `email` — it may be absent):
-```tsx
-const subtitle = account?.email ?? `@${account?.couchUsername}`;
-```
+These files NO LONGER EXIST — do not reference them:
+- `src/store/useAuthStore.ts` → replaced by `useSyncConfigStore.ts`
+- `src/lib/auth/pin.ts` → Clerk handles auth, no PIN needed
+- `src/app/(auth)/register/` → replaced by Clerk `<SignUp />`
+- `src/app/(auth)/login/` → replaced by Clerk `<SignIn />`
+- `src/app/(auth)/user-select/` → no multi-account profile picker
+- `src/app/(auth)/splash/` → removed
+- `src/lib/db/testCouchConnection.ts` → proxy handles connectivity
+- `EditSyncSheet` component → removed (no user-facing CouchDB config)
 
 ---
 
@@ -1569,55 +1393,45 @@ transition={springGentle}      // sheets, large movements
 transition={springCelebration} // playful, error shakes, celebrations
 ```
 
-### ❌ Don't Use Email to Disambiguate Accounts
+### ❌ Don't Use Old Auth Stores or Types
 
 ```tsx
-// ❌ WRONG: email may be missing or identical between family members
-<span>{account.email}</span>
+// ❌ WRONG: These no longer exist
+import { useAuthStore } from '@/store/useAuthStore'; // DELETED
+const { account } = useAuthStore();                 // DELETED
+const account: CloudAccount = { ... };              // Type DELETED
 
-// ✅ CORRECT: @couchUsername · host is always unique (CouchDB enforces it)
-<span>@{account.couchUsername} · {maskServerUrl(account.couchDbUrl)}</span>
+// ✅ CORRECT: Use Clerk hooks for auth
+import { useUser, useAuth, useClerk } from '@clerk/nextjs';
+const { user } = useUser();
+const { isSignedIn } = useAuth();
+const { signOut } = useClerk();
+
+// ✅ CORRECT: Use useSyncConfigStore for sync state
+import { useSyncConfigStore } from '@/store/useSyncConfigStore';
+const syncConfig = useSyncConfigStore(s => s.syncConfig);
 ```
 
-### ❌ Don't Forget `decodeURIComponent` on URL Credentials
+### ❌ Don't Expose CouchDB Credentials to the Browser
 
 ```typescript
-// ❌ WRONG: u.username and u.password are percent-encoded
-const username = new URL(account.couchDbUrl).username;  // "alice%40example.com" ← wrong
+// ❌ WRONG: CouchDB URL with credentials in the browser
+const remote = new PouchDB('https://user:pass@couchdb.example.com/db');
 
-// ✅ CORRECT: Always decode before comparing or displaying
-const username = decodeURIComponent(new URL(account.couchDbUrl).username);
-const password = decodeURIComponent(new URL(account.couchDbUrl).password);
+// ✅ CORRECT: Sync through the proxy — credentials stay server-side
+const remote = new PouchDB('/api/couch/fitforge_routines', {
+  fetch: (url, opts) => fetch(url, { ...opts, credentials: 'same-origin' }),
+});
 ```
 
-### ❌ Don't Navigate to `/restore` Without Setting `justLoggedIn`
+### ❌ Don't Put middleware.ts in Project Root
 
-```tsx
-// ❌ WRONG: The restore page guards on justLoggedIn — navigating directly will bounce back to '/'
-router.push('/restore');  // without calling login() first
-
-// ✅ CORRECT: login() / register flow sets justLoggedIn=true before pushing
-store.login(account);     // sets justLoggedIn internally
-router.push('/restore');
 ```
+// ❌ WRONG: Won't be detected by Next.js when using src/ directory
+./middleware.ts
 
-### ❌ Don't Use Email as CouchDB Username
-
-```typescript
-// ❌ WRONG: Email is app identity, not a CouchDB credential
-const account: CloudAccount = {
-  userId: email,          // Field no longer exists
-  email: email,
-  couchDbUrl: `...${email}:${password}@...`,   // Wrong — email ≠ couchUsername
-};
-
-// ✅ CORRECT: Separate the two
-const account: CloudAccount = {
-  displayName: displayName || couchUsername,
-  email: email || undefined,       // Optional, UI only
-  couchUsername,                   // The actual DB user
-  couchDbUrl: `...${encodeURIComponent(couchUsername)}:${encodeURIComponent(couchPassword)}@...`,
-};
+// ✅ CORRECT: Must be inside src/ when using src/ directory structure
+./src/middleware.ts
 ```
 
 ### ❌ Don't Use Tailwind `pt-safe-top`
@@ -1644,16 +1458,6 @@ const account: CloudAccount = {
     paddingBottom: 'max(32px, env(safe-area-inset-bottom))',
   }}
 >
-```
-
-### ❌ Don't Display Raw couchDbUrl
-
-```tsx
-// ❌ WRONG: Exposes embedded username:password in URL
-<span>{account.couchDbUrl}</span>
-
-// ✅ CORRECT: Always mask
-<span>{maskServerUrl(account.couchDbUrl)}</span>
 ```
 
 ### ❌ Don't Mix Animation Libraries
@@ -1726,20 +1530,36 @@ const routine = {
 
 ```
 src/
-├── app/                      # Routes (App Router)
+├── app/
+│   ├── (app)/                # Protected routes (Clerk middleware)
+│   ├── (auth)/               # Sign-in, sign-up (Clerk components)
+│   ├── api/
+│   │   ├── auth/provision-couch/  # CouchDB DB provisioning
+│   │   └── couch/                 # CouchDB proxy (root + catch-all)
+│   └── layout.tsx            # ClerkProvider + dark theme
 ├── components/
 │   ├── ui/                   # Design system primitives
 │   ├── workout/              # Workout execution
 │   ├── routine/              # Routine builder
 │   ├── exercise/             # Exercise browser
+│   ├── sync/                 # ConflictResolverSheet
 │   └── layout/               # Shell (AppLayout, BottomNav)
-├── store/                    # Zustand stores
+├── store/
+│   ├── useSyncConfigStore.ts # CouchDB sync config (Clerk, no credentials)
+│   ├── useSessionStore.ts    # Workout execution
+│   ├── useProfileStore.ts    # User data, XP, PRs
+│   ├── useSettingsStore.ts   # Preferences
+│   └── useSheetStore.ts      # Bottom sheet open/close
+├── hooks/
+│   ├── useProvisionCouch.ts  # Auto-provision CouchDB DBs after Clerk sign-in
+│   ├── useSyncManager.ts     # Orchestrates PouchDB↔CouchDB sync lifecycle
+│   └── useStartupSync.ts     # Seeds exercise library on first mount
 ├── lib/
-│   ├── db/                   # PouchDB utilities
+│   ├── db/couchSync.ts       # PouchDB sync engine (proxy-based)
 │   ├── calculations/         # Calorie, time, progression
 │   ├── motion/               # Springs, variants
 │   └── utils/                # General helpers
-├── hooks/                    # Custom React hooks
+├── middleware.ts             # Clerk route protection (MUST be in src/)
 └── types/                    # TypeScript interfaces
 
 data/exercises/               # Seeded JSON (prebuild input)
@@ -1790,12 +1610,14 @@ springCelebration // Phase transitions, error shakes, celebrations
 ### Core Stores
 
 ```typescript
-useAuthStore      // Multi-account auth (v2), active user, justLoggedIn
-useSessionStore   // Workout execution
-useProfileStore   // User data, XP, PRs
-useSettingsStore  // Preferences
-useSheetStore     // Bottom sheet open/close
+useSyncConfigStore // CouchDB sync config (Clerk userId, provision state)
+useSessionStore    // Workout execution
+useProfileStore    // User data, XP, PRs
+useSettingsStore   // Preferences
+useSheetStore      // Bottom sheet open/close
 ```
+
+**Deleted stores:** `useAuthStore` no longer exists — Clerk handles auth.
 
 ---
 
@@ -1809,5 +1631,5 @@ useSheetStore     // Bottom sheet open/close
 
 ---
 
-**Last Updated:** July 2025 (Phase 8 — Multi-Account Auth, PIN & Privacy)  
-**Skill Version:** 2.0
+**Last Updated:** March 2026 (Clerk Auth + CouchDB Proxy Migration)  
+**Skill Version:** 3.0
