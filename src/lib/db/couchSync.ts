@@ -1,10 +1,11 @@
 // ═══════════════════════════════════════════════════════════════════
-// FitForge — CouchDB Sync Engine (Phase 7)
-// Bidirectional PouchDB ↔ CouchDB replication with:
-//   - JWT authentication via Basic auth on the CouchDB URL
+// FitForge — CouchDB Sync Engine (Phase 8 — Clerk + Proxy)
+// Bidirectional PouchDB ↔ CouchDB replication via Next.js API proxy.
+//   - Browser PouchDB syncs to /api/couch/{dbName}/...
+//   - The proxy authenticates via Clerk and forwards to CouchDB
+//   - No CouchDB credentials in the browser
 //   - Exponential backoff on network errors
 //   - Conflict detection and queuing for UI resolution
-//   - Per-database sync handles so fitforge_exercises is excluded
 // ═══════════════════════════════════════════════════════════════════
 
 import PouchDB from 'pouchdb';
@@ -37,7 +38,7 @@ let _currentStatus: SyncStatus = {
   pendingChanges: 0,
 };
 
-function emitStatus(patch: Partial<SyncStatus>) {
+function emitStatus(patch: Partial<SyncStatus>): void {
   _currentStatus = { ..._currentStatus, ...patch };
   _onStatusChange?.(_currentStatus);
 }
@@ -45,10 +46,18 @@ function emitStatus(patch: Partial<SyncStatus>) {
 // ─── Public API ─────────────────────────────────────────────────────
 
 export interface SyncConfig {
-  couchDbUrl: string;   // e.g. https://user:pass@my-couch.example.com
-  couchUsername: string;
   onStatusChange: (status: SyncStatus) => void;
   onConflict: (conflict: RoutineConflict) => void;
+}
+
+/**
+ * Build the proxy URL for a given database.
+ * PouchDB will talk to /api/couch/{dbName} which the Next.js proxy
+ * maps to the correct per-user CouchDB database.
+ */
+function buildProxyUrl(dbName: string): string {
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  return `${origin}/api/couch/${dbName}`;
 }
 
 /**
@@ -65,9 +74,17 @@ export function startSync(config: SyncConfig): void {
   emitStatus({ state: 'syncing', errorMessage: null });
 
   for (const dbName of SYNCABLE_DBS) {
-    const remoteUrl = buildRemoteUrl(config.couchDbUrl, dbName, config.couchUsername);
+    const proxyUrl = buildProxyUrl(dbName);
     const local = new PouchDB(dbName);
-    const remote = new PouchDB(remoteUrl);
+    const remote = new PouchDB(proxyUrl, {
+      // Clerk session cookies are sent automatically with same-origin fetch
+      fetch: (url: string | Request, opts?: RequestInit) => {
+        return fetch(url, {
+          ...opts,
+          credentials: 'same-origin',
+        });
+      },
+    } as PouchDB.Configuration.RemoteDatabaseConfiguration);
 
     const handle = local.sync(remote, {
       live: true,
@@ -76,12 +93,10 @@ export function startSync(config: SyncConfig): void {
 
     handle
       .on('change', (info) => {
-        // Count pending local changes — cast needed: PouchDB typings omit `pending`
         const pending = (info.change as { pending?: number }).pending ?? 0;
         emitStatus({ state: 'syncing', pendingChanges: pending });
       })
       .on('paused', () => {
-        // "paused" fires after a batch is written (idle between pushes)
         _retryCount = 0;
         emitStatus({
           state: 'synced',
@@ -108,8 +123,8 @@ export function startSync(config: SyncConfig): void {
     _handles[dbName] = handle;
   }
 
-  // Detect conflicts in routines (user-authored documents worth merging)
-  detectConflicts(config, config.onConflict);
+  // Detect conflicts in routines
+  detectConflicts(config.onConflict);
 }
 
 /**
@@ -136,8 +151,7 @@ export function getSyncStatus(): SyncStatus {
 // ─── Conflict Detection ─────────────────────────────────────────────
 
 async function detectConflicts(
-  config: SyncConfig,
-  onConflict: (c: RoutineConflict) => void
+  onConflict: (c: RoutineConflict) => void,
 ): Promise<void> {
   try {
     const db = new PouchDB('fitforge_routines');
@@ -146,9 +160,11 @@ async function detectConflicts(
     for (const row of result.rows) {
       const doc = row.doc as (typeof row.doc & { _conflicts?: string[] });
       if (doc._conflicts && doc._conflicts.length > 0) {
-        // Fetch the conflicting rev from remote
-        const remoteUrl = buildRemoteUrl(config.couchDbUrl, 'fitforge_routines', config.couchUsername);
-        const remoteDb = new PouchDB(remoteUrl);
+        const proxyUrl = buildProxyUrl('fitforge_routines');
+        const remoteDb = new PouchDB(proxyUrl, {
+          fetch: (url: string | Request, opts?: RequestInit) =>
+            fetch(url, { ...opts, credentials: 'same-origin' }),
+        } as PouchDB.Configuration.RemoteDatabaseConfiguration);
 
         for (const conflictRev of doc._conflicts) {
           try {
@@ -172,9 +188,6 @@ async function detectConflicts(
 
 // ─── Conflict Resolution ────────────────────────────────────────────
 
-/**
- * Accept the local version of a routine — deletes the conflicting remote rev.
- */
 export async function resolveConflictKeepLocal(conflict: RoutineConflict): Promise<void> {
   const db = new PouchDB('fitforge_routines');
   const doc = conflict.local as PouchDB.Core.ExistingDocument<object> & {
@@ -188,45 +201,23 @@ export async function resolveConflictKeepLocal(conflict: RoutineConflict): Promi
   }
 }
 
-/**
- * Accept the remote version — replaces local doc with the incoming version.
- */
 export async function resolveConflictKeepRemote(conflict: RoutineConflict): Promise<void> {
   const db = new PouchDB('fitforge_routines');
   const local = conflict.local as PouchDB.Core.ExistingDocument<object>;
   const remote = conflict.remote as PouchDB.Core.ExistingDocument<object>;
 
-  // Delete all conflicting local revs
   await db.remove(local._id, local._rev);
-
-  // Put the remote version as the new winner (strip its _rev so PouchDB inserts cleanly)
   await db.put({ ...remote, _id: local._id, _rev: undefined });
 }
 
 // ─── Internals ──────────────────────────────────────────────────────
 
-/**
- * Build the remote CouchDB URL for a given database.
- * The database name is prefixed with the CouchDB username so that
- * each family member gets isolated databases on the same server:
- *   alice_fitforge_routines, bob_fitforge_routines, etc.
- *
- * CouchDB database name rules: lowercase a-z, 0-9, _ $ ( ) + -
- * Username chars outside that range are replaced with _.
- */
-function buildRemoteUrl(baseUrl: string, dbName: string, couchUsername: string): string {
-  const safePrefix = couchUsername
-    .toLowerCase()
-    .replace(/[^a-z0-9_$()+-]/g, '_');
-  return `${baseUrl.replace(/\/$/, '')}/${safePrefix}_${dbName}`;
-}
-
 function scheduleRetry(config: SyncConfig): void {
-  if (_retryTimeoutId !== null) return; // Already scheduled
+  if (_retryTimeoutId !== null) return;
 
   const delayMs = Math.min(
     1000 * Math.pow(2, _retryCount),
-    MAX_RETRY_DELAY_MS
+    MAX_RETRY_DELAY_MS,
   );
   _retryCount += 1;
 

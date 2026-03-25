@@ -1,13 +1,15 @@
 // ═══════════════════════════════════════════════════════════════════
 // FitForge — App Layout with iOS 26 Sheet Scale-Behind
 // Wraps all (app) route group pages with transitions
+// Auth is handled by Clerk middleware — this component focuses on
+// sync orchestration and layout.
 // ═══════════════════════════════════════════════════════════════════
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { getNavDirection } from '@/lib/motion/navDirection';
 import {
   pushVariants,
@@ -15,9 +17,9 @@ import {
   sheetBackgroundVariants,
 } from '@/lib/motion/variants';
 import { useSheetStore } from '@/store/useSheetStore';
-import { useAuthStore } from '@/store/useAuthStore';
 import { useStartupSync } from '@/hooks/useStartupSync';
 import { useSyncManager } from '@/hooks/useSyncManager';
+import { useProvisionCouch } from '@/hooks/useProvisionCouch';
 import { ConflictResolverSheet } from '@/components/sync/ConflictResolverSheet';
 import { BottomNav } from './BottomNav';
 import type { RoutineConflict } from '@/types';
@@ -27,31 +29,13 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
-  const router = useRouter();
-  const accounts = useAuthStore((s) => s.accounts);
-  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  const skippedAuth = useAuthStore((s) => s.skippedAuth);
-
-  // Auth guard: redirect unauthenticated users before rendering app content.
-  // We gate on a hydration flag so we don’t redirect during SSR or before
-  // Zustand’s persisted state has been loaded from localStorage.
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => { setHydrated(true); }, []);
-
-  useEffect(() => {
-    if (!hydrated) return;
-    if (skippedAuth) return;           // local-only mode — no redirect
-    if (accounts.length === 0) {
-      router.replace('/register');
-    } else if (!isAuthenticated) {
-      router.replace('/user-select');
-    }
-  }, [hydrated, skippedAuth, accounts.length, isAuthenticated, router]);
+  // Provision CouchDB databases after Clerk sign-in
+  useProvisionCouch();
 
   // Seed / delta-sync exercise library from static JSON on first mount
   useStartupSync();
 
-  // Start CouchDB sync if authenticated; expose conflicts for resolution
+  // Start CouchDB sync if provisioned; expose conflicts for resolution
   const { conflicts, dismissConflict } = useSyncManager();
   const [activeConflict, setActiveConflict] = useState<RoutineConflict | null>(
     conflicts[0] ?? null,
@@ -66,11 +50,6 @@ export function AppLayout({ children }: AppLayoutProps) {
   const direction = getNavDirection(pathname);
   const variants = direction === 'pop' ? popVariants : pushVariants;
   const sheetOpen = useSheetStore((s) => s.isOpen);
-
-  // Render nothing until hydrated and auth state resolved to avoid content flash
-  if (!hydrated || (!isAuthenticated && !skippedAuth)) {
-    return <div className="min-h-screen bg-[#0B0B0B]" />;
-  }
 
   return (
     <div className="relative min-h-screen bg-[#0B0B0B]">

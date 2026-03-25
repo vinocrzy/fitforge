@@ -1,17 +1,9 @@
 // ═══════════════════════════════════════════════════════════════════
-// FitForge — Data Restore Screen (Phase 7)
+// FitForge — Data Restore Screen (Phase 8 — Clerk)
 //
-// Shown immediately after logging in on a new device.
-// Subscribes to sync status and navigates home once the initial pull
-// from CouchDB completes (state === 'synced') or the user skips.
-//
-// Flow:
-//   login / register → router.push('/restore')
-//   AppLayout mounts → useSyncManager starts → PouchDB pulls all data
-//   sync state: syncing → synced → this page auto-navigates to '/'
-//
-// Guard: if justLoggedIn is false (user navigated here manually after
-// the initial sync), we redirect straight to '/'.
+// Shown when navigating to /restore (e.g. after first sign-in on
+// a new device). Subscribes to sync status and navigates home once
+// the initial pull from CouchDB completes or the user skips.
 // ═══════════════════════════════════════════════════════════════════
 
 'use client';
@@ -21,7 +13,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { springDefault, springGentle, springCelebration } from '@/lib/motion/springs';
 import { Icon } from '@/components/ui/Icon';
-import { useAuthStore } from '@/store/useAuthStore';
+import { useUser } from '@clerk/nextjs';
 import { useSyncManager } from '@/hooks/useSyncManager';
 
 /** Max time we wait for CouchDB before allowing the user to continue. */
@@ -36,21 +28,12 @@ const DB_LABELS: Record<string, string> = {
 
 export default function RestorePage() {
   const router = useRouter();
-  const justLoggedIn = useAuthStore((s) => s.justLoggedIn);
-  const clearJustLoggedIn = useAuthStore((s) => s.clearJustLoggedIn);
-  const account = useAuthStore((s) => s.account);
+  const { user } = useUser();
   const { syncStatus } = useSyncManager();
 
   const [timedOut, setTimedOut] = useState(false);
   const [done, setDone] = useState(false);
   const navigatedRef = useRef(false);
-
-  // If user lands here without a fresh login, skip immediately
-  useEffect(() => {
-    if (!justLoggedIn) {
-      router.replace('/');
-    }
-  }, [justLoggedIn, router]);
 
   // Timeout fallback — after SYNC_TIMEOUT_MS let the user proceed anyway
   useEffect(() => {
@@ -66,17 +49,15 @@ export default function RestorePage() {
       const id = setTimeout(() => {
         if (navigatedRef.current) return;
         navigatedRef.current = true;
-        clearJustLoggedIn();
         router.replace('/');
       }, 900); // brief "All done" moment
       return () => clearTimeout(id);
     }
-  }, [syncStatus.state, clearJustLoggedIn, router]);
+  }, [syncStatus.state, router]);
 
   const handleSkip = () => {
     if (navigatedRef.current) return;
     navigatedRef.current = true;
-    clearJustLoggedIn();
     router.replace('/');
   };
 
@@ -170,8 +151,8 @@ export default function RestorePage() {
               <p className="text-[15px] leading-relaxed" style={{ color: 'rgba(245,245,245,0.50)' }}>
                 {isError
                   ? syncStatus.errorMessage ?? 'Could not reach your CouchDB server.'
-                  : account
-                  ? `Pulling ${account.displayName}'s workouts, routines, and history from your CouchDB server.`
+                  : user
+                  ? `Pulling ${user.firstName ?? 'your'}'s workouts, routines, and history from your CouchDB server.`
                   : 'Pulling your workouts, routines, and history from your CouchDB server.'}
               </p>
             </div>

@@ -246,7 +246,7 @@ export type WorkoutCategory =
   | 'core'
   | 'fullbody';
 
-// ─── Cloud Sync (Phase 7) ─────────────────────────────────────────
+// ─── Cloud Sync (Phase 8 — Clerk) ─────────────────────────────────
 
 export type SyncState = 'idle' | 'syncing' | 'synced' | 'error' | 'offline';
 
@@ -257,20 +257,15 @@ export interface SyncStatus {
   pendingChanges: number;        // Local writes not yet pushed
 }
 
-export interface CloudAccount {
-  /** Stable UUID generated at account creation — never changes, used as PouchDB partition key. */
-  userId: string;
-  /** App-level identity — shown in the UI (not used for CouchDB auth). */
-  displayName: string;
-  /** Optional app email — shown in the UI only. */
-  email?: string;
-  /** CouchDB username — used to authenticate with CouchDB (may differ from displayName). */
-  couchUsername: string;
-  /** Full CouchDB URL with embedded Basic-Auth credentials. Never display raw. */
-  couchDbUrl: string;
-  createdAt: string;
-  /** PBKDF2-SHA256 hash of the user's 4–6-digit app PIN. Undefined = no PIN. */
-  appPinHash?: string;
+/**
+ * CouchDB sync configuration provisioned server-side after Clerk auth.
+ * Stored in Zustand (localStorage). No credentials — sync goes through proxy.
+ */
+export interface CouchSyncConfig {
+  /** Clerk userId — used as CouchDB database namespace prefix. */
+  clerkUserId: string;
+  /** ISO timestamp of when CouchDB databases were provisioned. */
+  provisionedAt: string;
 }
 
 export interface RoutineConflict {
