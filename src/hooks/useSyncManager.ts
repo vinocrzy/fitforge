@@ -19,7 +19,12 @@ import {
 } from '@/lib/db/couchSync';
 import type { SyncStatus, RoutineConflict } from '@/types';
 
-export function useSyncManager() {
+interface UseSyncManagerOptions {
+  skip?: boolean;
+}
+
+export function useSyncManager(options: UseSyncManagerOptions = {}) {
+  const { skip = false } = options;
   const { isSignedIn } = useAuth();
   const syncConfig = useSyncConfigStore((s) => s.syncConfig);
   const clearSyncConfig = useSyncConfigStore((s) => s.clearSyncConfig);
@@ -43,6 +48,11 @@ export function useSyncManager() {
 
   // Boot sync when signed in and CouchDB is provisioned
   useEffect(() => {
+    if (skip) {
+      stopSync();
+      setSyncStatus({ state: 'idle', lastSyncedAt: null, errorMessage: null, pendingChanges: 0 });
+      return;
+    }
     if (!isSignedIn || !syncConfig) {
       stopSync();
       setSyncStatus({ state: 'idle', lastSyncedAt: null, errorMessage: null, pendingChanges: 0 });
@@ -66,7 +76,7 @@ export function useSyncManager() {
     });
 
     return () => stopSync();
-  }, [isSignedIn, syncConfig, handleConflict, clearSyncConfig]);
+  }, [skip, isSignedIn, syncConfig, handleConflict, clearSyncConfig]);
 
   // Online / offline window events
   useEffect(() => {
@@ -93,7 +103,7 @@ export function useSyncManager() {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
     };
-  }, [isSignedIn, syncConfig, handleConflict]);
+  }, [skip, isSignedIn, syncConfig, handleConflict]);
 
   return { syncStatus, conflicts, dismissConflict };
 }

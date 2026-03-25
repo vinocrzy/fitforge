@@ -17,6 +17,7 @@ import {
   sheetBackgroundVariants,
 } from '@/lib/motion/variants';
 import { useSheetStore } from '@/store/useSheetStore';
+import { useGuestStore } from '@/store/useGuestStore';
 import { useStartupSync } from '@/hooks/useStartupSync';
 import { useSyncManager } from '@/hooks/useSyncManager';
 import { useProvisionCouch } from '@/hooks/useProvisionCouch';
@@ -29,14 +30,16 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
-  // Provision CouchDB databases after Clerk sign-in
-  useProvisionCouch();
+  const isGuest = useGuestStore((s) => s.isGuest);
+
+  // Provision CouchDB databases after Clerk sign-in (skip for guests)
+  useProvisionCouch({ skip: isGuest });
 
   // Seed / delta-sync exercise library from static JSON on first mount
   useStartupSync();
 
-  // Start CouchDB sync if provisioned; expose conflicts for resolution
-  const { conflicts, dismissConflict } = useSyncManager();
+  // Start CouchDB sync if provisioned; expose conflicts for resolution (skip for guests)
+  const { conflicts, dismissConflict } = useSyncManager({ skip: isGuest });
   const [activeConflict, setActiveConflict] = useState<RoutineConflict | null>(
     conflicts[0] ?? null,
   );

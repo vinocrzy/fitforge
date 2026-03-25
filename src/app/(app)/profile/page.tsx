@@ -23,6 +23,7 @@ import { useWorkoutHistory } from '@/hooks/useDatabase';
 import { useNotificationScheduler } from '@/hooks/useNotificationScheduler';
 import { useUser, useClerk } from '@clerk/nextjs';
 import { useSyncConfigStore } from '@/store/useSyncConfigStore';
+import { useGuestStore } from '@/store/useGuestStore';
 import { useSyncManager } from '@/hooks/useSyncManager';
 import { SyncStatusBadge } from '@/components/sync/SyncStatusBadge';
 import { BottomSheet } from '@/components/ui/BottomSheet';
@@ -105,7 +106,9 @@ export default function ProfilePage() {
   const { signOut } = useClerk();
   const syncConfig = useSyncConfigStore((s) => s.syncConfig);
   const clearSyncConfig = useSyncConfigStore((s) => s.clearSyncConfig);
-  const { syncStatus } = useSyncManager();
+  const isGuest = useGuestStore((s) => s.isGuest);
+  const disableGuestMode = useGuestStore((s) => s.disableGuestMode);
+  const { syncStatus } = useSyncManager({ skip: isGuest });
 
   const { data: workouts = [] } = useWorkoutHistory();
 
@@ -617,14 +620,13 @@ export default function ProfilePage() {
                 </motion.button>
               </>
             ) : (
-              /* This shouldn't happen since Clerk middleware protects the route,
-                 but show a sign-in CTA as a fallback */
+              /* Show sign-in CTA for guests or unauthenticated users */
               <motion.button
                 className="w-full flex items-center justify-between px-4"
                 style={{ height: 56, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
                 whileTap={{ scale: 0.98 }}
                 transition={springSnappy}
-                onClick={() => router.push('/sign-in')}
+                onClick={() => { disableGuestMode(); router.push('/sign-in'); }}
               >
                 <div className="flex items-center gap-2.5">
                   <Icon name="icloud" size={18} color="rgba(245,245,245,0.40)" />

@@ -1,4 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
 const isPublicRoute = createRouteMatcher([
   '/sign-in(.*)',
@@ -9,8 +10,17 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async (auth, request) => {
+  // Allow guest users to access all routes
+  const guestCookie = request.cookies.get('fitforge-guest');
+  if (guestCookie?.value === 'true') return;
+
   if (!isPublicRoute(request)) {
-    await auth.protect();
+    const { userId } = await auth();
+    if (!userId) {
+      // Redirect unauthenticated users to splash instead of sign-in
+      const splashUrl = new URL('/splash', request.url);
+      return NextResponse.redirect(splashUrl);
+    }
   }
 });
 

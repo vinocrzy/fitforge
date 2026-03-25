@@ -12,7 +12,12 @@ import { useEffect, useRef } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useSyncConfigStore } from '@/store/useSyncConfigStore';
 
-export function useProvisionCouch(): { isProvisioning: boolean } {
+interface UseProvisionCouchOptions {
+  skip?: boolean;
+}
+
+export function useProvisionCouch(options: UseProvisionCouchOptions = {}): { isProvisioning: boolean } {
+  const { skip = false } = options;
   const { isSignedIn, user } = useUser();
   const syncConfig = useSyncConfigStore((s) => s.syncConfig);
   const setSyncConfig = useSyncConfigStore((s) => s.setSyncConfig);
@@ -20,6 +25,7 @@ export function useProvisionCouch(): { isProvisioning: boolean } {
   const attemptedRef = useRef(false);
 
   useEffect(() => {
+    if (skip) return;
     if (!isSignedIn || !user) return;
     // Already provisioned for this user
     if (syncConfig?.clerkUserId === user.id) return;
@@ -51,7 +57,7 @@ export function useProvisionCouch(): { isProvisioning: boolean } {
         provisioningRef.current = false;
       }
     })();
-  }, [isSignedIn, user, syncConfig, setSyncConfig]);
+  }, [skip, isSignedIn, user, syncConfig, setSyncConfig]);
 
   return { isProvisioning: provisioningRef.current };
 }
