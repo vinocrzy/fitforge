@@ -1,4 +1,4 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { clerkClient, clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
 const isPublicRoute = createRouteMatcher([
@@ -31,11 +31,22 @@ export default clerkMiddleware(async (auth, request) => {
 
     // Trainer route guard — require trainer role
     if (isTrainerRoute(request)) {
-      const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
-      // Allow /trainer/enroll for non-trainers (enrollment page)
       const isEnrollRoute = request.nextUrl.pathname.startsWith('/trainer/enroll');
-      if (role !== 'trainer' && !isEnrollRoute) {
-        return NextResponse.redirect(new URL('/', request.url));
+      if (!isEnrollRoute) {
+        // Fast path: role in JWT claims (available after first token refresh)
+        let role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role as string | undefined;
+
+        // Slow path: JWT may be stale right after enrollment — check Clerk directly.
+        // This only runs once per session until the JWT refreshes (~60s).
+        if (role !== 'trainer') {
+          const client = await clerkClient();
+          const user = await client.users.getUser(userId!);
+          role = (user.publicMetadata as Record<string, unknown>)?.role as string | undefined;
+        }
+
+        if (role !== 'trainer') {
+          return NextResponse.redirect(new URL('/', request.url));
+        }
       }
     }
   }

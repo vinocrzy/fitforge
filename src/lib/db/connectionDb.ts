@@ -15,12 +15,14 @@ export async function ensureConnectionDb(): Promise<void> {
     throw new Error(`Failed to create ${CONNECTION_DB}: ${res.status} ${body}`);
   }
 
-  // Ensure indexes
+  // Ensure indexes — ddoc names versioned so CouchDB recreates them fresh.
+  // Sort field (requestedAt) must follow ONLY the selector equality fields;
+  // status is intentionally excluded so queries without a status filter work.
   await couchFetch(`/${CONNECTION_DB}/_index`, {
     method: 'POST',
     body: JSON.stringify({
-      index: { fields: ['type', 'trainerId', 'status'] },
-      ddoc: 'connection-trainer-index',
+      index: { fields: ['type', 'trainerId', 'requestedAt'] },
+      ddoc: 'connection-trainer-v2',
       type: 'json',
     }),
   });
@@ -28,8 +30,8 @@ export async function ensureConnectionDb(): Promise<void> {
   await couchFetch(`/${CONNECTION_DB}/_index`, {
     method: 'POST',
     body: JSON.stringify({
-      index: { fields: ['type', 'clientId', 'status'] },
-      ddoc: 'connection-client-index',
+      index: { fields: ['type', 'clientId', 'requestedAt'] },
+      ddoc: 'connection-client-v2',
       type: 'json',
     }),
   });
@@ -80,11 +82,16 @@ export async function listConnections(options: ConnectionQueryOptions = {}): Pro
   if (options.clientId) selector.clientId = options.clientId;
   if (options.status) selector.status = options.status;
 
+  // Use the matching index explicitly and sort client-side.
+  // Server-side sort on requestedAt would require status to also be an
+  // equality condition in the selector (CouchDB Mango index prefix rule).
+  const useIndex = options.trainerId ? 'connection-trainer-v2' : 'connection-client-v2';
+
   const findRes = await couchFetch(`/${CONNECTION_DB}/_find`, {
     method: 'POST',
     body: JSON.stringify({
       selector,
-      sort: [{ requestedAt: 'desc' }],
+      use_index: useIndex,
       limit,
       skip,
     }),
@@ -97,9 +104,16 @@ export async function listConnections(options: ConnectionQueryOptions = {}): Pro
 
   const result = await findRes.json() as { docs: Record<string, unknown>[] };
 
+  // Sort by requestedAt descending client-side (result sets are small)
+  const sorted = result.docs.slice().sort((a, b) => {
+    const aTime = typeof a.requestedAt === 'string' ? a.requestedAt : '';
+    const bTime = typeof b.requestedAt === 'string' ? b.requestedAt : '';
+    return bTime.localeCompare(aTime);
+  });
+
   return {
-    connections: result.docs,
-    total: result.docs.length,
+    connections: sorted,
+    total: sorted.length,
   };
 }
 
