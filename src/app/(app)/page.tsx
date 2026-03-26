@@ -30,6 +30,7 @@ import { useRpeAdvisor } from '@/hooks/useRpeAdvisor';
 import { DayTypeBanner } from '@/components/coaching/DayTypeBanner';
 import { DeloadWeekView } from '@/components/deload/DeloadWeekView';
 import { MyTrainerCard } from '@/components/trainer/MyTrainerCard';
+import { useGuestStore } from '@/store/useGuestStore';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
 
@@ -141,7 +142,7 @@ function WeeklyActivity({ workoutDates }: { workoutDates: string[] }) {
 // ─── Dashboard Page ───────────────────────────────────────────────
 
 export default function DashboardPage() {
-  const router = useRouter();
+  const isGuest = useGuestStore((s) => s.isGuest);
   const { streakDays, manualFeelScore } = useProfileStore();
   const { data: routines = [] } = useRoutines();
   const { data: workouts = [] } = useWorkoutHistory();
@@ -285,7 +286,7 @@ export default function DashboardPage() {
         <DailyFeelPrompt />
 
         {/* My Trainer Card (shows only if user has active/pending connection) */}
-        <MyTrainerCard />
+        {!isGuest && <MyTrainerCard />}
 
         {/* Deload Suggestion */}
         <DeloadSuggestionCard recommendation={deloadRecommendation} />

@@ -66,9 +66,8 @@ export async function GET(request: NextRequest, { params }: RouteParams): Promis
       method: 'POST',
       body: JSON.stringify({
         selector: { type: 'workout_session' },
-        sort: [{ completedAt: 'desc' }],
-        limit,
-        skip,
+        limit: 200,   // Fetch a wider set; we sort + slice client-side
+        skip: 0,
       }),
     });
 
@@ -86,12 +85,22 @@ export async function GET(request: NextRequest, { params }: RouteParams): Promis
     }
 
     const result = await workoutsRes.json() as { docs: Record<string, unknown>[] };
-    const workouts = result.docs.map(({ _rev, ...rest }) => rest);
+
+    // Sort client-side — per-user PouchDB DBs have no guaranteed Mango index
+    const sorted = result.docs.slice().sort((a, b) => {
+      const aDate = typeof a.completedAt === 'string' ? a.completedAt : '';
+      const bDate = typeof b.completedAt === 'string' ? b.completedAt : '';
+      return bDate.localeCompare(aDate);
+    });
+
+    const page = Math.floor(skip / limit) + 1;
+    const sliced = sorted.slice(skip, skip + limit);
+    const workouts = sliced.map(({ _rev, ...rest }) => rest);
 
     return NextResponse.json({
       success: true,
       data: workouts,
-      pagination: { total: workouts.length, page: Math.floor(skip / limit) + 1, pageSize: limit, hasMore: workouts.length >= limit },
+      pagination: { total: sorted.length, page, pageSize: limit, hasMore: sorted.length > skip + limit },
     });
   } catch (error) {
     console.error('[GET /api/clients/[clientId]/workouts] Error:', error);

@@ -574,6 +574,7 @@ export default function ProfilePage() {
         </motion.div>
 
         {/* ── Personal Trainer ────────────────────────────────── */}
+        {!isGuest && (
         <motion.div
           initial={{ y: 12, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -621,6 +622,7 @@ export default function ProfilePage() {
             </motion.button>
           </div>
         </motion.div>
+        )}
 
         {/* ── Cloud Sync ─────────────────────────────────────── */}
         <motion.div
