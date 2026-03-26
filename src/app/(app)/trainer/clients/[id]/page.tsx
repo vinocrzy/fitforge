@@ -37,7 +37,11 @@ export default function ClientDetailPage({ params }: PageProps): React.ReactElem
     <div className="min-h-screen bg-[#0B0B0B]">
       <TopBar title="Client Detail" showBack />
 
-      <div className="px-5 pt-3 pb-32">
+      {/* Offset content below the fixed TopBar (44px nav + safe-area-inset-top) */}
+      <div
+        className="px-5 pb-32"
+        style={{ paddingTop: 'calc(44px + env(safe-area-inset-top, 0px) + 16px)' }}
+      >
         {/* Tab bar */}
         <div className="flex gap-1 p-1 rounded-full glass mb-5">
           {TABS.map((tab) => (
