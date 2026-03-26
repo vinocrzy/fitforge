@@ -11,7 +11,8 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 const isTrainerRoute = createRouteMatcher([
-  '/trainer(.*)',            // Trainer dashboard, enrollment, clients
+  '/trainer',                // Trainer dashboard (exact)
+  '/trainer/(.*)',           // Trainer sub-pages (not /trainers)
   '/api/clients(.*)',
   '/api/trainer-notifications(.*)',
 ]);
