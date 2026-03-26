@@ -5,13 +5,15 @@
 
 'use client';
 
+import { useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { springSnappy } from '@/lib/motion/springs';
 import { Icon } from '@/components/ui/Icon';
+import { useIsTrainer } from '@/hooks/useIsTrainer';
 
-const tabs = [
+const baseTabs = [
   { id: 'home', icon: 'house.fill', href: '/' },
   { id: 'routines', icon: 'list.bullet.clipboard.fill', href: '/routines' },
   { id: 'exercises', icon: 'figure.strengthtraining.traditional', href: '/exercises' },
@@ -19,9 +21,22 @@ const tabs = [
   { id: 'profile', icon: 'person.crop.circle.fill', href: '/profile' },
 ] as const;
 
+const trainerTab = { id: 'trainer', icon: 'briefcase.fill', href: '/trainer' } as const;
+
 export function BottomNav() {
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const isTrainer = useIsTrainer();
+
+  const tabs = useMemo(() => {
+    if (!isTrainer) return baseTabs;
+    // Insert trainer tab before profile
+    return [
+      ...baseTabs.slice(0, 4),
+      trainerTab,
+      ...baseTabs.slice(4),
+    ] as ReadonlyArray<{ id: string; icon: string; href: string }>;
+  }, [isTrainer]);
 
   // Don't show nav on onboarding/splash routes
   if (

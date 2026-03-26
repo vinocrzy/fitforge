@@ -29,6 +29,7 @@ import { CoachingNoteCard } from '@/components/coaching/CoachingNoteCard';
 import { useRpeAdvisor } from '@/hooks/useRpeAdvisor';
 import { DayTypeBanner } from '@/components/coaching/DayTypeBanner';
 import { DeloadWeekView } from '@/components/deload/DeloadWeekView';
+import { MyTrainerCard } from '@/components/trainer/MyTrainerCard';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
 
@@ -282,6 +283,9 @@ export default function DashboardPage() {
       >
         {/* Daily Feel Prompt */}
         <DailyFeelPrompt />
+
+        {/* My Trainer Card (shows only if user has active/pending connection) */}
+        <MyTrainerCard />
 
         {/* Deload Suggestion */}
         <DeloadSuggestionCard recommendation={deloadRecommendation} />

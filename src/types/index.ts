@@ -316,3 +316,28 @@ export interface TrainerProfile {
   updatedAt: string;
 }
 
+// ─── PT ↔ User Connection ─────────────────────────────────────────
+
+export type ConnectionStatus = 'pending' | 'active' | 'declined' | 'ended';
+
+export interface SharedDataSettings {
+  workoutHistory: boolean;
+  personalRecords: boolean;
+  bodyStats: boolean;
+  streakData: boolean;
+}
+
+export interface TrainerConnection {
+  _id: string;
+  _rev?: string;
+  type: 'trainer_connection';
+  trainerId: string;      // Clerk userId of the trainer
+  clientId: string;       // Clerk userId of the user
+  status: ConnectionStatus;
+  requestedAt: string;
+  respondedAt?: string;
+  endedAt?: string;
+  endedBy?: 'trainer' | 'client';
+  sharedData: SharedDataSettings;
+}
+

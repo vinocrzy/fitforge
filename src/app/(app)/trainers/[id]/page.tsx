@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import { springGentle } from '@/lib/motion/springs';
 import { TopBar } from '@/components/layout/TopBar';
 import { TrainerDetailView } from '@/components/trainer/TrainerDetailView';
+import { SubscribeButton } from '@/components/trainer/SubscribeButton';
 import { Icon } from '@/components/ui/Icon';
 import { useTrainer } from '@/hooks/useTrainers';
 
@@ -59,7 +60,7 @@ export default function TrainerDetailPage({ params }: TrainerDetailPageProps): R
           <TrainerDetailView trainer={trainer} />
         )}
 
-        {/* Subscribe CTA placeholder — Phase 2 will add the SubscribeButton here */}
+        {/* Subscribe CTA */}
         {trainer && !isLoading && (
           <motion.div
             className="mt-6 px-1"
@@ -67,12 +68,7 @@ export default function TrainerDetailPage({ params }: TrainerDetailPageProps): R
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.24 }}
           >
-            <p
-              className="text-[13px] text-center"
-              style={{ color: 'rgba(245,245,245,0.35)' }}
-            >
-              Subscription coming soon
-            </p>
+            <SubscribeButton trainer={trainer} />
           </motion.div>
         )}
       </div>

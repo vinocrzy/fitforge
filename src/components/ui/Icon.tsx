@@ -59,6 +59,9 @@ import {
   Table,
   Bell,
   BellRinging,
+  // Phase PT-2 — Trainer portal
+  Briefcase,
+  UsersThree,
 } from '@phosphor-icons/react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react';
 
@@ -120,6 +123,9 @@ const ICON_MAP: Record<string, PhosphorIcon> = {
   'tablecells': Table,
   'bell.fill': Bell,
   'bell.badge.fill': BellRinging,
+  // Phase PT-2 — Trainer portal
+  'briefcase.fill': Briefcase,
+  'person.3.fill': UsersThree,
 };
 
 export type IconName = keyof typeof ICON_MAP;

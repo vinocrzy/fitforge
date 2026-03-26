@@ -507,6 +507,30 @@
 | `src/app/(app)/trainers/[id]/page.tsx` | ✅ | S-PT-02 Trainer Detail (profile + subscribe placeholder) |
 | `src/app/(app)/trainer/enroll/page.tsx` | ✅ | S-PT-03 Trainer Enrollment page |
 | `src/app/(app)/profile/page.tsx` | 🔄 | Added Personal Training section (Find a Trainer + Become a Trainer CTAs) |
+| **PT Phase 2** | | |
+| `src/types/index.ts` | 🔄 | Added ConnectionStatus, SharedDataSettings, TrainerConnection |
+| `src/lib/db/connectionDb.ts` | ✅ | CouchDB utilities for fitforge_connections database |
+| `src/app/api/connections/route.ts` | ✅ | POST (subscribe) + GET (list) connections API |
+| `src/app/api/connections/active/route.ts` | ✅ | GET active connection with trainer profile |
+| `src/app/api/connections/[id]/respond/route.ts` | ✅ | PATCH accept/decline connection |
+| `src/app/api/connections/[id]/end/route.ts` | ✅ | PATCH end connection (either party) |
+| `src/app/api/connections/[id]/privacy/route.ts` | ✅ | PATCH update shared data settings |
+| `src/app/api/clients/route.ts` | ✅ | GET trainer's client list |
+| `src/hooks/useConnections.ts` | ✅ | TanStack Query hooks for connections + clients |
+| `src/components/trainer/SubscribeButton.tsx` | ✅ | Context-aware subscribe/unsubscribe CTA |
+| `src/components/trainer/ConnectionRequestCard.tsx` | ✅ | Accept/decline request card |
+| `src/components/trainer/ClientCard.tsx` | ✅ | Client list item with avatar + time |
+| `src/components/trainer/TrainerDashboard.tsx` | ✅ | Stats grid + requests + client list |
+| `src/components/trainer/MyTrainerCard.tsx` | ✅ | Dashboard card for active trainer |
+| `src/components/trainer/PrivacySettingsSheet.tsx` | ✅ | Bottom sheet with privacy toggles |
+| `src/app/(app)/trainer/page.tsx` | ✅ | S-PT-04 Trainer Dashboard |
+| `src/app/(app)/trainer/clients/page.tsx` | ✅ | S-PT-05 Client List |
+| `src/app/(app)/trainer/requests/page.tsx` | ✅ | S-PT-11 Pending Requests |
+| `src/app/(app)/my-trainer/page.tsx` | ✅ | S-PT-10 My Trainer page |
+| `src/components/layout/BottomNav.tsx` | 🔄 | Added conditional trainer tab |
+| `src/components/ui/Icon.tsx` | 🔄 | Added Briefcase + UsersThree icons |
+| `src/app/(app)/page.tsx` | 🔄 | Added MyTrainerCard to dashboard |
+| `src/app/(app)/trainers/[id]/page.tsx` | 🔄 | Wired SubscribeButton (replaced placeholder) |
 
 ---
 
@@ -555,4 +579,58 @@
 - [x] `useMyTrainerProfile()` — own trainer profile
 - [x] `useEnrollTrainer()` — enrollment mutation with cache invalidation
 - [x] `useUpdateTrainer(id)` — profile update mutation
+
+---
+
+## PT Phase 2 — Connections & Trainer Dashboard
+
+**Status:** ✅ Complete
+**Ref:** `docs/08-personal-trainer-portal.md`
+
+### Tasks
+
+**Data Layer**
+- [x] Define `TrainerConnection`, `ConnectionStatus`, `SharedDataSettings` interfaces in `src/types/index.ts`
+- [x] Create `fitforge_connections` CouchDB database utilities (`src/lib/db/connectionDb.ts`)
+- [x] Mango indexes for trainer+status and client+status queries
+
+**API Routes**
+- [x] `POST /api/connections` — user sends subscription request (validates trainer exists, availability, no duplicate)
+- [x] `GET /api/connections` — list connections (role-aware: trainer vs client filter)
+- [x] `GET /api/connections/active` — user's current active connection with enriched trainer profile
+- [x] `PATCH /api/connections/[id]/respond` — trainer accepts/declines (updates clientCount)
+- [x] `PATCH /api/connections/[id]/end` — either party ends connection (decrements clientCount)
+- [x] `PATCH /api/connections/[id]/privacy` — client updates shared data settings
+- [x] `GET /api/clients` — trainer's connected client list (trainer role enforced)
+
+**TanStack Query Hooks**
+- [x] `useActiveConnection()` — user's current connection + enriched trainer profile
+- [x] `useConnections(options)` — list connections with role/status filter
+- [x] `useSubscribeToTrainer()` — mutation to send subscription request
+- [x] `useRespondToConnection()` — mutation for trainer accept/decline
+- [x] `useEndConnection()` — mutation to end connection (either party)
+- [x] `useUpdatePrivacy()` — mutation for privacy settings
+- [x] `useClients(status)` — trainer's client list
+
+**Components**
+- [x] `SubscribeButton` — context-aware (subscribe/pending/unsubscribe/unavailable/has-other-connection)
+- [x] `ConnectionRequestCard` — accept/decline UI for trainer with time-since display
+- [x] `ClientCard` — trainer's client list item with avatar, ID, connected time
+- [x] `TrainerDashboard` — stats grid + request queue + client list overview
+- [x] `MyTrainerCard` — dashboard card for user's active trainer connection
+- [x] `PrivacySettingsSheet` — bottom sheet with toggles for shared data settings
+
+**Pages**
+- [x] `/trainer` — S-PT-04 Trainer Dashboard (greeting, stats grid, requests, clients)
+- [x] `/trainer/clients` — S-PT-05 Client List (active/pending tabs, empty states)
+- [x] `/trainer/requests` — S-PT-11 Pending Requests (full request list)
+- [x] `/my-trainer` — S-PT-10 My Trainer (profile, privacy controls, unsubscribe)
+
+**Navigation**
+- [x] Added conditional trainer tab to BottomNav (briefcase icon, visible when `isTrainer`)
+- [x] Added "My Trainer" card to Dashboard home page (shows only with active connection)
+- [x] Wired SubscribeButton into Trainer Detail page (replaced placeholder)
+
+**Icon System**
+- [x] Added `Briefcase` and `UsersThree` Phosphor icons to Icon.tsx (`briefcase.fill`, `person.3.fill`)
 
