@@ -27,6 +27,7 @@ import { useGuestStore } from '@/store/useGuestStore';
 import { useSyncManager } from '@/hooks/useSyncManager';
 import { SyncStatusBadge } from '@/components/sync/SyncStatusBadge';
 import { BottomSheet } from '@/components/ui/BottomSheet';
+import { useIsTrainer } from '@/hooks/useIsTrainer';
 import { exportAllDataAsJSON, exportWorkoutsAsCSV } from '@/lib/utils/exportData';
 import type { WorkoutSession, PersonalRecord, FitnessGoal } from '@/types';
 
@@ -109,6 +110,7 @@ export default function ProfilePage() {
   const isGuest = useGuestStore((s) => s.isGuest);
   const disableGuestMode = useGuestStore((s) => s.disableGuestMode);
   const { syncStatus } = useSyncManager({ skip: isGuest });
+  const isTrainer = useIsTrainer();
 
   const { data: workouts = [] } = useWorkoutHistory();
 
@@ -568,6 +570,55 @@ export default function ProfilePage() {
                 />
               </>
             )}
+          </div>
+        </motion.div>
+
+        {/* ── Personal Trainer ────────────────────────────────── */}
+        <motion.div
+          initial={{ y: 12, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.29 }}
+        >
+          <SectionLabel>Personal Training</SectionLabel>
+          <div className="rounded-[14px] mt-3 overflow-hidden" style={{ background: '#141414' }}>
+            {/* Find a Trainer */}
+            <motion.button
+              className="w-full flex items-center justify-between px-4"
+              style={{ height: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+              whileTap={{ scale: 0.98 }}
+              transition={springSnappy}
+              onClick={() => router.push('/trainers')}
+            >
+              <div className="flex items-center gap-2.5">
+                <Icon name="magnifyingglass" size={16} color="rgba(245,245,245,0.55)" />
+                <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+                  Find a Trainer
+                </span>
+              </div>
+              <Icon name="chevron.right" size={13} color="rgba(245,245,245,0.35)" />
+            </motion.button>
+
+            {/* Become a Trainer / Trainer Profile */}
+            <motion.button
+              className="w-full flex items-center justify-between px-4"
+              style={{ height: 52 }}
+              whileTap={{ scale: 0.98 }}
+              transition={springSnappy}
+              onClick={() => router.push(isTrainer ? '/trainer/enroll' : '/trainer/enroll')}
+            >
+              <div className="flex items-center gap-2.5">
+                <Icon
+                  name={isTrainer ? 'checkmark.circle.fill' : 'person.crop.circle.badge.plus'}
+                  size={16}
+                  color={isTrainer ? '#C5F74F' : 'rgba(245,245,245,0.55)'}
+                  weight="fill"
+                />
+                <span className="text-[17px]" style={{ color: '#F5F5F5' }}>
+                  {isTrainer ? 'Trainer Profile' : 'Become a Trainer'}
+                </span>
+              </div>
+              <Icon name="chevron.right" size={13} color="rgba(245,245,245,0.35)" />
+            </motion.button>
           </div>
         </motion.div>
 

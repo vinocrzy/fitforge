@@ -7,6 +7,13 @@ const isPublicRoute = createRouteMatcher([
   '/splash(.*)',
   '/onboarding(.*)',
   '/api/auth(.*)',
+  '/api/trainers',           // Public trainer directory listing
+]);
+
+const isTrainerRoute = createRouteMatcher([
+  '/trainer(.*)',            // Trainer dashboard, enrollment, clients
+  '/api/clients(.*)',
+  '/api/trainer-notifications(.*)',
 ]);
 
 export default clerkMiddleware(async (auth, request) => {
@@ -15,11 +22,21 @@ export default clerkMiddleware(async (auth, request) => {
   if (guestCookie?.value === 'true') return;
 
   if (!isPublicRoute(request)) {
-    const { userId } = await auth();
+    const { userId, sessionClaims } = await auth();
     if (!userId) {
       // Redirect unauthenticated users to splash instead of sign-in
       const splashUrl = new URL('/splash', request.url);
       return NextResponse.redirect(splashUrl);
+    }
+
+    // Trainer route guard — require trainer role
+    if (isTrainerRoute(request)) {
+      const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
+      // Allow /trainer/enroll for non-trainers (enrollment page)
+      const isEnrollRoute = request.nextUrl.pathname.startsWith('/trainer/enroll');
+      if (role !== 'trainer' && !isEnrollRoute) {
+        return NextResponse.redirect(new URL('/', request.url));
+      }
     }
   }
 });

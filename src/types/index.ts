@@ -275,3 +275,44 @@ export interface RoutineConflict {
   detectedAt: string;
 }
 
+// ─── Personal Trainer Portal ──────────────────────────────────────
+
+export type TrainerStatus = 'pending' | 'active' | 'suspended';
+export type AvailabilityStatus = 'accepting' | 'full' | 'paused';
+
+export type TrainerSpecialization =
+  | 'strength'
+  | 'cardio'
+  | 'flexibility'
+  | 'weight_loss'
+  | 'bodybuilding'
+  | 'powerlifting'
+  | 'rehabilitation'
+  | 'sports_performance'
+  | 'general_fitness';
+
+export interface TrainerCertification {
+  name: string;
+  issuedBy: string;
+  year: number;
+}
+
+export interface TrainerProfile {
+  _id: string;
+  _rev?: string;
+  type: 'trainer_profile';
+  clerkUserId: string;
+  displayName: string;
+  bio: string;
+  specializations: TrainerSpecialization[];
+  certifications: TrainerCertification[];
+  experienceYears: number;
+  photoUrl?: string;
+  status: TrainerStatus;
+  availability: AvailabilityStatus;
+  clientCount: number;
+  rating?: number;
+  createdAt: string;
+  updatedAt: string;
+}
+

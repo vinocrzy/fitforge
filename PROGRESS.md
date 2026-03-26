@@ -491,4 +491,68 @@
 | `src/components/layout/AppLayout.tsx` | 🔄 | Wired useSyncManager + ConflictResolverSheet |
 | `src/app/(app)/profile/page.tsx` | 🔄 | Added Cloud Sync section with status badge + export buttons |
 | `src/components/ui/Icon.tsx` | 🔄 | Added 14 new icons for cloud/sync/device UI |
+| **PT Phase 1** | | |
+| `src/types/index.ts` | 🔄 | Added TrainerProfile, TrainerSpecialization, TrainerCertification, TrainerStatus, AvailabilityStatus |
+| `src/lib/db/trainerDb.ts` | ✅ | CouchDB server utilities for shared fitforge_trainers database |
+| `src/app/api/trainers/route.ts` | ✅ | POST (enroll) + GET (list) trainers API |
+| `src/app/api/trainers/me/route.ts` | ✅ | GET own trainer profile API |
+| `src/app/api/trainers/[trainerId]/route.ts` | ✅ | GET + PUT single trainer API |
+| `src/middleware.ts` | 🔄 | Added trainer route protection + public trainer directory |
+| `src/hooks/useIsTrainer.ts` | ✅ | Clerk publicMetadata role check hook |
+| `src/hooks/useTrainers.ts` | ✅ | TanStack Query hooks for trainer CRUD |
+| `src/components/trainer/TrainerCard.tsx` | ✅ | Directory list item with avatar, rating, specialization chips |
+| `src/components/trainer/TrainerEnrollmentForm.tsx` | ✅ | Multi-section enrollment form (name, bio, specs, certs, exp) |
+| `src/components/trainer/TrainerDetailView.tsx` | ✅ | Full profile display with glass cards |
+| `src/app/(app)/trainers/page.tsx` | ✅ | S-PT-01 Trainer Directory (search + filter + list) |
+| `src/app/(app)/trainers/[id]/page.tsx` | ✅ | S-PT-02 Trainer Detail (profile + subscribe placeholder) |
+| `src/app/(app)/trainer/enroll/page.tsx` | ✅ | S-PT-03 Trainer Enrollment page |
+| `src/app/(app)/profile/page.tsx` | 🔄 | Added Personal Training section (Find a Trainer + Become a Trainer CTAs) |
+
+---
+
+## PT Phase 1 — Trainer Enrollment & Directory
+
+**Status:** ✅ Complete
+**Ref:** `docs/08-personal-trainer-portal.md`
+
+### Tasks
+
+**Data Layer**
+- [x] Define new TypeScript interfaces in `src/types/index.ts` (TrainerProfile, TrainerSpecialization, TrainerCertification, TrainerStatus, AvailabilityStatus)
+- [x] Create CouchDB shared database utilities (`src/lib/db/trainerDb.ts`) — ensureTrainerDb, getTrainerDoc, putTrainerDoc, listTrainers
+- [x] Create server-side Mango index for trainer queries
+
+**API Routes**
+- [x] `POST /api/trainers` — create trainer profile (enrollment) with Clerk metadata update
+- [x] `GET /api/trainers` — list trainers with pagination, search, specialization filter
+- [x] `GET /api/trainers/[trainerId]` — single trainer detail
+- [x] `PUT /api/trainers/[trainerId]` — update own profile (authorization enforced)
+- [x] `GET /api/trainers/me` — get own trainer profile
+
+**Clerk Integration**
+- [x] Set `role: "trainer"` in Clerk `publicMetadata` on enrollment
+- [x] Create `useIsTrainer()` hook (reads Clerk publicMetadata)
+- [x] Update middleware — public `/api/trainers` for directory, trainer-only route guard for `/trainer/*`
+- [x] Allow `/trainer/enroll` for non-trainers (enrollment page exception)
+
+**Components**
+- [x] `TrainerCard` — glass card with avatar, name, rating, client count, specialization chips
+- [x] `TrainerDetailView` — full profile with About, Specializations, Certifications, Stats sections
+- [x] `TrainerEnrollmentForm` — multi-field form (name, bio, specialization chips, certifications, experience stepper)
+
+**Pages**
+- [x] `/trainers` — S-PT-01 Trainer Directory (search, filter, staggered list)
+- [x] `/trainers/[id]` — S-PT-02 Trainer Detail (full profile + subscribe placeholder)
+- [x] `/trainer/enroll` — S-PT-03 Enrollment Form (hero + form + error handling)
+
+**Navigation**
+- [x] Added "Find a Trainer" entry point on Profile page
+- [x] Added "Become a Trainer" / "Trainer Profile" CTA on Profile page (conditional on trainer role)
+
+**TanStack Query Hooks**
+- [x] `useTrainers(options)` — directory listing with search + filter
+- [x] `useTrainer(id)` — single trainer detail
+- [x] `useMyTrainerProfile()` — own trainer profile
+- [x] `useEnrollTrainer()` — enrollment mutation with cache invalidation
+- [x] `useUpdateTrainer(id)` — profile update mutation
 
