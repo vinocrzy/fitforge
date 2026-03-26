@@ -12,6 +12,7 @@ import {
   putConnectionDoc,
 } from '@/lib/db/connectionDb';
 import { getTrainerDoc, putTrainerDoc, ensureTrainerDb } from '@/lib/db/trainerDb';
+import { createTrainerNotification } from '@/lib/db/notificationDb';
 
 interface RouteParams {
   params: Promise<{ id: string }>;

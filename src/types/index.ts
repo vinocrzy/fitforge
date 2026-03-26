@@ -389,3 +389,26 @@ export interface ClientProgressSnapshot {
   createdAt: string;
 }
 
+// ─── Trainer Notifications ────────────────────────────────────────
+
+export type TrainerNotificationType =
+  | 'new_connection_request'
+  | 'connection_ended'
+  | 'suggestion_accepted'
+  | 'suggestion_declined'
+  | 'client_workout_completed';
+
+export interface TrainerNotification {
+  _id: string;
+  _rev?: string;
+  type: 'trainer_notification';
+  trainerId: string;
+  notificationType: TrainerNotificationType;
+  title: string;
+  body: string;
+  referenceId?: string;       // Connection/suggestion/workout ID
+  clientId?: string;
+  read: boolean;
+  createdAt: string;
+}
+

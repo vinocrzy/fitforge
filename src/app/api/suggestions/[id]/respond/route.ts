@@ -11,6 +11,7 @@ import {
   getSuggestionDoc,
   putSuggestionDoc,
 } from '@/lib/db/suggestionDb';
+import { createTrainerNotification } from '@/lib/db/notificationDb';
 
 interface RouteParams {
   params: Promise<{ id: string }>;
@@ -75,6 +76,19 @@ export async function PATCH(request: NextRequest, { params }: RouteParams): Prom
     };
 
     await putSuggestionDoc(updatedDoc);
+
+    // Notify the trainer about the response
+    const routineName = (doc.routineSnapshot as Record<string, unknown> | undefined)?.name as string ?? 'a routine';
+    void createTrainerNotification({
+      trainerId: doc.trainerId as string,
+      notificationType: newStatus === 'accepted' ? 'suggestion_accepted' : 'suggestion_declined',
+      title: newStatus === 'accepted' ? 'Suggestion Accepted' : 'Suggestion Declined',
+      body: newStatus === 'accepted'
+        ? `Your client accepted "${routineName}".`
+        : `Your client declined "${routineName}".`,
+      referenceId: id,
+      clientId: userId,
+    });
 
     const { _rev: _discard, ...cleaned } = updatedDoc as Record<string, unknown>;
 

@@ -16,6 +16,7 @@ import {
   findConnectionBetween,
 } from '@/lib/db/connectionDb';
 import { getTrainerDoc, ensureTrainerDb } from '@/lib/db/trainerDb';
+import { createTrainerNotification } from '@/lib/db/notificationDb';
 
 // ─── GET /api/connections ─────────────────────────────────────────
 
@@ -159,6 +160,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     };
 
     await putConnectionDoc(connectionDoc);
+
+    // Notify the trainer about the new request
+    void createTrainerNotification({
+      trainerId,
+      notificationType: 'new_connection_request',
+      title: 'New Connection Request',
+      body: 'A new client wants to connect with you.',
+      referenceId: connectionDoc._id,
+      clientId: userId,
+    });
 
     return NextResponse.json({
       success: true,

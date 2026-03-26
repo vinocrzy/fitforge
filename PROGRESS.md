@@ -550,6 +550,21 @@
 | `src/app/(app)/routines/suggested/page.tsx` | ✅ | S-PT-08 Suggested Routines Inbox |
 | `src/app/(app)/routines/suggested/[id]/page.tsx` | ✅ | S-PT-09 Suggestion Preview |
 | `src/app/(app)/routines/page.tsx` | 🔄 | Added pending suggestion badge/banner |
+| **PT Phase 4 — Notifications & Polish** | | |
+| `src/types/index.ts` | 🔄 | Added TrainerNotificationType, TrainerNotification |
+| `src/lib/db/notificationDb.ts` | ✅ | CouchDB utilities for fitforge_trainer_notifications |
+| `src/app/api/trainer-notifications/route.ts` | ✅ | GET paginated notifications + countOnly mode |
+| `src/app/api/trainer-notifications/[id]/read/route.ts` | ✅ | PATCH mark single notification read |
+| `src/app/api/trainer-notifications/read-all/route.ts` | ✅ | POST mark all notifications read |
+| `src/hooks/useTrainerNotifications.ts` | ✅ | TanStack Query hooks for notifications |
+| `src/components/trainer/NotificationBell.tsx` | ✅ | Bell icon with unread badge |
+| `src/components/trainer/NotificationItem.tsx` | ✅ | Notification row with icon, title, timeAgo |
+| `src/components/trainer/NotificationList.tsx` | ✅ | Full notification feed with mark-all-read |
+| `src/app/(app)/trainer/notifications/page.tsx` | ✅ | S-PT-12 Notification Center |
+| `src/app/(app)/trainer/page.tsx` | 🔄 | Added NotificationBell to TopBar rightAction |
+| `src/app/api/connections/route.ts` | 🔄 | Added new_connection_request notification trigger |
+| `src/app/api/connections/[id]/respond/route.ts` | 🔄 | Added createTrainerNotification import |
+| `src/app/api/suggestions/[id]/respond/route.ts` | 🔄 | Added suggestion_accepted/declined notification trigger |
 
 ---
 
@@ -703,4 +718,50 @@
 
 **Modified Existing**
 - [x] Routines page — Added pending suggestions banner with count badge (links to inbox)
+
+---
+
+## PT Phase 4 — Notifications & Polish
+
+**Status:** ✅ Complete
+**Ref:** `docs/08-personal-trainer-portal.md`
+
+### Tasks
+
+**Data Layer**
+- [x] Define `TrainerNotificationType` (5-value union) and `TrainerNotification` interface in `src/types/index.ts`
+- [x] Create `fitforge_trainer_notifications` CouchDB database utilities (`src/lib/db/notificationDb.ts`)
+- [x] Mango indexes for trainer+createdAt and trainer+read+createdAt queries
+- [x] Fire-and-forget `createTrainerNotification()` helper (logs errors, never throws)
+
+**API Routes**
+- [x] `GET /api/trainer-notifications` — paginated list with `countOnly=true` mode for badge
+- [x] `PATCH /api/trainer-notifications/[id]/read` — mark single notification read (ownership enforced)
+- [x] `POST /api/trainer-notifications/read-all` — mark all unread notifications read
+
+**TanStack Query Hooks**
+- [x] `useTrainerNotifications(limit)` — notification list (30s stale)
+- [x] `useUnreadNotificationCount()` — badge count (15s stale for frequent updates)
+- [x] `useMarkNotificationRead()` — mutation with cache invalidation
+- [x] `useMarkAllNotificationsRead()` — mutation with cache invalidation
+
+**Components**
+- [x] `NotificationBell` — bell icon with red unread count badge, navigates to notifications page
+- [x] `NotificationItem` — notification row with type-mapped icon+color, title, body, timeAgo, unread dot
+- [x] `NotificationList` — full feed with mark-all-read action, empty state, smart navigation on tap
+
+**Pages**
+- [x] `/trainer/notifications` — S-PT-12 Notification Center (TopBar + back + list)
+
+**Integration**
+- [x] Wired NotificationBell into trainer dashboard TopBar (`rightAction` prop)
+- [x] Added `new_connection_request` notification trigger in `POST /api/connections`
+- [x] Added `suggestion_accepted` / `suggestion_declined` notification triggers in `PATCH /api/suggestions/[id]/respond`
+
+**Notification Types**
+- `new_connection_request` — green person icon, fired when user subscribes to trainer
+- `connection_ended` — red person icon (type defined, trigger deferred)
+- `suggestion_accepted` — lime checkmark icon, fired when user accepts routine suggestion
+- `suggestion_declined` — orange xmark icon, fired when user declines routine suggestion
+- `client_workout_completed` — blue dumbbell icon (type defined, trigger deferred to workout completion flow)
 
