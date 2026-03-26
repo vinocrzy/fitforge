@@ -991,6 +991,63 @@ export async function ensureNotificationDb(): Promise<void> {
 
 **Pattern:** Module-level `let dbReady = false` flag prevents redundant DB/index creation after the first successful run within a server process.
 
+### CouchDB Mango Index — Sort Field Rules (CRITICAL)
+
+CouchDB Mango has a strict **prefix rule**: every field before the sort field in the index must appear as an **equality condition** in the query selector. If any field in between is optional or absent from the selector, the index cannot be used for that sort.
+
+```typescript
+// ✅ CORRECT: Sort field (requestedAt) immediately follows selector equality fields
+// Index: ['type', 'clientId', 'requestedAt']
+// Selector: { type: '...', clientId: '...' }  ← no gap
+// Sort: [{ requestedAt: 'desc' }]              ← works
+
+// ❌ WRONG: 'status' is in the index between clientId and requestedAt
+// Index: ['type', 'clientId', 'status', 'requestedAt']
+// Selector: { type: '...', clientId: '...' }  ← status missing from selector → 400 no_usable_index
+// Sort: [{ requestedAt: 'desc' }]
+```
+
+**Rule:** When queries don't always filter by every middle field, either:
+1. **Exclude optional fields from the index** so the sort field directly follows the required equality fields, OR
+2. **Sort client-side** — omit `sort` from the CouchDB query and sort in JS after fetching
+
+**Versioning ddoc names** forces CouchDB to recreate stale indexes:
+```typescript
+// If you fix an index definition, bump the ddoc name:
+ddoc: 'connection-client-v2'  // ← was 'connection-client-index'
+```
+
+### Sorting Per-User PouchDB Databases Accessed via Admin API
+
+Per-user databases (e.g. `{userId}_fitforge_workouts`) are created and managed by PouchDB replication — they have **no guaranteed Mango indexes**. Never use `sort` in `_find` queries against them:
+
+```typescript
+// ❌ WRONG: PouchDB user DB has no Mango index → 400 no_usable_index
+const res = await couchFetch(`/${workoutDbName}/_find`, {
+  method: 'POST',
+  body: JSON.stringify({
+    selector: { type: 'workout_session' },
+    sort: [{ completedAt: 'desc' }],  // ← will fail
+  }),
+});
+
+// ✅ CORRECT: Fetch without sort, sort client-side
+const res = await couchFetch(`/${workoutDbName}/_find`, {
+  method: 'POST',
+  body: JSON.stringify({
+    selector: { type: 'workout_session' },
+    limit: 200,  // wider fetch, slice after sort
+  }),
+});
+const docs = (await res.json() as { docs: Record<string, unknown>[] }).docs;
+const sorted = docs.slice().sort((a, b) => {
+  const aDate = typeof a.completedAt === 'string' ? a.completedAt : '';
+  const bDate = typeof b.completedAt === 'string' ? b.completedAt : '';
+  return bDate.localeCompare(aDate);
+});
+// Then slice for pagination: sorted.slice(skip, skip + limit)
+```
+
 ### Middleware — Trainer Route Protection
 
 The middleware uses three route matchers for PT-related access control:
@@ -1001,8 +1058,12 @@ const isPublicRoute = createRouteMatcher([
   '/sign-in(.*)', '/sign-up(.*)', '/api/trainers',  // trainer directory is public
 ]);
 
+// CRITICAL: Use '/trainer' (exact) + '/trainer/(.*)' — NOT '/trainer(.*)'
+// '/trainer(.*)' also matches '/trainers' (public directory!) — causes non-trainers
+// visiting /trainers to be redirected to home.
 const isTrainerRoute = createRouteMatcher([
-  '/trainer(.*)',                      // All trainer pages
+  '/trainer',                          // Trainer dashboard (exact)
+  '/trainer/(.*)',                     // Trainer sub-pages (NOT /trainers)
   '/api/clients(.*)',                  // Client list API
   '/api/trainer-notifications(.*)',    // Notification API
 ]);
@@ -1015,15 +1076,17 @@ const isTrainerApiRoute = createRouteMatcher([
 **Logic flow:**
 1. Public routes → pass through
 2. Non-public routes → `auth.protect()` (require login)
-3. Trainer routes → check `sessionClaims.metadata.role === 'trainer'`
+3. Trainer routes → check role via `resolveRole()` (see below)
 4. Exception: `/trainer/enroll` is allowed for non-trainers (enrollment page)
 
 ### API Route Auth Pattern
 
-All PT API routes follow this authentication pattern:
+All PT API routes use the `resolveRole()` helper for role checks — **never read `sessionClaims.metadata.role` directly**. Clerk JWTs can be stale for up to ~60s after enrollment, so the raw claim is unreliable right after a user becomes a trainer.
+
+**`src/lib/auth/resolveRole.ts`** — use this in every API route that checks trainer role:
 
 ```typescript
-import { auth } from '@clerk/nextjs/server';
+import { resolveRole } from '@/lib/auth/resolveRole';
 
 export async function GET(request: Request): Promise<Response> {
   const { userId, sessionClaims } = await auth();
@@ -1034,8 +1097,8 @@ export async function GET(request: Request): Promise<Response> {
     );
   }
   
-  // For trainer-only endpoints:
-  const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
+  // ✅ CORRECT: Two-path role check — JWT fast path + live Clerk API fallback
+  const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
   if (role !== 'trainer') {
     return Response.json(
       { success: false, error: { code: 'FORBIDDEN', message: 'Trainer role required' } },
@@ -1047,9 +1110,14 @@ export async function GET(request: Request): Promise<Response> {
 }
 ```
 
+**How `resolveRole` works:**
+1. **Fast path** — reads `sessionClaims.metadata.role` from JWT (zero extra latency)
+2. **Slow path** — if JWT doesn't have the role, calls `clerkClient().users.getUser(userId)` to read live `publicMetadata` (handles stale tokens post-enrollment)
+
 **Role-aware queries** — some endpoints return different data based on role:
 
 ```typescript
+const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
 const isTrainer = role === 'trainer';
 const connections = await listConnections(
   isTrainer ? { trainerId: userId } : { clientId: userId }
@@ -1938,7 +2006,8 @@ const res = await couchFetch(`/${DB_NAME}/_find`, {
 
 // ✅ CORRECT: Add to middleware matcher
 const isTrainerRoute = createRouteMatcher([
-  '/trainer(.*)',
+  '/trainer',
+  '/trainer/(.*)',
   '/api/clients(.*)',
   '/api/trainer-notifications(.*)',
   '/api/trainer-schedule(.*)',        // ← Add new routes here
@@ -1953,6 +2022,67 @@ const DB_NAME = `${sanitizeUserId(userId)}_fitforge_connections`;
 
 // ✅ CORRECT: Shared database, no user prefix
 const DB_NAME = 'fitforge_connections';
+```
+
+### ❌ Don't Use `/trainer(.*)` in Middleware — It Matches `/trainers`
+
+```typescript
+// ❌ WRONG: '/trainer(.*)' regex matches '/trainers' (public directory)
+// Non-trainer users visiting /trainers get redirected to home!
+const isTrainerRoute = createRouteMatcher([
+  '/trainer(.*)',  // Also matches /trainers, /trainers/123, etc.
+]);
+
+// ✅ CORRECT: Exact match + sub-path matcher separately
+const isTrainerRoute = createRouteMatcher([
+  '/trainer',         // exact dashboard route
+  '/trainer/(.*)',    // sub-pages only (/trainer/clients, /trainer/requests, etc.)
+]);
+```
+
+### ❌ Don't Read `sessionClaims.metadata.role` Directly for Trainer Checks
+
+```typescript
+// ❌ WRONG: JWT claims can be stale for ~60s after enrollment
+// Newly enrolled trainers will be treated as non-trainers and get 403s
+const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
+if (role !== 'trainer') return forbidden();
+
+// ✅ CORRECT: Use resolveRole() — handles stale JWT with live Clerk fallback
+import { resolveRole } from '@/lib/auth/resolveRole';
+const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
+if (role !== 'trainer') return forbidden();
+```
+
+### ❌ Don't Sort Queries Against Per-User PouchDB Databases
+
+```typescript
+// ❌ WRONG: Per-user PouchDB DBs ({userId}_fitforge_workouts etc.) have no Mango indexes
+// CouchDB returns 400 'no_usable_index' for any sort on these databases
+const res = await couchFetch(`/${userWorkoutDb}/_find`, {
+  body: JSON.stringify({ selector: { type: 'workout_session' }, sort: [{ completedAt: 'desc' }] }),
+});
+
+// ✅ CORRECT: Fetch without sort, sort client-side
+const res = await couchFetch(`/${userWorkoutDb}/_find`, {
+  body: JSON.stringify({ selector: { type: 'workout_session' }, limit: 200 }),
+});
+const sorted = (await res.json()).docs.sort((a, b) =>
+  (b.completedAt as string).localeCompare(a.completedAt as string)
+);
+```
+
+### ❌ Don't Skip TopBar Height in Content `paddingTop`
+
+```tsx
+// ❌ WRONG: pt-3 (12px) doesn't clear the fixed TopBar → content collides with nav
+<div className="px-5 pt-3 pb-32">
+
+// ✅ CORRECT: Account for TopBar height (44px) + safe-area-inset-top + breathing room
+<div
+  className="px-5 pb-32"
+  style={{ paddingTop: 'calc(44px + env(safe-area-inset-top, 0px) + 16px)' }}
+>
 ```
 
 ---
@@ -2009,6 +2139,7 @@ src/
 │   ├── db/connectionDb.ts    # Connection CRUD (server-only)
 │   ├── db/suggestionDb.ts    # Suggestion CRUD (server-only)
 │   ├── db/notificationDb.ts  # Notification CRUD + fire-and-forget (server-only)
+│   ├── auth/resolveRole.ts   # Two-path Clerk role resolver (JWT → live API fallback)
 │   ├── calculations/         # Calorie, time, progression
 │   ├── motion/               # Springs, variants
 │   └── utils/                # General helpers
@@ -2072,6 +2203,34 @@ useSheetStore      // Bottom sheet open/close
 
 **Deleted stores:** `useAuthStore` no longer exists — Clerk handles auth.
 
+### TopBar Content Offset Formula
+
+Pages with a `<TopBar />` (fixed position) **must** push content below it using:
+
+```tsx
+// Always use inline style — not Tailwind pt-* (doesn't account for safe area)
+<div
+  className="px-5 pb-32"
+  style={{ paddingTop: 'calc(44px + env(safe-area-inset-top, 0px) + 16px)' }}
+>
+```
+
+- `44px` — TopBar inner content height
+- `env(safe-area-inset-top, 0px)` — Dynamic Island / notch clearance
+- `+ 16px` — breathing room between nav bar and first content element
+
+### `resolveRole` — Always Use for Trainer Role Checks
+
+```typescript
+import { resolveRole } from '@/lib/auth/resolveRole';
+
+// In any API route that guards trainer access:
+const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
+const isTrainer = role === 'trainer';
+```
+
+Never use `sessionClaims?.metadata?.role` directly — stale for ~60s after enrollment.
+
 ### PT Portal Databases
 
 ```typescript
@@ -2096,5 +2255,5 @@ fitforge_trainer_notifications // Trainer alerts (shared)
 
 ---
 
-**Last Updated:** March 2026 (PT Portal Phases 1-4 Complete)  
-**Skill Version:** 4.0
+**Last Updated:** March 2026 (PT Portal Phases 1-4 + Bug Fix Round)  
+**Skill Version:** 4.1
