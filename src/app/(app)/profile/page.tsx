@@ -188,14 +188,24 @@ export default function ProfilePage() {
         >
           {/* Avatar */}
           <div
-            className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[26px] font-bold relative"
+            className="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[26px] font-bold relative overflow-hidden flex-shrink-0"
             style={{
               background: 'linear-gradient(135deg, #C5F74F, #8BC34A)',
               border: `2px solid ${user ? '#64D2FF' : '#C5F74F'}`,
               color: '#0B0B0B',
             }}
           >
-            {user ? getUserInitials(user.firstName, user.lastName) : 'FF'}
+            {user?.hasImage ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={user.imageUrl}
+                alt={user.fullName ?? 'Profile'}
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              user ? getUserInitials(user.firstName, user.lastName) : 'FF'
+            )}
             {/* Sync connected dot */}
             {user && (
               <span
