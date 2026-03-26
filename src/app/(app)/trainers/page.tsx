@@ -8,13 +8,14 @@
 import { useState, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { springGentle } from '@/lib/motion/springs';
+import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { MultiFilterSection } from '@/components/ui/FilterChip';
 import { TopBar } from '@/components/layout/TopBar';
 import { TrainerCard } from '@/components/trainer/TrainerCard';
 import { Icon } from '@/components/ui/Icon';
 import { useTrainers } from '@/hooks/useTrainers';
+import { useGuestStore } from '@/store/useGuestStore';
 import type { TrainerProfile, TrainerSpecialization } from '@/types';
 
 const SPECIALIZATIONS: TrainerSpecialization[] = [
@@ -43,6 +44,7 @@ const SPEC_DISPLAY: Record<TrainerSpecialization, string> = {
 
 export default function TrainerDirectoryPage(): React.ReactElement {
   const router = useRouter();
+  const isGuest = useGuestStore((s) => s.isGuest);
 
   const [search, setSearch] = useState('');
   const [specFilter, setSpecFilter] = useState<string | null>(null);
@@ -92,7 +94,52 @@ export default function TrainerDirectoryPage(): React.ReactElement {
           ]}
         />
 
-        {/* Results count */}
+        {/* Guest upsell banner */}
+        {isGuest && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={springGentle}
+            className="w-full glass rounded-2xl p-4 mb-3 flex items-start gap-3"
+            style={{ border: '1px solid rgba(197,247,79,0.25)', background: 'rgba(197,247,79,0.06)' }}
+          >
+            <div
+              className="flex items-center justify-center rounded-full flex-shrink-0"
+              style={{ width: 40, height: 40, background: 'rgba(197,247,79,0.15)' }}
+            >
+              <Icon name="person.2.fill" size={20} color="#C5F74F" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-[15px] font-semibold" style={{ color: '#F5F5F5' }}>
+                Get a Personal Trainer
+              </p>
+              <p className="text-[13px] mt-0.5 leading-snug" style={{ color: 'rgba(245,245,245,0.55)' }}>
+                Sign up to subscribe to a trainer, receive personalised routines, and level up your fitness journey.
+              </p>
+              <div className="flex gap-2 mt-3">
+                <motion.button
+                  onClick={() => router.push('/sign-up')}
+                  className="px-4 py-1.5 rounded-full text-[13px] font-semibold"
+                  style={{ background: '#C5F74F', color: '#0B0B0B' }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={springSnappy}
+                >
+                  Sign Up Free
+                </motion.button>
+                <motion.button
+                  onClick={() => router.push('/sign-in')}
+                  className="px-4 py-1.5 rounded-full text-[13px] font-medium glass"
+                  style={{ color: 'rgba(245,245,245,0.75)' }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={springSnappy}
+                >
+                  Log In
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         <div className="flex items-center justify-between py-2">
           <span
             className="text-[13px] font-medium"
