@@ -5,6 +5,7 @@
 // ═══════════════════════════════════════════════════════════════════
 
 import { auth } from '@clerk/nextjs/server';
+import { resolveRole } from '@/lib/auth/resolveRole';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   ensureNotificationDb,
@@ -25,7 +26,7 @@ export async function PATCH(_request: NextRequest, { params }: RouteParams): Pro
     );
   }
 
-  const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
+  const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
   if (role !== 'trainer') {
     return NextResponse.json(
       { success: false, error: { code: 'FORBIDDEN', message: 'Trainer role required' } },

@@ -6,6 +6,7 @@
 // ═══════════════════════════════════════════════════════════════════
 
 import { auth } from '@clerk/nextjs/server';
+import { resolveRole } from '@/lib/auth/resolveRole';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   ensureSuggestionDb,
@@ -33,7 +34,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const limit = Math.min(Number(url.searchParams.get('limit') ?? 50), 100);
     const skip = Number(url.searchParams.get('skip') ?? 0);
 
-    const isTrainer = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role === 'trainer';
+    const isTrainer = (await resolveRole(userId, sessionClaims as Record<string, unknown>)) === 'trainer';
 
     // Trainers see suggestions they sent; users see suggestions they received
     const queryOptions = isTrainer
@@ -70,7 +71,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 
   // Must be a trainer
-  const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
+  const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
   if (role !== 'trainer') {
     return NextResponse.json(
       { success: false, error: { code: 'FORBIDDEN', message: 'Trainer role required' } },

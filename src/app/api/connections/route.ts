@@ -7,6 +7,7 @@
 // ═══════════════════════════════════════════════════════════════════
 
 import { auth } from '@clerk/nextjs/server';
+import { resolveRole } from '@/lib/auth/resolveRole';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   ensureConnectionDb,
@@ -37,7 +38,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const limit = Math.min(Number(url.searchParams.get('limit') ?? 50), 100);
     const skip = Number(url.searchParams.get('skip') ?? 0);
 
-    const isTrainer = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role === 'trainer';
+    const role = await resolveRole(userId, sessionClaims as Record<string, unknown>);
+    const isTrainer = role === 'trainer';
 
     // If user is a trainer viewing their connections, filter by trainerId
     // Otherwise filter by clientId
