@@ -1,6 +1,6 @@
 ---
 name: fitforge-dev
-description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries, cloud sync, authentication. CONTAINS: architecture patterns (local-first PouchDB, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management, Clerk authentication, CouchDB proxy sync (useSyncConfigStore, useProvisionCouch, /api/couch proxy). DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
+description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries, cloud sync, authentication, Personal Trainer Portal, trainer enrollment, connections, routine suggestions, client progress, notifications. CONTAINS: architecture patterns (local-first PouchDB, server-authoritative CouchDB for PT Portal, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management, Clerk authentication, CouchDB proxy sync, PT Portal patterns (couchFetch, shared DBs, role-aware APIs, fire-and-forget notifications, TanStack Query hooks). DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
 ---
 
 # FitForge PWA Development Guide
@@ -19,10 +19,11 @@ description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness
 6. [Business Logic](#business-logic)
 7. [Animation System](#animation-system)
 8. [TypeScript Patterns](#typescript-patterns)
-9. [Authentication (Clerk)](#authentication-clerk)
-10. [Cloud Sync (CouchDB Proxy)](#cloud-sync-couchdb-proxy)
-11. [Common Tasks](#common-tasks)
-12. [Anti-Patterns](#anti-patterns)
+9. [Personal Trainer Portal](#personal-trainer-portal)
+10. [Common Tasks](#common-tasks)
+11. [Authentication (Clerk)](#authentication-clerk)
+12. [Cloud Sync (CouchDB Proxy)](#cloud-sync-couchdb-proxy)
+13. [Anti-Patterns](#anti-patterns)
 
 ---
 
@@ -890,6 +891,376 @@ enum WorkoutCategory {
 
 ---
 
+## Personal Trainer Portal
+
+### Architecture — Server-Authoritative vs Local-First
+
+The PT Portal uses a **fundamentally different data pattern** from the main app:
+
+| Aspect | Main App | PT Portal |
+|--------|----------|-----------|
+| **Data Store** | Local-first PouchDB | Server-authoritative CouchDB |
+| **Access Pattern** | Direct PouchDB reads + background sync | REST API routes + TanStack Query |
+| **Authorization** | Clerk middleware (route-level) | Clerk metadata `role: "trainer"` (route + API) |
+| **Offline Support** | Full | None (requires network) |
+| **Data Scope** | Per-user (own routines, workouts) | Cross-user (trainer-client relationships) |
+
+**Why server-authoritative?** PT data (connections, suggestions, notifications) is inherently cross-user — a trainer needs to see multiple clients' data, and clients need to see trainer profiles. Local-first PouchDB doesn't work for cross-user queries.
+
+### Shared CouchDB Databases
+
+Four server-side databases (NOT per-user prefixed, unlike sync databases):
+
+| Database | Purpose | Doc ID Pattern |
+|----------|---------|----------------|
+| `fitforge_trainers` | Trainer profiles | `trainer_{clerkUserId}` |
+| `fitforge_connections` | PT-client subscriptions | `connection_{trainerId}_{clientId}_{timestamp}` |
+| `fitforge_suggestions` | Routine recommendations | `suggestion_{trainerId}_{clientId}_{timestamp}` |
+| `fitforge_trainer_notifications` | Trainer alerts | `notif_{trainerId}_{timestamp}` |
+
+Each database has its own utility module in `src/lib/db/`:
+
+```
+src/lib/db/
+├── trainerDb.ts        # couchFetch() + trainer CRUD
+├── connectionDb.ts     # Connection CRUD + client list
+├── suggestionDb.ts     # Suggestion CRUD
+└── notificationDb.ts   # Notification CRUD + fire-and-forget helper
+```
+
+### `couchFetch` — Server-Side CouchDB Client
+
+All PT database modules share `couchFetch()` from `trainerDb.ts`:
+
+```typescript
+// src/lib/db/trainerDb.ts — server-side only, never import in client components
+export async function couchFetch(path: string, options: RequestInit = {}): Promise<Response> {
+  const url = new URL(process.env.COUCHDB_ADMIN_URL!);
+  const authHeader = 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64');
+  const base = `${url.protocol}//${url.host}`;
+  
+  return fetch(`${base}${path}`, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: authHeader,
+      ...options.headers,
+    },
+  });
+}
+```
+
+**Usage in other DB modules:**
+```typescript
+// connectionDb.ts, suggestionDb.ts, notificationDb.ts all import from trainerDb
+import { couchFetch } from '@/lib/db/trainerDb';
+
+const res = await couchFetch(`/${DB_NAME}/_find`, {
+  method: 'POST',
+  body: JSON.stringify({ selector, sort, limit, skip }),
+});
+```
+
+### `ensureDb` Pattern — Idempotent DB + Index Creation
+
+Every DB module has an `ensure*Db()` function that creates the database and Mango indexes:
+
+```typescript
+let dbReady = false;
+
+export async function ensureNotificationDb(): Promise<void> {
+  if (dbReady) return;
+  
+  // Create DB (409 = already exists, that's fine)
+  await couchFetch(`/${DB_NAME}`, { method: 'PUT' });
+  
+  // Create Mango indexes
+  await couchFetch(`/${DB_NAME}/_index`, {
+    method: 'POST',
+    body: JSON.stringify({
+      index: { fields: ['type', 'trainerId', 'createdAt'] },
+      ddoc: 'trainer-created',
+      type: 'json',
+    }),
+  });
+  
+  dbReady = true;
+}
+```
+
+**Pattern:** Module-level `let dbReady = false` flag prevents redundant DB/index creation after the first successful run within a server process.
+
+### Middleware — Trainer Route Protection
+
+The middleware uses three route matchers for PT-related access control:
+
+```typescript
+// src/middleware.ts
+const isPublicRoute = createRouteMatcher([
+  '/sign-in(.*)', '/sign-up(.*)', '/api/trainers',  // trainer directory is public
+]);
+
+const isTrainerRoute = createRouteMatcher([
+  '/trainer(.*)',                      // All trainer pages
+  '/api/clients(.*)',                  // Client list API
+  '/api/trainer-notifications(.*)',    // Notification API
+]);
+
+const isTrainerApiRoute = createRouteMatcher([
+  '/api/trainers/(.*)',               // Individual trainer CRUD
+]);
+```
+
+**Logic flow:**
+1. Public routes → pass through
+2. Non-public routes → `auth.protect()` (require login)
+3. Trainer routes → check `sessionClaims.metadata.role === 'trainer'`
+4. Exception: `/trainer/enroll` is allowed for non-trainers (enrollment page)
+
+### API Route Auth Pattern
+
+All PT API routes follow this authentication pattern:
+
+```typescript
+import { auth } from '@clerk/nextjs/server';
+
+export async function GET(request: Request): Promise<Response> {
+  const { userId, sessionClaims } = await auth();
+  if (!userId) {
+    return Response.json(
+      { success: false, error: { code: 'UNAUTHORIZED', message: 'Authentication required' } },
+      { status: 401 }
+    );
+  }
+  
+  // For trainer-only endpoints:
+  const role = (sessionClaims?.metadata as Record<string, unknown> | undefined)?.role;
+  if (role !== 'trainer') {
+    return Response.json(
+      { success: false, error: { code: 'FORBIDDEN', message: 'Trainer role required' } },
+      { status: 403 }
+    );
+  }
+  
+  // ... route logic
+}
+```
+
+**Role-aware queries** — some endpoints return different data based on role:
+
+```typescript
+const isTrainer = role === 'trainer';
+const connections = await listConnections(
+  isTrainer ? { trainerId: userId } : { clientId: userId }
+);
+```
+
+### Standard API Response Shape
+
+```typescript
+// Success
+{ success: true, data: T, pagination?: { total, page, pageSize, hasMore } }
+
+// Error
+{ success: false, error: { code: string, message: string } }
+```
+
+### TanStack Query Hooks for PT
+
+PT hooks live in `src/hooks/` alongside main app hooks. Key patterns:
+
+**Query key conventions:**
+```typescript
+['trainers', search, specialization]       // Directory listing
+['trainer', trainerId]                      // Single trainer
+['trainerProfile', 'me']                   // Own profile
+['connections', role, status]               // Connection list
+['active-connection']                       // User's current connection
+['clients', status]                         // Trainer's client list
+['suggestions', status]                     // Suggestion list
+['pending-suggestions-count']               // Badge count
+['client-progress', clientId]              // Aggregated stats
+['client-workouts', clientId, limit]       // Workout history
+['client-prs', clientId]                   // Personal records
+['trainer-notifications', limit]           // Notification list
+['trainer-notifications', 'unread-count']  // Badge count
+```
+
+**Stale time tiers:**
+```typescript
+staleTime: 15_000    // Notification badge — needs frequent updates
+staleTime: 30_000    // Notification list, active connection
+staleTime: 60_000    // Connections, suggestions, clients
+staleTime: 120_000   // Trainer directory (changes infrequently)
+staleTime: 300_000   // Own trainer profile
+```
+
+**Mutation + invalidation pattern:**
+```typescript
+export function useRespondToConnection(): UseMutationResult<...> {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: async ({ connectionId, action }) => {
+      const res = await fetch(`/api/connections/${connectionId}/respond`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action }),
+      });
+      if (!res.ok) throw new Error('Failed');
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['connections'] });
+      queryClient.invalidateQueries({ queryKey: ['clients'] });
+    },
+  });
+}
+```
+
+### Fire-and-Forget Notifications
+
+Notifications are created as side effects in API routes. They must **never block** the main response:
+
+```typescript
+// src/lib/db/notificationDb.ts
+export async function createTrainerNotification(params: {
+  trainerId: string;
+  notificationType: TrainerNotificationType;
+  title: string;
+  body: string;
+  referenceId?: string;
+  clientId?: string;
+}): Promise<void> {
+  try {
+    await ensureNotificationDb();
+    await putNotificationDoc({ ...params, read: false, createdAt: new Date().toISOString() });
+  } catch (error) {
+    console.error('[createTrainerNotification] Error:', error);
+    // Don't throw — fire-and-forget
+  }
+}
+```
+
+**Usage in API routes — `void` prefix, never `await`:**
+```typescript
+await putConnectionDoc(connectionDoc);  // Main operation — await this
+
+void createTrainerNotification({        // Side effect — fire-and-forget
+  trainerId,
+  notificationType: 'new_connection_request',
+  title: 'New Connection Request',
+  body: 'A new client wants to connect with you.',
+  referenceId: connectionDoc._id,
+  clientId: userId,
+});
+
+return Response.json({ success: true, data: connectionDoc });
+```
+
+**Five notification types:**
+
+| Type | Trigger | Icon |
+|------|---------|------|
+| `new_connection_request` | Client subscribes to trainer | Green person |
+| `connection_ended` | Either party ends connection | Red person |
+| `suggestion_accepted` | Client accepts routine suggestion | Lime checkmark |
+| `suggestion_declined` | Client declines routine suggestion | Orange xmark |
+| `client_workout_completed` | Client finishes a workout | Blue dumbbell |
+
+### PT Component Organization
+
+```
+src/components/trainer/
+├── TrainerCard.tsx           # Directory listing card
+├── TrainerDetailView.tsx     # Full trainer profile
+├── TrainerEnrollmentForm.tsx # Enrollment form
+├── TrainerDashboard.tsx      # Dashboard stats + overview
+├── SubscribeButton.tsx       # Subscribe/unsubscribe CTA
+├── ConnectionRequestCard.tsx # Accept/decline request
+├── ClientCard.tsx            # Client list item
+├── MyTrainerCard.tsx         # User's active trainer
+├── PrivacySettingsSheet.tsx  # Shared data toggles
+├── SuggestRoutineSheet.tsx   # PT routine suggestion
+├── SuggestionCard.tsx        # User suggestion card
+├── ClientProgressView.tsx    # Trainer client overview
+├── ClientWorkoutList.tsx     # Client workout history
+├── NotificationBell.tsx      # Bell icon + badge
+├── NotificationItem.tsx      # Notification row
+└── NotificationList.tsx      # Notification feed
+```
+
+### PT Page Routes
+
+```
+src/app/(app)/
+├── trainers/
+│   ├── page.tsx              # S-PT-01 Trainer Directory
+│   └── [id]/page.tsx         # S-PT-02 Trainer Detail
+├── trainer/
+│   ├── enroll/page.tsx       # S-PT-03 Enrollment
+│   ├── page.tsx              # S-PT-04 Dashboard
+│   ├── clients/
+│   │   ├── page.tsx          # S-PT-05 Client List
+│   │   └── [id]/page.tsx     # S-PT-06 Client Detail
+│   ├── requests/page.tsx     # S-PT-11 Pending Requests
+│   └── notifications/page.tsx# S-PT-12 Notification Center
+├── my-trainer/page.tsx       # S-PT-10 My Trainer
+└── routines/
+    └── suggested/
+        ├── page.tsx          # S-PT-08 Suggestion Inbox
+        └── [id]/page.tsx     # S-PT-09 Suggestion Preview
+```
+
+### PT API Routes
+
+```
+src/app/api/
+├── trainers/
+│   ├── route.ts              # POST create, GET list
+│   ├── me/route.ts           # GET own profile
+│   └── [trainerId]/route.ts  # GET detail, PUT update
+├── connections/
+│   ├── route.ts              # POST subscribe, GET list
+│   ├── active/route.ts       # GET user's active connection
+│   └── [id]/
+│       ├── respond/route.ts  # PATCH accept/decline
+│       ├── end/route.ts      # PATCH end connection
+│       └── privacy/route.ts  # PATCH shared data settings
+├── clients/
+│   ├── route.ts              # GET trainer's client list
+│   └── [clientId]/
+│       ├── progress/route.ts # GET aggregated stats
+│       ├── workouts/route.ts # GET workout history
+│       └── prs/route.ts      # GET personal records
+├── suggestions/
+│   ├── route.ts              # POST create, GET list
+│   ├── pending/route.ts      # GET pending count
+│   └── [id]/
+│       └── respond/route.ts  # PATCH accept/decline
+└── trainer-notifications/
+    ├── route.ts              # GET list (+ countOnly mode)
+    ├── read-all/route.ts     # POST mark all read
+    └── [id]/
+        └── read/route.ts     # PATCH mark single read
+```
+
+### Adding a New PT Feature
+
+Follow this checklist when extending the PT Portal:
+
+1. **Types** — Add interfaces to `src/types/index.ts` (after existing PT types)
+2. **DB module** — Create `src/lib/db/newFeatureDb.ts` (import `couchFetch` from `trainerDb`)
+3. **API routes** — Create in `src/app/api/` with standard auth pattern
+4. **Middleware** — Add new trainer-only routes to `isTrainerRoute` or `isTrainerApiRoute` matcher
+5. **Hooks** — Create `src/hooks/useNewFeature.ts` with TanStack Query
+6. **Components** — Create in `src/components/trainer/`
+7. **Pages** — Create in `src/app/(app)/trainer/` or relevant route group
+8. **Notifications** — Add `void createTrainerNotification(...)` calls in relevant API routes
+
+---
+
 ## Common Tasks
 
 ### Adding a New Screen
@@ -1522,6 +1893,68 @@ const routine = {
 };
 ```
 
+### ❌ Don't Import `couchFetch` in Client Components
+
+```typescript
+// ❌ WRONG: couchFetch uses server-only env vars + Node Buffer
+'use client';
+import { couchFetch } from '@/lib/db/trainerDb';  // Will crash in browser
+
+// ✅ CORRECT: Use fetch to call API routes from client
+const res = await fetch('/api/trainers');
+```
+
+### ❌ Don't `await` Fire-and-Forget Notifications
+
+```typescript
+// ❌ WRONG: Blocks API response on notification creation
+await createTrainerNotification({ trainerId, ... });
+return Response.json({ success: true, data });
+
+// ✅ CORRECT: Use void prefix — non-blocking
+void createTrainerNotification({ trainerId, ... });
+return Response.json({ success: true, data });
+```
+
+### ❌ Don't Use PouchDB for Cross-User PT Data
+
+```typescript
+// ❌ WRONG: PouchDB is per-user, can't query across users
+const connections = await connectionsDb.allDocs({ include_docs: true });
+
+// ✅ CORRECT: Use server-authoritative CouchDB via couchFetch
+const res = await couchFetch(`/${DB_NAME}/_find`, {
+  method: 'POST',
+  body: JSON.stringify({ selector: { trainerId } }),
+});
+```
+
+### ❌ Don't Forget to Update Middleware for New Trainer Routes
+
+```typescript
+// ❌ WRONG: New trainer API accessible to non-trainers
+// (forgot to add to isTrainerRoute matcher)
+// src/app/api/trainer-schedule/route.ts ← unprotected!
+
+// ✅ CORRECT: Add to middleware matcher
+const isTrainerRoute = createRouteMatcher([
+  '/trainer(.*)',
+  '/api/clients(.*)',
+  '/api/trainer-notifications(.*)',
+  '/api/trainer-schedule(.*)',        // ← Add new routes here
+]);
+```
+
+### ❌ Don't Create Shared DBs with Per-User Prefix
+
+```typescript
+// ❌ WRONG: PT data is shared, not per-user
+const DB_NAME = `${sanitizeUserId(userId)}_fitforge_connections`;
+
+// ✅ CORRECT: Shared database, no user prefix
+const DB_NAME = 'fitforge_connections';
+```
+
 ---
 
 ## Quick Reference
@@ -1532,16 +1965,26 @@ const routine = {
 src/
 ├── app/
 │   ├── (app)/                # Protected routes (Clerk middleware)
+│   │   ├── trainer/          # PT dashboard, clients, requests, notifications
+│   │   ├── trainers/         # PT directory + detail
+│   │   ├── my-trainer/       # User's active trainer view
+│   │   └── routines/suggested/ # Suggested routine inbox
 │   ├── (auth)/               # Sign-in, sign-up (Clerk components)
 │   ├── api/
 │   │   ├── auth/provision-couch/  # CouchDB DB provisioning
-│   │   └── couch/                 # CouchDB proxy (root + catch-all)
+│   │   ├── couch/                 # CouchDB proxy (root + catch-all)
+│   │   ├── trainers/              # PT profile CRUD
+│   │   ├── connections/           # PT-client subscription management
+│   │   ├── clients/               # Trainer's client list + progress
+│   │   ├── suggestions/           # Routine suggestion CRUD
+│   │   └── trainer-notifications/ # Notification list + mark read
 │   └── layout.tsx            # ClerkProvider + dark theme
 ├── components/
 │   ├── ui/                   # Design system primitives
 │   ├── workout/              # Workout execution
 │   ├── routine/              # Routine builder
 │   ├── exercise/             # Exercise browser
+│   ├── trainer/              # PT Portal components (16 files)
 │   ├── sync/                 # ConflictResolverSheet
 │   └── layout/               # Shell (AppLayout, BottomNav)
 ├── store/
@@ -1553,14 +1996,24 @@ src/
 ├── hooks/
 │   ├── useProvisionCouch.ts  # Auto-provision CouchDB DBs after Clerk sign-in
 │   ├── useSyncManager.ts     # Orchestrates PouchDB↔CouchDB sync lifecycle
-│   └── useStartupSync.ts     # Seeds exercise library on first mount
+│   ├── useStartupSync.ts     # Seeds exercise library on first mount
+│   ├── useTrainers.ts        # PT directory + profile hooks
+│   ├── useConnections.ts     # Connection management hooks
+│   ├── useClients.ts         # Trainer's client list hook
+│   ├── useSuggestions.ts     # Routine suggestion hooks
+│   ├── useClientProgress.ts  # Client progress/workouts/PRs hooks
+│   └── useTrainerNotifications.ts # Notification hooks
 ├── lib/
 │   ├── db/couchSync.ts       # PouchDB sync engine (proxy-based)
+│   ├── db/trainerDb.ts       # couchFetch() + trainer CRUD (server-only)
+│   ├── db/connectionDb.ts    # Connection CRUD (server-only)
+│   ├── db/suggestionDb.ts    # Suggestion CRUD (server-only)
+│   ├── db/notificationDb.ts  # Notification CRUD + fire-and-forget (server-only)
 │   ├── calculations/         # Calorie, time, progression
 │   ├── motion/               # Springs, variants
 │   └── utils/                # General helpers
-├── middleware.ts             # Clerk route protection (MUST be in src/)
-└── types/                    # TypeScript interfaces
+├── middleware.ts             # Clerk route protection + trainer role guard
+└── types/                    # TypeScript interfaces (includes PT types)
 
 data/exercises/               # Seeded JSON (prebuild input)
 public/
@@ -1619,6 +2072,17 @@ useSheetStore      // Bottom sheet open/close
 
 **Deleted stores:** `useAuthStore` no longer exists — Clerk handles auth.
 
+### PT Portal Databases
+
+```typescript
+fitforge_trainers              // Trainer profiles (shared)
+fitforge_connections           // PT-client subscriptions (shared)
+fitforge_suggestions           // Routine recommendations (shared)
+fitforge_trainer_notifications // Trainer alerts (shared)
+```
+
+**Unlike sync databases, these are NOT per-user prefixed.** They use server-side `couchFetch()` with admin credentials, not PouchDB replication.
+
 ---
 
 ## Resources
@@ -1628,8 +2092,9 @@ useSheetStore      // Bottom sheet open/close
 - **Business Logic:** `docs/04-business-logic.md`
 - **Implementation Plan:** `docs/05-implementation-plan.md`
 - **UI/UX Screens:** `docs/06-ui-ux-screens.md`
+- **Personal Trainer Portal:** `docs/08-personal-trainer-portal.md`
 
 ---
 
-**Last Updated:** March 2026 (Clerk Auth + CouchDB Proxy Migration)  
-**Skill Version:** 3.0
+**Last Updated:** March 2026 (PT Portal Phases 1-4 Complete)  
+**Skill Version:** 4.0
