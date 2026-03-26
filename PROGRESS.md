@@ -531,6 +531,25 @@
 | `src/components/ui/Icon.tsx` | 🔄 | Added Briefcase + UsersThree icons |
 | `src/app/(app)/page.tsx` | 🔄 | Added MyTrainerCard to dashboard |
 | `src/app/(app)/trainers/[id]/page.tsx` | 🔄 | Wired SubscribeButton (replaced placeholder) |
+| **PT Phase 3** | | |
+| `src/types/index.ts` | 🔄 | Added SuggestionStatus, RoutineSuggestion, WorkoutSummaryBrief, ClientProgressSnapshot |
+| `src/lib/db/suggestionDb.ts` | ✅ | CouchDB utilities for fitforge_suggestions database |
+| `src/app/api/suggestions/route.ts` | ✅ | POST (create) + GET (list) suggestions API |
+| `src/app/api/suggestions/pending/route.ts` | ✅ | GET pending suggestion count |
+| `src/app/api/suggestions/[id]/respond/route.ts` | ✅ | PATCH accept/decline suggestion |
+| `src/app/api/clients/[clientId]/progress/route.ts` | ✅ | GET aggregated client progress |
+| `src/app/api/clients/[clientId]/workouts/route.ts` | ✅ | GET client workout history |
+| `src/app/api/clients/[clientId]/prs/route.ts` | ✅ | GET client personal records |
+| `src/hooks/useSuggestions.ts` | ✅ | TanStack Query hooks for suggestions CRUD |
+| `src/hooks/useClientProgress.ts` | ✅ | TanStack Query hooks for client progress/workouts/PRs |
+| `src/components/trainer/SuggestRoutineSheet.tsx` | ✅ | Bottom sheet to select and suggest routine to client |
+| `src/components/trainer/SuggestionCard.tsx` | ✅ | User-side suggestion card (preview, accept, decline) |
+| `src/components/trainer/ClientProgressView.tsx` | ✅ | Trainer-side client progress with stats + charts |
+| `src/components/trainer/ClientWorkoutList.tsx` | ✅ | Read-only client workout session history |
+| `src/app/(app)/trainer/clients/[id]/page.tsx` | ✅ | S-PT-06 Client Detail (tabs: overview, workouts, PRs) |
+| `src/app/(app)/routines/suggested/page.tsx` | ✅ | S-PT-08 Suggested Routines Inbox |
+| `src/app/(app)/routines/suggested/[id]/page.tsx` | ✅ | S-PT-09 Suggestion Preview |
+| `src/app/(app)/routines/page.tsx` | 🔄 | Added pending suggestion badge/banner |
 
 ---
 
@@ -633,4 +652,55 @@
 
 **Icon System**
 - [x] Added `Briefcase` and `UsersThree` Phosphor icons to Icon.tsx (`briefcase.fill`, `person.3.fill`)
+
+---
+
+## PT Phase 3 — Routine Suggestions & Client Progress
+
+**Status:** ✅ Complete
+**Ref:** `docs/08-personal-trainer-portal.md`
+
+### Tasks
+
+**Data Layer**
+- [x] Define `RoutineSuggestion`, `SuggestionStatus`, `WorkoutSummaryBrief`, `ClientProgressSnapshot` interfaces in `src/types/index.ts`
+- [x] Create `fitforge_suggestions` CouchDB database utilities (`src/lib/db/suggestionDb.ts`)
+- [x] Mango indexes for trainer+suggestedAt and client+status+suggestedAt queries
+
+**API Routes**
+- [x] `POST /api/suggestions` — PT creates routine suggestion (validates active connection, freezes routine snapshot)
+- [x] `GET /api/suggestions` — list suggestions (role-aware: trainer sees sent, client sees received)
+- [x] `GET /api/suggestions/pending` — user's pending suggestion count (for badge)
+- [x] `PATCH /api/suggestions/[id]/respond` — user accepts/declines suggestion
+- [x] `GET /api/clients/[clientId]/progress` — aggregated client stats from per-user CouchDB
+- [x] `GET /api/clients/[clientId]/workouts` — client workout history (paginated)
+- [x] `GET /api/clients/[clientId]/prs` — client personal records
+
+**TanStack Query Hooks**
+- [x] `useSuggestions(options)` — list suggestions with status filter
+- [x] `usePendingSuggestionCount()` — count for badge display
+- [x] `useCreateSuggestion()` — mutation for PT to send suggestion
+- [x] `useRespondToSuggestion()` — mutation for user accept/decline
+- [x] `useClientProgress(clientId)` — aggregated client progress snapshot
+- [x] `useClientWorkouts(options)` — paginated client workout history
+- [x] `useClientPRs(clientId)` — client personal records
+
+**Components**
+- [x] `SuggestRoutineSheet` — bottom sheet for PT to select routine + add note for client
+- [x] `SuggestionCard` — user-side suggestion card (status badge, preview, accept actions)
+- [x] `ClientProgressView` — trainer-side client overview (stat cards, streak, volume, charts)
+- [x] `ClientWorkoutList` — read-only session history with duration, calories, RPE
+
+**Pages**
+- [x] `/trainer/clients/[id]` — S-PT-06 Client Detail (tabs: overview, workouts, PRs + suggest CTA)
+- [x] `/routines/suggested` — S-PT-08 Suggested Routines Inbox (sorted pending-first)
+- [x] `/routines/suggested/[id]` — S-PT-09 Suggestion Preview (full routine breakdown + accept/decline)
+
+**Flows**
+- [x] PT: Client detail → Suggest routine → Select from own routines → Add note → Send
+- [x] User: Accept suggestion → Copy routineSnapshot to local PouchDB → Navigate to routine
+- [x] User: Decline suggestion → Update status → Return to inbox
+
+**Modified Existing**
+- [x] Routines page — Added pending suggestions banner with count badge (links to inbox)
 

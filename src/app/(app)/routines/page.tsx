@@ -12,12 +12,14 @@ import { staggerContainer, fadeUpItem } from '@/lib/motion/variants';
 import { Icon } from '@/components/ui/Icon';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { useRoutines, useWorkoutHistory } from '@/hooks/useDatabase';
+import { usePendingSuggestionCount } from '@/hooks/useSuggestions';
 import { calculateDayType, DAY_TYPE_CONFIG, hasUndulatingExercises } from '@/lib/coaching/undulatingDayType';
 
 export default function RoutinesPage() {
   const router = useRouter();
   const { data: routines = [], isLoading } = useRoutines();
   const { data: workouts = [] } = useWorkoutHistory();
+  const { data: pendingCount = 0 } = usePendingSuggestionCount();
 
   const exerciseCount = (r: (typeof routines)[number]) =>
     (r.warmUp?.length ?? 0) + (r.workout?.length ?? 0) + (r.stretch?.length ?? 0);
@@ -57,6 +59,44 @@ export default function RoutinesPage() {
           </span>
         </motion.button>
       </div>
+
+      {/* Suggested routines banner */}
+      {pendingCount > 0 && (
+        <motion.button
+          onClick={() => router.push('/routines/suggested')}
+          whileTap={{ scale: 0.98 }}
+          className="w-full mt-4 flex items-center justify-between rounded-2xl p-4 glass"
+          initial={{ y: 8, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={springGentle}
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: 'rgba(197,247,79,0.12)' }}
+            >
+              <Icon name="tray.fill" size={18} color="#C5F74F" />
+            </div>
+            <div>
+              <p className="text-[15px] font-semibold" style={{ color: '#F5F5F5' }}>
+                Suggested Routines
+              </p>
+              <p className="text-[13px]" style={{ color: 'rgba(245,245,245,0.45)' }}>
+                {pendingCount} pending from your trainer
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <span
+              className="min-w-[22px] h-[22px] rounded-full flex items-center justify-center text-[12px] font-bold px-1.5"
+              style={{ background: '#C5F74F', color: '#0B0B0B' }}
+            >
+              {pendingCount}
+            </span>
+            <Icon name="chevron.right" size={14} color="rgba(245,245,245,0.30)" />
+          </div>
+        </motion.button>
+      )}
 
       {/* Loading shimmers */}
       {isLoading && (

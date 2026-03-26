@@ -341,3 +341,51 @@ export interface TrainerConnection {
   sharedData: SharedDataSettings;
 }
 
+// ─── Routine Suggestions ──────────────────────────────────────────
+
+export type SuggestionStatus = 'pending' | 'accepted' | 'declined' | 'expired';
+
+export interface RoutineSuggestion {
+  _id: string;
+  _rev?: string;
+  type: 'routine_suggestion';
+  trainerId: string;
+  clientId: string;
+  routineSnapshot: Routine;     // Full routine data (frozen copy)
+  trainerNote?: string;         // Guidance from PT (max 1000 chars)
+  status: SuggestionStatus;
+  suggestedAt: string;
+  respondedAt?: string;
+  acceptedRoutineId?: string;   // If accepted, the ID of the user's copy
+}
+
+// ─── Client Progress Snapshot ─────────────────────────────────────
+
+export interface WorkoutSummaryBrief {
+  sessionId: string;
+  routineName: string | null;
+  completedAt: string;
+  durationSec: number;
+  totalCalories: number;
+  exerciseCount: number;
+  avgRpe?: number;
+}
+
+export interface ClientProgressSnapshot {
+  _id: string;
+  _rev?: string;
+  type: 'client_progress';
+  clientId: string;
+  trainerId: string;
+  snapshotDate: string;
+  recentWorkouts: WorkoutSummaryBrief[];
+  weeklyVolume: number;
+  monthlyWorkoutCount: number;
+  currentStreak: number;
+  complianceRate: number;       // 0-1
+  prs: PersonalRecord[];
+  bodyWeightKg?: number;
+  energyScore?: number;
+  createdAt: string;
+}
+
