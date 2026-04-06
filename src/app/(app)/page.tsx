@@ -142,6 +142,7 @@ function WeeklyActivity({ workoutDates }: { workoutDates: string[] }) {
 // ─── Dashboard Page ───────────────────────────────────────────────
 
 export default function DashboardPage() {
+  const router = useRouter();
   const isGuest = useGuestStore((s) => s.isGuest);
   const { streakDays, manualFeelScore } = useProfileStore();
   const { data: routines = [] } = useRoutines();
