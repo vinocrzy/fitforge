@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell, exercise ball",
+  "id": "1660",
+  "name": "dumbbell kneeling bicep curl exercise ball",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Kneel on the floor with an exercise ball in front of you.",
+    "Place your elbows on top of the exercise ball, holding a dumbbell in each hand with your palms facing up.",
+    "Keeping your upper arms stationary, exhale and curl the dumbbells while contracting your biceps.",
+    "Continue to raise the dumbbells until your biceps are fully contracted and the dumbbells are at shoulder level.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly begin to lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell kneeling bicep curl on an exercise ball is a variation of the standard bicep curl that increases the challenge to your core and stability by having you kneel and support your elbows on an unstable surface. This exercise targets the biceps and also engages the forearms and core for stabilization.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

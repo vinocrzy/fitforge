@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1473",
+  "name": "backward jump",
+  "target": "quads",
+  "secondaryMuscles": [
+    "hamstrings",
+    "glutes",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Bend your knees slightly and jump backwards, pushing off with both feet.",
+    "Land softly on the balls of your feet, bending your knees to absorb the impact.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The backward jump is a plyometric exercise that targets the quadriceps while also engaging the hamstrings, glutes, and calves. It involves jumping backward from a standing position, requiring coordination, balance, and explosive power.",
+  "difficulty": "intermediate",
+  "category": "plyometrics"
+}

@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "cable",
+  "id": "1643",
+  "name": "cable seated overhead curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bench facing the cable machine with your feet flat on the ground.",
+    "Grasp the cable attachment with an underhand grip, palms facing up, and your hands shoulder-width apart.",
+    "Keep your upper arms stationary and your elbows close to your sides.",
+    "Exhale and curl the cable attachment towards your shoulders, contracting your biceps.",
+    "Pause for a moment at the top of the movement, squeezing your biceps.",
+    "Inhale and slowly lower the cable attachment back to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable seated overhead curl is an isolation exercise targeting the biceps, performed using a cable machine while seated. It emphasizes controlled movement and constant tension on the biceps throughout the range of motion.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

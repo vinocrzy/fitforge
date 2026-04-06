@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "assisted",
+  "id": "1709",
+  "name": "assisted lying glutes stretch",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hamstrings"
+  ],
+  "instructions": [
+    "Lie on your back with your legs extended.",
+    "Bend your right knee and place your right ankle on your left thigh, just above the knee.",
+    "Grasp your left thigh with both hands and gently pull it towards your chest.",
+    "Hold the stretch for 20-30 seconds.",
+    "Release and repeat on the other side."
+  ],
+  "description": "The assisted lying glutes stretch is a flexibility exercise targeting the gluteal muscles. It is performed lying on your back, crossing one ankle over the opposite thigh, and gently pulling the thigh towards your chest to stretch the glutes and hamstrings.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

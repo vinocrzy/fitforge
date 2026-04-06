@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1648",
+  "name": "dumbbell alternate seated hammer curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a bench with a dumbbell in each hand, palms facing your torso and arms extended down.",
+    "Keep your back straight and your elbows close to your torso.",
+    "Exhale and curl the dumbbell in your right hand towards your shoulder, keeping your upper arm stationary.",
+    "Continue to raise the dumbbell until your biceps are fully contracted and the dumbbell is at shoulder level.",
+    "Pause for a brief moment, then inhale and slowly lower the dumbbell back to the starting position.",
+    "Repeat the movement with your left arm.",
+    "Continue alternating arms for the desired number of repetitions."
+  ],
+  "description": "The dumbbell alternate seated hammer curl is an upper arm exercise that targets the biceps and forearms. It is performed while seated, alternating curls with each arm using a neutral grip.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

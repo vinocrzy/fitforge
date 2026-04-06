@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "cable",
+  "id": "2399",
+  "name": "cable seated twist",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques"
+  ],
+  "instructions": [
+    "Sit on a cable machine with your feet flat on the ground and your knees slightly bent.",
+    "Hold the cable handle with both hands and extend your arms straight in front of you.",
+    "Keeping your core engaged, slowly rotate your torso to one side, pulling the cable across your body.",
+    "Pause for a moment at the end of the range of motion, then slowly rotate back to the starting position.",
+    "Repeat on the other side.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The cable seated twist is an exercise targeting the abdominal muscles, particularly the obliques, using a cable machine. It involves rotating the torso while seated, providing resistance throughout the movement.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

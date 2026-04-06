@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "stability ball",
+  "id": "1744",
+  "name": "exercise ball dip",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on the stability ball with your feet flat on the ground and your knees bent at a 90-degree angle.",
+    "Place your hands on the ball beside your hips, fingers pointing forward.",
+    "Engage your triceps and push through your hands to lift your body off the ball, straightening your arms.",
+    "Lower your body back down by bending your elbows, keeping them close to your sides.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The exercise ball dip is a triceps-focused movement performed using a stability ball. It challenges the triceps, chest, and shoulders while also requiring balance and core engagement due to the unstable surface.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

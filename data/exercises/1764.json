@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "1764",
+  "name": "hanging leg hip raise",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors",
+    "lower back"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with your arms fully extended and your palms facing away from you.",
+    "Engage your core and lift your legs up by flexing your hips and knees until your thighs are parallel to the ground.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The hanging leg hip raise is a bodyweight exercise that targets the abdominal muscles by requiring you to hang from a pull-up bar and lift your legs, engaging your core and hip flexors.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

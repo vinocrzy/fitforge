@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "leverage machine",
+  "id": "1299",
+  "name": "lever incline chest press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Adjust the seat and backrest of the leverage machine to a comfortable position.",
+    "Sit on the machine with your back against the backrest and your feet flat on the floor.",
+    "Grasp the handles with an overhand grip and position your hands slightly wider than shoulder-width apart.",
+    "Push the handles forward and away from your body until your arms are fully extended.",
+    "Pause for a moment, then slowly bend your elbows and lower the handles back towards your chest.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever incline chest press is a machine-based exercise targeting the upper chest (pectorals), with secondary emphasis on the shoulders and triceps. It is performed on a leverage machine, providing guided movement for safety and stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

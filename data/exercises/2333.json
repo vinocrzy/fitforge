@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "2333",
+  "name": "arm slingers hanging straight legs",
+  "target": "abs",
+  "secondaryMuscles": [
+    "shoulders",
+    "back"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with your arms fully extended and your legs straight down.",
+    "Engage your core and lift your legs up in front of you until they are parallel to the ground.",
+    "Hold for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The arm slingers hanging straight legs exercise involves hanging from a pull-up bar and lifting your straight legs up in front of you, targeting the abdominal muscles while also engaging the shoulders and back.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

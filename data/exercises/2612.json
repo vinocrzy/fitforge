@@ -1,0 +1,23 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "rope",
+  "id": "2612",
+  "name": "jump rope",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "calves",
+    "quadriceps",
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Hold the handles of the jump rope with your hands, palms facing inward.",
+    "Stand with your feet shoulder-width apart and knees slightly bent.",
+    "Swing the rope over your head and jump over it as it comes towards your feet.",
+    "Land softly on the balls of your feet and repeat the jump as the rope comes around again.",
+    "Continue jumping for the desired duration or number of repetitions."
+  ],
+  "description": "Jump rope is a cardiovascular exercise that involves continuously jumping over a swinging rope. It primarily targets the cardiovascular system while also engaging the calves, quadriceps, hamstrings, and glutes.",
+  "difficulty": "beginner",
+  "category": "cardio"
+}

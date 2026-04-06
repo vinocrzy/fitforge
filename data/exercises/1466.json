@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1466",
+  "name": "twist hip lift",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "obliques",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Lie on your back with your knees bent and feet flat on the ground.",
+    "Place your hands by your sides for support.",
+    "Engage your glutes and lift your hips off the ground, forming a straight line from your knees to your shoulders.",
+    "While keeping your hips lifted, twist your lower body to the right side, bringing your knees towards the ground.",
+    "Return to the starting position and repeat the twist to the left side.",
+    "Continue alternating twists for the desired number of repetitions."
+  ],
+  "description": "The twist hip lift is a bodyweight exercise targeting the glutes, with additional engagement of the obliques and hamstrings. It involves lifting the hips off the ground and twisting the lower body side to side, challenging core stability and hip strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

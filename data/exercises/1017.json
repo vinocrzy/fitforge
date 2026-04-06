@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "band",
+  "id": "1017",
+  "name": "band y-raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold the band in front of your thighs with your palms facing inwards.",
+    "Keep your arms straight and lift them up and out to the sides, forming a 'Y' shape with your body.",
+    "Squeeze your shoulder blades together at the top of the movement.",
+    "Slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The band Y-raise is a shoulder exercise that targets the deltoids and also engages the traps and rhomboids. It is performed using a resistance band and involves raising the arms in a 'Y' shape to strengthen the upper back and shoulders.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

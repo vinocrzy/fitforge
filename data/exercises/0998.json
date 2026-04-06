@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "band",
+  "id": "0998",
+  "name": "band side triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold the band with both hands, palms facing down.",
+    "Extend your arms straight out to the sides, keeping them parallel to the ground.",
+    "Slowly bend your elbows and bring your hands towards your shoulders, keeping your upper arms still.",
+    "Pause for a moment, then slowly extend your arms back out to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The band side triceps extension is an exercise targeting the triceps using a resistance band. It also engages the shoulders as secondary muscles. The movement involves extending the arms out to the sides and bending the elbows to bring the hands toward the shoulders, then returning to the starting position.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

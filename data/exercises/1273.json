@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "1273",
+  "name": "clap push up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands slightly wider than shoulder-width apart.",
+    "Lower your body towards the ground by bending your elbows, keeping your core engaged.",
+    "Push through your palms explosively to propel your body off the ground.",
+    "While in mid-air, clap your hands together before landing back in the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The clap push up is a plyometric bodyweight exercise that targets the pectorals, triceps, and shoulders. It involves an explosive push off the ground, clapping the hands in mid-air, and landing back in the push-up position. This movement requires significant upper body strength, power, and coordination.",
+  "difficulty": "advanced",
+  "category": "plyometrics"
+}

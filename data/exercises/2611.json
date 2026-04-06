@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "leverage machine",
+  "id": "2611",
+  "name": "lever horizontal one leg press",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the seat of the machine so that your knees are at a 90-degree angle when your feet are on the footplate.",
+    "Sit on the machine with your back against the backrest and your feet shoulder-width apart on the footplate.",
+    "Place your hands on the handles or sides of the machine for stability.",
+    "Push the footplate away from your body by extending your leg, keeping your back against the backrest.",
+    "Pause for a moment at the fully extended position, then slowly bend your leg to return to the starting position.",
+    "Repeat for the desired number of repetitions, then switch legs."
+  ],
+  "description": "The lever horizontal one leg press is a lower body strength exercise performed on a leverage machine. It primarily targets the glutes, with secondary emphasis on the quadriceps, hamstrings, and calves. The exercise involves pressing a footplate away from the body using one leg at a time, which increases the demand for unilateral strength and stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "dumbbell",
+  "id": "1415",
+  "name": "dumbbell one arm seated neutral wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "brachialis"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a dumbbell in one hand, palm facing up.",
+    "Rest your forearm on your thigh, allowing your wrist to hang off the edge.",
+    "Keeping your forearm stationary, curl your wrist upward as far as possible.",
+    "Pause for a moment at the top, then slowly lower your wrist back down to the starting position.",
+    "Repeat for the desired number of repetitions, then switch to the other hand."
+  ],
+  "description": "The dumbbell one arm seated neutral wrist curl is an isolation exercise targeting the forearm muscles, particularly the wrist flexors. It is performed seated, with the forearm resting on the thigh and the wrist curling a dumbbell upward.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

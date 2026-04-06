@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1736",
+  "name": "dumbbell one arm french press on exercise ball",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on an exercise ball with your feet flat on the ground and your back straight.",
+    "Hold a dumbbell in one hand with your palm facing up and your elbow bent at a 90-degree angle.",
+    "Extend your arm straight up towards the ceiling, keeping your elbow stationary.",
+    "Slowly lower the dumbbell back down to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell one arm French press on an exercise ball targets the triceps while also engaging the core and shoulders due to the instability of the exercise ball. This movement requires balance and coordination in addition to upper arm strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

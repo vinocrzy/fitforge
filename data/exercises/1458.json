@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "ez barbell",
+  "id": "1458",
+  "name": "ez barbell seated curls",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and your back straight.",
+    "Hold the ez barbell with an underhand grip, palms facing up, and your hands shoulder-width apart.",
+    "Rest your upper arms on your thighs, allowing the ez barbell to hang down in front of you.",
+    "Keeping your upper arms stationary, exhale and curl the ez barbell upwards towards your shoulders.",
+    "Pause for a moment at the top, squeezing your biceps.",
+    "Inhale and slowly lower the ez barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The EZ barbell seated curl is an isolation exercise targeting the biceps, performed while seated to minimize body movement and focus on the arms. It uses an EZ barbell, which is easier on the wrists than a straight bar.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

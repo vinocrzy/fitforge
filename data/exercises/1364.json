@@ -1,0 +1,20 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1364",
+  "name": "standing pelvic tilt",
+  "target": "spine",
+  "secondaryMuscles": [
+    "abdominals"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and your knees slightly bent.",
+    "Place your hands on your hips or let them hang by your sides.",
+    "Engage your core muscles and tilt your pelvis forward, pushing your lower back towards the wall behind you.",
+    "Hold the position for a few seconds, then release and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The standing pelvic tilt is a bodyweight exercise that targets the spine and helps improve core engagement and lower back mobility. It is performed by tilting the pelvis forward while standing, engaging the core and gently mobilizing the lower back.",
+  "difficulty": "beginner",
+  "category": "mobility"
+}

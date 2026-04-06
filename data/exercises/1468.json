@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "1468",
+  "name": "crab twist toe touch",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "hip flexors"
+  ],
+  "instructions": [
+    "Start by sitting on the ground with your knees bent and feet flat on the floor.",
+    "Place your hands behind you, fingers pointing towards your feet, and lift your hips off the ground.",
+    "Extend one leg straight out in front of you while simultaneously reaching your opposite hand towards your toes.",
+    "Return to the starting position and repeat on the other side.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The crab twist toe touch is a bodyweight exercise targeting the abdominal muscles, with additional engagement of the obliques and hip flexors. It involves a dynamic movement pattern that requires coordination and balance, as you alternate reaching your hand to the opposite foot while supporting your body in a crab position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

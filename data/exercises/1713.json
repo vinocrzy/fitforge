@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "assisted",
+  "id": "1713",
+  "name": "assisted prone lying quads stretch",
+  "target": "quads",
+  "secondaryMuscles": [
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Lie face down on the ground with your legs extended.",
+    "Bend your left knee and reach back with your left hand to grab your left foot or ankle.",
+    "Gently pull your left foot towards your glutes, feeling a stretch in your left quad.",
+    "Hold the stretch for 20-30 seconds, then release.",
+    "Repeat with your right leg."
+  ],
+  "description": "The assisted prone lying quads stretch is a flexibility exercise targeting the quadriceps, performed by lying face down and using your hand to gently pull your foot towards your glutes, stretching the front of the thigh.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

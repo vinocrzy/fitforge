@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1476",
+  "name": "one leg squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Extend one leg forward, keeping it off the ground.",
+    "Bend your standing leg and lower your body down as if sitting back into a chair.",
+    "Keep your chest up and your back straight.",
+    "Push through your heel to return to the starting position.",
+    "Repeat with the other leg."
+  ],
+  "description": "The one leg squat, also known as a pistol squat, is a challenging lower body exercise that targets the glutes while also engaging the quadriceps, hamstrings, and calves. It requires significant balance, strength, and coordination, as you lower your body on one leg while keeping the other leg extended off the ground.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

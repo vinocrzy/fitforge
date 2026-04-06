@@ -1,0 +1,20 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "assisted",
+  "id": "1708",
+  "name": "assisted lying calves stretch",
+  "target": "calves",
+  "secondaryMuscles": [
+    "hamstrings"
+  ],
+  "instructions": [
+    "Lie on your back with your legs extended.",
+    "Bend one knee and place your foot flat on the ground.",
+    "Using your hands or a towel, gently pull your toes towards your body, feeling a stretch in your calf.",
+    "Hold the stretch for 20-30 seconds.",
+    "Release the stretch and repeat on the other leg."
+  ],
+  "description": "The assisted lying calves stretch is a flexibility exercise targeting the calves, performed lying on your back and using your hands or a towel to gently pull your toes toward your body.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

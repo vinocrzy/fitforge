@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1647",
+  "name": "dumbbell alternate preacher curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Sit on a preacher bench with a dumbbell in each hand, palms facing up.",
+    "Rest your upper arms on the pad of the preacher bench, allowing your arms to fully extend.",
+    "Keeping your upper arms stationary, exhale and curl the dumbbell in your right hand as you contract your biceps.",
+    "Continue to curl the dumbbell until your biceps are fully contracted and the dumbbell is at shoulder level.",
+    "Pause for a moment, then inhale and slowly lower the dumbbell back to the starting position.",
+    "Repeat the movement with your left arm.",
+    "Continue alternating arms for the desired number of repetitions."
+  ],
+  "description": "The dumbbell alternate preacher curl is an isolation exercise targeting the biceps, performed on a preacher bench to minimize cheating and maximize biceps engagement. It is performed by alternating arms, curling a dumbbell up while keeping the upper arm stationary on the pad.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

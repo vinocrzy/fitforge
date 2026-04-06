@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "1436",
+  "name": "barbell high bar squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, toes slightly turned out.",
+    "Place the barbell on your upper back, resting it on your traps.",
+    "Engage your core and keep your chest up as you begin to squat down, pushing your hips back and bending your knees.",
+    "Lower yourself until your thighs are parallel to the ground, or as low as you can comfortably go.",
+    "Drive through your heels to stand back up, extending your hips and knees.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell high bar squat is a compound lower body exercise that primarily targets the glutes, with significant involvement from the quadriceps, hamstrings, calves, and core. It requires placing a barbell on the upper back (traps) and performing a squat movement.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

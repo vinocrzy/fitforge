@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1737",
+  "name": "dumbbell seated bent over triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders",
+    "back"
+  ],
+  "instructions": [
+    "Sit on a bench with your feet flat on the ground and hold a dumbbell in each hand.",
+    "Bend forward at the waist, keeping your back straight and your head up.",
+    "Extend your arms straight back, keeping your elbows close to your head.",
+    "Pause for a moment, then slowly lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated bent over triceps extension is an isolation exercise targeting the triceps, performed while seated and bent over, extending the arms backward with dumbbells.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

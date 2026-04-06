@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1472",
+  "name": "forward jump",
+  "target": "quads",
+  "secondaryMuscles": [
+    "calves",
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Bend your knees and lower your body into a squat position.",
+    "Swing your arms back for momentum.",
+    "Jump forward explosively, extending your hips, knees, and ankles.",
+    "Land softly on the balls of your feet and immediately go into the next jump.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The forward jump is a plyometric exercise that targets the quadriceps and also works the calves, hamstrings, and glutes. It involves jumping forward explosively from a squat position and landing softly, then repeating the movement.",
+  "difficulty": "intermediate",
+  "category": "plyometrics"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1576",
+  "name": "leg up hamstring stretch",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "glutes"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended.",
+    "Bend one knee and bring it towards your chest, holding onto your thigh or shin.",
+    "Straighten your leg as much as possible while keeping it elevated.",
+    "Hold the stretch for 20-30 seconds.",
+    "Repeat with the other leg."
+  ],
+  "description": "The leg up hamstring stretch is a flexibility exercise targeting the hamstrings and glutes. It involves lying on your back, bringing one knee toward your chest, and then straightening the leg to stretch the hamstring.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

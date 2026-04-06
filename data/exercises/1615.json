@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "leverage machine",
+  "id": "1615",
+  "name": "lever hammer grip preacher curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Adjust the seat height and position yourself on the leverage machine.",
+    "Place your upper arms on the preacher pad, ensuring your chest is pressed against it.",
+    "Grasp the handles with a hammer grip (palms facing each other).",
+    "Keeping your upper arms stationary, exhale and curl the handles towards your shoulders.",
+    "Pause for a moment at the top, squeezing your biceps.",
+    "Inhale and slowly lower the handles back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever hammer grip preacher curl is an isolation exercise performed on a leverage machine, targeting the biceps with a neutral (hammer) grip. It also engages the forearms as secondary muscles. The preacher pad provides support and stability, making the movement controlled and focused on the biceps.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

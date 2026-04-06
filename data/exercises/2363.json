@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "2363",
+  "name": "wide-grip chest dip on high parallel bars",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself on the parallel bars with your arms fully extended and your body suspended in the air.",
+    "Lean forward slightly and lower your body by bending your elbows until your chest is just above the bars.",
+    "Pause for a moment, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The wide-grip chest dip on high parallel bars is a bodyweight exercise that targets the pectoral muscles, with secondary emphasis on the triceps and shoulders. It requires significant upper body strength, stability, and control, as well as experience with dip movements.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

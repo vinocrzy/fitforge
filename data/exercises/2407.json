@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "2407",
+  "name": "barbell biceps curl (with arm blaster)",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand up straight with your feet shoulder-width apart and hold a barbell with an underhand grip, palms facing up.",
+    "Place your upper arms against the arm blaster, keeping your elbows close to your torso.",
+    "Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps.",
+    "Continue to raise the barbell until your biceps are fully contracted and the bar is at shoulder level.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly begin to lower the barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell biceps curl with arm blaster is a strength exercise that isolates the biceps by preventing elbow movement and reducing cheating. The arm blaster helps maintain proper form, making the exercise more effective for targeting the biceps.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,24 @@
+{
+  "bodyPart": "back",
+  "equipment": "dumbbell",
+  "id": "1329",
+  "name": "dumbbell palm rotational bent over row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand with an overhand grip.",
+    "Bend forward at the hips, keeping your back straight and your knees slightly bent.",
+    "Let your arms hang straight down, palms facing your body.",
+    "Engage your core and pull the dumbbells up towards your chest, keeping your elbows close to your body.",
+    "As you pull the dumbbells up, rotate your palms so they face away from your body.",
+    "Squeeze your shoulder blades together at the top of the movement.",
+    "Slowly lower the dumbbells back down to the starting position, rotating your palms back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell palm rotational bent over row is a compound exercise targeting the upper back, with additional engagement of the biceps and forearms. The rotational component adds a coordination challenge and increases muscle activation.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

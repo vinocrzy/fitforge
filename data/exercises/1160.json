@@ -1,0 +1,26 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "1160",
+  "name": "burpee",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves",
+    "shoulders",
+    "chest"
+  ],
+  "instructions": [
+    "Start in a standing position with your feet shoulder-width apart.",
+    "Lower your body into a squat position by bending your knees and placing your hands on the floor in front of you.",
+    "Kick your feet back into a push-up position.",
+    "Perform a push-up, keeping your body in a straight line.",
+    "Jump your feet back into the squat position.",
+    "Jump up explosively, reaching your arms overhead.",
+    "Land softly and immediately lower back into a squat position to begin the next repetition."
+  ],
+  "description": "The burpee is a full-body exercise that combines a squat, push-up, and jump to elevate heart rate and build strength and endurance.",
+  "difficulty": "intermediate",
+  "category": "cardio"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1365",
+  "name": "upper back stretch",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand up straight with your feet shoulder-width apart.",
+    "Extend your arms straight in front of you, parallel to the ground.",
+    "Interlace your fingers and rotate your palms away from your body.",
+    "Slowly raise your arms overhead, keeping them straight and parallel to each other.",
+    "As you raise your arms, squeeze your shoulder blades together.",
+    "Hold the stretch for 15-30 seconds, then release and repeat."
+  ],
+  "description": "The upper back stretch is a bodyweight exercise designed to stretch and mobilize the upper back and shoulders. It is performed by extending the arms, interlacing the fingers, and raising the arms overhead while squeezing the shoulder blades together.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

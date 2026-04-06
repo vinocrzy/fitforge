@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "smith machine",
+  "id": "1752",
+  "name": "smith machine incline tricep extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Adjust the seat of the smith machine so that the bar is at shoulder height.",
+    "Sit on the bench with your back against the pad and your feet flat on the ground.",
+    "Grasp the bar with an overhand grip, slightly wider than shoulder-width apart.",
+    "Extend your arms fully, lifting the bar off the rack and holding it directly above your chest.",
+    "Lower the bar slowly towards your forehead, keeping your elbows close to your head.",
+    "Pause for a moment at the bottom, then push the bar back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith machine incline tricep extension is an isolation exercise that targets the triceps using a smith machine and an incline bench. It involves extending the arms to work the triceps, with some involvement of the shoulders for stabilization.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

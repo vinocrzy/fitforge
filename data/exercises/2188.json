@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "2188",
+  "name": "dumbbell seated triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bench with your back straight and feet flat on the ground.",
+    "Hold a dumbbell with both hands and extend your arms straight up overhead.",
+    "Bend your elbows and lower the dumbbell behind your head, keeping your upper arms close to your ears.",
+    "Pause for a moment, then straighten your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated triceps extension is an isolation exercise that targets the triceps, performed while seated and using a dumbbell held with both hands overhead.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

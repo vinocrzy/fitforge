@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1548",
+  "name": "chair leg extended stretch",
+  "target": "quads",
+  "secondaryMuscles": [
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Sit on the edge of a chair with your back straight and feet flat on the ground.",
+    "Extend one leg straight out in front of you, keeping your heel on the ground.",
+    "Lean forward slightly, feeling a stretch in your quadriceps.",
+    "Hold this position for 20-30 seconds.",
+    "Switch legs and repeat the stretch."
+  ],
+  "description": "A seated stretch targeting the quadriceps, performed by extending one leg while sitting on a chair and leaning forward to feel the stretch.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "1753",
+  "name": "three bench dip",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bench with your hands gripping the edge, fingers pointing forward.",
+    "Slide your butt off the bench, supporting your weight with your hands.",
+    "Place your feet on a second bench and, if using a third, elevate your legs further.",
+    "Bend your elbows and lower your body until your upper arms are parallel to the ground.",
+    "Push yourself back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The three bench dip is a bodyweight exercise targeting the triceps, performed using three benches to elevate the feet and hands, increasing the range of motion and difficulty compared to standard dips.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

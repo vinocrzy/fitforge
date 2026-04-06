@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "1277",
+  "name": "dumbbell fly on exercise ball",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on an exercise ball and hold a dumbbell in each hand.",
+    "Walk your feet forward and roll your body down until your head, neck, and upper back are supported by the ball.",
+    "Extend your arms straight up above your chest, palms facing each other.",
+    "Bend your elbows slightly and lower your arms out to the sides in a wide arc until you feel a stretch in your chest.",
+    "Pause for a moment, then reverse the movement and squeeze your chest muscles as you bring the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell fly on exercise ball is a chest exercise that also challenges your core and stability by performing the movement on an unstable surface. It targets the pectorals, with secondary emphasis on the shoulders and triceps.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

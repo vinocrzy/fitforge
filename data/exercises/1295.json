@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell, exercise ball",
+  "id": "1295",
+  "name": "dumbbell pullover on exercise ball",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "latissimus dorsi"
+  ],
+  "instructions": [
+    "Sit on an exercise ball and hold a dumbbell with both hands above your chest, arms extended.",
+    "Slowly lower the dumbbell behind your head while keeping your arms straight.",
+    "Pause for a moment, then raise the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell pullover on exercise ball is a chest exercise that also engages the triceps and latissimus dorsi. It is performed by lying on an exercise ball, holding a dumbbell above the chest, and lowering it behind the head before returning to the starting position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "1700",
+  "name": "dumbbell push press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder level.",
+    "Bend your knees slightly and dip your body down, then explosively extend your legs and press the dumbbells overhead.",
+    "Lock out your arms at the top of the movement, then lower the dumbbells back to shoulder level.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell push press is a compound exercise that targets the deltoids (shoulders) and also engages the triceps and core. It involves a slight dip and drive from the legs to help press the dumbbells overhead, making it a dynamic movement that combines strength and power.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

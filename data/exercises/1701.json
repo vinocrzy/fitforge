@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "medicine ball",
+  "id": "1701",
+  "name": "medicine ball close grip push up",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands on the medicine ball, shoulder-width apart.",
+    "Lower your body towards the ground by bending your elbows, keeping them close to your sides.",
+    "Push back up to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "A push-up variation performed with hands close together on a medicine ball, targeting the triceps and engaging the chest and shoulders.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

@@ -1,0 +1,23 @@
+{
+  "bodyPart": "back",
+  "equipment": "dumbbell",
+  "id": "2327",
+  "name": "dumbbell reverse grip row (female)",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and knees slightly bent.",
+    "Hold a dumbbell in each hand with an overhand grip, palms facing your body.",
+    "Bend forward at the waist, keeping your back straight and your core engaged.",
+    "Let your arms hang straight down, fully extended, with a slight bend in your elbows.",
+    "Pull the dumbbells up towards your chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell reverse grip row is a strength exercise targeting the upper back, performed with dumbbells and a reverse (underhand) grip. It also engages the biceps and forearms.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

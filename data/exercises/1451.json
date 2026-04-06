@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "leverage machine",
+  "id": "1451",
+  "name": "lever seated dip",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Adjust the seat height so that your feet are flat on the ground and your knees are at a 90-degree angle.",
+    "Grasp the handles of the leverage machine with your palms facing down and your arms fully extended.",
+    "Slowly lower your body by bending your elbows until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever seated dip is a machine-based exercise targeting the triceps, with secondary emphasis on the chest and shoulders. It involves pressing down on handles while seated, simulating a dip movement in a controlled environment.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

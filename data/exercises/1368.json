@@ -1,0 +1,19 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "body weight",
+  "id": "1368",
+  "name": "ankle circles",
+  "target": "calves",
+  "secondaryMuscles": [
+    "ankle stabilizers"
+  ],
+  "instructions": [
+    "Sit on the ground with your legs extended in front of you.",
+    "Lift one leg off the ground and rotate your ankle in a circular motion.",
+    "Perform the desired number of circles in one direction, then switch to the other direction.",
+    "Repeat with the other leg."
+  ],
+  "description": "Ankle circles are a bodyweight exercise that targets the calves and ankle stabilizers. This movement involves rotating the ankle in a circular motion while seated, helping to improve mobility and flexibility in the ankle joint.",
+  "difficulty": "beginner",
+  "category": "mobility"
+}

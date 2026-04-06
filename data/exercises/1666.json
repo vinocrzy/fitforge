@@ -1,0 +1,19 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1666",
+  "name": "dumbbell one arm prone hammer curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Lie face down on a flat bench with a dumbbell in one hand, palm facing your body and arm fully extended.",
+    "Keep your upper arm stationary and curl the dumbbell towards your shoulder, contracting your biceps.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell one arm prone hammer curl is an isolation exercise targeting the biceps and forearms. It is performed lying face down on a bench, curling a dumbbell with a neutral grip.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

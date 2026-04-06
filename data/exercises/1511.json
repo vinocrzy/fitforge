@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1511",
+  "name": "hamstring stretch",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "glutes"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Step forward with your right foot and shift your weight onto your right leg.",
+    "Keeping your back straight, slowly bend forward at the hips, reaching towards your right foot with both hands.",
+    "Hold the stretch for 20-30 seconds, then return to the starting position.",
+    "Repeat on the other side."
+  ],
+  "description": "The hamstring stretch is a bodyweight exercise targeting the hamstrings and also engaging the glutes. It involves stepping forward, bending at the hips, and reaching toward the foot to stretch the back of the thigh.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

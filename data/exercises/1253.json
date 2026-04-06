@@ -1,0 +1,22 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "leverage machine",
+  "id": "1253",
+  "name": "lever donkey calf raise",
+  "target": "calves",
+  "secondaryMuscles": [
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Adjust the leverage machine to the appropriate height for your body.",
+    "Position yourself facing the machine, with your toes on the foot platform and your heels hanging off the edge.",
+    "Place your hands on the handles or the support bars for stability.",
+    "Engage your calves and lift your heels as high as possible, using the balls of your feet.",
+    "Pause for a moment at the top, then slowly lower your heels back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever donkey calf raise is a machine-based exercise targeting the calf muscles. It involves standing on a platform with your heels hanging off, then raising and lowering your heels to work the calves. The leverage machine provides resistance and support, making it a controlled movement.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

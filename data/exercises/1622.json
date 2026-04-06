@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "1622",
+  "name": "dumbbell one arm reverse grip press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a flat bench with a dumbbell in one hand, palm facing towards your body.",
+    "Place your feet flat on the ground and keep your back straight.",
+    "Raise the dumbbell to shoulder height, keeping your elbow close to your body.",
+    "Press the dumbbell upwards until your arm is fully extended.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch to the other arm."
+  ],
+  "description": "The dumbbell one arm reverse grip press is a unilateral chest exercise that targets the pectorals with a unique grip, also engaging the triceps and shoulders. It requires stability and control due to the reverse grip and single-arm execution.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

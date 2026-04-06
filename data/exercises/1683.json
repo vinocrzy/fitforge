@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "smith machine",
+  "id": "1683",
+  "name": "smith machine bicep curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Adjust the height of the smith machine bar to be at waist level.",
+    "Stand facing the smith machine with your feet shoulder-width apart.",
+    "Grasp the bar with an underhand grip, hands slightly wider than shoulder-width apart.",
+    "Keep your elbows close to your sides and your upper arms stationary.",
+    "Exhale and curl the bar up towards your shoulders, contracting your biceps.",
+    "Pause for a moment at the top of the movement, squeezing your biceps.",
+    "Inhale and slowly lower the bar back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith machine bicep curl is a strength exercise targeting the biceps, performed using a smith machine for guided movement. It is suitable for those looking to build arm strength and muscle mass with added stability from the machine.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

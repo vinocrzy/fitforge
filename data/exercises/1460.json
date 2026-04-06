@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1460",
+  "name": "walking lunge",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Take a step forward with your right leg, lowering your body into a lunge position.",
+    "Keep your torso upright and your front knee aligned with your ankle.",
+    "Push off with your right foot and bring your left foot forward, stepping into a lunge position with your left leg.",
+    "Continue alternating legs and walking forward, maintaining a controlled and steady pace.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The walking lunge is a bodyweight exercise that targets the glutes while also engaging the quadriceps, hamstrings, and calves. It involves stepping forward into a lunge and alternating legs as you walk forward, requiring balance, coordination, and lower body strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

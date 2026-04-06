@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "2398",
+  "name": "close-grip push-up (on knees)",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start by getting on your hands and knees, with your hands shoulder-width apart and your knees hip-width apart.",
+    "Lower your upper body towards the ground by bending your elbows, keeping them close to your sides.",
+    "Pause for a moment when your chest is just above the ground.",
+    "Push through your palms to straighten your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The close-grip push-up (on knees) is a bodyweight exercise that primarily targets the triceps, with secondary emphasis on the chest and shoulders. It is performed from a kneeling position, making it more accessible for beginners and those building upper body strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

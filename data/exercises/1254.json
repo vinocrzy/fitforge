@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "band",
+  "id": "1254",
+  "name": "band bench press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench.",
+    "Grasp the band handles with an overhand grip, slightly wider than shoulder-width apart.",
+    "Extend your arms fully, pushing the bands away from your chest.",
+    "Slowly lower the bands back down to your chest, keeping your elbows at a 90-degree angle.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The band bench press is a resistance exercise targeting the pectoral muscles using a resistance band. It mimics the traditional bench press but uses bands instead of weights, making it accessible and effective for building chest strength with less equipment.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

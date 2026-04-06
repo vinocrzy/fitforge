@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "barbell",
+  "id": "1629",
+  "name": "barbell standing wide grip biceps curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a barbell with an underhand grip, hands wider than shoulder-width apart.",
+    "Keep your back straight and your elbows close to your torso.",
+    "Exhale and curl the barbell up towards your shoulders, keeping your upper arms stationary.",
+    "Pause for a moment at the top, squeezing your biceps.",
+    "Inhale and slowly lower the barbell back to the starting position, fully extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell standing wide grip biceps curl is a strength exercise targeting the biceps, with secondary emphasis on the forearms. It involves curling a barbell with a wide grip, which can help emphasize the outer portion of the biceps.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

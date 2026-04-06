@@ -1,0 +1,20 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1352",
+  "name": "lower back curl",
+  "target": "spine",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Lie flat on your stomach with your legs extended and your arms by your sides.",
+    "Engage your glutes and hamstrings, and slowly lift your upper body off the ground, curling your back upwards.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lower back curl is a bodyweight exercise that targets the muscles of the lower back (spine) and also engages the glutes and hamstrings. It involves lying face down and curling the upper body off the ground by contracting the lower back muscles.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

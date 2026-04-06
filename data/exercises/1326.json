@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1326",
+  "name": "chin-up",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Hang from a pull-up bar with your palms facing towards you and your hands shoulder-width apart.",
+    "Engage your core and pull your body up towards the bar, leading with your chest.",
+    "Continue pulling until your chin is above the bar.",
+    "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The chin-up is a bodyweight exercise that targets the latissimus dorsi (lats) and also works the biceps and forearms. It involves pulling your body up towards a bar with an underhand grip until your chin clears the bar.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

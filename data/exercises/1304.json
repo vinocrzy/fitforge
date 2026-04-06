@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "medicine ball",
+  "id": "1304",
+  "name": "medicine ball chest push multiple response",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding a medicine ball at chest level.",
+    "Extend your arms forward, pushing the medicine ball away from your chest.",
+    "Pause for a moment, then slowly bring the medicine ball back to your chest.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "A chest-focused exercise using a medicine ball to develop pressing strength and coordination. The movement involves pushing the medicine ball away from the chest and returning it, engaging the pectorals, triceps, and shoulders.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

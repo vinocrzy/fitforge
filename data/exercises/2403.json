@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "2403",
+  "name": "dumbbell alternate biceps curl (with arm blaster)",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand up straight with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing forward.",
+    "Place the arm blaster on your upper arms, ensuring a secure fit.",
+    "Keeping your upper arms stationary, exhale and curl one dumbbell up towards your shoulder while contracting your biceps.",
+    "Continue to raise the dumbbell until your biceps are fully contracted and the dumbbell is at shoulder level.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly lower the dumbbell back to the starting position.",
+    "Repeat the movement with the opposite arm.",
+    "Continue alternating arms for the desired number of repetitions."
+  ],
+  "description": "The dumbbell alternate biceps curl (with arm blaster) is an isolation exercise targeting the biceps, using an arm blaster to maintain strict form and minimize shoulder involvement. This exercise is performed by alternately curling dumbbells while keeping the upper arms stationary against the arm blaster.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

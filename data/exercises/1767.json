@@ -1,0 +1,20 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "weighted",
+  "id": "1767",
+  "name": "weighted triceps dip on high parallel bars",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself between two parallel bars with your hands gripping the bars and your arms fully extended.",
+    "Bend your elbows and lower your body until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push through your palms to straighten your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The weighted triceps dip on high parallel bars is an advanced upper body exercise that primarily targets the triceps, while also engaging the chest and shoulders. The addition of weight increases the strength and stability demands, making it suitable for experienced lifters.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

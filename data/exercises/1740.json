@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1740",
+  "name": "dumbbell standing bent over one arm triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders",
+    "back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in one hand.",
+    "Bend forward at the waist, keeping your back straight and parallel to the ground.",
+    "Extend your arm straight back, keeping your elbow close to your body.",
+    "Slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell standing bent over one arm triceps extension is an isolation exercise targeting the triceps, performed while bent over and extending the arm behind the body.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

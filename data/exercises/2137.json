@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "2137",
+  "name": "dumbbell arnold press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper chest"
+  ],
+  "instructions": [
+    "Sit on a bench with back support and hold a dumbbell in each hand at shoulder level, palms facing your body and elbows bent.",
+    "Press the dumbbells upward until your arms are fully extended and your palms are facing forward.",
+    "Rotate your wrists as you lift, so that your palms are facing forward at the top of the movement.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell Arnold press is a shoulder exercise that targets the deltoids while also engaging the triceps and upper chest. It involves a rotational movement as you press the dumbbells overhead, increasing the range of motion and muscle activation compared to a standard shoulder press.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

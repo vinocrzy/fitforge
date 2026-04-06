@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "stability ball",
+  "id": "2328",
+  "name": "narrow push-up on exercise ball",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Place the stability ball on the ground and position yourself in a push-up position with your hands on the ball, slightly narrower than shoulder-width apart.",
+    "Engage your core and keep your body in a straight line from head to toe.",
+    "Lower your chest towards the ball by bending your elbows, keeping them close to your body.",
+    "Pause for a moment at the bottom, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The narrow push-up on an exercise ball is a challenging upper body exercise that targets the triceps while also engaging the chest and shoulders. The instability of the ball increases the demand on core stability and balance.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

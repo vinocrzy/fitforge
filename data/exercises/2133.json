@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "dumbbell",
+  "id": "2133",
+  "name": "farmers walk",
+  "target": "quads",
+  "secondaryMuscles": [
+    "calves",
+    "forearms",
+    "core"
+  ],
+  "instructions": [
+    "Stand up straight with a dumbbell in each hand, palms facing your sides.",
+    "Keep your back straight and your shoulders back.",
+    "Take small, controlled steps forward, maintaining an upright posture.",
+    "Continue walking for the desired distance or time.",
+    "To finish, stop walking and carefully lower the dumbbells to your sides."
+  ],
+  "description": "The farmer's walk is a functional strength exercise where you walk while holding a dumbbell in each hand, engaging the quads, calves, forearms, and core. It improves grip strength, core stability, and overall conditioning.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

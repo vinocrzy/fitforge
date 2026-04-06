@@ -1,0 +1,20 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "smith machine",
+  "id": "1395",
+  "name": "smith seated one leg calf raise",
+  "target": "calves",
+  "secondaryMuscles": [
+    "hamstrings"
+  ],
+  "instructions": [
+    "Sit on the machine with your back against the pad and your feet on the footrest.",
+    "Place one leg on the footrest and keep the other leg off the footrest.",
+    "Using your calf muscles, raise your heel as high as possible.",
+    "Pause for a moment at the top, then slowly lower your heel back down to the starting position.",
+    "Repeat for the desired number of repetitions, then switch legs and repeat."
+  ],
+  "description": "The smith seated one leg calf raise is a lower leg exercise performed on a smith machine, targeting the calf muscles by raising one heel at a time while seated.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

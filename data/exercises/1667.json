@@ -1,0 +1,19 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1667",
+  "name": "dumbbell one arm reverse spider curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Stand up straight with a dumbbell in one hand, palm facing down and arm fully extended.",
+    "Keeping your upper arm stationary, curl the dumbbell towards your shoulder by flexing your elbow.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell one arm reverse spider curl is an isolation exercise targeting the biceps and forearms. It is performed with a dumbbell in one hand, using a reverse grip to emphasize the brachialis and forearm muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

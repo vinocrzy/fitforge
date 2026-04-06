@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1773",
+  "name": "one arm towel row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, knees slightly bent, and hold a towel with one hand.",
+    "Bend forward at the waist, keeping your back straight and your core engaged.",
+    "Extend your arm fully, allowing the towel to hang in front of you.",
+    "Pull the towel towards your chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the top, then slowly lower the towel back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The one arm towel row is a bodyweight exercise targeting the upper back, performed by pulling a towel with one arm while maintaining a strong core and straight back.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

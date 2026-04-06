@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "stability ball",
+  "id": "1339",
+  "name": "exercise ball lat stretch",
+  "target": "lats",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on a stability ball with your feet flat on the ground and your back straight.",
+    "Hold a dumbbell in one hand and extend your arm straight up overhead.",
+    "Slowly lean to the opposite side, feeling a stretch in your lat muscle.",
+    "Hold the stretch for 20-30 seconds, then return to the starting position.",
+    "Repeat on the other side."
+  ],
+  "description": "The exercise ball lat stretch is a flexibility movement that targets the latissimus dorsi muscles. It involves sitting on a stability ball and leaning to the side while holding a dumbbell overhead, providing a deep stretch to the lats and engaging the shoulders and triceps as secondary muscles.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "2317",
+  "name": "dumbbell seated bent arm lateral raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "trapezius",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Sit on a bench with your back straight and feet flat on the ground.",
+    "Hold a dumbbell in each hand with your palms facing your body and your arms bent at a 90-degree angle.",
+    "Keeping your elbows bent, raise your arms out to the sides until they are parallel to the ground.",
+    "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell seated bent arm lateral raise targets the deltoid muscles in the shoulders, with secondary emphasis on the trapezius and rhomboids. It is performed while seated, which helps stabilize the body and focus the effort on the shoulders.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

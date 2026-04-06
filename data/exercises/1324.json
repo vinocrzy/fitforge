@@ -1,0 +1,24 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "1324",
+  "name": "cable upper row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Attach a straight bar to a cable machine at chest height.",
+    "Stand facing the machine with your feet shoulder-width apart.",
+    "Grasp the bar with an overhand grip, hands slightly wider than shoulder-width apart.",
+    "Keep your back straight and your core engaged.",
+    "Pull the bar towards your upper chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the top of the movement.",
+    "Slowly release the bar back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable upper row is a compound exercise targeting the upper back, performed using a cable machine and a straight bar. It involves pulling the bar towards the upper chest, engaging the upper back, biceps, and shoulders.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

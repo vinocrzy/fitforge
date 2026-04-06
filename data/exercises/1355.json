@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1355",
+  "name": "one arm against wall",
+  "target": "lats",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Stand facing a wall with your feet shoulder-width apart.",
+    "Extend one arm straight out in front of you and place your palm against the wall.",
+    "Engage your core and lean your body forward, keeping your arm straight and your back flat.",
+    "Slowly push against the wall with your palm, activating your lat muscles.",
+    "Hold the position for a few seconds, then release and repeat with the other arm."
+  ],
+  "description": "A bodyweight exercise where you stand facing a wall, extend one arm to press against the wall, and engage your lats by pushing, focusing on lat activation and shoulder stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

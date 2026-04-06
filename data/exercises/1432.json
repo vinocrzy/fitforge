@@ -1,0 +1,23 @@
+{
+  "bodyPart": "back",
+  "equipment": "leverage machine",
+  "id": "1432",
+  "name": "assisted standing pull-up",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Adjust the machine to your desired weight and height settings.",
+    "Stand facing the machine with your feet shoulder-width apart.",
+    "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart.",
+    "Engage your lats and biceps, and pull yourself up towards the handles.",
+    "Pause for a moment at the top, squeezing your back muscles.",
+    "Slowly lower yourself back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The assisted standing pull-up is a machine-based exercise targeting the latissimus dorsi (lats) with assistance to help perform the pull-up movement. It is suitable for those building strength to perform unassisted pull-ups.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

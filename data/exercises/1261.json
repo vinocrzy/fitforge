@@ -1,0 +1,24 @@
+{
+  "bodyPart": "chest",
+  "equipment": "cable",
+  "id": "1261",
+  "name": "cable decline press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Adjust the cable machine to a decline position.",
+    "Sit on the decline bench facing the cable machine.",
+    "Grasp the handles with an overhand grip and position them at chest level.",
+    "Keep your feet flat on the ground and your back firmly against the bench.",
+    "Exhale and push the handles away from your body, extending your arms fully.",
+    "Pause for a moment at the end of the movement, squeezing your chest muscles.",
+    "Inhale and slowly return the handles back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable decline press is a chest exercise performed on a cable machine with a decline bench. It targets the lower portion of the pectoral muscles and also engages the triceps and shoulders. The movement involves pressing the handles away from the body in a decline position, providing constant tension through the range of motion.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

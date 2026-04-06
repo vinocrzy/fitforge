@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "1306",
+  "name": "plyo push up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands slightly wider than shoulder-width apart.",
+    "Lower your chest towards the ground by bending your elbows, keeping your body in a straight line.",
+    "Push explosively off the ground, using your chest muscles to propel your upper body off the ground.",
+    "Land softly with your hands back in the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The plyo push up is an explosive bodyweight exercise that targets the pectoral muscles and also works the triceps, shoulders, and core. It involves pushing off the ground with enough force for your hands to leave the floor, requiring power, coordination, and upper body strength.",
+  "difficulty": "advanced",
+  "category": "plyometrics"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "1366",
+  "name": "upward facing dog",
+  "target": "spine",
+  "secondaryMuscles": [
+    "shoulders",
+    "chest"
+  ],
+  "instructions": [
+    "Lie face down on the floor with your legs extended behind you.",
+    "Place your hands on the floor next to your lower ribs, fingers pointing forward.",
+    "Press your hands firmly into the floor and straighten your arms, lifting your torso and thighs off the ground.",
+    "Roll your shoulders back and down, opening your chest and lifting your gaze towards the ceiling.",
+    "Hold this position for a few breaths, then slowly lower your body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Upward Facing Dog is a yoga pose that stretches the spine, chest, and shoulders while strengthening the arms and back. It is commonly used to improve spinal mobility and posture.",
+  "difficulty": "beginner",
+  "category": "mobility"
+}

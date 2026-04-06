@@ -1,0 +1,27 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "smith machine",
+  "id": "1433",
+  "name": "smith front squat (clean grip)",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves",
+    "core"
+  ],
+  "instructions": [
+    "Set up the smith machine with the barbell at shoulder height.",
+    "Stand facing the barbell with your feet shoulder-width apart.",
+    "Grasp the barbell with an overhand grip, slightly wider than shoulder-width apart.",
+    "Step back and position the barbell on your front shoulders, resting it on your collarbone and deltoids.",
+    "Keep your chest up, back straight, and core engaged.",
+    "Lower your body by bending at the knees and hips, as if sitting back into a chair.",
+    "Continue lowering until your thighs are parallel to the ground or slightly below.",
+    "Pause for a moment, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The smith front squat (clean grip) is a lower body exercise performed on a smith machine, targeting the glutes with significant involvement from the quadriceps, hamstrings, calves, and core. The clean grip requires good shoulder and wrist mobility, and the movement demands proper technique to maintain balance and safety.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

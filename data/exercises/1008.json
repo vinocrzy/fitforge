@@ -1,0 +1,24 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "band",
+  "id": "1008",
+  "name": "band step-up",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Place a band around your thighs, just above your knees.",
+    "Stand facing a step or platform with your feet hip-width apart.",
+    "Step up onto the platform with your right foot, pushing through your heel.",
+    "Extend your left leg behind you, keeping it straight.",
+    "Lower your left foot back down to the ground.",
+    "Repeat with your left foot stepping up onto the platform.",
+    "Continue alternating legs for the desired number of repetitions."
+  ],
+  "description": "The band step-up is a lower body exercise that targets the glutes, with secondary emphasis on the quadriceps, hamstrings, and calves. It involves stepping onto a platform with resistance provided by a band around the thighs, enhancing muscle activation and stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

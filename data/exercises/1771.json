@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "1771",
+  "name": "bodyweight kneeling triceps extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders",
+    "chest"
+  ],
+  "instructions": [
+    "Kneel down on the ground with your knees hip-width apart.",
+    "Place your hands on the ground in front of you, shoulder-width apart, fingers pointing forward.",
+    "Extend your legs straight behind you, balancing on your toes and hands, forming a straight line from head to heels.",
+    "Bend your elbows and lower your upper body towards the ground, keeping your elbows close to your sides.",
+    "Pause for a moment at the bottom, then push through your hands to straighten your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The bodyweight kneeling triceps extension is a bodyweight exercise that targets the triceps, with secondary emphasis on the shoulders and chest. It involves lowering your body by bending the elbows while keeping the core engaged and then pressing back up to the starting position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

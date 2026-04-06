@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1656",
+  "name": "dumbbell biceps curl v sit on bosu ball",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on a bosu ball with your feet flat on the ground and your knees bent at a 90-degree angle.",
+    "Hold a dumbbell in each hand with your palms facing forward and your arms fully extended down by your sides.",
+    "Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps.",
+    "Continue to raise the dumbbells until your biceps are fully contracted and the dumbbells are at shoulder level.",
+    "Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Inhale and slowly begin to lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell biceps curl v sit on bosu ball is a challenging exercise that combines a traditional biceps curl with a core-engaging V-sit position on an unstable surface (BOSU ball). This movement targets the biceps while also requiring significant balance and core stability.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

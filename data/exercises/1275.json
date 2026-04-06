@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "1275",
+  "name": "drop push up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands slightly wider than shoulder-width apart.",
+    "Lower your chest towards the ground, keeping your elbows close to your body.",
+    "Once your chest is just above the ground, quickly drop your knees to the ground.",
+    "Push yourself back up to the starting position by extending your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The drop push up is a bodyweight exercise that targets the pectorals and also works the triceps and shoulders. It involves lowering the chest towards the ground in a plank position, dropping the knees to the ground at the bottom, and then pushing back up.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

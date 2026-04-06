@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "leverage machine",
+  "id": "1439",
+  "name": "lever gripless shrug v. 2",
+  "target": "traps",
+  "secondaryMuscles": [
+    "shoulders",
+    "forearms"
+  ],
+  "instructions": [
+    "Adjust the seat height and position yourself on the machine with your back against the pad.",
+    "Grasp the handles or bars with an overhand grip, keeping your arms straight.",
+    "Keeping your back straight, lift your shoulders up towards your ears as high as possible.",
+    "Hold the contraction for a moment, then slowly lower your shoulders back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever gripless shrug v. 2 is performed on a leverage machine and targets the trapezius muscles. It involves elevating the shoulders while keeping the arms straight, focusing on the upper back and traps.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

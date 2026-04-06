@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "kettlebell",
+  "id": "1345",
+  "name": "kettlebell two arm row",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, knees slightly bent, and hold a kettlebell in each hand with your palms facing your body.",
+    "Bend forward at the hips, keeping your back straight and your core engaged.",
+    "Pull the kettlebells up towards your chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the top, then slowly lower the kettlebells back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The kettlebell two arm row is a compound exercise targeting the upper back, performed by pulling two kettlebells towards the chest while maintaining a bent-over position.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "assisted",
+  "id": "1714",
+  "name": "assisted prone rectus femoris stretch",
+  "target": "abs",
+  "secondaryMuscles": [
+    "quadriceps"
+  ],
+  "instructions": [
+    "Lie face down on the ground with your legs straight.",
+    "Bend your right knee and reach back with your right hand to grab your right foot or ankle.",
+    "Gently pull your right foot or ankle towards your glutes, feeling a stretch in the front of your right thigh.",
+    "Hold the stretch for 20-30 seconds.",
+    "Release and repeat on the other side."
+  ],
+  "description": "The assisted prone rectus femoris stretch is a flexibility exercise that targets the abdominal area and quadriceps. It is performed lying face down, bending one knee, and pulling the foot towards the glutes to stretch the front of the thigh.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

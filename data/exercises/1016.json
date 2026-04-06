@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "band",
+  "id": "1016",
+  "name": "band wrist curl",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "biceps",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on a bench or chair with your feet flat on the ground.",
+    "Hold the band with both hands, palms facing up, and rest your forearms on your thighs.",
+    "Slowly curl your wrists upward, squeezing your forearms.",
+    "Pause for a moment at the top, then slowly lower your wrists back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The band wrist curl is an isolation exercise targeting the forearms using a resistance band. It is performed seated, with the forearms resting on the thighs, and involves curling the wrists upward to strengthen the forearm muscles.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

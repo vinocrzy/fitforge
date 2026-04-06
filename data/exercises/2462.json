@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "2462",
+  "name": "chest dip on straight bar",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Grab the parallel bars with your palms facing down and your arms fully extended.",
+    "Bend your knees and cross your ankles.",
+    "Lower your body by bending your arms until your shoulders are below your elbows.",
+    "Push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The chest dip on a straight bar is a bodyweight exercise that targets the pectoral muscles, with secondary emphasis on the triceps and shoulders. It requires significant upper body strength, stability, and control.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

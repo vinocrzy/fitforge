@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "band",
+  "id": "1011",
+  "name": "band seated twist",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques"
+  ],
+  "instructions": [
+    "Sit on the ground with your legs extended in front of you and your back straight.",
+    "Wrap the band around your waist and hold the ends with both hands.",
+    "Engage your abs and slowly twist your torso to one side, keeping your back straight and your feet on the ground.",
+    "Pause for a moment at the end of the twist, then slowly return to the starting position.",
+    "Repeat the twist to the other side.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The band seated twist is an exercise that targets the abdominal muscles, particularly the obliques, by incorporating rotational movement with resistance from a band. It is performed seated on the ground with legs extended and involves twisting the torso side to side.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "medicine ball",
+  "id": "1305",
+  "name": "medicine ball chest push single response",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, holding the medicine ball at chest level.",
+    "Extend your arms forward, pushing the medicine ball away from your chest.",
+    "Pause for a moment, then slowly bring the medicine ball back to your chest.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The medicine ball chest push single response is an exercise that targets the pectoral muscles by pushing a medicine ball away from the chest, engaging the triceps and shoulders as secondary muscles. It is performed standing and requires coordination and strength to execute the movement effectively.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

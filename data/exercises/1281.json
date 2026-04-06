@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "1281",
+  "name": "dumbbell incline one arm press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on an incline bench with a dumbbell in one hand, resting on your thigh.",
+    "Lie back on the bench and position the dumbbell at shoulder level, palm facing forward.",
+    "Press the dumbbell upward and slightly inward, extending your arm fully.",
+    "Pause for a moment at the top, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch to the other arm."
+  ],
+  "description": "The dumbbell incline one arm press is a unilateral chest exercise performed on an incline bench, targeting the upper pectorals while also engaging the shoulders and triceps. It requires balance and coordination due to the single-arm movement.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "barbell",
+  "id": "1316",
+  "name": "barbell bent arm pullover",
+  "target": "lats",
+  "secondaryMuscles": [
+    "triceps",
+    "chest"
+  ],
+  "instructions": [
+    "Lie flat on a bench with your head at one end and your feet on the floor.",
+    "Hold a barbell with a shoulder-width grip and extend your arms straight above your chest.",
+    "Lower the barbell behind your head while keeping your arms slightly bent.",
+    "Pause for a moment, then raise the barbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The barbell bent arm pullover is a compound exercise that targets the lats, with secondary emphasis on the triceps and chest. It involves lying on a bench and moving a barbell in an arc over and behind the head, requiring control and strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

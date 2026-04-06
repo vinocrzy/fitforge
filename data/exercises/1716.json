@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "assisted",
+  "id": "1716",
+  "name": "assisted seated pectoralis major stretch with stability ball",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on a stability ball with your feet flat on the ground and your back straight.",
+    "Hold a stability ball with both hands and extend your arms straight out in front of you.",
+    "Slowly lower the stability ball towards your chest, feeling a stretch in your pectoral muscles.",
+    "Hold the stretch for a few seconds, then slowly return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The assisted seated pectoralis major stretch with a stability ball is a stretching exercise that targets the chest muscles, specifically the pectorals, and also involves the shoulders and triceps. It is performed while seated on a stability ball, using the ball to assist in deepening the stretch.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

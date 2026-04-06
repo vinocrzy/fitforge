@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "1284",
+  "name": "dumbbell lying pullover on exercise ball",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "back"
+  ],
+  "instructions": [
+    "Sit on an exercise ball and roll forward until your upper back is resting on the ball.",
+    "Hold a dumbbell with both hands and extend your arms straight up over your chest.",
+    "Slowly lower the dumbbell behind your head while keeping your arms straight.",
+    "Pause for a moment, then raise the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell lying pullover on exercise ball is a chest exercise that also engages the triceps, shoulders, and back. It requires balance and stability due to the use of the exercise ball, making it more challenging than the standard pullover.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

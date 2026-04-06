@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "dumbbell",
+  "id": "2796",
+  "name": "dumbbell step-up lunge",
+  "target": "quads",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand in front of a step or platform with a dumbbell in each hand, palms facing your sides.",
+    "Place your right foot on the step, ensuring your entire foot is on the surface.",
+    "Push through your right heel and lift your body up onto the step, bringing your left foot up as well.",
+    "Once both feet are on the step, lower your left foot back down to the starting position, keeping your right foot on the step.",
+    "Repeat the movement, alternating which foot you step up with each time.",
+    "Continue for the desired number of repetitions."
+  ],
+  "description": "The dumbbell step-up lunge is a compound lower body exercise that targets the quadriceps while also engaging the glutes, hamstrings, and calves. It involves stepping onto a raised platform while holding dumbbells, requiring balance, coordination, and lower body strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

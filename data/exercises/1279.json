@@ -1,0 +1,23 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "1279",
+  "name": "dumbbell incline one arm fly",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "deltoids",
+    "triceps"
+  ],
+  "instructions": [
+    "Adjust the incline bench to a 30-45 degree angle.",
+    "Sit on the bench with a dumbbell in one hand, resting it on your thigh.",
+    "Lie back on the bench, keeping your feet flat on the ground.",
+    "Hold the dumbbell with your arm extended straight up over your chest.",
+    "Lower the dumbbell out to the side in a wide arc, keeping a slight bend in your elbow.",
+    "Pause when your arm is parallel to the ground, then reverse the motion to bring the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell incline one arm fly is a unilateral chest exercise performed on an incline bench. It targets the pectoral muscles and also engages the deltoids and triceps. The movement requires control and stability, as only one arm is working at a time, increasing the demand on core and shoulder stabilizers.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

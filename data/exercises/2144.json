@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "cable",
+  "id": "2144",
+  "name": "cable seated chest press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Adjust the seat height and cable handles to a comfortable position.",
+    "Sit on the bench with your back straight and feet flat on the floor.",
+    "Grasp the cable handles with an overhand grip at shoulder height.",
+    "Push the handles forward and away from your body, extending your arms fully.",
+    "Pause for a moment, then slowly bring the handles back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable seated chest press is a resistance exercise targeting the pectoral muscles using a cable machine. It also engages the shoulders and triceps as secondary muscles. The movement is performed while seated, pressing the cable handles forward and then returning to the starting position.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

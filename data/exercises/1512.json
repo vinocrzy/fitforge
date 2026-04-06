@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1512",
+  "name": "all fours squad stretch",
+  "target": "quads",
+  "secondaryMuscles": [
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Start on all fours with your hands directly under your shoulders and your knees directly under your hips.",
+    "Extend one leg straight back, keeping your knee bent and your foot flexed.",
+    "Slowly lower your hips towards the ground, feeling a stretch in your quads.",
+    "Hold this position for 20-30 seconds.",
+    "Switch legs and repeat the stretch on the other side."
+  ],
+  "description": "The all fours squad stretch is a bodyweight exercise that targets the quadriceps, with secondary emphasis on the hamstrings and glutes. It is performed on all fours, extending one leg back and lowering the hips to stretch the quads.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

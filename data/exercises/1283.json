@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell, exercise ball",
+  "id": "1283",
+  "name": "dumbbell incline press on exercise ball",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on an exercise ball with a dumbbell in each hand, palms facing forward.",
+    "Slowly walk your feet forward, rolling your body down the ball until your head, neck, and upper back are supported on the ball.",
+    "Hold the dumbbells at shoulder level, elbows bent and pointing out to the sides.",
+    "Press the dumbbells upward, extending your arms fully.",
+    "Pause for a moment at the top, then slowly lower the dumbbells back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell incline press on exercise ball is a chest exercise that also engages the shoulders and triceps. Performing this movement on an exercise ball increases the demand for balance and core stability compared to a traditional incline press on a bench.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

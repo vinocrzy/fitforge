@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "weighted",
+  "id": "1754",
+  "name": "weighted three bench dips",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on the edge of a bench with your hands gripping the edge, fingers pointing forward.",
+    "Walk your feet forward, sliding your butt off the bench and supporting your weight with your arms.",
+    "Lower your body by bending your elbows, keeping your back close to the bench.",
+    "Pause for a moment at the bottom, then push yourself back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The weighted three bench dips is a triceps-focused exercise that involves supporting your body weight between three benches while adding extra resistance. It targets the triceps and also works the chest and shoulders. This movement requires significant upper body strength, stability, and proper form to avoid injury.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

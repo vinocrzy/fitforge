@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "1424",
+  "name": "seated glute stretch",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hamstrings"
+  ],
+  "instructions": [
+    "Sit on the ground with your legs extended in front of you.",
+    "Bend your right knee and cross your right ankle over your left thigh.",
+    "Place your right hand on the ground behind you for support.",
+    "With your left hand, gently press down on your right knee to deepen the stretch.",
+    "Hold the stretch for 30 seconds to 1 minute.",
+    "Switch sides and repeat."
+  ],
+  "description": "The seated glute stretch is a flexibility exercise targeting the gluteal muscles. It is performed seated on the ground, crossing one ankle over the opposite thigh and gently pressing down on the knee to deepen the stretch. This exercise helps improve hip mobility and relieve tension in the glutes and hamstrings.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

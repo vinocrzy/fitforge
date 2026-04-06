@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "cable",
+  "id": "1724",
+  "name": "cable rope high pulley overhead tricep extension",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Attach a rope to a high pulley and adjust the weight accordingly.",
+    "Stand facing away from the pulley machine with your feet shoulder-width apart.",
+    "Grasp the rope with both hands, palms facing down, and bring your hands above your head.",
+    "Keep your upper arms close to your head and perpendicular to the floor.",
+    "Slowly lower the rope behind your head by bending your elbows.",
+    "Pause for a moment, then extend your arms back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The cable rope high pulley overhead tricep extension is an isolation exercise targeting the triceps, performed using a cable machine with a rope attachment. It emphasizes triceps development and also engages the shoulders for stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell (used as handles for deeper range)",
+  "id": "1274",
+  "name": "deep push up",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start in a high plank position with your hands slightly wider than shoulder-width apart and your body in a straight line.",
+    "Lower your chest towards the ground by bending your elbows, keeping them close to your body.",
+    "Push through your palms to extend your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The deep push up is a variation of the traditional push up that increases the range of motion, targeting the pectorals more intensely and also engaging the triceps and shoulders.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

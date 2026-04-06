@@ -1,0 +1,19 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "1769",
+  "name": "bodyweight side lying biceps curl",
+  "target": "biceps",
+  "secondaryMuscles": [
+    "forearms"
+  ],
+  "instructions": [
+    "Lie on your side with your legs extended and your head supported by your arm.",
+    "Hold your upper arm against your side and bend your elbow to curl your forearm towards your shoulder.",
+    "Pause for a moment at the top, then slowly lower your forearm back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The bodyweight side lying biceps curl is a biceps-focused exercise performed lying on your side, using only your body weight for resistance. It primarily targets the biceps and also engages the forearms.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

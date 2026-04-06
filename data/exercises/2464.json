@@ -1,0 +1,23 @@
+{
+  "bodyPart": "back",
+  "equipment": "cable",
+  "id": "2464",
+  "name": "cable thibaudeau kayak row",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "rhomboids",
+    "rear deltoids"
+  ],
+  "instructions": [
+    "Attach a cable handle to a low pulley and sit facing the machine with your feet flat on the floor.",
+    "Grasp the handle with your right hand and extend your arm fully, keeping a slight bend in your elbow.",
+    "Lean forward from your hips, keeping your back straight and your abs engaged.",
+    "Pull the handle towards your torso by retracting your shoulder blade and bending your elbow, keeping your arm close to your body.",
+    "Squeeze your back muscles at the top of the movement, then slowly return to the starting position.",
+    "Repeat for the desired number of repetitions, then switch sides and perform with your left arm."
+  ],
+  "description": "The cable Thibaudeau kayak row is a unilateral rowing exercise that targets the latissimus dorsi using a cable machine. It mimics the motion of a kayak paddle, emphasizing back engagement and unilateral strength.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

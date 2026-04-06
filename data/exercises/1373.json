@@ -1,0 +1,21 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "body weight",
+  "id": "1373",
+  "name": "bodyweight standing calf raise",
+  "target": "calves",
+  "secondaryMuscles": [
+    "ankles",
+    "feet"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, toes pointing forward.",
+    "Place your hands on a wall or stable surface for balance.",
+    "Slowly raise your heels off the ground, lifting your body weight onto the balls of your feet.",
+    "Pause for a moment at the top, then slowly lower your heels back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The bodyweight standing calf raise is a simple exercise that targets the calf muscles. It involves lifting your heels off the ground while standing, using only your body weight for resistance. This movement helps to strengthen and tone the calves, and can also improve ankle stability.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

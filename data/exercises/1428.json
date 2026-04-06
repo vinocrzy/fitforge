@@ -1,0 +1,20 @@
+{
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "id": "1428",
+  "name": "wrist circles",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "hands",
+    "wrists"
+  ],
+  "instructions": [
+    "Extend your arms straight out in front of you.",
+    "Make a fist with both hands.",
+    "Rotate your wrists in a circular motion, keeping your arms still.",
+    "Continue the wrist circles for the desired number of repetitions."
+  ],
+  "description": "Wrist circles are a bodyweight exercise focused on improving mobility and flexibility in the wrists and forearms. This movement is commonly used as a warm-up or rehabilitation exercise to increase blood flow and prepare the wrists for more strenuous activities.",
+  "difficulty": "beginner",
+  "category": "mobility"
+}

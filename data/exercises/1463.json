@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "sled machine",
+  "id": "1463",
+  "name": "sled 45° leg press (side pov)",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Adjust the seat of the sled machine so that your knees are at a 90-degree angle when your feet are on the footplate.",
+    "Sit on the sled machine with your back flat against the backrest and your feet shoulder-width apart on the footplate.",
+    "Grip the handles on the sides of the seat for stability.",
+    "Push against the footplate to extend your legs, straightening them completely.",
+    "Pause for a moment at the top, then slowly bend your knees to lower the footplate back to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The sled 45° leg press (side pov) is a compound lower body exercise performed on a sled machine. It primarily targets the glutes and also works the quadriceps, hamstrings, and calves. The movement involves pressing a weighted footplate away from the body by extending the legs, then returning to the starting position by bending the knees.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

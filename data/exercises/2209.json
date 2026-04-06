@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "roller",
+  "id": "2209",
+  "name": "roller seated single leg shoulder flexor depresor retractor",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "deltoids",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on a flat surface with your legs extended in front of you.",
+    "Hold the roller with both hands, palms facing down, and place it on your thighs.",
+    "Lean back slightly and engage your core muscles.",
+    "Raise the roller up to shoulder level, keeping your arms straight.",
+    "Slowly lower the roller back down to your thighs.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "This exercise targets the pectoral muscles while also engaging the deltoids and triceps. It involves sitting with legs extended, holding a roller, and performing a controlled shoulder flexion movement.",
+  "difficulty": "beginner",
+  "category": "mobility"
+}

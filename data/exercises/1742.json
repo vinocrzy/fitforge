@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "dumbbell",
+  "id": "1742",
+  "name": "dumbbell tricep kickback with stork stance",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a dumbbell in your right hand.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight.",
+    "Bring your right elbow up to your side, keeping it bent at a 90-degree angle.",
+    "Extend your right arm straight back, squeezing your triceps.",
+    "Pause for a moment, then slowly lower the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch sides."
+  ],
+  "description": "The dumbbell tricep kickback with stork stance is a variation of the traditional tricep kickback that incorporates a balance challenge by having the exerciser stand on one leg (stork stance) while performing the movement. This targets the triceps while also engaging the core and stabilizing muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

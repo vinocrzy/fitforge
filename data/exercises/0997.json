@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "band",
+  "id": "0997",
+  "name": "band shoulder press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and place the band under your feet.",
+    "Hold the band with your palms facing forward and raise your hands to shoulder height, elbows bent.",
+    "Press the band overhead, fully extending your arms.",
+    "Pause for a moment at the top, then slowly lower the band back to shoulder height.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The band shoulder press is a resistance exercise targeting the deltoid muscles of the shoulders, using a resistance band for added tension. It also engages the triceps and upper back as secondary muscles. The movement involves pressing the band overhead from shoulder height, making it a fundamental strength exercise for the upper body.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

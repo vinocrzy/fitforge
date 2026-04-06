@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "dumbbell",
+  "id": "1291",
+  "name": "dumbbell one arm pullover on exercise ball",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "latissimus dorsi",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Sit on an exercise ball with your feet flat on the ground and your knees bent at a 90-degree angle.",
+    "Hold a dumbbell with one hand and extend your arm straight up above your chest.",
+    "Slowly lower the dumbbell behind your head while keeping your arm straight.",
+    "Pause for a moment, then raise the dumbbell back to the starting position.",
+    "Repeat for the desired number of repetitions, then switch arms."
+  ],
+  "description": "The dumbbell one arm pullover on exercise ball is a chest exercise that also engages the triceps, latissimus dorsi, and rhomboids. It requires balance and core stability due to the use of the exercise ball, as well as unilateral strength and coordination.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

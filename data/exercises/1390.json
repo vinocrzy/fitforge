@@ -1,0 +1,20 @@
+{
+  "bodyPart": "lower legs",
+  "equipment": "body weight",
+  "id": "1390",
+  "name": "seated calf stretch (male)",
+  "target": "calves",
+  "secondaryMuscles": [
+    "hamstrings"
+  ],
+  "instructions": [
+    "Sit on the edge of a chair or bench with your feet flat on the ground.",
+    "Extend one leg straight out in front of you, keeping your heel on the ground.",
+    "Lean forward slightly, feeling a stretch in your calf muscle.",
+    "Hold the stretch for 20-30 seconds.",
+    "Switch legs and repeat the stretch."
+  ],
+  "description": "The seated calf stretch (male) is a flexibility exercise targeting the calf muscles. It is performed while seated, requiring no equipment other than a chair or bench, and focuses on stretching the calves and, to a lesser extent, the hamstrings.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}
