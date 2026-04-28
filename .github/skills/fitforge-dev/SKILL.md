@@ -1,6 +1,13 @@
 ---
 name: fitforge-dev
+version: 1.1.0
 description: "Development guide for FitForge PWA — iOS 26 Liquid Glass fitness app. USE FOR: adding features, fixing bugs, refactoring components, implementing new screens, workout logic, routine builder, exercise browser, animation work, database queries, cloud sync, authentication, Personal Trainer Portal, trainer enrollment, connections, routine suggestions, client progress, notifications. CONTAINS: architecture patterns (local-first PouchDB, server-authoritative CouchDB for PT Portal, three-phase workout model), design system (Liquid Glass materials, brand tokens, Framer Motion springs), component conventions, business logic (calorie/time calculations), TypeScript patterns, Zustand state management, Clerk authentication, CouchDB proxy sync, PT Portal patterns (couchFetch, shared DBs, role-aware APIs, fire-and-forget notifications, TanStack Query hooks). DO NOT USE FOR: general React questions, unrelated projects, or tasks outside FitForge codebase."
+triggers:
+  - fitforge
+  - build this feature
+  - how does fitforge
+  - pouchdb local first
+  - liquid glass component
 ---
 
 # FitForge PWA Development Guide
