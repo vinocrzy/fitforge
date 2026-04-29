@@ -17,6 +17,7 @@ const baseTabs = [
   { id: 'home', icon: 'house.fill', href: '/' },
   { id: 'routines', icon: 'list.bullet.clipboard.fill', href: '/routines' },
   { id: 'exercises', icon: 'figure.strengthtraining.traditional', href: '/exercises' },
+  { id: 'diet', icon: 'fork.knife', href: '/diet' },
   { id: 'history', icon: 'clock.arrow.circlepath', href: '/history' },
   { id: 'profile', icon: 'person.crop.circle.fill', href: '/profile' },
 ] as const;
@@ -43,7 +44,8 @@ export function BottomNav() {
     pathname.startsWith('/splash') ||
     pathname.startsWith('/onboarding') ||
     pathname.startsWith('/session') ||
-    pathname.startsWith('/restore')
+    pathname.startsWith('/restore') ||
+    pathname.startsWith('/diet/setup')
   ) {
     return null;
   }

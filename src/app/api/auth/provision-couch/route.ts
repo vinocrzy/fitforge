@@ -21,6 +21,7 @@ const SYNCABLE_DBS = [
   'fitforge_routines',
   'fitforge_workouts',
   'fitforge_profile',
+  'fitforge_nutrition',
 ] as const;
 
 /**

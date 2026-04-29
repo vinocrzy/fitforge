@@ -1,0 +1,8 @@
+{
+  "id": "F005",
+  "name": "Oats dry",
+  "category": "Grains",
+  "isCustom": false,
+  "per100g": { "calories": 389, "proteinG": 17, "carbsG": 66, "fatG": 7 },
+  "defaultPortion": { "amount": 80, "unit": "g", "weightG": 80 }
+}

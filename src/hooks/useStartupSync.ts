@@ -9,6 +9,7 @@
 import { useEffect, useRef } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { syncExerciseLibrary } from '@/lib/db/syncExerciseLibrary';
+import { syncFoodLibrary } from '@/lib/db/syncFoodLibrary';
 
 /**
  * Run once on app startup to seed / delta-sync the exercise library
@@ -29,6 +30,14 @@ export function useStartupSync() {
       })
       .catch((err) => {
         console.error('[StartupSync] Exercise library sync failed:', err);
+      });
+
+    syncFoodLibrary()
+      .then(() => {
+        queryClient.invalidateQueries({ queryKey: ['foods'] });
+      })
+      .catch((err) => {
+        console.error('[StartupSync] Food library sync failed:', err);
       });
   }, [queryClient]);
 }

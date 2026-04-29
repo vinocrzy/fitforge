@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3200",
-    "prebuild": "npx tsx scripts/process-gifs.ts && npx tsx scripts/generate-exercise-manifest.ts",
+    "prebuild": "npx tsx scripts/process-gifs.ts && npx tsx scripts/generate-exercise-manifest.ts && npx tsx scripts/generate-food-manifest.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "setup:gifs": "npx tsx scripts/process-gifs.ts",
     "process-gifs": "npx tsx scripts/process-gifs.ts",
-    "generate:manifest": "npx tsx scripts/generate-exercise-manifest.ts"
+    "generate:manifest": "npx tsx scripts/generate-exercise-manifest.ts",
+    "generate:foods": "npx tsx scripts/generate-food-manifest.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.0.6",

@@ -39,6 +39,10 @@ export const workoutDb = new Proxy({} as PouchDB.Database, {
 export const profileDb = new Proxy({} as PouchDB.Database, {
   get: (_, p) => (db('fitforge_profile') as any)[p],
 });
+/** Nutrition: diet profile, meal entries, weight logs, custom foods */
+export const nutritionDb = new Proxy({} as PouchDB.Database, {
+  get: (_, p) => (db('fitforge_nutrition') as any)[p],
+});
 
 // ─── Database Names (for sync) ────────────────────────────────────
 
@@ -48,6 +52,7 @@ export const DB_NAMES = [
   'fitforge_routines',
   'fitforge_workouts',
   'fitforge_profile',
+  'fitforge_nutrition',
 ] as const;
 
 // ─── Utility: Destroy all databases (for testing/reset) ──────────
@@ -59,5 +64,6 @@ export async function destroyAllDatabases(): Promise<void> {
     routineDb.destroy(),
     workoutDb.destroy(),
     profileDb.destroy(),
+    nutritionDb.destroy(),
   ]);
 }

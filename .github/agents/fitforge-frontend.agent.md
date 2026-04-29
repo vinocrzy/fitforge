@@ -186,6 +186,7 @@ src/lib/motion/             # Spring presets + animation variants
 4. **Early returns** for loading/error/empty states
 5. **Accessibility** — `aria-label` on icon-only buttons, proper heading hierarchy
 6. **Safe areas** — `env(safe-area-inset-*)` on shell UI (tab bar, full-screen overlays)
+7. **WRITE files using tools** — use `create_file` for new files, `replace_string_in_file` for edits. NEVER output code as text in your response.
 
 ## Constraints
 - DO NOT use CSS `transition`, `@keyframes`, or Tailwind `animate-*` classes
@@ -198,6 +199,5 @@ src/lib/motion/             # Spring presets + animation variants
 - ALWAYS apply `layoutId` for elements that animate between states
 
 ## Output Format
-For new components: full TypeScript component file with props interface, Framer Motion animations, and glass design system applied.
-For screen implementation: component tree + data flow + Zustand/TanStack Query wiring.
-For animation work: motion.div setup with correct spring preset and variant.
+ALWAYS write code directly to files using `create_file` (new files) and `replace_string_in_file` (edits). DO NOT output code blocks in your response message.
+Return a brief summary: files created/modified, key decisions made, and any follow-up needed.

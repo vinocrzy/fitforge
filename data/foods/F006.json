@@ -1,0 +1,8 @@
+{
+  "id": "F006",
+  "name": "Banana",
+  "category": "Fruit",
+  "isCustom": false,
+  "per100g": { "calories": 89, "proteinG": 1.1, "carbsG": 23, "fatG": 0.3 },
+  "defaultPortion": { "amount": 1, "unit": "piece", "weightG": 120 }
+}

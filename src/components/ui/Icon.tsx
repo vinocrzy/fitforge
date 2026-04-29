@@ -62,6 +62,8 @@ import {
   // Phase PT-2 — Trainer portal
   Briefcase,
   UsersThree,
+  // Diet module
+  ForkKnife,
 } from '@phosphor-icons/react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react';
 
@@ -126,6 +128,8 @@ const ICON_MAP: Record<string, PhosphorIcon> = {
   // Phase PT-2 — Trainer portal
   'briefcase.fill': Briefcase,
   'person.3.fill': UsersThree,
+  // Diet module
+  'fork.knife': ForkKnife,
 };
 
 export type IconName = keyof typeof ICON_MAP;

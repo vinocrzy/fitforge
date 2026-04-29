@@ -412,3 +412,5 @@ export interface TrainerNotification {
   createdAt: string;
 }
 
+export * from './nutrition';
+

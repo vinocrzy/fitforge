@@ -1,0 +1,8 @@
+{
+  "id": "F008",
+  "name": "Whey Protein Powder",
+  "category": "Supplements",
+  "isCustom": false,
+  "per100g": { "calories": 380, "proteinG": 75, "carbsG": 8, "fatG": 5 },
+  "defaultPortion": { "amount": 30, "unit": "g", "weightG": 30 }
+}

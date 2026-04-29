@@ -1,0 +1,8 @@
+{
+  "id": "F010",
+  "name": "Sweet Potato baked",
+  "category": "Vegetables",
+  "isCustom": false,
+  "per100g": { "calories": 90, "proteinG": 2, "carbsG": 21, "fatG": 0.1 },
+  "defaultPortion": { "amount": 200, "unit": "g", "weightG": 200 }
+}

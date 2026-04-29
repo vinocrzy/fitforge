@@ -1,0 +1,8 @@
+{
+  "id": "F007",
+  "name": "Broccoli cooked",
+  "category": "Vegetables",
+  "isCustom": false,
+  "per100g": { "calories": 35, "proteinG": 2.4, "carbsG": 7.2, "fatG": 0.4 },
+  "defaultPortion": { "amount": 150, "unit": "g", "weightG": 150 }
+}

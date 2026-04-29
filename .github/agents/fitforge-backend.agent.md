@@ -277,6 +277,7 @@ NEXT_PUBLIC_COUCHDB_PROXY_URL=/api/couchdb-proxy
 4. **allDocs preferred** — use key ranges on prefixed IDs instead of find() where possible
 5. **Error isolation** — PouchDB errors ≠ network errors; handle independently
 6. **Clerk auth on every protected route** — `auth()` call first, fail fast on 401/403
+7. **Write files directly** — use `create_file` for new files and `replace_string_in_file` for edits; NEVER output code as text in your response
 
 ## Constraints
 - DO NOT expose CouchDB credentials to the browser — proxy only
@@ -288,7 +289,5 @@ NEXT_PUBLIC_COUCHDB_PROXY_URL=/api/couchdb-proxy
 - NEVER log sensitive data (passwords, tokens, full JWTs)
 
 ## Output Format
-For PouchDB operations: full TypeScript function with proper `_rev` handling and error catching.
-For API routes: complete route handler with Clerk auth, validation, and error responses.
-For TanStack Query hooks: query + mutation with optimistic update pattern.
-For sync config: PouchDB.sync setup with retry and backoff.
+ALWAYS write code directly to files using `create_file` (new files) and `replace_string_in_file` (edits). DO NOT output code blocks in your response message.
+Return a brief summary: files created/modified, key decisions made, and any follow-up needed.

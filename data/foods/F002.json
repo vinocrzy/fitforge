@@ -1,0 +1,8 @@
+{
+  "id": "F002",
+  "name": "Brown Rice cooked",
+  "category": "Grains",
+  "isCustom": false,
+  "per100g": { "calories": 112, "proteinG": 2.6, "carbsG": 23, "fatG": 0.9 },
+  "defaultPortion": { "amount": 180, "unit": "g", "weightG": 180 }
+}
