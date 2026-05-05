@@ -49,7 +49,8 @@ export function BottomNav() {
     pathname.startsWith('/diet/log') ||
     pathname.startsWith('/diet/food') ||
     pathname.startsWith('/diet/weight') ||
-    pathname.startsWith('/diet/templates')
+    pathname.startsWith('/diet/templates') ||
+    pathname.startsWith('/diet/report')
   ) {
     return null;
   }

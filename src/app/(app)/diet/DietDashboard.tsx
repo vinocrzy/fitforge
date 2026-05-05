@@ -395,16 +395,28 @@ export function DietDashboard() {
         >
           Diet
         </h1>
-        <motion.button
-          whileTap={{ scale: 0.92 }}
-          transition={springSnappy}
-          onClick={() => router.push('/diet/templates')}
-          className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
-          style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
-        >
-          <Icon name="list.bullet" size={16} color="var(--brand-text-2)" />
-          Templates
-        </motion.button>
+        <div className="flex items-center gap-2">
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            transition={springSnappy}
+            onClick={() => router.push('/diet/report')}
+            className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+            style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+          >
+            <Icon name="chart.line.uptrend.xyaxis" size={16} color="var(--brand-text-2)" />
+            Report
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            transition={springSnappy}
+            onClick={() => router.push('/diet/templates')}
+            className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+            style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+          >
+            <Icon name="list.bullet" size={16} color="var(--brand-text-2)" />
+            Templates
+          </motion.button>
+        </div>
       </div>
 
       {/* Setup CTA — no profile */}
