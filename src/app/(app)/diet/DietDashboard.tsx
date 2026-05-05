@@ -16,6 +16,7 @@ import { useExerciseBurnToday } from '@/hooks/useExerciseBurnToday';
 import { nutritionDb } from '@/lib/db/pouchdb';
 import { BottomSheet } from '@/components/ui/BottomSheet';
 import { useCreateTemplate } from '@/hooks/useMealTemplates';
+import { HydrationCard } from '@/components/diet/HydrationCard';
 import type { MealSlot, MacroTargets, MealEntry } from '@/types';
 
 // ─── Date helpers ─────────────────────────────────────────────────
@@ -482,6 +483,23 @@ export function DietDashboard() {
             />
           </motion.div>
 
+          {/* Fasting shortcut */}
+          <motion.button
+            whileTap={{ scale: 0.96 }}
+            transition={springSnappy}
+            onClick={() => router.push('/diet/fasting')}
+            className="glass rounded-2xl flex items-center justify-between px-4 py-3 w-full mb-1"
+            style={{ background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left' }}
+          >
+            <div className="flex items-center gap-2">
+              <Icon name="moon.fill" size={16} color="var(--brand-text-2)" />
+              <span style={{ color: 'var(--brand-text-2)', fontSize: 14, fontWeight: 600 }}>
+                Intermittent Fasting
+              </span>
+            </div>
+            <Icon name="chevron.right" size={14} color="var(--brand-text-3)" />
+          </motion.button>
+
           {/* Over-target banner */}
           <AnimatePresence>
             {netOver && (
@@ -499,6 +517,9 @@ export function DietDashboard() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Hydration */}
+          <HydrationCard date={date} />
 
           {/* Meal slots */}
           <div className="space-y-3">

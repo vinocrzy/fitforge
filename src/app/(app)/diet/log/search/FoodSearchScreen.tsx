@@ -139,6 +139,16 @@ export function FoodSearchScreen({ slot, date }: Props) {
         <motion.button
           whileTap={{ scale: 0.92 }}
           transition={springSnappy}
+          onClick={() => router.push(`/diet/log/barcode?slot=${slot}&date=${date}`)}
+          className="flex items-center justify-center w-9 h-9 rounded-full glass"
+          aria-label="Scan barcode"
+        >
+          <Icon name="barcode.viewfinder" size={20} color="var(--brand-text-2)" />
+        </motion.button>
+
+        <motion.button
+          whileTap={{ scale: 0.92 }}
+          transition={springSnappy}
           onClick={() => router.push(`/diet/food/new?slot=${slot}&date=${date}`)}
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass text-xs font-semibold"
           style={{ color: 'var(--brand-lime)' }}

@@ -50,7 +50,8 @@ export function BottomNav() {
     pathname.startsWith('/diet/food') ||
     pathname.startsWith('/diet/weight') ||
     pathname.startsWith('/diet/templates') ||
-    pathname.startsWith('/diet/report')
+    pathname.startsWith('/diet/report') ||
+    pathname.startsWith('/diet/fasting')
   ) {
     return null;
   }

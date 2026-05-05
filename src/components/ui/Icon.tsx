@@ -64,6 +64,11 @@ import {
   UsersThree,
   // Diet module
   ForkKnife,
+  Barcode,
+  // Sprint 8 — Fasting & Hydration
+  Moon,
+  Drop,
+  Bookmark,
 } from '@phosphor-icons/react';
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react';
 
@@ -130,6 +135,12 @@ const ICON_MAP: Record<string, PhosphorIcon> = {
   'person.3.fill': UsersThree,
   // Diet module
   'fork.knife': ForkKnife,
+  'barcode.viewfinder': Barcode,
+  // Sprint 8 — Fasting & Hydration
+  'moon.fill': Moon,
+  'drop.fill': Drop,
+  'bookmark': Bookmark,
+  'trash': Trash,
 };
 
 export type IconName = keyof typeof ICON_MAP;

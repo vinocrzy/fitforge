@@ -52,3 +52,22 @@ export interface DietSetupFormState {
   sex: 'male' | 'female' | ''; dob: string; heightCm: number | ''; weightKg: number | '';
   activityLevel: ActivityLevel | ''; goalPhase: GoalPhase | '';
 }
+
+export interface FastingLog {
+  _id: string;          // fasting_log_{startedAt ISO}_{shortId}
+  _rev?: string;
+  type: 'fasting_log';
+  startedAt: string;    // ISO8601
+  endedAt?: string;     // ISO8601 — undefined while active
+  targetHours: number;  // 16 | 18 | 20 | 23
+  note?: string;
+}
+
+export interface HydrationEntry {
+  _id: string;          // hydration_{date}_{loggedAt ISO}_{shortId}
+  _rev?: string;
+  type: 'hydration_entry';
+  date: string;         // YYYY-MM-DD
+  amountMl: number;
+  loggedAt: string;     // ISO8601
+}
