@@ -1,0 +1,21 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "3318",
+  "name": "swing 360",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and knees slightly bent.",
+    "Hold your arms straight out in front of you, parallel to the ground.",
+    "Engage your core and swing your arms in a circular motion, rotating your torso as you do so.",
+    "Continue the circular motion, swinging your arms and rotating your torso for the desired number of repetitions.",
+    "Remember to breathe throughout the exercise."
+  ],
+  "description": "The swing 360 is a dynamic bodyweight exercise that targets the cardiovascular system while also engaging the shoulders and core. It involves swinging the arms in a circular motion while rotating the torso, making it a great movement for increasing heart rate and improving coordination.",
+  "difficulty": "beginner",
+  "category": "cardio"
+}

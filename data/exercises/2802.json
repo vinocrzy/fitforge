@@ -1,0 +1,23 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "2802",
+  "name": "twisted leg raise",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your legs extended and your arms by your sides.",
+    "Place your hands under your glutes for support.",
+    "Engage your abs and lift both legs off the ground, keeping them straight.",
+    "As you lift your legs, twist your hips to one side, bringing your legs towards your opposite shoulder.",
+    "Pause for a moment at the top, then slowly lower your legs back down to the starting position.",
+    "Repeat the movement, this time twisting your hips to the other side.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The twisted leg raise is a bodyweight exercise targeting the abdominal muscles, with an emphasis on the obliques and hip flexors. It involves lifting the legs while twisting the hips to engage the core from different angles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

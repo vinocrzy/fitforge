@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "3640",
+  "name": "knee touch crunch",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Place your hands behind your head with your elbows pointing outwards.",
+    "Engaging your abs, lift your shoulder blades off the ground and reach your right hand towards your left knee.",
+    "Return to the starting position and repeat, this time reaching your left hand towards your right knee.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "description": "The knee touch crunch is a bodyweight abdominal exercise that targets the abs and also engages the hip flexors. It involves alternating reaching across the body to touch the opposite knee while performing a crunch motion.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

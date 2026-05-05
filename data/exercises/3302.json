@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "3302",
+  "name": "handstand",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Find an open space with enough room to perform a handstand.",
+    "Place your hands on the ground shoulder-width apart, fingers pointing forward.",
+    "Kick your legs up towards the wall, using your core and shoulders to maintain balance.",
+    "Once in a handstand position, engage your triceps to support your body weight.",
+    "Hold the handstand for as long as you can maintain balance.",
+    "To come down, slowly lower your legs back to the ground.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The handstand is a bodyweight exercise that primarily targets the triceps, while also engaging the shoulders and core. It requires significant balance, strength, and coordination to perform safely and effectively.",
+  "difficulty": "advanced",
+  "category": "balance"
+}

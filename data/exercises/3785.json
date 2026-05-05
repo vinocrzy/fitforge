@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "3785",
+  "name": "incline push-up (on box)",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Place your hands on the edge of a box or elevated surface, slightly wider than shoulder-width apart.",
+    "Extend your legs behind you, resting on the balls of your feet, creating a straight line from your head to your heels.",
+    "Lower your chest towards the box by bending your elbows, keeping your body in a straight line.",
+    "Pause for a moment at the bottom, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The incline push-up (on box) is a bodyweight exercise that targets the pectoral muscles, with secondary emphasis on the triceps and shoulders. It is performed by placing the hands on an elevated surface, such as a box, and executing a push-up motion.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

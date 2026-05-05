@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "3212",
+  "name": "basic toe touch (male)",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and your arms by your sides.",
+    "Bend forward at the waist, keeping your back straight and your knees slightly bent.",
+    "Reach down towards your toes with your hands, keeping your legs as straight as possible.",
+    "Pause for a moment at the bottom, then slowly return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The basic toe touch is a bodyweight exercise that primarily targets the glutes, with secondary emphasis on the hamstrings and calves. It involves bending forward at the waist to reach towards the toes, providing a stretch to the posterior chain.",
+  "difficulty": "beginner",
+  "category": "stretching"
+}

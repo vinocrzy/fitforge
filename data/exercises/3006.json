@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "resistance band",
+  "id": "3006",
+  "name": "resistance band seated hip abduction",
+  "target": "abductors",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings"
+  ],
+  "instructions": [
+    "Sit on a chair or bench with your back straight and feet flat on the ground.",
+    "Wrap the resistance band around your thighs, just above your knees.",
+    "Place your hands on the sides of the chair or bench for support.",
+    "Engage your abductors (outer thigh muscles) and slowly push your knees apart, against the resistance of the band.",
+    "Pause for a moment at the end of the movement, then slowly bring your knees back together.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "A seated exercise using a resistance band to target the hip abductors by pushing the knees apart against resistance. This movement also engages the glutes and hamstrings.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

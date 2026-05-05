@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "3287",
+  "name": "elbow dips",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Sit on the edge of a bench or chair with your hands gripping the edge next to your hips.",
+    "Slide your hips forward off the bench and straighten your legs, keeping your heels on the ground.",
+    "Bend your elbows and lower your body towards the ground, keeping your back close to the bench.",
+    "Pause for a moment at the bottom, then push through your hands to straighten your arms and lift your body back up to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Elbow dips are a bodyweight exercise targeting the triceps, performed using a bench or chair. The movement involves lowering and raising the body by bending and straightening the elbows while keeping the back close to the bench.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "weighted",
+  "id": "3642",
+  "name": "weighted stretch lunge",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Take a step forward with your right foot, keeping your back straight.",
+    "Lower your body by bending your knees until your right thigh is parallel to the ground.",
+    "Push through your right heel to return to the starting position.",
+    "Repeat with your left leg.",
+    "Continue alternating legs for the desired number of repetitions."
+  ],
+  "description": "The weighted stretch lunge is a lower body exercise that targets the glutes while also engaging the quadriceps, hamstrings, and calves. It involves stepping forward into a lunge position while holding weights, then returning to the starting position and alternating legs.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

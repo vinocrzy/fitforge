@@ -1,0 +1,22 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "3217",
+  "name": "modified hindu push-up (male)",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "instructions": [
+    "Start in a push-up position with your hands slightly wider than shoulder-width apart and your feet hip-width apart.",
+    "Lower your body towards the ground, bending your elbows and keeping your core engaged.",
+    "As you lower your body, shift your weight back and lift your hips up towards the ceiling, creating an inverted V shape with your body.",
+    "Continue to lower your body until your chest is just above the ground, then reverse the movement, pushing your hips back down and extending your arms to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The modified Hindu push-up is a bodyweight exercise that targets the pectorals while also engaging the triceps, shoulders, and core. It involves a dynamic movement pattern that combines elements of a push-up with a downward dog-like position, challenging both strength and mobility.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,22 @@
+{
+  "bodyPart": "back",
+  "equipment": "weighted",
+  "id": "3290",
+  "name": "weighted one hand pull up",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Grab the pull-up bar with an overhand grip, slightly wider than shoulder-width apart.",
+    "Hang from the bar with your arm fully extended and your body straight.",
+    "Engage your core and pull your body up towards the bar by bending your elbow and squeezing your back muscles.",
+    "Continue pulling until your chin is above the bar.",
+    "Lower your body back down to the starting position with control.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The weighted one hand pull up is an advanced bodyweight exercise that targets the latissimus dorsi (lats) and also engages the biceps and forearms. By adding weight, this movement significantly increases the strength and coordination required, making it a challenging exercise for experienced athletes.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

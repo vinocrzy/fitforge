@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "barbell",
+  "id": "2810",
+  "name": "barbell split squat v. 2",
+  "target": "quads",
+  "secondaryMuscles": [
+    "glutes",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Start by standing with your feet shoulder-width apart, holding a barbell across your upper back.",
+    "Take a large step forward with your right foot, keeping your torso upright.",
+    "Lower your body by bending your knees and hips until your right thigh is parallel to the ground.",
+    "Pause for a moment, then push through your right heel to return to the starting position.",
+    "Repeat with your left leg forward for the desired number of repetitions."
+  ],
+  "description": "The barbell split squat v. 2 is a lower body strength exercise that targets the quadriceps, while also engaging the glutes, hamstrings, and calves. It involves stepping forward into a split stance and lowering the body with a barbell across the upper back.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

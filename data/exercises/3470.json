@@ -1,0 +1,22 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "3470",
+  "name": "forward lunge (male)",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet hip-width apart and hands on your hips.",
+    "Take a big step forward with your right foot, lowering your body into a lunge position.",
+    "Bend your right knee to about 90 degrees, keeping your knee aligned with your ankle.",
+    "Push off with your right foot and return to the starting position.",
+    "Repeat with your left leg, alternating sides for the desired number of repetitions."
+  ],
+  "description": "The forward lunge is a bodyweight exercise targeting the glutes, with secondary emphasis on the quadriceps, hamstrings, and calves. It involves stepping forward into a lunge position and returning to standing, alternating legs.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

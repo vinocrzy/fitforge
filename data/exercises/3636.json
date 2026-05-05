@@ -1,0 +1,25 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "3636",
+  "name": "high knee against wall",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "glutes",
+    "calves"
+  ],
+  "instructions": [
+    "Stand facing a wall with your feet hip-width apart.",
+    "Place your hands on the wall for support.",
+    "Engage your core and lift your right knee up towards your chest, while keeping your left foot on the ground.",
+    "Quickly switch legs, bringing your left knee up towards your chest and lowering your right foot back down.",
+    "Continue alternating legs in a running motion, bringing your knees up as high as possible.",
+    "Maintain a fast pace and keep your upper body stable throughout the exercise.",
+    "Repeat for the desired duration or number of repetitions."
+  ],
+  "description": "High knee against wall is a bodyweight cardio exercise that involves running in place while bringing your knees up high, using a wall for balance and support. It targets the cardiovascular system and also works the quadriceps, hamstrings, glutes, and calves.",
+  "difficulty": "beginner",
+  "category": "cardio"
+}

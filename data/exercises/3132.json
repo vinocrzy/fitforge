@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "3132",
+  "name": "potty squat with support",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, toes pointing slightly outward.",
+    "Hold onto a stable support, such as a chair or wall, for balance.",
+    "Lower your body down into a squat position by bending your knees and pushing your hips back.",
+    "Keep your chest up and your back straight throughout the movement.",
+    "Pause for a moment at the bottom, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The potty squat with support is a bodyweight exercise targeting the glutes, performed with the assistance of a stable support for balance. It is suitable for those developing lower body strength and proper squat mechanics.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

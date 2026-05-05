@@ -1,0 +1,22 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "3221",
+  "name": "half knee bends (male)",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "glutes"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Bend your knees and lower your body down as if you were sitting back into a chair.",
+    "Keep your chest up and your weight in your heels.",
+    "Pause for a moment at the bottom, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Half knee bends (male) are a bodyweight exercise that primarily targets the cardiovascular system while also engaging the quadriceps, hamstrings, and glutes. The movement involves bending the knees and lowering the body as if sitting back into a chair, then returning to standing. This exercise is often used for light cardio, warm-ups, or rehabilitation.",
+  "difficulty": "beginner",
+  "category": "cardio"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "3548",
+  "name": "dumbbell single arm overhead carry",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "core"
+  ],
+  "instructions": [
+    "Stand tall with your feet shoulder-width apart, holding a dumbbell in one hand.",
+    "Raise the dumbbell overhead, fully extending your arm.",
+    "Engage your core and keep your back straight as you walk forward, maintaining the dumbbell overhead.",
+    "Continue walking for the desired distance or time.",
+    "Switch hands and repeat the exercise."
+  ],
+  "description": "The dumbbell single arm overhead carry is a functional exercise that targets the deltoids while also engaging the traps and core. It challenges shoulder stability, core strength, and coordination as you walk while holding a dumbbell overhead.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

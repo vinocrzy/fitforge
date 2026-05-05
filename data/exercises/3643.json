@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "weighted",
+  "id": "3643",
+  "name": "weighted cossack squats (male)",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet wider than shoulder-width apart and toes pointing slightly outward.",
+    "Hold a weight in front of your chest with both hands.",
+    "Shift your weight to one side and lower your body by bending the knee of the side you shifted towards, while keeping the other leg straight.",
+    "Go as low as you can while maintaining balance and keeping your chest up.",
+    "Push through the heel of the bent leg to return to the starting position.",
+    "Repeat on the other side, alternating between legs."
+  ],
+  "description": "Weighted cossack squats are a lower body exercise targeting the glutes, quadriceps, hamstrings, and calves. This movement requires significant balance, mobility, and strength, as you shift your weight laterally and squat deeply on one leg while holding a weight.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

@@ -1,0 +1,23 @@
+{
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "id": "3769",
+  "name": "curtsey squat",
+  "target": "glutes",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Take a step diagonally behind and across your body with your right foot, crossing it behind your left leg.",
+    "Bend both knees as if you were curtsying, lowering your body towards the ground.",
+    "Keep your torso upright and your weight on your front foot.",
+    "Push through your front foot to return to the starting position.",
+    "Repeat on the other side, stepping diagonally behind and across your body with your left foot."
+  ],
+  "description": "The curtsey squat is a lower body exercise that targets the glutes and also works the quadriceps, hamstrings, and calves. It involves stepping one leg diagonally behind and across the body, bending both knees to lower into a squat, and then returning to the starting position. This movement challenges balance and coordination in addition to strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "id": "3165",
+  "name": "bodyweight standing row (with towel)",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "biceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and hold a towel in front of you with both hands.",
+    "Bend your knees slightly and hinge forward at the hips, keeping your back straight.",
+    "Pull the towel towards your chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the top, then slowly release the tension and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The bodyweight standing row (with towel) is a back exercise that targets the upper back using a towel for resistance. It also engages the biceps and shoulders. The movement is performed by pulling the towel towards your chest while maintaining a strong posture.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

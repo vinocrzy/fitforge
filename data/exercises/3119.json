@@ -1,0 +1,22 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "3119",
+  "name": "potty squat",
+  "target": "abs",
+  "secondaryMuscles": [
+    "quadriceps",
+    "glutes"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart, toes pointing slightly outward.",
+    "Lower your body down by bending your knees and pushing your hips back as if you were sitting on a chair.",
+    "Keep your chest up and your back straight throughout the movement.",
+    "Lower yourself until your thighs are parallel to the ground or as low as you can comfortably go.",
+    "Pause for a moment at the bottom, then push through your heels to return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The potty squat is a bodyweight exercise that targets the abs while also engaging the quadriceps and glutes. It involves squatting down as if sitting on a chair, maintaining a straight back and upright chest, and then returning to a standing position.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

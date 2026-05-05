@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "leverage machine",
+  "id": "3758",
+  "name": "lever standing chest press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Adjust the seat height and position yourself on the machine with your feet flat on the ground.",
+    "Grasp the handles with an overhand grip and position your hands at chest level.",
+    "Push the handles forward until your arms are fully extended, keeping your elbows slightly bent.",
+    "Pause for a moment, then slowly bring the handles back towards your chest, maintaining control throughout the movement.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The lever standing chest press is a machine-based exercise that targets the pectoral muscles, with secondary emphasis on the shoulders and triceps. It is performed standing, using a leverage machine, and involves pressing handles forward from chest level to full extension.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

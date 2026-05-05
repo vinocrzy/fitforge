@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "3288",
+  "name": "korean dips",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself between two parallel bars with your arms extended and supporting your body weight.",
+    "Lower your body by bending your elbows until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Korean dips are a challenging bodyweight exercise performed on parallel bars, targeting the pectorals, triceps, and shoulders. The movement requires significant upper body strength, shoulder mobility, and stability, as the body is lowered deeply between the bars before pressing back up.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

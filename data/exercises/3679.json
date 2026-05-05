@@ -1,0 +1,20 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "3679",
+  "name": "sit-up with arms on chest",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors"
+  ],
+  "instructions": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Cross your arms over your chest.",
+    "Engaging your abs, lift your upper body off the ground towards your knees.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The sit-up with arms on chest is a classic abdominal exercise that targets the abs and also engages the hip flexors. It is performed by lying on your back, crossing your arms over your chest, and lifting your upper body towards your knees.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

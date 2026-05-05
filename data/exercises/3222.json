@@ -1,0 +1,22 @@
+{
+  "bodyPart": "cardio",
+  "equipment": "body weight",
+  "id": "3222",
+  "name": "semi squat jump (male)",
+  "target": "cardiovascular system",
+  "secondaryMuscles": [
+    "quadriceps",
+    "hamstrings",
+    "calves"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart.",
+    "Bend your knees and lower your body into a squat position.",
+    "Jump explosively, extending your hips and knees while swinging your arms for momentum.",
+    "Land softly on the balls of your feet and immediately go into the next repetition.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The semi squat jump is a plyometric exercise that targets the cardiovascular system while also engaging the quadriceps, hamstrings, and calves. It involves performing a partial squat followed by an explosive jump, making it effective for improving cardiovascular fitness, lower body power, and coordination.",
+  "difficulty": "intermediate",
+  "category": "cardio"
+}

@@ -1,0 +1,20 @@
+{
+  "bodyPart": "chest",
+  "equipment": "weighted",
+  "id": "3313",
+  "name": "weighted straight bar dip",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself between parallel bars with your arms fully extended and your body straight.",
+    "Lower your body by bending your elbows until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The weighted straight bar dip is a compound chest exercise performed on parallel bars with added weight for increased resistance. It primarily targets the pectorals, with significant involvement of the triceps and shoulders.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

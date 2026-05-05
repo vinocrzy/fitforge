@@ -1,0 +1,24 @@
+{
+  "bodyPart": "back",
+  "equipment": "band",
+  "id": "3117",
+  "name": "band fixed back close grip pulldown",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms"
+  ],
+  "instructions": [
+    "Attach the band to a fixed point above you, such as a pull-up bar or sturdy beam.",
+    "Sit down on a bench or chair facing the band, with your feet flat on the ground and your knees bent.",
+    "Grasp the band with a close grip, palms facing towards you.",
+    "Keep your back straight and engage your core.",
+    "Pull the band down towards your chest, squeezing your shoulder blades together.",
+    "Pause for a moment at the bottom of the movement, feeling the contraction in your lats.",
+    "Slowly release the band back to the starting position, maintaining control throughout the movement.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The band fixed back close grip pulldown is an exercise targeting the latissimus dorsi (lats) using a resistance band anchored above the user. It mimics the traditional cable pulldown but uses a band for resistance, making it accessible and effective for building back strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

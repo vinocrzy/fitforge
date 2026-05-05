@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "dumbbell",
+  "id": "3542",
+  "name": "dumbbell incline t-raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "rhomboids"
+  ],
+  "instructions": [
+    "Set an incline bench to a 45-degree angle and sit on it with a dumbbell in each hand, palms facing inwards.",
+    "Lean forward and let your arms hang straight down, perpendicular to the floor.",
+    "Keeping your arms straight, raise them out to the sides until they are parallel to the floor, forming a 'T' shape with your body.",
+    "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell incline T-raise is an isolation exercise targeting the deltoids, performed on an incline bench to emphasize shoulder and upper back muscles. It requires good form and control to avoid swinging and to properly engage the target muscles.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

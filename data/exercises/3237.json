@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "barbell",
+  "id": "3237",
+  "name": "landmine lateral raise",
+  "target": "delts",
+  "secondaryMuscles": [
+    "traps",
+    "upper back"
+  ],
+  "instructions": [
+    "Stand with your feet shoulder-width apart and knees slightly bent.",
+    "Hold the barbell with an overhand grip, resting it on the front of your shoulders.",
+    "Keeping your core engaged and back straight, lift the barbell up and away from your body, raising it to shoulder height.",
+    "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The landmine lateral raise is a shoulder exercise performed using a barbell anchored at one end (landmine setup). It targets the deltoids and also engages the traps and upper back. The movement involves lifting the barbell laterally to shoulder height, emphasizing shoulder strength and stability.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

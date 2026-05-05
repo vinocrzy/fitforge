@@ -1,0 +1,23 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "3011",
+  "name": "incline scapula push up",
+  "target": "serratus anterior",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Set up an incline bench at a 45-degree angle.",
+    "Place your hands on the bench slightly wider than shoulder-width apart.",
+    "Position your feet on the ground, hip-width apart.",
+    "Lower your chest towards the bench, keeping your elbows tucked in.",
+    "As you lower, retract your shoulder blades, squeezing your scapulae together.",
+    "Push through your palms to extend your arms and return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The incline scapula push up is a bodyweight exercise performed on an incline bench that primarily targets the serratus anterior. It also engages the triceps and shoulders. The movement emphasizes scapular retraction and protraction, helping to improve shoulder stability and strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

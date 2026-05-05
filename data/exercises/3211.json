@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "id": "3211",
+  "name": "kneeling push-up (male)",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "instructions": [
+    "Start by kneeling on the ground with your hands shoulder-width apart, fingers pointing forward.",
+    "Extend your legs behind you, resting on the balls of your feet, so that your body forms a straight line from head to heels.",
+    "Engage your core and lower your body towards the ground by bending your elbows, keeping them close to your sides.",
+    "Continue lowering until your chest is just above the ground, then push back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The kneeling push-up (male) is a bodyweight exercise targeting the pectorals, with secondary emphasis on the triceps and shoulders. It is performed from a kneeling position, making it a less challenging variation of the standard push-up, suitable for building foundational upper body strength.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

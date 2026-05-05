@@ -1,0 +1,21 @@
+{
+  "bodyPart": "chest",
+  "equipment": "resistance band",
+  "id": "3124",
+  "name": "resistance band seated chest press",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "shoulders",
+    "triceps"
+  ],
+  "instructions": [
+    "Sit on a chair or bench with your back straight and feet flat on the ground.",
+    "Hold the resistance band handles in each hand, with your palms facing down and elbows bent at a 90-degree angle.",
+    "Extend your arms forward, pushing the resistance band away from your chest.",
+    "Pause for a moment at the end of the movement, then slowly return to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The resistance band seated chest press is a chest-focused exercise performed while sitting, using a resistance band to provide tension. It targets the pectoral muscles and also works the shoulders and triceps. This movement is performed by pressing the band forward from the chest while seated, making it accessible and safe for most fitness levels.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

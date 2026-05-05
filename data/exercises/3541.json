@@ -1,0 +1,21 @@
+{
+  "bodyPart": "back",
+  "equipment": "dumbbell",
+  "id": "3541",
+  "name": "dumbbell incline y-raise",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "shoulders",
+    "rear deltoids"
+  ],
+  "instructions": [
+    "Set an incline bench to a 45-degree angle and sit on it with a dumbbell in each hand, palms facing inwards.",
+    "Lean forward slightly and let your arms hang straight down, keeping a slight bend in your elbows.",
+    "Raise your arms out to the sides and up in a Y shape until they are parallel to the ground.",
+    "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The dumbbell incline Y-raise is an upper back exercise performed on an incline bench, targeting the upper back, shoulders, and rear deltoids. It involves raising the arms in a Y shape while lying face down on an incline bench, emphasizing scapular stability and shoulder health.",
+  "difficulty": "intermediate",
+  "category": "strength"
+}

@@ -1,0 +1,21 @@
+{
+  "bodyPart": "shoulders",
+  "equipment": "resistance band",
+  "id": "3122",
+  "name": "resistance band seated shoulder press",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back"
+  ],
+  "instructions": [
+    "Sit on a chair or bench with your back straight and feet flat on the ground.",
+    "Hold the resistance band with both hands, palms facing forward, and bring it up to shoulder level.",
+    "Press the band overhead, extending your arms fully.",
+    "Pause for a moment at the top, then slowly lower the band back down to shoulder level.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The resistance band seated shoulder press is an overhead pressing exercise performed while seated, using a resistance band to target the deltoid muscles. It also engages the triceps and upper back as secondary muscles. This exercise is suitable for building shoulder strength and stability, and is accessible for most fitness levels due to the controlled movement and support provided by the seated position.",
+  "difficulty": "beginner",
+  "category": "strength"
+}

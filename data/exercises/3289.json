@@ -1,0 +1,21 @@
+{
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "id": "3289",
+  "name": "impossible dips",
+  "target": "triceps",
+  "secondaryMuscles": [
+    "chest",
+    "shoulders"
+  ],
+  "instructions": [
+    "Position yourself between two parallel bars with your arms fully extended and your body suspended in the air.",
+    "Bend your knees and cross your ankles.",
+    "Lower your body by bending your elbows until your upper arms are parallel to the ground.",
+    "Pause for a moment, then push yourself back up to the starting position by straightening your arms.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "Impossible dips are a challenging bodyweight exercise performed between two parallel bars, focusing on the triceps while also engaging the chest and shoulders. The movement requires significant upper body strength and control, as well as experience with dip variations.",
+  "difficulty": "advanced",
+  "category": "strength"
+}

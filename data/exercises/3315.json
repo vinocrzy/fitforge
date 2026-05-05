@@ -1,0 +1,21 @@
+{
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "id": "3315",
+  "name": "full maltese",
+  "target": "abs",
+  "secondaryMuscles": [
+    "shoulders",
+    "chest"
+  ],
+  "instructions": [
+    "Start by standing with your feet shoulder-width apart and your arms extended straight out to the sides.",
+    "Slowly lean forward, keeping your arms straight, until your upper body is parallel to the ground.",
+    "Engage your core and hold this position for a few seconds.",
+    "Return to the starting position by pushing through your feet and standing back up.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "description": "The full maltese is an advanced bodyweight exercise that primarily targets the abs, with significant involvement of the shoulders and chest. It requires a high degree of core strength, balance, and body control, making it a challenging movement for most practitioners.",
+  "difficulty": "advanced",
+  "category": "strength"
+}
