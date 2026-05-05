@@ -45,7 +45,9 @@ export function BottomNav() {
     pathname.startsWith('/onboarding') ||
     pathname.startsWith('/session') ||
     pathname.startsWith('/restore') ||
-    pathname.startsWith('/diet/setup')
+    pathname.startsWith('/diet/setup') ||
+    pathname.startsWith('/diet/log') ||
+    pathname.startsWith('/diet/food')
   ) {
     return null;
   }
