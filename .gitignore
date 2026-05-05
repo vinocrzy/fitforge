@@ -43,8 +43,10 @@ next-env.d.ts
 # FitForge — generated / cached assets
 public/data/exercises/
 public/data/gifs/
+public/data/foods/
 public/data/previews/
 public/data/exercise-manifest.json
+public/data/food-manifest.json
 public/sw.js
 public/sw.js.map
 public/workbox-*.js
