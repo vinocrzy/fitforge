@@ -4,8 +4,12 @@ import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { springDefault, springSnappy, springGentle } from '@/lib/motion/springs';
+import { bannerVariants } from '@/lib/motion/variants';
 import { Icon } from '@/components/ui/Icon';
 import { cn } from '@/lib/utils';
+import { CalorieRing } from '@/components/diet/CalorieRing';
+import { MacroRings } from '@/components/diet/MacroRings';
+import { DateNavBar } from '@/components/diet/DateNavBar';
 import { useDailyTotals, useMealEntries, useDeleteMealEntry } from '@/hooks/useMealEntries';
 import { useDietProfile } from '@/hooks/useDietProfile';
 import { useExerciseBurnToday } from '@/hooks/useExerciseBurnToday';
@@ -212,7 +216,7 @@ const MEAL_SLOTS: MealSlot[] = ['breakfast', 'lunch', 'dinner', 'snack'];
 
 export function DietDashboard() {
   const router = useRouter();
-  const date = todayISO();
+  const [date, setDate] = useState(todayISO);
 
   const { data: dietProfile, isLoading: profileLoading } = useDietProfile();
   const { totals } = useDailyTotals(date);
@@ -275,16 +279,13 @@ export function DietDashboard() {
       }}
     >
       {/* Header */}
-      <div className="mb-5">
+      <div className="mb-3">
         <h1
           className="font-black"
           style={{ fontSize: 34, color: 'var(--brand-text)', letterSpacing: '-0.04em' }}
         >
           Diet
         </h1>
-        <p className="text-sm mt-0.5" style={{ color: 'var(--brand-text-2)' }}>
-          {formatDate(date)}
-        </p>
       </div>
 
       {/* Setup CTA — no profile */}
@@ -316,35 +317,57 @@ export function DietDashboard() {
         </motion.div>
       ) : (
         <>
-          {/* Daily summary bar */}
+          {/* Date navigation */}
+          <DateNavBar date={date} onDateChange={setDate} />
+
+          {/* Calorie ring */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={springDefault}
+            className="flex justify-center my-4"
+          >
+            <CalorieRing
+              consumed={totals.calories}
+              burned={burnKcal}
+              target={targetKcal}
+            />
+          </motion.div>
+
+          {/* Macro rings */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={springDefault}
-            className="glass rounded-2xl px-4 py-4 mb-4 grid grid-cols-4 gap-2"
+            className="glass rounded-2xl px-4 py-4 mb-4"
           >
-            {[
-              { label: 'Consumed', value: `${totals.calories}`, unit: 'kcal', danger: false },
-              { label: 'Burned', value: `${burnKcal}`, unit: 'kcal', danger: false },
-              { label: 'Net', value: `${netKcal}`, unit: 'kcal', danger: netOver },
-              { label: 'Target', value: `${targetKcal}`, unit: 'kcal', danger: false },
-            ].map(({ label, value, unit, danger }) => (
-              <div key={label} className="flex flex-col items-center">
-                <span
-                  className="text-lg font-bold tabular-nums leading-none"
-                  style={{ color: danger ? 'var(--brand-danger)' : 'var(--brand-text)' }}
-                >
-                  {value}
-                </span>
-                <span className="text-[10px] mt-0.5" style={{ color: 'var(--brand-text-2)' }}>
-                  {unit}
-                </span>
-                <span className="text-[10px]" style={{ color: 'var(--brand-text-3)' }}>
-                  {label}
-                </span>
-              </div>
-            ))}
+            <MacroRings
+              consumed={{ proteinG: totals.proteinG, carbsG: totals.carbsG, fatG: totals.fatG }}
+              target={{
+                proteinG: dietProfile.dailyTargets.proteinG,
+                carbsG: dietProfile.dailyTargets.carbsG,
+                fatG: dietProfile.dailyTargets.fatG,
+              }}
+            />
           </motion.div>
+
+          {/* Over-target banner */}
+          <AnimatePresence>
+            {netOver && (
+              <motion.div
+                key="over-target-banner"
+                variants={bannerVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="glass-elevated rounded-2xl px-4 py-3 mb-4"
+              >
+                <p className="text-sm font-semibold" style={{ color: 'var(--brand-danger)' }}>
+                  You&apos;re {netKcal - targetKcal} kcal over your target today
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Meal slots */}
           <div className="space-y-3">
