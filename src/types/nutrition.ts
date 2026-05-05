@@ -71,3 +71,25 @@ export interface HydrationEntry {
   amountMl: number;
   loggedAt: string;     // ISO8601
 }
+
+export interface RecipeIngredient {
+  foodId: string;
+  isCustomFood: boolean;
+  foodName: string;
+  portionWeightG: number;
+  macros: MacroTargets;   // pre-calculated for this ingredient's portion
+}
+
+export interface Recipe {
+  _id: string;           // recipe_{ISO8601}_{shortId}
+  _rev?: string;
+  type: 'recipe';
+  name: string;
+  description?: string;
+  servings: number;      // number of servings the recipe makes (default 1)
+  ingredients: RecipeIngredient[];
+  totalMacros: MacroTargets;       // sum across all ingredients
+  perServingMacros: MacroTargets;  // totalMacros / servings
+  createdAt: string;
+  updatedAt: string;
+}

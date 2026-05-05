@@ -22,6 +22,11 @@ interface DietState {
   loadDietProfile: (clerkUserId: string) => Promise<void>;
   saveDietProfile: (clerkUserId: string, form: DietSetupFormState) => Promise<void>;
   updateGoalPhase: (goalPhase: GoalPhase) => Promise<void>;
+  quickUpdateProfile: (patch: {
+    weightKg?: number;
+    activityLevel?: ActivityLevel;
+    goalPhase?: GoalPhase;
+  }) => Promise<void>;
   setSetupForm: (patch: Partial<DietSetupFormState>) => void;
   clearSetupForm: () => void;
 }
@@ -163,5 +168,40 @@ export const useDietStore = create<DietState>((set, get) => ({
   clearSetupForm: () => {
     const weightKg = useProfileStore.getState().weightKg;
     set({ setupForm: { ...DEFAULT_FORM, weightKg: weightKg || '' } });
+  },
+
+  quickUpdateProfile: async (patch) => {
+    const current = get().dietProfile;
+    if (!current) return;
+
+    set({ isSavingProfile: true, profileError: null });
+    try {
+      const newWeight = patch.weightKg ?? current.weightKg;
+      const newActivity = patch.activityLevel ?? current.activityLevel;
+      const newGoal = patch.goalPhase ?? current.goalPhase;
+
+      const dailyTargets = computeDailyTargets(
+        current.sex,
+        current.dob,
+        newWeight,
+        current.heightCm,
+        newActivity,
+        newGoal,
+      );
+
+      const updated: DietProfile = {
+        ...current,
+        weightKg: newWeight,
+        activityLevel: newActivity,
+        goalPhase: newGoal,
+        dailyTargets,
+        updatedAt: new Date().toISOString(),
+      };
+
+      await nutritionDb.put(updated);
+      set({ dietProfile: updated, isSavingProfile: false });
+    } catch {
+      set({ isSavingProfile: false, profileError: 'Failed to update profile' });
+    }
   },
 }));

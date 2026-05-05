@@ -15,6 +15,7 @@ import { useDietProfile } from '@/hooks/useDietProfile';
 import { useExerciseBurnToday } from '@/hooks/useExerciseBurnToday';
 import { nutritionDb } from '@/lib/db/pouchdb';
 import { BottomSheet } from '@/components/ui/BottomSheet';
+import { DietSettingsSheet } from '@/components/diet/DietSettingsSheet';
 import { useCreateTemplate } from '@/hooks/useMealTemplates';
 import { HydrationCard } from '@/components/diet/HydrationCard';
 import type { MealSlot, MacroTargets, MealEntry } from '@/types';
@@ -352,6 +353,7 @@ export function DietDashboard() {
   const targetKcal = dietProfile?.dailyTargets.calories ?? 0;
   const netOver = dietProfile?.goalPhase === 'cut' && netKcal > targetKcal;
 
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [saveTemplateSlot, setSaveTemplateSlot] = useState<MealSlot | null>(null);
   const [saveTemplateEntries, setSaveTemplateEntries] = useState<MealEntry[]>([]);
   const [isSaveTemplateOpen, setIsSaveTemplateOpen] = useState(false);
@@ -410,12 +412,32 @@ export function DietDashboard() {
           <motion.button
             whileTap={{ scale: 0.92 }}
             transition={springSnappy}
+            onClick={() => router.push('/diet/recipes')}
+            className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+            style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+          >
+            <Icon name="fork.knife" size={16} color="var(--brand-text-2)" />
+            Recipes
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            transition={springSnappy}
             onClick={() => router.push('/diet/templates')}
             className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
             style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
           >
             <Icon name="list.bullet" size={16} color="var(--brand-text-2)" />
             Templates
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            transition={springSnappy}
+            onClick={() => setIsSettingsOpen(true)}
+            className="glass rounded-xl p-2"
+            style={{ color: 'var(--brand-text-2)' }}
+            aria-label="Diet settings"
+          >
+            <Icon name="gear" size={18} color="var(--brand-text-2)" />
           </motion.button>
         </div>
       </div>
@@ -539,6 +561,12 @@ export function DietDashboard() {
           </div>
         </>
       )}
+
+      {/* Diet Settings Sheet */}
+      <DietSettingsSheet
+        open={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
+      />
 
       {/* Save Template Sheet */}
       <SaveTemplateSheet
