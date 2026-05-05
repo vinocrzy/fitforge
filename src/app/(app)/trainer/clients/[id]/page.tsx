@@ -13,6 +13,8 @@ import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { ClientProgressView } from '@/components/trainer/ClientProgressView';
 import { ClientWorkoutList } from '@/components/trainer/ClientWorkoutList';
 import { SuggestRoutineSheet } from '@/components/trainer/SuggestRoutineSheet';
+import { ClientNutritionView } from '@/components/trainer/ClientNutritionView';
+import { SuggestNutritionSheet } from '@/components/trainer/SuggestNutritionSheet';
 import { useClientPRs } from '@/hooks/useClientProgress';
 import { Icon } from '@/components/ui/Icon';
 
@@ -20,6 +22,7 @@ const TABS = [
   { id: 'overview', label: 'Overview' },
   { id: 'workouts', label: 'Workouts' },
   { id: 'prs', label: 'PRs' },
+  { id: 'nutrition', label: 'Nutrition' },
 ] as const;
 
 type TabId = (typeof TABS)[number]['id'];
@@ -32,6 +35,7 @@ export default function ClientDetailPage({ params }: PageProps): React.ReactElem
   const { id: clientId } = use(params);
   const [activeTab, setActiveTab] = useState<TabId>('overview');
   const [showSuggestSheet, setShowSuggestSheet] = useState(false);
+  const [showNutritionSheet, setShowNutritionSheet] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#0B0B0B]">
@@ -81,6 +85,13 @@ export default function ClientDetailPage({ params }: PageProps): React.ReactElem
           <PRsTab clientId={clientId} />
         )}
 
+        {activeTab === 'nutrition' && (
+          <ClientNutritionView
+            clientId={clientId}
+            onSuggest={() => setShowNutritionSheet(true)}
+          />
+        )}
+
         {/* Suggest routine button */}
         <div className="mt-8">
           <PrimaryButton onClick={() => setShowSuggestSheet(true)}>
@@ -93,6 +104,11 @@ export default function ClientDetailPage({ params }: PageProps): React.ReactElem
         clientId={clientId}
         open={showSuggestSheet}
         onClose={() => setShowSuggestSheet(false)}
+      />
+      <SuggestNutritionSheet
+        clientId={clientId}
+        open={showNutritionSheet}
+        onClose={() => setShowNutritionSheet(false)}
       />
     </div>
   );

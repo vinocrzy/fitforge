@@ -7,14 +7,102 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { springSnappy, springGentle } from '@/lib/motion/springs';
+import { springSnappy, springGentle, springDefault } from '@/lib/motion/springs';
 import { TopBar } from '@/components/layout/TopBar';
 import { Icon } from '@/components/ui/Icon';
 import { SPEC_LABELS, SPEC_COLORS } from '@/components/trainer/TrainerCard';
 import { PrivacySettingsSheet } from '@/components/trainer/PrivacySettingsSheet';
 import { useActiveConnection, useEndConnection } from '@/hooks/useConnections';
+import { useNutritionSuggestions, useRespondNutritionSuggestion } from '@/hooks/useNutritionSuggestions';
+import { useDietStore } from '@/store/useDietStore';
+import { useUser } from '@clerk/nextjs';
 import { useSheetStore } from '@/store/useSheetStore';
 import type { TrainerProfile, SharedDataSettings } from '@/types';
+
+function NutritionSuggestionsSection(): React.ReactElement {
+  const { user } = useUser();
+  const { data: suggestions = [], isLoading } = useNutritionSuggestions('pending');
+  const respond = useRespondNutritionSuggestion();
+  const updateGoalPhase = useDietStore((s) => s.updateGoalPhase);
+
+  if (isLoading || suggestions.length === 0) return <></>;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={springDefault}
+      className="flex flex-col gap-3"
+    >
+      <p
+        className="text-[13px] font-semibold uppercase tracking-wider"
+        style={{ color: 'var(--brand-text-2)' }}
+      >
+        Nutrition Suggestions
+      </p>
+      {suggestions.map((s) => (
+        <div key={s._id} className="glass-elevated rounded-2xl p-4 flex flex-col gap-3">
+          <p className="text-[15px]" style={{ color: 'var(--brand-text)' }}>
+            {s.message}
+          </p>
+          {(s.suggestedGoalPhase || s.suggestedDailyCalories) && (
+            <div className="flex gap-2 flex-wrap">
+              {s.suggestedGoalPhase && (
+                <span
+                  className="text-[12px] font-semibold px-2 py-1 rounded-lg"
+                  style={{ background: 'rgba(197,247,79,0.12)', color: 'var(--brand-lime)' }}
+                >
+                  Phase: {s.suggestedGoalPhase.charAt(0).toUpperCase() + s.suggestedGoalPhase.slice(1)}
+                </span>
+              )}
+              {s.suggestedDailyCalories && (
+                <span
+                  className="text-[12px] font-semibold px-2 py-1 rounded-lg"
+                  style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--brand-text-2)' }}
+                >
+                  {s.suggestedDailyCalories} kcal/day
+                </span>
+              )}
+            </div>
+          )}
+          <div className="flex gap-2">
+            <motion.button
+              whileTap={{ scale: 0.94 }}
+              transition={springSnappy}
+              disabled={respond.isPending}
+              onClick={() => {
+                respond.mutate(
+                  { id: s._id, action: 'accept' },
+                  {
+                    onSuccess: () => {
+                      if (s.suggestedGoalPhase && user?.id) {
+                        updateGoalPhase(s.suggestedGoalPhase);
+                      }
+                    },
+                  },
+                );
+              }}
+              className="flex-1 py-2 rounded-xl text-[14px] font-semibold"
+              style={{ background: 'var(--brand-lime)', color: '#0B0B0B' }}
+            >
+              Accept
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.94 }}
+              transition={springSnappy}
+              disabled={respond.isPending}
+              onClick={() => respond.mutate({ id: s._id, action: 'dismiss' })}
+              className="flex-1 py-2 rounded-xl text-[14px] font-semibold"
+              style={{ background: 'rgba(255,255,255,0.08)', color: 'var(--brand-text-2)' }}
+            >
+              Dismiss
+            </motion.button>
+          </div>
+        </div>
+      ))}
+    </motion.div>
+  );
+}
 
 function getInitials(name: string): string {
   const parts = name.trim().split(/\s+/);
@@ -206,6 +294,9 @@ export default function MyTrainerPage(): React.ReactElement {
                 })}
               </motion.div>
             )}
+
+            {/* Nutrition Suggestions */}
+            <NutritionSuggestionsSection />
 
             {/* Unsubscribe */}
             <motion.div
