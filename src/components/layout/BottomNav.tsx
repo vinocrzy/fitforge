@@ -47,7 +47,8 @@ export function BottomNav() {
     pathname.startsWith('/restore') ||
     pathname.startsWith('/diet/setup') ||
     pathname.startsWith('/diet/log') ||
-    pathname.startsWith('/diet/food')
+    pathname.startsWith('/diet/food') ||
+    pathname.startsWith('/diet/weight')
   ) {
     return null;
   }

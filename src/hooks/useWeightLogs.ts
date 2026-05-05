@@ -49,8 +49,9 @@ export function useLogWeight() {
       note?: string;
     }) => {
       const now = new Date().toISOString();
+      const shortId = Math.random().toString(36).slice(2, 8);
       const doc: Omit<WeightLog, '_rev'> = {
-        _id: `weight_log_${now}`,
+        _id: `weight_log_${now}_${shortId}`,
         type: 'weight_log',
         weightKg,
         loggedAt: now,
