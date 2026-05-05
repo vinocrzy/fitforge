@@ -14,6 +14,8 @@ import { useDailyTotals, useMealEntries, useDeleteMealEntry } from '@/hooks/useM
 import { useDietProfile } from '@/hooks/useDietProfile';
 import { useExerciseBurnToday } from '@/hooks/useExerciseBurnToday';
 import { nutritionDb } from '@/lib/db/pouchdb';
+import { BottomSheet } from '@/components/ui/BottomSheet';
+import { useCreateTemplate } from '@/hooks/useMealTemplates';
 import type { MealSlot, MacroTargets, MealEntry } from '@/types';
 
 // ─── Date helpers ─────────────────────────────────────────────────
@@ -142,9 +144,10 @@ interface MealSlotCardProps {
   entries: MealEntry[];
   date: string;
   onDeleteStart: (entry: MealEntry) => void;
+  onSaveAsTemplate: (slot: MealSlot, entries: MealEntry[]) => void;
 }
 
-function MealSlotCard({ slot, entries, date, onDeleteStart }: MealSlotCardProps) {
+function MealSlotCard({ slot, entries, date, onDeleteStart, onSaveAsTemplate }: MealSlotCardProps) {
   const router = useRouter();
   const slotCalories = entries.reduce((sum, e) => sum + (e.macros?.calories ?? 0), 0);
   const slotLabel = slot.charAt(0).toUpperCase() + slot.slice(1);
@@ -167,9 +170,28 @@ function MealSlotCard({ slot, entries, date, onDeleteStart }: MealSlotCardProps)
         >
           {slotLabel}
         </span>
-        <span className="text-sm tabular-nums" style={{ color: 'var(--brand-text-2)' }}>
-          {slotCalories > 0 ? `${slotCalories} kcal` : ''}
-        </span>
+        <div className="flex items-center gap-2">
+          {entries.length > 0 && (
+            <motion.button
+              whileTap={{ scale: 0.88 }}
+              transition={springSnappy}
+              onClick={() => onSaveAsTemplate(slot, entries)}
+              aria-label="Save as template"
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 4,
+                opacity: 0.7,
+              }}
+            >
+              <Icon name="bookmark" size={16} color="var(--brand-text-2)" />
+            </motion.button>
+          )}
+          <span className="text-sm tabular-nums" style={{ color: 'var(--brand-text-2)' }}>
+            {slotCalories > 0 ? `${slotCalories} kcal` : ''}
+          </span>
+        </div>
       </div>
 
       {/* Entry list */}
@@ -207,6 +229,83 @@ function MealSlotCard({ slot, entries, date, onDeleteStart }: MealSlotCardProps)
         </motion.button>
       </div>
     </motion.div>
+  );
+}
+
+// ─── SaveTemplateSheet ────────────────────────────────────────────
+
+interface SaveTemplateSheetProps {
+  open: boolean;
+  slot: MealSlot | null;
+  entries: MealEntry[];
+  onClose: () => void;
+}
+
+function SaveTemplateSheet({ open, slot, entries, onClose }: SaveTemplateSheetProps) {
+  const [name, setName] = useState('');
+  const createTemplate = useCreateTemplate();
+
+  const handleSave = useCallback(() => {
+    if (!name.trim() || !slot) return;
+    const items = entries.map(e => ({
+      foodId: e.foodId,
+      isCustomFood: e.isCustomFood,
+      foodName: e.foodName,
+      portionWeightG: e.portionWeightG,
+      macros: e.macros,
+    }));
+    createTemplate.mutate(
+      { name: name.trim(), slot, items },
+      {
+        onSuccess: () => {
+          setName('');
+          onClose();
+        },
+      },
+    );
+  }, [name, slot, entries, createTemplate, onClose]);
+
+  return (
+    <BottomSheet id="save-template-sheet" open={open} onClose={onClose} title="Save as Template">
+      <div style={{ padding: '0 16px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <p style={{ color: 'var(--brand-text-2)', fontSize: 14, margin: 0 }}>
+          {entries.length} item{entries.length !== 1 ? 's' : ''} from {slot ? slot.charAt(0).toUpperCase() + slot.slice(1) : ''}
+        </p>
+        <input
+          type="text"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          placeholder="Template name (e.g. My Breakfast)"
+          style={{
+            background: 'var(--brand-surface-2)',
+            border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: 12,
+            padding: '12px 16px',
+            color: 'var(--brand-text)',
+            fontSize: 16,
+            outline: 'none',
+          }}
+        />
+        <motion.button
+          whileTap={{ scale: 0.96 }}
+          transition={springSnappy}
+          onClick={handleSave}
+          disabled={!name.trim() || createTemplate.isPending}
+          className="rounded-2xl"
+          style={{
+            background: name.trim() ? 'var(--brand-lime)' : 'var(--brand-surface-2)',
+            border: 'none',
+            padding: '15px',
+            fontWeight: 700,
+            fontSize: 16,
+            color: name.trim() ? '#0B0B0B' : 'var(--brand-text-3)',
+            cursor: name.trim() && !createTemplate.isPending ? 'pointer' : 'not-allowed',
+          }}
+        >
+          {createTemplate.isPending ? 'Saving\u2026' : 'Save Template'}
+        </motion.button>
+      </div>
+    </BottomSheet>
   );
 }
 
@@ -252,6 +351,16 @@ export function DietDashboard() {
   const targetKcal = dietProfile?.dailyTargets.calories ?? 0;
   const netOver = dietProfile?.goalPhase === 'cut' && netKcal > targetKcal;
 
+  const [saveTemplateSlot, setSaveTemplateSlot] = useState<MealSlot | null>(null);
+  const [saveTemplateEntries, setSaveTemplateEntries] = useState<MealEntry[]>([]);
+  const [isSaveTemplateOpen, setIsSaveTemplateOpen] = useState(false);
+
+  const handleSaveAsTemplate = useCallback((slot: MealSlot, entries: MealEntry[]) => {
+    setSaveTemplateSlot(slot);
+    setSaveTemplateEntries(entries);
+    setIsSaveTemplateOpen(true);
+  }, []);
+
   if (profileLoading) {
     return (
       <div
@@ -279,13 +388,23 @@ export function DietDashboard() {
       }}
     >
       {/* Header */}
-      <div className="mb-3">
+      <div className="mb-3 flex items-center justify-between">
         <h1
           className="font-black"
           style={{ fontSize: 34, color: 'var(--brand-text)', letterSpacing: '-0.04em' }}
         >
           Diet
         </h1>
+        <motion.button
+          whileTap={{ scale: 0.92 }}
+          transition={springSnappy}
+          onClick={() => router.push('/diet/templates')}
+          className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+          style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+        >
+          <Icon name="list.bullet" size={16} color="var(--brand-text-2)" />
+          Templates
+        </motion.button>
       </div>
 
       {/* Setup CTA — no profile */}
@@ -380,12 +499,21 @@ export function DietDashboard() {
                   entries={slotEntries}
                   date={date}
                   onDeleteStart={handleDeleteStart}
+                  onSaveAsTemplate={handleSaveAsTemplate}
                 />
               );
             })}
           </div>
         </>
       )}
+
+      {/* Save Template Sheet */}
+      <SaveTemplateSheet
+        open={isSaveTemplateOpen}
+        slot={saveTemplateSlot}
+        entries={saveTemplateEntries}
+        onClose={() => setIsSaveTemplateOpen(false)}
+      />
 
       {/* Undo toast */}
       <AnimatePresence>
