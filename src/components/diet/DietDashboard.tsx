@@ -15,7 +15,6 @@ import { useDietProfile } from '@/hooks/useDietProfile';
 import { useExerciseBurnToday } from '@/hooks/useExerciseBurnToday';
 import { nutritionDb } from '@/lib/db/pouchdb';
 import { BottomSheet } from '@/components/ui/BottomSheet';
-import { DietSettingsSheet } from '@/components/diet/DietSettingsSheet';
 import { useCreateTemplate } from '@/hooks/useMealTemplates';
 import { HydrationCard } from '@/components/diet/HydrationCard';
 import type { MealSlot, MacroTargets, MealEntry } from '@/types';
@@ -353,7 +352,6 @@ export function DietDashboard() {
   const targetKcal = dietProfile?.dailyTargets.calories ?? 0;
   const netOver = dietProfile?.goalPhase === 'cut' && netKcal > targetKcal;
 
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [saveTemplateSlot, setSaveTemplateSlot] = useState<MealSlot | null>(null);
   const [saveTemplateEntries, setSaveTemplateEntries] = useState<MealEntry[]>([]);
   const [isSaveTemplateOpen, setIsSaveTemplateOpen] = useState(false);
@@ -391,7 +389,7 @@ export function DietDashboard() {
       }}
     >
       {/* Header */}
-      <div className="mb-3 flex items-center justify-between gap-3">
+      <div className="mb-5 flex items-center justify-between gap-3">
         <h1
           className="font-black shrink-0"
           style={{ fontSize: 34, color: 'var(--brand-text)', letterSpacing: '-0.04em' }}
@@ -432,16 +430,6 @@ export function DietDashboard() {
             <Icon name="list.bullet.rectangle" size={16} color="var(--brand-text-2)" />
             <span className="hidden sm:inline">Templates</span>
           </motion.button>
-          <motion.button
-            whileTap={{ scale: 0.92 }}
-            transition={springSnappy}
-            onClick={() => setIsSettingsOpen(true)}
-            className="glass rounded-xl p-2 shrink-0"
-            style={{ color: 'var(--brand-text-2)' }}
-            aria-label="Diet settings"
-          >
-            <Icon name="gear" size={18} color="var(--brand-text-2)" />
-          </motion.button>
         </div>
       </div>
 
@@ -475,7 +463,9 @@ export function DietDashboard() {
       ) : (
         <>
           {/* Date navigation */}
-          <DateNavBar date={date} onDateChange={setDate} />
+          <div className="mt-1">
+            <DateNavBar date={date} onDateChange={setDate} />
+          </div>
 
           {/* Calorie ring */}
           <motion.div
@@ -513,7 +503,7 @@ export function DietDashboard() {
             whileTap={{ scale: 0.96 }}
             transition={springSnappy}
             onClick={() => router.push('/diet/fasting')}
-            className="glass rounded-2xl flex items-center justify-between px-4 py-3 w-full mb-1"
+            className="glass rounded-2xl flex items-center justify-between px-4 py-3 w-full mb-3"
             style={{ background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left' }}
           >
             <div className="flex items-center gap-2">
@@ -544,7 +534,9 @@ export function DietDashboard() {
           </AnimatePresence>
 
           {/* Hydration */}
-          <HydrationCard date={date} />
+          <div className="mt-3 mb-3">
+            <HydrationCard date={date} />
+          </div>
 
           {/* Meal slots */}
           <div className="space-y-3">
@@ -565,11 +557,7 @@ export function DietDashboard() {
         </>
       )}
 
-      {/* Diet Settings Sheet */}
-      <DietSettingsSheet
-        open={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-      />
+      {/* Diet Settings Sheet — now accessible from Profile */}
 
       {/* Save Template Sheet */}
       <SaveTemplateSheet

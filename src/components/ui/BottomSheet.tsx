@@ -5,7 +5,8 @@
 
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { springGentle, springSnappy } from '@/lib/motion/springs';
 import { useSheetStore } from '@/store/useSheetStore';
@@ -28,6 +29,14 @@ export function BottomSheet({
   fullHeight = false,
 }: BottomSheetProps) {
   const { openSheet, closeSheet } = useSheetStore();
+  const [mounted, setMounted] = useState(false);
+  const portalRef = useRef<HTMLElement | null>(null);
+
+  // Ensure we only render portal on client
+  useEffect(() => {
+    portalRef.current = document.body;
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -39,7 +48,9 @@ export function BottomSheet({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, id]);
 
-  return (
+  if (!mounted || !portalRef.current) return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <>
@@ -102,6 +113,7 @@ export function BottomSheet({
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    portalRef.current,
   );
 }

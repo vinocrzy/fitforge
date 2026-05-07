@@ -2,12 +2,15 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useQueryClient } from '@tanstack/react-query';
+import { useUser } from '@clerk/nextjs';
 import { springSnappy } from '@/lib/motion/springs';
 import { BottomSheet } from '@/components/ui/BottomSheet';
 import { Icon } from '@/components/ui/Icon';
-import { useDietStore } from '@/store/useDietStore';
+import { useDietProfile } from '@/hooks/useDietProfile';
+import { nutritionDb } from '@/lib/db/pouchdb';
 import { computeDailyTargets } from '@/lib/calculations/nutrition';
-import type { GoalPhase, ActivityLevel } from '@/types';
+import type { GoalPhase, ActivityLevel, DietProfile } from '@/types';
 
 // ─── Types ────────────────────────────────────────────────────────
 
@@ -29,15 +32,16 @@ const ACTIVITY_OPTIONS: Array<{ id: ActivityLevel; label: string; desc: string }
 // ─── DietSettingsSheet ────────────────────────────────────────────
 
 export function DietSettingsSheet({ open, onClose }: DietSettingsSheetProps) {
-  // Individual selectors — object literal selectors create a new ref every render
-  // causing "getServerSnapshot should be cached" infinite loop
-  const dietProfile = useDietStore(s => s.dietProfile);
-  const quickUpdateProfile = useDietStore(s => s.quickUpdateProfile);
-  const isSavingProfile = useDietStore(s => s.isSavingProfile);
+  const { user } = useUser();
+  const userId = user?.id ?? 'guest';
+  const queryClient = useQueryClient();
+
+  const { data: dietProfile, isLoading } = useDietProfile();
 
   const [weightKg, setWeightKg] = useState('');
   const [goalPhase, setGoalPhase] = useState<GoalPhase | ''>('');
   const [activityLevel, setActivityLevel] = useState<ActivityLevel | ''>('');
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     if (open && dietProfile) {
@@ -48,16 +52,42 @@ export function DietSettingsSheet({ open, onClose }: DietSettingsSheetProps) {
   }, [open, dietProfile]);
 
   const handleSave = useCallback(async () => {
-    if (!goalPhase || !activityLevel) return;
+    if (!dietProfile || !goalPhase || !activityLevel) return;
     const kg = parseFloat(weightKg);
     if (isNaN(kg) || kg < 20 || kg > 500) return;
-    await quickUpdateProfile({
-      weightKg: kg,
-      goalPhase,
-      activityLevel,
-    });
-    onClose();
-  }, [weightKg, goalPhase, activityLevel, quickUpdateProfile, onClose]);
+
+    setIsSaving(true);
+    try {
+      const dailyTargets = computeDailyTargets(
+        dietProfile.sex,
+        dietProfile.dob,
+        kg,
+        dietProfile.heightCm,
+        activityLevel as ActivityLevel,
+        goalPhase as GoalPhase,
+      );
+
+      const updated: DietProfile = {
+        ...dietProfile,
+        weightKg: kg,
+        activityLevel: activityLevel as ActivityLevel,
+        goalPhase: goalPhase as GoalPhase,
+        dailyTargets,
+        updatedAt: new Date().toISOString(),
+      };
+
+      await nutritionDb.put(updated);
+      // Fetch saved doc to get fresh _rev, then update cache
+      const saved = await nutritionDb.get<DietProfile>(updated._id);
+      queryClient.setQueryData(['diet', 'profile', userId], saved);
+      await queryClient.invalidateQueries({ queryKey: ['diet', 'profile', userId] });
+      onClose();
+    } catch (err) {
+      console.error('[DietSettingsSheet] save error:', err);
+    } finally {
+      setIsSaving(false);
+    }
+  }, [dietProfile, weightKg, goalPhase, activityLevel, userId, queryClient, onClose]);
 
   // ─── Projected targets preview ────────────────────────────────
 
@@ -76,13 +106,31 @@ export function DietSettingsSheet({ open, onClose }: DietSettingsSheetProps) {
   }, [dietProfile, goalPhase, activityLevel, weightKg]);
 
   const isSaveDisabled =
-    isSavingProfile ||
+    isSaving ||
+    isLoading ||
+    !dietProfile ||
     !goalPhase ||
     !activityLevel ||
     isNaN(parseFloat(weightKg));
 
   return (
     <BottomSheet id="diet-settings-sheet" open={open} onClose={onClose} title="Diet Settings">
+      {isLoading ? (
+        <div className="flex items-center justify-center py-10">
+          <motion.div
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-8 h-8 rounded-full"
+            style={{ background: 'var(--brand-surface-2)' }}
+          />
+        </div>
+      ) : !dietProfile ? (
+        <div className="flex flex-col items-center gap-3 py-10">
+          <p style={{ color: 'var(--brand-text-2)', fontSize: 15 }}>
+            No diet profile found. Set one up first.
+          </p>
+        </div>
+      ) : (
       <div className="flex flex-col gap-5 px-1 pb-2">
 
         {/* ── Current Weight ───────────────────────────────────── */}
@@ -212,9 +260,10 @@ export function DietSettingsSheet({ open, onClose }: DietSettingsSheetProps) {
             cursor: isSaveDisabled ? 'not-allowed' : 'pointer',
           }}
         >
-          {isSavingProfile ? 'Saving…' : 'Save & Recalculate'}
+          {isSaving ? 'Saving…' : 'Save & Recalculate'}
         </motion.button>
       </div>
+      )}
     </BottomSheet>
   );
 }

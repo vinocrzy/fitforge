@@ -27,6 +27,7 @@ import { useGuestStore } from '@/store/useGuestStore';
 import { useSyncManager } from '@/hooks/useSyncManager';
 import { SyncStatusBadge } from '@/components/sync/SyncStatusBadge';
 import { BottomSheet } from '@/components/ui/BottomSheet';
+import { DietSettingsSheet } from '@/components/diet/DietSettingsSheet';
 import { useIsTrainer } from '@/hooks/useIsTrainer';
 import { exportAllDataAsJSON, exportWorkoutsAsCSV } from '@/lib/utils/exportData';
 import type { WorkoutSession, PersonalRecord, FitnessGoal } from '@/types';
@@ -102,6 +103,7 @@ export default function ProfilePage() {
   const [requestingPermission, setRequestingPermission] = useState(false);
   const [exportingJson, setExportingJson] = useState(false);
   const [exportingCsv, setExportingCsv] = useState(false);
+  const [isDietSettingsOpen, setIsDietSettingsOpen] = useState(false);
 
   const { user } = useUser();
   const { signOut } = useClerk();
@@ -454,6 +456,12 @@ export default function ProfilePage() {
                 setFatigueThreshold(next);
               }}
             />
+            {/* Diet settings */}
+            <SettingsRow
+              label="Diet Settings"
+              chevron
+              onTap={() => setIsDietSettingsOpen(true)}
+            />
             {/* Edit profile */}
             <SettingsRow
               label="Edit Profile"
@@ -752,6 +760,12 @@ export default function ProfilePage() {
       </div>
 
       {/* Edit Sync Settings sheet — removed (Clerk manages auth) */}
+
+      {/* Diet Settings */}
+      <DietSettingsSheet
+        open={isDietSettingsOpen}
+        onClose={() => setIsDietSettingsOpen(false)}
+      />
     </div>
   );
 }
