@@ -1,0 +1,18 @@
+{
+  "id": "F562",
+  "name": "Shahi chicken masala",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 163.7,
+  "proteinPer100g": 9.8,
+  "carbsPer100g": 4.1,
+  "fatPer100g": 12.0,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

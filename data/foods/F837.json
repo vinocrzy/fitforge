@@ -1,0 +1,18 @@
+{
+  "id": "F837",
+  "name": "Buttermilk biscuit",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 322.5,
+  "proteinPer100g": 5.8,
+  "carbsPer100g": 34.9,
+  "fatPer100g": 17.5,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

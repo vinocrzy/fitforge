@@ -1,0 +1,18 @@
+{
+  "id": "F854",
+  "name": "Lotus stem pickle (Kamal kakdi ka achar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 102.7,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 20.1,
+  "fatPer100g": 1.6,
+  "fiberPer100g": 8.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

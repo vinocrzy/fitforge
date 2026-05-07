@@ -1,0 +1,18 @@
+{
+  "id": "F856",
+  "name": "Garlic pickle (Lahasun ka achar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 413.6,
+  "proteinPer100g": 3.7,
+  "carbsPer100g": 9.8,
+  "fatPer100g": 39.9,
+  "fiberPer100g": 5.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

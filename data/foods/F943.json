@@ -1,0 +1,18 @@
+{
+  "id": "F943",
+  "name": "Panchmel dal",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 111.2,
+  "proteinPer100g": 4.6,
+  "carbsPer100g": 10.7,
+  "fatPer100g": 5.4,
+  "fiberPer100g": 3.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

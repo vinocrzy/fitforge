@@ -1,0 +1,18 @@
+{
+  "id": "F186",
+  "name": "Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 106.6,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 5.0,
+  "fatPer100g": 8.6,
+  "fiberPer100g": 4.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

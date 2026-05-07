@@ -1,0 +1,18 @@
+{
+  "id": "F357",
+  "name": "Potato bonda (Aloo bonda)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 632.8,
+  "proteinPer100g": 1.1,
+  "carbsPer100g": 4.5,
+  "fatPer100g": 67.8,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

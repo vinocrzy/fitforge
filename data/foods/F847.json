@@ -1,0 +1,18 @@
+{
+  "id": "F847",
+  "name": "Cranberry cookies",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 272.5,
+  "proteinPer100g": 3.9,
+  "carbsPer100g": 36.4,
+  "fatPer100g": 12.7,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

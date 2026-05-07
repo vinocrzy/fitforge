@@ -1,0 +1,18 @@
+{
+  "id": "F549",
+  "name": "Shahi keema kofta curry",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 418.1,
+  "proteinPer100g": 4.1,
+  "carbsPer100g": 1.7,
+  "fatPer100g": 43.8,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

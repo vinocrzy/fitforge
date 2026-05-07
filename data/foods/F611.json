@@ -1,0 +1,18 @@
+{
+  "id": "F611",
+  "name": "Fricassee of Mushroom",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 106.7,
+  "proteinPer100g": 3.7,
+  "carbsPer100g": 8.1,
+  "fatPer100g": 6.6,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

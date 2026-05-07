@@ -1,0 +1,18 @@
+{
+  "id": "F779",
+  "name": "Spinach khichri (Palak khichri/khichdi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 102.2,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 17.4,
+  "fatPer100g": 1.9,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

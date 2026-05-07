@@ -1,0 +1,18 @@
+{
+  "id": "F377",
+  "name": "Peanut brittle (Moongfali ki chikki)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 320.5,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 47.5,
+  "fatPer100g": 11.1,
+  "fiberPer100g": 2.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

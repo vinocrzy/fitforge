@@ -1,0 +1,18 @@
+{
+  "id": "F982",
+  "name": "Mashed banana with milk",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 95.4,
+  "proteinPer100g": 2.5,
+  "carbsPer100g": 14.6,
+  "fatPer100g": 3.0,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

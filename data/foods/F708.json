@@ -1,0 +1,18 @@
+{
+  "id": "F708",
+  "name": "Curd vegetable dip",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 56.2,
+  "proteinPer100g": 3.9,
+  "carbsPer100g": 6.0,
+  "fatPer100g": 1.9,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

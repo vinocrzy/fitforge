@@ -1,0 +1,18 @@
+{
+  "id": "F153",
+  "name": "Masala dosa",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 164.6,
+  "proteinPer100g": 3.3,
+  "carbsPer100g": 19.6,
+  "fatPer100g": 7.8,
+  "fiberPer100g": 2.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

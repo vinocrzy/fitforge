@@ -1,0 +1,18 @@
+{
+  "id": "F480",
+  "name": "Orange omelette/omlet",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 194.7,
+  "proteinPer100g": 8.9,
+  "carbsPer100g": 1.7,
+  "fatPer100g": 16.8,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

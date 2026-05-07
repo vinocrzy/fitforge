@@ -1,0 +1,18 @@
+{
+  "id": "F641",
+  "name": "Vanilla ice cream without egg",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 228.7,
+  "proteinPer100g": 2.7,
+  "carbsPer100g": 14.2,
+  "fatPer100g": 18.1,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

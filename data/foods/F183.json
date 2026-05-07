@@ -1,0 +1,18 @@
+{
+  "id": "F183",
+  "name": "Dry potato (Sookhe aloo)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 103.1,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 14.4,
+  "fatPer100g": 4.2,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F901",
+  "name": "Sago khitchdi/khichri (Sabudana khitchdi/khichri)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 187.2,
+  "proteinPer100g": 2.7,
+  "carbsPer100g": 22.4,
+  "fatPer100g": 10.1,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

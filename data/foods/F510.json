@@ -1,0 +1,18 @@
+{
+  "id": "F510",
+  "name": "Bacon and mushroom pancake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 157.7,
+  "proteinPer100g": 6.8,
+  "carbsPer100g": 8.5,
+  "fatPer100g": 10.6,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

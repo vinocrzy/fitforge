@@ -1,0 +1,18 @@
+{
+  "id": "F217",
+  "name": "Baked brinjal in tomato sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 38.6,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 4.1,
+  "fatPer100g": 1.6,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

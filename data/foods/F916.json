@@ -1,0 +1,18 @@
+{
+  "id": "F916",
+  "name": "Semolina dhokla (Suji/Rava dhokla)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 194.9,
+  "proteinPer100g": 5.4,
+  "carbsPer100g": 30.9,
+  "fatPer100g": 5.2,
+  "fiberPer100g": 5.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

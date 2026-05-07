@@ -1,0 +1,18 @@
+{
+  "id": "F335",
+  "name": "Chocolate burfi",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 339.3,
+  "proteinPer100g": 13.0,
+  "carbsPer100g": 33.2,
+  "fatPer100g": 17.9,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F270",
+  "name": "Peanut raita (Mungfali ka raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 150.4,
+  "proteinPer100g": 8.6,
+  "carbsPer100g": 9.3,
+  "fatPer100g": 9.0,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

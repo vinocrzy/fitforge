@@ -1,0 +1,18 @@
+{
+  "id": "F965",
+  "name": "Mayonnaise",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 774.9,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 1.6,
+  "fatPer100g": 84.5,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

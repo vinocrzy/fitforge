@@ -1,0 +1,18 @@
+{
+  "id": "F1004",
+  "name": "Mango pickle (Aam ka achaar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 192.1,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 8.1,
+  "fatPer100g": 17.9,
+  "fiberPer100g": 3.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F717",
+  "name": "Rolled sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 293.1,
+  "proteinPer100g": 6.5,
+  "carbsPer100g": 34.7,
+  "fatPer100g": 15.3,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

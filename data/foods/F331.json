@@ -1,0 +1,18 @@
+{
+  "id": "F331",
+  "name": "Hot vanilla souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 192.9,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 21.8,
+  "fatPer100g": 9.1,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

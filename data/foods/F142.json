@@ -1,0 +1,18 @@
+{
+  "id": "F142",
+  "name": "Vegetable chowmein",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 129.7,
+  "proteinPer100g": 3.1,
+  "carbsPer100g": 15.4,
+  "fatPer100g": 6.4,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

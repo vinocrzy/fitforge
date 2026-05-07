@@ -1,0 +1,18 @@
+{
+  "id": "F899",
+  "name": "Pav bhaji masala",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 230.5,
+  "proteinPer100g": 9.1,
+  "carbsPer100g": 29.1,
+  "fatPer100g": 11.0,
+  "fiberPer100g": 24.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

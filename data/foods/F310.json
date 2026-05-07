@@ -1,0 +1,18 @@
+{
+  "id": "F310",
+  "name": "Pineapple souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 196.1,
+  "proteinPer100g": 8.1,
+  "carbsPer100g": 15.5,
+  "fatPer100g": 11.7,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

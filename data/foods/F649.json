@@ -1,0 +1,18 @@
+{
+  "id": "F649",
+  "name": "Coffee pear alaska",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 204.0,
+  "proteinPer100g": 2.9,
+  "carbsPer100g": 19.4,
+  "fatPer100g": 13.2,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F319",
+  "name": "Steamed orange pudding",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 278.0,
+  "proteinPer100g": 2.3,
+  "carbsPer100g": 41.5,
+  "fatPer100g": 12.0,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

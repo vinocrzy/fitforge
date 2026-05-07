@@ -1,0 +1,18 @@
+{
+  "id": "F833",
+  "name": "Watercress sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 229.4,
+  "proteinPer100g": 5.2,
+  "carbsPer100g": 28.0,
+  "fatPer100g": 11.5,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

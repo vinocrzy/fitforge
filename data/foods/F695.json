@@ -1,0 +1,18 @@
+{
+  "id": "F695",
+  "name": "Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 745.5,
+  "proteinPer100g": 4.4,
+  "carbsPer100g": 9.7,
+  "fatPer100g": 76.3,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

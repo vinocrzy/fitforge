@@ -1,0 +1,18 @@
+{
+  "id": "F701",
+  "name": "Coriander chutney (Hare dhaniye ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 42.9,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 8.2,
+  "fatPer100g": 0.4,
+  "fiberPer100g": 2.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

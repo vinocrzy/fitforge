@@ -1,0 +1,18 @@
+{
+  "id": "F627",
+  "name": "Carrot raita (Gajar ka raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 64.8,
+  "proteinPer100g": 4.1,
+  "carbsPer100g": 7.2,
+  "fatPer100g": 2.2,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

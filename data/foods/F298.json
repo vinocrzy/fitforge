@@ -1,0 +1,18 @@
+{
+  "id": "F298",
+  "name": "Moong dal halwa",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 349.8,
+  "proteinPer100g": 8.4,
+  "carbsPer100g": 40.2,
+  "fatPer100g": 17.7,
+  "fiberPer100g": 2.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

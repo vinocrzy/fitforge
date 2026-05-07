@@ -1,0 +1,18 @@
+{
+  "id": "F256",
+  "name": "Paneer, apple and pineapple salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 95.1,
+  "proteinPer100g": 3.9,
+  "carbsPer100g": 8.3,
+  "fatPer100g": 5.1,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F031",
+  "name": "Cumin infused water (Jeere/Zeere ka pani)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 9.1,
+  "proteinPer100g": 0.2,
+  "carbsPer100g": 1.9,
+  "fatPer100g": 0.1,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

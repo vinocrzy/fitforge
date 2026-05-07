@@ -1,0 +1,18 @@
+{
+  "id": "F757",
+  "name": "Orange cream flan",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 280.3,
+  "proteinPer100g": 4.7,
+  "carbsPer100g": 36.2,
+  "fatPer100g": 13.6,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F305",
+  "name": "Caramel ice cream",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 173.5,
+  "proteinPer100g": 4.3,
+  "carbsPer100g": 14.8,
+  "fatPer100g": 11.2,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

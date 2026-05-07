@@ -1,0 +1,18 @@
+{
+  "id": "F620",
+  "name": "Chicken and tomato towers",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 100.6,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 2.4,
+  "fatPer100g": 7.0,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

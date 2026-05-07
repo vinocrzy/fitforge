@@ -1,0 +1,18 @@
+{
+  "id": "F660",
+  "name": "Cold pineapple souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 181.2,
+  "proteinPer100g": 6.2,
+  "carbsPer100g": 16.8,
+  "fatPer100g": 10.4,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

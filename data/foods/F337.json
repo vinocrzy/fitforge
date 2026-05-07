@@ -1,0 +1,18 @@
+{
+  "id": "F337",
+  "name": "Gram flour burfi (Besan burfi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 421.8,
+  "proteinPer100g": 11.2,
+  "carbsPer100g": 46.6,
+  "fatPer100g": 22.4,
+  "fiberPer100g": 3.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F997",
+  "name": "Plum jam (Aloo bukhara jam)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 178.9,
+  "proteinPer100g": 0.3,
+  "carbsPer100g": 46.2,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

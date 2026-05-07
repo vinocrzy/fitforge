@@ -1,0 +1,18 @@
+{
+  "id": "F523",
+  "name": "Instant idli (with semolina)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 247.3,
+  "proteinPer100g": 9.2,
+  "carbsPer100g": 43.4,
+  "fatPer100g": 3.6,
+  "fiberPer100g": 7.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

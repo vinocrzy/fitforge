@@ -1,0 +1,18 @@
+{
+  "id": "F998",
+  "name": "Pineapple jam",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 149.2,
+  "proteinPer100g": 0.3,
+  "carbsPer100g": 38.3,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

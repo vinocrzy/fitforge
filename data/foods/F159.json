@@ -1,0 +1,18 @@
+{
+  "id": "F159",
+  "name": "Washed urad dal (Dhuli urad ki dal)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 61.3,
+  "proteinPer100g": 2.5,
+  "carbsPer100g": 5.8,
+  "fatPer100g": 3.0,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

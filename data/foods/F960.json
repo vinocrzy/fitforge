@@ -1,0 +1,18 @@
+{
+  "id": "F960",
+  "name": "Mustard sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 158.6,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 8.3,
+  "fatPer100g": 12.2,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

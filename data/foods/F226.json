@@ -1,0 +1,18 @@
+{
+  "id": "F226",
+  "name": "Paneer in butter sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 145.6,
+  "proteinPer100g": 7.0,
+  "carbsPer100g": 9.7,
+  "fatPer100g": 8.8,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

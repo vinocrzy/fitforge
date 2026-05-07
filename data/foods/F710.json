@@ -1,0 +1,18 @@
+{
+  "id": "F710",
+  "name": "Tomato and cucumber sandwich (Tamatar aur kheere ka sandwich)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 150.7,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 20.5,
+  "fatPer100g": 6.3,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

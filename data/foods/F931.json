@@ -1,0 +1,18 @@
+{
+  "id": "F931",
+  "name": "Baked potato soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 147.1,
+  "proteinPer100g": 5.7,
+  "carbsPer100g": 5.9,
+  "fatPer100g": 11.2,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

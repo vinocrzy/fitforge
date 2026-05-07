@@ -1,0 +1,18 @@
+{
+  "id": "F1016",
+  "name": "Tartare sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 610.9,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 3.0,
+  "fatPer100g": 66.1,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

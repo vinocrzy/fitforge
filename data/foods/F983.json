@@ -1,0 +1,18 @@
+{
+  "id": "F983",
+  "name": "Poha with curd (Poha aur dahi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 173.3,
+  "proteinPer100g": 6.0,
+  "carbsPer100g": 26.7,
+  "fatPer100g": 4.7,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

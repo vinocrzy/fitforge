@@ -1,0 +1,18 @@
+{
+  "id": "F175",
+  "name": "Khatta channa",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 202.6,
+  "proteinPer100g": 6.3,
+  "carbsPer100g": 21.1,
+  "fatPer100g": 10.6,
+  "fiberPer100g": 5.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

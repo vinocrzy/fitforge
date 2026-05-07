@@ -1,0 +1,18 @@
+{
+  "id": "F918",
+  "name": "Jackfruit fritters (Ponsa mulik/Kathal ka pakora)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 597.8,
+  "proteinPer100g": 2.3,
+  "carbsPer100g": 24.0,
+  "fatPer100g": 54.4,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

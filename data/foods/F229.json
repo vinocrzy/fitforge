@@ -1,0 +1,18 @@
+{
+  "id": "F229",
+  "name": "Paneer makhana korma",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 775.8,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 4.6,
+  "fatPer100g": 82.8,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

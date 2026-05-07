@@ -1,0 +1,18 @@
+{
+  "id": "F999",
+  "name": "Guava jelly (Amrood ki jelly)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 115.7,
+  "proteinPer100g": 1.1,
+  "carbsPer100g": 28.2,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 6.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

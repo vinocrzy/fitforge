@@ -1,0 +1,18 @@
+{
+  "id": "F667",
+  "name": "Steamed cake with chocolate sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 301.9,
+  "proteinPer100g": 4.5,
+  "carbsPer100g": 29.1,
+  "fatPer100g": 19.0,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

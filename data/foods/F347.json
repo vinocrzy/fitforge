@@ -1,0 +1,18 @@
+{
+  "id": "F347",
+  "name": "Shahi tukre",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 189.8,
+  "proteinPer100g": 2.8,
+  "carbsPer100g": 41.5,
+  "fatPer100g": 2.5,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

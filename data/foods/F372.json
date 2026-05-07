@@ -1,0 +1,18 @@
+{
+  "id": "F372",
+  "name": "Vegetable seekh kebab",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 690.7,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 5.3,
+  "fatPer100g": 73.7,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

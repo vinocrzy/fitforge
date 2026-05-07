@@ -1,0 +1,18 @@
+{
+  "id": "F210",
+  "name": "Spinach paneer kofta curry (Palak paneer kofta curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 606.0,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 2.9,
+  "fatPer100g": 65.4,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

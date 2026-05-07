@@ -1,0 +1,18 @@
+{
+  "id": "F669",
+  "name": "Gulab jamun with milk powder",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 471.2,
+  "proteinPer100g": 0.9,
+  "carbsPer100g": 28.2,
+  "fatPer100g": 40.2,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

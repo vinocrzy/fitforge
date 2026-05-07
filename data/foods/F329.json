@@ -1,0 +1,18 @@
+{
+  "id": "F329",
+  "name": "Hot orange souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 180.0,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 18.8,
+  "fatPer100g": 8.9,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

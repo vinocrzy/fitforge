@@ -1,0 +1,18 @@
+{
+  "id": "F267",
+  "name": "Coleslaw",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 76.7,
+  "proteinPer100g": 1.2,
+  "carbsPer100g": 5.6,
+  "fatPer100g": 5.3,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F380",
+  "name": "Peanut chutney (Mungfali ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 258.4,
+  "proteinPer100g": 11.8,
+  "carbsPer100g": 9.9,
+  "fatPer100g": 19.1,
+  "fiberPer100g": 5.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

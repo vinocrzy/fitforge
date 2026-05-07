@@ -1,0 +1,18 @@
+{
+  "id": "F327",
+  "name": "Stewed apple with custard",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 92.9,
+  "proteinPer100g": 1.3,
+  "carbsPer100g": 18.4,
+  "fatPer100g": 1.8,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

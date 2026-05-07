@@ -1,0 +1,18 @@
+{
+  "id": "F131",
+  "name": "Navratan pulao",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 261.7,
+  "proteinPer100g": 6.2,
+  "carbsPer100g": 37.0,
+  "fatPer100g": 9.5,
+  "fiberPer100g": 3.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F120",
+  "name": "Methi poori",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 710.0,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 8.0,
+  "fatPer100g": 74.6,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

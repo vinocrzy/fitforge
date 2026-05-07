@@ -1,0 +1,18 @@
+{
+  "id": "F413",
+  "name": "Eggless cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 318.1,
+  "proteinPer100g": 8.1,
+  "carbsPer100g": 46.1,
+  "fatPer100g": 11.8,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

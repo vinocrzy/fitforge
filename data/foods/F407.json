@@ -1,0 +1,18 @@
+{
+  "id": "F407",
+  "name": "Orange cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 357.6,
+  "proteinPer100g": 6.1,
+  "carbsPer100g": 48.3,
+  "fatPer100g": 16.2,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

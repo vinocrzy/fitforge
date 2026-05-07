@@ -1,0 +1,18 @@
+{
+  "id": "F599",
+  "name": "Vegetable jalfrezi",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 68.5,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 5.4,
+  "fatPer100g": 4.4,
+  "fiberPer100g": 3.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

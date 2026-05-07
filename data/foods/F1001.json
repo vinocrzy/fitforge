@@ -1,0 +1,18 @@
+{
+  "id": "F1001",
+  "name": "Carrot murabba (Gajar ka murabba)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 175.2,
+  "proteinPer100g": 0.3,
+  "carbsPer100g": 45.6,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

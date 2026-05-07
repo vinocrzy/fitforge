@@ -1,0 +1,18 @@
+{
+  "id": "F640",
+  "name": "Caramel custard (baked)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 122.7,
+  "proteinPer100g": 5.1,
+  "carbsPer100g": 15.0,
+  "fatPer100g": 5.0,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

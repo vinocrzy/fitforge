@@ -1,0 +1,18 @@
+{
+  "id": "F823",
+  "name": "Kiwi granola pudding",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 281.0,
+  "proteinPer100g": 5.6,
+  "carbsPer100g": 32.3,
+  "fatPer100g": 15.4,
+  "fiberPer100g": 3.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

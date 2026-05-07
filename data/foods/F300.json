@@ -1,0 +1,18 @@
+{
+  "id": "F300",
+  "name": "Baked custard",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 106.5,
+  "proteinPer100g": 5.4,
+  "carbsPer100g": 9.5,
+  "fatPer100g": 5.3,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

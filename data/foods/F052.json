@@ -1,0 +1,18 @@
+{
+  "id": "F052",
+  "name": "Vegetarian club sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 198.3,
+  "proteinPer100g": 5.5,
+  "carbsPer100g": 19.7,
+  "fatPer100g": 11.3,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

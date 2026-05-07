@@ -1,0 +1,18 @@
+{
+  "id": "F126",
+  "name": "Mixed vegetable pulao",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 113.0,
+  "proteinPer100g": 2.7,
+  "carbsPer100g": 17.5,
+  "fatPer100g": 3.3,
+  "fiberPer100g": 2.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

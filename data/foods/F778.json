@@ -1,0 +1,18 @@
+{
+  "id": "F778",
+  "name": "Lentils and semolina porridge (Dal suji porridge/daliya)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 117.3,
+  "proteinPer100g": 3.3,
+  "carbsPer100g": 23.2,
+  "fatPer100g": 1.1,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

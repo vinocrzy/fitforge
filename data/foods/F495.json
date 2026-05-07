@@ -1,0 +1,18 @@
+{
+  "id": "F495",
+  "name": "Cream of broccoli soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 56.1,
+  "proteinPer100g": 9.0,
+  "carbsPer100g": 3.7,
+  "fatPer100g": 12.7,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

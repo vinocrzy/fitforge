@@ -1,0 +1,18 @@
+{
+  "id": "F693",
+  "name": "Minced meat cutlet",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 531.9,
+  "proteinPer100g": 5.1,
+  "carbsPer100g": 5.6,
+  "fatPer100g": 54.5,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

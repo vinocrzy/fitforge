@@ -1,0 +1,18 @@
+{
+  "id": "F893",
+  "name": "Green chilli raita (Hari mirch ka raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 77.1,
+  "proteinPer100g": 5.6,
+  "carbsPer100g": 7.7,
+  "fatPer100g": 2.9,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

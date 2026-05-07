@@ -1,0 +1,18 @@
+{
+  "id": "F248",
+  "name": "Fried chicken with tomato sauce (Fried chicken tamatar ki chutney kay saath)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 125.0,
+  "proteinPer100g": 11.5,
+  "carbsPer100g": 2.5,
+  "fatPer100g": 7.6,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

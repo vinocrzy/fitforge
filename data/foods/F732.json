@@ -1,0 +1,18 @@
+{
+  "id": "F732",
+  "name": "Black forest gateau",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 217.8,
+  "proteinPer100g": 5.9,
+  "carbsPer100g": 30.6,
+  "fatPer100g": 8.6,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

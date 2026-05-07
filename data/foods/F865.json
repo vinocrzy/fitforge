@@ -1,0 +1,18 @@
+{
+  "id": "F865",
+  "name": "Mango murabba candy",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 293.3,
+  "proteinPer100g": 0.3,
+  "carbsPer100g": 77.3,
+  "fatPer100g": 0.1,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

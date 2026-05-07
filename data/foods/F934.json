@@ -1,0 +1,18 @@
+{
+  "id": "F934",
+  "name": "Paneer soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 47.9,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 2.4,
+  "fatPer100g": 2.8,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

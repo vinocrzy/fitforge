@@ -1,0 +1,18 @@
+{
+  "id": "F888",
+  "name": "Chicken salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 338.2,
+  "proteinPer100g": 15.3,
+  "carbsPer100g": 1.3,
+  "fatPer100g": 30.3,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

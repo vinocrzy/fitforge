@@ -1,0 +1,18 @@
+{
+  "id": "F736",
+  "name": "Chocolate eggless cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 312.0,
+  "proteinPer100g": 6.7,
+  "carbsPer100g": 43.4,
+  "fatPer100g": 13.2,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

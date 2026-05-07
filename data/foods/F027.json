@@ -1,0 +1,18 @@
+{
+  "id": "F027",
+  "name": "Fruit Punch (with fresh juices)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 36.1,
+  "proteinPer100g": 0.1,
+  "carbsPer100g": 9.4,
+  "fatPer100g": 0.0,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

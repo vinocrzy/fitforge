@@ -1,0 +1,18 @@
+{
+  "id": "F154",
+  "name": "Semolina dosa (Suji/Rava dosa)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 227.1,
+  "proteinPer100g": 7.3,
+  "carbsPer100g": 32.8,
+  "fatPer100g": 7.1,
+  "fiberPer100g": 4.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

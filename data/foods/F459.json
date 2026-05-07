@@ -1,0 +1,18 @@
+{
+  "id": "F459",
+  "name": "Banana milkshake with ice cream (Kele ka milkshake ice cream ke saath)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 76.4,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 11.2,
+  "fatPer100g": 2.8,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

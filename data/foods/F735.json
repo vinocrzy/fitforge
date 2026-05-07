@@ -1,0 +1,18 @@
+{
+  "id": "F735",
+  "name": "Victorian sandwich cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 373.1,
+  "proteinPer100g": 5.2,
+  "carbsPer100g": 44.7,
+  "fatPer100g": 19.8,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

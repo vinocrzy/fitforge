@@ -1,0 +1,18 @@
+{
+  "id": "F013",
+  "name": "Marie Gold Biscuit",
+  "nameLocal": null,
+  "category": "snack",
+  "caloriesPer100g": 445.0,
+  "proteinPer100g": 7.9,
+  "carbsPer100g": 79.5,
+  "fatPer100g": 10.6,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 30
+  },
+  "altPortions": [],
+  "source": "Open Food Facts",
+  "isCustom": false
+}

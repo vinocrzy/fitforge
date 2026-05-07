@@ -1,0 +1,18 @@
+{
+  "id": "F199",
+  "name": "Paneer curry",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 176.5,
+  "proteinPer100g": 7.8,
+  "carbsPer100g": 8.4,
+  "fatPer100g": 12.4,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

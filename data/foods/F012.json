@@ -1,0 +1,18 @@
+{
+  "id": "F012",
+  "name": "Classic Malt",
+  "nameLocal": null,
+  "category": "beverage",
+  "caloriesPer100g": 377.0,
+  "proteinPer100g": 11.0,
+  "carbsPer100g": 79.0,
+  "fatPer100g": 2.0,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "glass",
+    "weightGrams": 200
+  },
+  "altPortions": [],
+  "source": "Open Food Facts",
+  "isCustom": false
+}

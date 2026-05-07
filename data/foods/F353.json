@@ -1,0 +1,18 @@
+{
+  "id": "F353",
+  "name": "Methi pakora/pakoda (Methi ke pakode)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 713.3,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 4.7,
+  "fatPer100g": 76.4,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

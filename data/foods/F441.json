@@ -1,0 +1,18 @@
+{
+  "id": "F441",
+  "name": "Gram flour and semolina chilla/cheela/savory pancake (Besan suji chilla/cheela)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 758.9,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 7.6,
+  "fatPer100g": 80.0,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

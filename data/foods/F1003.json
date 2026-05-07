@@ -1,0 +1,18 @@
+{
+  "id": "F1003",
+  "name": "Ginger candy (Adrak ki candy)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 195.7,
+  "proteinPer100g": 0.7,
+  "carbsPer100g": 50.4,
+  "fatPer100g": 0.3,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

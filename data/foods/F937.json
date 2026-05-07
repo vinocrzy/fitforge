@@ -1,0 +1,18 @@
+{
+  "id": "F937",
+  "name": "Lemon coriander soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 108.1,
+  "proteinPer100g": 2.3,
+  "carbsPer100g": 10.3,
+  "fatPer100g": 6.3,
+  "fiberPer100g": 6.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

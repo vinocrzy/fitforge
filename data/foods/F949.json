@@ -1,0 +1,18 @@
+{
+  "id": "F949",
+  "name": "Bread roll",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 435.5,
+  "proteinPer100g": 2.9,
+  "carbsPer100g": 16.1,
+  "fatPer100g": 40.2,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

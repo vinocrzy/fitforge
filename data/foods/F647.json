@@ -1,0 +1,18 @@
+{
+  "id": "F647",
+  "name": "Chocolate sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 263.2,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 43.2,
+  "fatPer100g": 10.4,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

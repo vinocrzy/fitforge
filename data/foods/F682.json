@@ -1,0 +1,18 @@
+{
+  "id": "F682",
+  "name": "Semolina ladoo with nuts (Suji/Rava ladoo with nuts)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 441.8,
+  "proteinPer100g": 5.4,
+  "carbsPer100g": 48.0,
+  "fatPer100g": 25.5,
+  "fiberPer100g": 4.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

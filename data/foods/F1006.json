@@ -1,0 +1,18 @@
+{
+  "id": "F1006",
+  "name": "Sweet lemon pickle (Neembu ka meetha achaar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 69.5,
+  "proteinPer100g": 1.2,
+  "carbsPer100g": 16.9,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

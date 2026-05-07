@@ -1,0 +1,18 @@
+{
+  "id": "F535",
+  "name": "Lasagne with vegetables",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 49.2,
+  "proteinPer100g": 1.7,
+  "carbsPer100g": 5.9,
+  "fatPer100g": 2.2,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

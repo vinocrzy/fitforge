@@ -1,0 +1,18 @@
+{
+  "id": "F906",
+  "name": "Methi thepla",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 346.2,
+  "proteinPer100g": 9.0,
+  "carbsPer100g": 41.3,
+  "fatPer100g": 15.9,
+  "fiberPer100g": 7.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

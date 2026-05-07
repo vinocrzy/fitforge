@@ -1,0 +1,18 @@
+{
+  "id": "F291",
+  "name": "Phirni",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 116.1,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 16.1,
+  "fatPer100g": 4.3,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

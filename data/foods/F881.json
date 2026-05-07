@@ -1,0 +1,18 @@
+{
+  "id": "F881",
+  "name": "Paneer lababdar",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 105.5,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 3.4,
+  "fatPer100g": 8.5,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

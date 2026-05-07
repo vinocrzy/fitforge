@@ -1,0 +1,18 @@
+{
+  "id": "F741",
+  "name": "Almond biscuit (Badam ke biscuit)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 407.7,
+  "proteinPer100g": 6.2,
+  "carbsPer100g": 52.1,
+  "fatPer100g": 19.7,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

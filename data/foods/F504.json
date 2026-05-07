@@ -1,0 +1,18 @@
+{
+  "id": "F504",
+  "name": "Bathua poori",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 598.8,
+  "proteinPer100g": 2.4,
+  "carbsPer100g": 13.9,
+  "fatPer100g": 59.1,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

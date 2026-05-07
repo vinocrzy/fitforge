@@ -1,0 +1,18 @@
+{
+  "id": "F912",
+  "name": "Veg manchurian",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 585.6,
+  "proteinPer100g": 0.9,
+  "carbsPer100g": 6.8,
+  "fatPer100g": 61.7,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

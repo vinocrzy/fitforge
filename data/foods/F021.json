@@ -1,0 +1,18 @@
+{
+  "id": "F021",
+  "nameLocal": null,
+  "altPortions": [],
+  "isCustom": false,
+  "name": "Complan Chocolate Drink Mix",
+  "category": "beverage",
+  "caloriesPer100g": 400.0,
+  "proteinPer100g": 18.0,
+  "carbsPer100g": 62.0,
+  "fatPer100g": 7.0,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "tablespoon",
+    "weightGrams": 25
+  },
+  "source": "manual"
+}

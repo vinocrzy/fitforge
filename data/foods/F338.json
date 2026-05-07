@@ -1,0 +1,18 @@
+{
+  "id": "F338",
+  "name": "Semolina ladoo with khoya (Suji/Rava aur khoye ke ladoo )",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 428.7,
+  "proteinPer100g": 6.7,
+  "carbsPer100g": 52.9,
+  "fatPer100g": 21.9,
+  "fiberPer100g": 4.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F932",
+  "name": "Pumpkin soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 40.0,
+  "proteinPer100g": 0.5,
+  "carbsPer100g": 2.1,
+  "fatPer100g": 3.2,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

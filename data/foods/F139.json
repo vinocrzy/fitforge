@@ -1,0 +1,18 @@
+{
+  "id": "F139",
+  "name": "Spanish rice",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 164.2,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 31.1,
+  "fatPer100g": 2.2,
+  "fiberPer100g": 2.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

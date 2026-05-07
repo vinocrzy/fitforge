@@ -1,0 +1,18 @@
+{
+  "id": "F184",
+  "name": "Beans with coconut (Nariyal aur sem/phali; Beans thoran)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 131.6,
+  "proteinPer100g": 2.6,
+  "carbsPer100g": 4.4,
+  "fatPer100g": 11.4,
+  "fiberPer100g": 5.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

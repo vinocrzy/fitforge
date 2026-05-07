@@ -1,0 +1,18 @@
+{
+  "id": "F222",
+  "name": "Jackfruit sabzi (Kathal ki sabzi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 625.4,
+  "proteinPer100g": 0.7,
+  "carbsPer100g": 3.4,
+  "fatPer100g": 67.6,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

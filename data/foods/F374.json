@@ -1,0 +1,18 @@
+{
+  "id": "F374",
+  "name": "Peanut sago vada (Sabudana mungfali vada)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 749.9,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 7.1,
+  "fatPer100g": 79.8,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

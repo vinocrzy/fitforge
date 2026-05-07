@@ -1,0 +1,18 @@
+{
+  "id": "F164",
+  "name": "Whole masoor (Masoor ki dal)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 54.1,
+  "proteinPer100g": 2.3,
+  "carbsPer100g": 5.4,
+  "fatPer100g": 2.5,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

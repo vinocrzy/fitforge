@@ -1,0 +1,18 @@
+{
+  "id": "F656",
+  "name": "Fruit delight",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 107.1,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 9.1,
+  "fatPer100g": 7.1,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

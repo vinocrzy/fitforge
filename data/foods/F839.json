@@ -1,0 +1,18 @@
+{
+  "id": "F839",
+  "name": "Sweet potato biscuit (Shakarkand ke biscuit)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 296.4,
+  "proteinPer100g": 5.1,
+  "carbsPer100g": 38.1,
+  "fatPer100g": 13.3,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

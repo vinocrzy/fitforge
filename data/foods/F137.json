@@ -1,0 +1,18 @@
+{
+  "id": "F137",
+  "name": "Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 195.7,
+  "proteinPer100g": 5.8,
+  "carbsPer100g": 32.9,
+  "fatPer100g": 4.3,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

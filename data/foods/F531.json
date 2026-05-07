@@ -1,0 +1,18 @@
+{
+  "id": "F531",
+  "name": "Meat and macaroni casserole",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 161.5,
+  "proteinPer100g": 9.1,
+  "carbsPer100g": 16.1,
+  "fatPer100g": 10.2,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

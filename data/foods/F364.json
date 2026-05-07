@@ -1,0 +1,18 @@
+{
+  "id": "F364",
+  "name": "Flattened rice cutlet (Chirwa cutlet/Chivda cutlet/Poha cutlet)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 701.7,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 7.4,
+  "fatPer100g": 73.9,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

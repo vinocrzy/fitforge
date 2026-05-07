@@ -1,0 +1,18 @@
+{
+  "id": "F525",
+  "name": "Masala dosa mixed vegetable fillings",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 144.5,
+  "proteinPer100g": 4.8,
+  "carbsPer100g": 23.0,
+  "fatPer100g": 3.3,
+  "fiberPer100g": 4.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

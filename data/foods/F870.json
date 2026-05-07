@@ -1,0 +1,18 @@
+{
+  "id": "F870",
+  "name": "Handi chicken",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 166.0,
+  "proteinPer100g": 12.3,
+  "carbsPer100g": 1.5,
+  "fatPer100g": 12.5,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

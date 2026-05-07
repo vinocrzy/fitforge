@@ -1,0 +1,18 @@
+{
+  "id": "F1030",
+  "name": "Brinjal pickle (Baingan ka achaar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 139.0,
+  "proteinPer100g": 2.2,
+  "carbsPer100g": 4.2,
+  "fatPer100g": 13.0,
+  "fiberPer100g": 4.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

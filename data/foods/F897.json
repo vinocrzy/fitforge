@@ -1,0 +1,18 @@
+{
+  "id": "F897",
+  "name": "Chicken and cheese souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 182.4,
+  "proteinPer100g": 9.1,
+  "carbsPer100g": 3.5,
+  "fatPer100g": 14.7,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

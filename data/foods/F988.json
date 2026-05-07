@@ -1,0 +1,18 @@
+{
+  "id": "F988",
+  "name": "Cracked wheat khichri/khichdi (Dalia khichri/khichdi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 167.5,
+  "proteinPer100g": 7.6,
+  "carbsPer100g": 22.3,
+  "fatPer100g": 5.5,
+  "fiberPer100g": 3.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F933",
+  "name": "Sweet corn soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 32.2,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 3.6,
+  "fatPer100g": 1.6,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

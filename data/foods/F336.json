@@ -1,0 +1,18 @@
+{
+  "id": "F336",
+  "name": "Cashewnut burfi (Kaju burfi/Kaju katli)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 421.7,
+  "proteinPer100g": 5.5,
+  "carbsPer100g": 37.9,
+  "fatPer100g": 28.5,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

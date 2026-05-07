@@ -1,0 +1,18 @@
+{
+  "id": "F646",
+  "name": "Pear chocholate sunday",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 183.5,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 15.0,
+  "fatPer100g": 13.1,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

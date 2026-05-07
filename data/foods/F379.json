@@ -1,0 +1,18 @@
+{
+  "id": "F379",
+  "name": "Dry mango chutney (Sookhe aam ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 298.1,
+  "proteinPer100g": 2.4,
+  "carbsPer100g": 69.2,
+  "fatPer100g": 0.7,
+  "fiberPer100g": 3.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

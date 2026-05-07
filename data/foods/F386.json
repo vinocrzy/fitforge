@@ -1,0 +1,18 @@
+{
+  "id": "F386",
+  "name": "Orange cream tart",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 197.2,
+  "proteinPer100g": 2.6,
+  "carbsPer100g": 27.4,
+  "fatPer100g": 8.7,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

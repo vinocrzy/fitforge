@@ -1,0 +1,18 @@
+{
+  "id": "F699",
+  "name": "Tomato ginger chutney (Tamatar adarak ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 44.7,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 9.1,
+  "fatPer100g": 0.3,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

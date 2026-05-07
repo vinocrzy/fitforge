@@ -1,0 +1,18 @@
+{
+  "id": "F889",
+  "name": "Macaroni salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 262.2,
+  "proteinPer100g": 5.0,
+  "carbsPer100g": 21.6,
+  "fatPer100g": 17.8,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

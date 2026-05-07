@@ -1,0 +1,18 @@
+{
+  "id": "F821",
+  "name": "Mango malpua",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 334.6,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 12.8,
+  "fatPer100g": 30.7,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

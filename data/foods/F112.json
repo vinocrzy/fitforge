@@ -1,0 +1,18 @@
+{
+  "id": "F112",
+  "name": "Dal parantha/paratha",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 268.2,
+  "proteinPer100g": 6.8,
+  "carbsPer100g": 30.0,
+  "fatPer100g": 13.1,
+  "fiberPer100g": 6.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

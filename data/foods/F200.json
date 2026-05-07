@@ -1,0 +1,18 @@
+{
+  "id": "F200",
+  "name": "Lotus stem curry (Kamal kakdi curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 110.3,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 9.2,
+  "fatPer100g": 7.3,
+  "fiberPer100g": 3.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F207",
+  "name": "Cauliflower kofta curry (Phoolgobhi kofta curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 641.1,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 2.6,
+  "fatPer100g": 69.6,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

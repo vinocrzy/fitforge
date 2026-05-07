@@ -1,0 +1,18 @@
+{
+  "id": "F085",
+  "name": "Jam and fruit pancake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 162.0,
+  "proteinPer100g": 3.8,
+  "carbsPer100g": 20.7,
+  "fatPer100g": 7.0,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

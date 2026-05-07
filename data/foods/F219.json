@@ -1,0 +1,18 @@
+{
+  "id": "F219",
+  "name": "Spinach paneer (Palak paneer)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 77.7,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 4.4,
+  "fatPer100g": 4.8,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

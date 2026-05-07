@@ -1,0 +1,18 @@
+{
+  "id": "F793",
+  "name": "Gram flour and semolina dhokla (Besan suji dhokla)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 198.9,
+  "proteinPer100g": 8.5,
+  "carbsPer100g": 25.9,
+  "fatPer100g": 7.1,
+  "fiberPer100g": 4.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

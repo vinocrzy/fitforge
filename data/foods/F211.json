@@ -1,0 +1,18 @@
+{
+  "id": "F211",
+  "name": "Vegetarian egg kofta curry",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 627.4,
+  "proteinPer100g": 1.3,
+  "carbsPer100g": 4.3,
+  "fatPer100g": 67.2,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

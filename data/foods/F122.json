@@ -1,0 +1,18 @@
+{
+  "id": "F122",
+  "name": "Potato stuffed poori (Aloo ki poori)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 776.7,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 9.4,
+  "fatPer100g": 81.4,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

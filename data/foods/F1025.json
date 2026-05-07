@@ -1,0 +1,18 @@
+{
+  "id": "F1025",
+  "name": "Hot cherry sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 252.7,
+  "proteinPer100g": 0.1,
+  "carbsPer100g": 67.9,
+  "fatPer100g": 0.1,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

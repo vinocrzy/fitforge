@@ -1,0 +1,18 @@
+{
+  "id": "F406",
+  "name": "Chocolate cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 335.6,
+  "proteinPer100g": 6.0,
+  "carbsPer100g": 45.1,
+  "fatPer100g": 15.2,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

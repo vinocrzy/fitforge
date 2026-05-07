@@ -1,0 +1,18 @@
+{
+  "id": "F984",
+  "name": "Potato with curd",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 73.2,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 12.0,
+  "fatPer100g": 1.3,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

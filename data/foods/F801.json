@@ -1,0 +1,18 @@
+{
+  "id": "F801",
+  "name": "Stuffed bittergourd (dry) (Bharwa karela)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 217.6,
+  "proteinPer100g": 1.3,
+  "carbsPer100g": 2.5,
+  "fatPer100g": 22.4,
+  "fiberPer100g": 3.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

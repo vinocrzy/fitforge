@@ -1,0 +1,18 @@
+{
+  "id": "F345",
+  "name": "Gulab Jamun with khoya",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 586.1,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 26.1,
+  "fatPer100g": 53.2,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

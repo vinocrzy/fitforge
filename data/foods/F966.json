@@ -1,0 +1,18 @@
+{
+  "id": "F966",
+  "name": "Low calorie quick mayonnaise",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 242.9,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 4.7,
+  "fatPer100g": 24.4,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

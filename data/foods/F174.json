@@ -1,0 +1,18 @@
+{
+  "id": "F174",
+  "name": "Besan kadhi with pakodies",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 403.3,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 3.6,
+  "fatPer100g": 42.6,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

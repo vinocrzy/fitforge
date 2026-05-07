@@ -1,0 +1,18 @@
+{
+  "id": "F321",
+  "name": "Cheese pudding",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 285.0,
+  "proteinPer100g": 11.3,
+  "carbsPer100g": 19.3,
+  "fatPer100g": 18.4,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F272",
+  "name": "Bottle gourd raita (Ghiya/Lauki ka raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 56.3,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 5.8,
+  "fatPer100g": 2.1,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

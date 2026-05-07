@@ -1,0 +1,18 @@
+{
+  "id": "F610",
+  "name": "Creamed spinach and mushroom",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 419.6,
+  "proteinPer100g": 2.3,
+  "carbsPer100g": 3.2,
+  "fatPer100g": 44.1,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

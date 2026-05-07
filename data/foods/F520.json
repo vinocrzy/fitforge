@@ -1,0 +1,18 @@
+{
+  "id": "F520",
+  "name": "Chicken pulao",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 108.2,
+  "proteinPer100g": 6.1,
+  "carbsPer100g": 11.2,
+  "fatPer100g": 8.5,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

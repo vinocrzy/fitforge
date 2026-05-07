@@ -1,0 +1,18 @@
+{
+  "id": "F570",
+  "name": "Fish finger",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 542.9,
+  "proteinPer100g": 5.7,
+  "carbsPer100g": 4.5,
+  "fatPer100g": 55.8,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

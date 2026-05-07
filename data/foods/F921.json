@@ -1,0 +1,18 @@
+{
+  "id": "F921",
+  "name": "Mango cheesecake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 152.5,
+  "proteinPer100g": 2.4,
+  "carbsPer100g": 20.1,
+  "fatPer100g": 7.3,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

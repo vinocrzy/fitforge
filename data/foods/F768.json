@@ -1,0 +1,18 @@
+{
+  "id": "F768",
+  "name": "Paneer patties",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 338.6,
+  "proteinPer100g": 7.6,
+  "carbsPer100g": 22.8,
+  "fatPer100g": 24.0,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

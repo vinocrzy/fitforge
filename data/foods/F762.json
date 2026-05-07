@@ -1,0 +1,18 @@
+{
+  "id": "F762",
+  "name": "Cream buns",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 215.7,
+  "proteinPer100g": 4.5,
+  "carbsPer100g": 14.2,
+  "fatPer100g": 15.8,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

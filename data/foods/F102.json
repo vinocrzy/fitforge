@@ -1,0 +1,18 @@
+{
+  "id": "F102",
+  "name": "French onion soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 55.6,
+  "proteinPer100g": 11.4,
+  "carbsPer100g": 4.3,
+  "fatPer100g": 14.4,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

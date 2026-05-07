@@ -1,0 +1,18 @@
+{
+  "id": "F592",
+  "name": "Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 110.8,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 4.5,
+  "fatPer100g": 9.3,
+  "fiberPer100g": 3.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

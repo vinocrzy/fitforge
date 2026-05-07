@@ -1,8 +1,18 @@
 {
   "id": "F005",
   "name": "Oats dry",
-  "category": "Grains",
-  "isCustom": false,
-  "per100g": { "calories": 389, "proteinG": 17, "carbsG": 66, "fatG": 7 },
-  "defaultPortion": { "amount": 80, "unit": "g", "weightG": 80 }
+  "nameLocal": null,
+  "category": "pulse-grain",
+  "caloriesPer100g": 389,
+  "proteinPer100g": 17,
+  "carbsPer100g": 66,
+  "fatPer100g": 7,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "g",
+    "weightGrams": 80
+  },
+  "altPortions": [],
+  "source": "manual",
+  "isCustom": false
 }

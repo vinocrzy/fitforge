@@ -1,0 +1,18 @@
+{
+  "id": "F515",
+  "name": "Cumin pulao (Jeera/Zeera pulao)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 135.2,
+  "proteinPer100g": 2.5,
+  "carbsPer100g": 23.6,
+  "fatPer100g": 3.2,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

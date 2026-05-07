@@ -1,0 +1,18 @@
+{
+  "id": "F601",
+  "name": "Broccoli delight",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 40.7,
+  "proteinPer100g": 2.5,
+  "carbsPer100g": 2.3,
+  "fatPer100g": 2.5,
+  "fiberPer100g": 2.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

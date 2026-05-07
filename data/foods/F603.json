@@ -1,0 +1,18 @@
+{
+  "id": "F603",
+  "name": "Cauliflower basket",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 90.9,
+  "proteinPer100g": 5.2,
+  "carbsPer100g": 4.0,
+  "fatPer100g": 5.9,
+  "fiberPer100g": 2.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

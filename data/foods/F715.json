@@ -1,0 +1,18 @@
+{
+  "id": "F715",
+  "name": "Spicy chutney sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 249.6,
+  "proteinPer100g": 8.7,
+  "carbsPer100g": 34.0,
+  "fatPer100g": 9.6,
+  "fiberPer100g": 3.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

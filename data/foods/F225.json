@@ -1,0 +1,18 @@
+{
+  "id": "F225",
+  "name": "Shahi paneer",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 156.5,
+  "proteinPer100g": 5.1,
+  "carbsPer100g": 6.6,
+  "fatPer100g": 12.3,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

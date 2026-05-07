@@ -1,0 +1,18 @@
+{
+  "id": "F140",
+  "name": "Chinese fried rice",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 120.6,
+  "proteinPer100g": 4.1,
+  "carbsPer100g": 13.4,
+  "fatPer100g": 5.4,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

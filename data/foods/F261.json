@@ -1,0 +1,18 @@
+{
+  "id": "F261",
+  "name": "Mixed pulse and vegetable salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 83.1,
+  "proteinPer100g": 4.7,
+  "carbsPer100g": 14.0,
+  "fatPer100g": 0.8,
+  "fiberPer100g": 3.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

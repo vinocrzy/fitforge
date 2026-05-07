@@ -1,0 +1,18 @@
+{
+  "id": "F240",
+  "name": "Shammi kebab",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 685.7,
+  "proteinPer100g": 4.5,
+  "carbsPer100g": 3.5,
+  "fatPer100g": 72.6,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

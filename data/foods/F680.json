@@ -1,0 +1,18 @@
+{
+  "id": "F680",
+  "name": "Khoa ladoo",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 396.0,
+  "proteinPer100g": 12.2,
+  "carbsPer100g": 34.4,
+  "fatPer100g": 24.1,
+  "fiberPer100g": 3.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

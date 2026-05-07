@@ -1,8 +1,18 @@
 {
   "id": "F004",
   "name": "Greek Yogurt 0% fat",
-  "category": "Dairy",
-  "isCustom": false,
-  "per100g": { "calories": 59, "proteinG": 10, "carbsG": 3.6, "fatG": 0.4 },
-  "defaultPortion": { "amount": 200, "unit": "g", "weightG": 200 }
+  "nameLocal": null,
+  "category": "dairy",
+  "caloriesPer100g": 59,
+  "proteinPer100g": 10,
+  "carbsPer100g": 3.6,
+  "fatPer100g": 0.4,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "g",
+    "weightGrams": 200
+  },
+  "altPortions": [],
+  "source": "manual",
+  "isCustom": false
 }

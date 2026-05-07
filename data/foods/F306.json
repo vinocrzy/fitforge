@@ -1,0 +1,18 @@
+{
+  "id": "F306",
+  "name": "Lemon souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 168.5,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 13.4,
+  "fatPer100g": 10.0,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

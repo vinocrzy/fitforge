@@ -1,0 +1,18 @@
+{
+  "id": "F580",
+  "name": "Curd with potatoes (Dahi aloo)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 59.9,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 7.1,
+  "fatPer100g": 2.7,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

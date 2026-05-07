@@ -1,0 +1,18 @@
+{
+  "id": "F437",
+  "name": "Soyabean tikki",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 698.2,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 4.4,
+  "fatPer100g": 74.0,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

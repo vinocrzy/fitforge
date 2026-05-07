@@ -1,0 +1,18 @@
+{
+  "id": "F311",
+  "name": "Apple mousse",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 106.9,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 12.8,
+  "fatPer100g": 4.3,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

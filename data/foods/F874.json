@@ -1,0 +1,18 @@
+{
+  "id": "F874",
+  "name": "Egg in a pepper",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 128.8,
+  "proteinPer100g": 12.6,
+  "carbsPer100g": 0.2,
+  "fatPer100g": 8.7,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

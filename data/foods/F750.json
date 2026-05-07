@@ -1,0 +1,18 @@
+{
+  "id": "F750",
+  "name": "Chocolate cream shells",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 427.2,
+  "proteinPer100g": 5.1,
+  "carbsPer100g": 59.3,
+  "fatPer100g": 19.3,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

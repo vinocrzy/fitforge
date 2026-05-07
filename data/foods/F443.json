@@ -1,0 +1,18 @@
+{
+  "id": "F443",
+  "name": "Split bengal gram sweet rice (Channa dal sweet rice)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 190.2,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 41.1,
+  "fatPer100g": 0.6,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

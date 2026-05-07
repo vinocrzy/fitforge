@@ -1,0 +1,18 @@
+{
+  "id": "F499",
+  "name": "Cold tomato soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 16.9,
+  "proteinPer100g": 0.1,
+  "carbsPer100g": 0.6,
+  "fatPer100g": 1.6,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

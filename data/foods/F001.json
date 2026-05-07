@@ -1,8 +1,18 @@
 {
   "id": "F001",
   "name": "Chicken Breast cooked",
-  "category": "Protein",
-  "isCustom": false,
-  "per100g": { "calories": 165, "proteinG": 31, "carbsG": 0, "fatG": 3.6 },
-  "defaultPortion": { "amount": 150, "unit": "g", "weightG": 150 }
+  "nameLocal": null,
+  "category": "protein-meat-fish",
+  "caloriesPer100g": 165,
+  "proteinPer100g": 31,
+  "carbsPer100g": 0,
+  "fatPer100g": 3.6,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "g",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "manual",
+  "isCustom": false
 }

@@ -1,0 +1,18 @@
+{
+  "id": "F685",
+  "name": "Masala onion pakora/pakoda (Pyaaz ke pakode)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 551.6,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 6.5,
+  "fatPer100g": 57.6,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

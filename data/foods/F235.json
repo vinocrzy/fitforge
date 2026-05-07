@@ -1,0 +1,18 @@
+{
+  "id": "F235",
+  "name": "Kashmiri mutton koftas (Gushtaba)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 97.4,
+  "proteinPer100g": 6.3,
+  "carbsPer100g": 3.0,
+  "fatPer100g": 6.8,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

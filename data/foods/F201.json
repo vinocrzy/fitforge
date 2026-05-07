@@ -1,0 +1,18 @@
+{
+  "id": "F201",
+  "name": "Gravy for kofta",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 125.6,
+  "proteinPer100g": 1.7,
+  "carbsPer100g": 6.3,
+  "fatPer100g": 10.3,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

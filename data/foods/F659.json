@@ -1,0 +1,18 @@
+{
+  "id": "F659",
+  "name": "Cold orange souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 173.2,
+  "proteinPer100g": 5.9,
+  "carbsPer100g": 16.3,
+  "fatPer100g": 9.8,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

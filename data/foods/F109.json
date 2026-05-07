@@ -1,0 +1,18 @@
+{
+  "id": "F109",
+  "name": "Potato parantha/paratha (Aloo ka parantha/paratha)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 205.0,
+  "proteinPer100g": 3.7,
+  "carbsPer100g": 23.9,
+  "fatPer100g": 10.2,
+  "fiberPer100g": 4.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

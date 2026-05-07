@@ -1,0 +1,18 @@
+{
+  "id": "F664",
+  "name": "Apricot fool",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 240.8,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 33.6,
+  "fatPer100g": 11.3,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

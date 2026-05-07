@@ -1,0 +1,18 @@
+{
+  "id": "F617",
+  "name": "Tossed green salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 49.9,
+  "proteinPer100g": 1.3,
+  "carbsPer100g": 3.8,
+  "fatPer100g": 3.2,
+  "fiberPer100g": 1.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

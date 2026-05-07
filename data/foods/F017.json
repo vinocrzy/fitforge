@@ -1,0 +1,18 @@
+{
+  "id": "F017",
+  "nameLocal": null,
+  "altPortions": [],
+  "isCustom": false,
+  "name": "Maggi 2-Minute Masala Noodles",
+  "category": "fast-food",
+  "caloriesPer100g": 440.0,
+  "proteinPer100g": 9.8,
+  "carbsPer100g": 62.0,
+  "fatPer100g": 16.1,
+  "fiberPer100g": 2.5,
+  "defaultPortion": {
+    "unit": "plate",
+    "weightGrams": 70
+  },
+  "source": "manual"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F903",
+  "name": "Vegetable namkeen jave",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 112.2,
+  "proteinPer100g": 2.9,
+  "carbsPer100g": 19.0,
+  "fatPer100g": 2.5,
+  "fiberPer100g": 2.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

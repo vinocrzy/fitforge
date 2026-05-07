@@ -1,0 +1,18 @@
+{
+  "id": "F917",
+  "name": "Spicy corn chaat",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 479.8,
+  "proteinPer100g": 4.6,
+  "carbsPer100g": 11.4,
+  "fatPer100g": 46.6,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

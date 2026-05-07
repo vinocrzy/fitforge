@@ -1,0 +1,18 @@
+{
+  "id": "F188",
+  "name": "Raw papaya with coconut (Papaya thoran)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 132.8,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 5.6,
+  "fatPer100g": 11.4,
+  "fiberPer100g": 4.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

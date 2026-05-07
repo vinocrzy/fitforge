@@ -1,0 +1,18 @@
+{
+  "id": "F134",
+  "name": "Vegetable biryani/biriyani",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 174.6,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 18.6,
+  "fatPer100g": 9.5,
+  "fiberPer100g": 3.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

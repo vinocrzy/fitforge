@@ -1,0 +1,18 @@
+{
+  "id": "F220",
+  "name": "Methi chaman",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 475.6,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 2.8,
+  "fatPer100g": 50.9,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

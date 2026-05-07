@@ -1,0 +1,18 @@
+{
+  "id": "F246",
+  "name": "Chicken kebab",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 729.4,
+  "proteinPer100g": 3.7,
+  "carbsPer100g": 1.1,
+  "fatPer100g": 78.9,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F481",
+  "name": "Cheese and mushroom omelette/omlet",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 205.6,
+  "proteinPer100g": 9.7,
+  "carbsPer100g": 1.7,
+  "fatPer100g": 17.8,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

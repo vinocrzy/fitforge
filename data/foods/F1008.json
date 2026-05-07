@@ -1,0 +1,18 @@
+{
+  "id": "F1008",
+  "name": "Raw mango chutney (Kachhe aam/Kairi ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 193.1,
+  "proteinPer100g": 0.5,
+  "carbsPer100g": 49.9,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

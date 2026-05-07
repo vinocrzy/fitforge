@@ -1,0 +1,18 @@
+{
+  "id": "F658",
+  "name": "Cold lemon souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 169.9,
+  "proteinPer100g": 5.9,
+  "carbsPer100g": 15.6,
+  "fatPer100g": 9.8,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

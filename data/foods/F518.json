@@ -1,0 +1,18 @@
+{
+  "id": "F518",
+  "name": "Black channa pulao/ Bengal gram pulao (Kale chane ka pulao)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 125.5,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 21.6,
+  "fatPer100g": 2.6,
+  "fiberPer100g": 2.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

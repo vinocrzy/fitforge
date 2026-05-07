@@ -1,0 +1,18 @@
+{
+  "id": "F438",
+  "name": "Soyabean namak paras",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 838.5,
+  "proteinPer100g": 2.7,
+  "carbsPer100g": 4.7,
+  "fatPer100g": 89.8,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

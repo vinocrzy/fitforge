@@ -1,0 +1,18 @@
+{
+  "id": "F241",
+  "name": "Scotch egg",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 676.9,
+  "proteinPer100g": 4.1,
+  "carbsPer100g": 1.9,
+  "fatPer100g": 72.6,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

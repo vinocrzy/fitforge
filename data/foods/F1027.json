@@ -1,0 +1,18 @@
+{
+  "id": "F1027",
+  "name": "Marmalade (Murabba)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 143.8,
+  "proteinPer100g": 0.2,
+  "carbsPer100g": 37.6,
+  "fatPer100g": 0.0,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

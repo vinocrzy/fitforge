@@ -1,0 +1,18 @@
+{
+  "id": "F351",
+  "name": "Mixed vegetable pakora/pakoda",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 673.8,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 5.1,
+  "fatPer100g": 71.9,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

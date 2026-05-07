@@ -1,0 +1,18 @@
+{
+  "id": "F734",
+  "name": "Dundee cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 396.6,
+  "proteinPer100g": 7.8,
+  "carbsPer100g": 41.4,
+  "fatPer100g": 22.7,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

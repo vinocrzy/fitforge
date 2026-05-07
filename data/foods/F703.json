@@ -1,0 +1,18 @@
+{
+  "id": "F703",
+  "name": "Walnut chutney (Akhrot ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 370.4,
+  "proteinPer100g": 9.4,
+  "carbsPer100g": 8.9,
+  "fatPer100g": 33.5,
+  "fiberPer100g": 3.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

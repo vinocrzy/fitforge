@@ -1,0 +1,18 @@
+{
+  "id": "F339",
+  "name": "Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 464.4,
+  "proteinPer100g": 5.7,
+  "carbsPer100g": 50.9,
+  "fatPer100g": 27.0,
+  "fiberPer100g": 6.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

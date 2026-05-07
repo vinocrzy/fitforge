@@ -1,0 +1,18 @@
+{
+  "id": "F203",
+  "name": "Spinach kofta curry (Palak kofta curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 571.8,
+  "proteinPer100g": 1.1,
+  "carbsPer100g": 3.6,
+  "fatPer100g": 61.5,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F358",
+  "name": "Potato samosa (Aloo ka samosa)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 577.4,
+  "proteinPer100g": 1.7,
+  "carbsPer100g": 9.2,
+  "fatPer100g": 59.2,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

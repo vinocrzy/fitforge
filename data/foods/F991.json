@@ -1,0 +1,18 @@
+{
+  "id": "F991",
+  "name": "Orange squash (Santre ka squash)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 193.3,
+  "proteinPer100g": 0.2,
+  "carbsPer100g": 50.9,
+  "fatPer100g": 0.0,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F887",
+  "name": "Dates chutney (Khajoor ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 103.6,
+  "proteinPer100g": 1.1,
+  "carbsPer100g": 21.7,
+  "fatPer100g": 1.1,
+  "fiberPer100g": 3.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

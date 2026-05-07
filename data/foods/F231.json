@@ -1,0 +1,18 @@
+{
+  "id": "F231",
+  "name": "Roghan josh",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 139.6,
+  "proteinPer100g": 9.6,
+  "carbsPer100g": 4.9,
+  "fatPer100g": 9.0,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

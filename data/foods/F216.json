@@ -1,0 +1,18 @@
+{
+  "id": "F216",
+  "name": "Shepherd's pie (vegetarian)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 135.6,
+  "proteinPer100g": 5.0,
+  "carbsPer100g": 12.0,
+  "fatPer100g": 7.3,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

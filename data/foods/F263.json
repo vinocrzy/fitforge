@@ -1,0 +1,18 @@
+{
+  "id": "F263",
+  "name": "Tossed salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 63.0,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 5.0,
+  "fatPer100g": 4.2,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

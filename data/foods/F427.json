@@ -1,0 +1,18 @@
+{
+  "id": "F427",
+  "name": "Saffron biscuit (Kesar biscuit)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 458.6,
+  "proteinPer100g": 6.0,
+  "carbsPer100g": 59.7,
+  "fatPer100g": 22.0,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

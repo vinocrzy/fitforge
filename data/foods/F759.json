@@ -1,0 +1,18 @@
+{
+  "id": "F759",
+  "name": "Apple banana pie",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 244.0,
+  "proteinPer100g": 3.1,
+  "carbsPer100g": 32.1,
+  "fatPer100g": 11.4,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

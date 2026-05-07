@@ -1,0 +1,18 @@
+{
+  "id": "F638",
+  "name": "Pumpkin kheer (Kaddu ki kheer)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 86.4,
+  "proteinPer100g": 2.8,
+  "carbsPer100g": 10.4,
+  "fatPer100g": 3.9,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

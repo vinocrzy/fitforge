@@ -1,0 +1,18 @@
+{
+  "id": "F683",
+  "name": "Sesame chickpeas brittle (Til aur channe ki chikki)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 282.7,
+  "proteinPer100g": 8.5,
+  "carbsPer100g": 50.5,
+  "fatPer100g": 4.7,
+  "fiberPer100g": 5.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

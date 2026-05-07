@@ -1,0 +1,18 @@
+{
+  "id": "F075",
+  "name": "Boiled egg (Ubla anda)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 45.4,
+  "proteinPer100g": 4.4,
+  "carbsPer100g": 0.1,
+  "fatPer100g": 3.0,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

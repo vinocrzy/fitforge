@@ -1,0 +1,18 @@
+{
+  "id": "F433",
+  "name": "Coffee biscuit",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 416.6,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 46.6,
+  "fatPer100g": 23.0,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

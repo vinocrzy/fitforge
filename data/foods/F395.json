@@ -1,0 +1,18 @@
+{
+  "id": "F395",
+  "name": "Chocolate eclairs",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 239.4,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 26.2,
+  "fatPer100g": 13.5,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

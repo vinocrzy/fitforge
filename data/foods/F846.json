@@ -1,0 +1,18 @@
+{
+  "id": "F846",
+  "name": "Milk cookies",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 459.4,
+  "proteinPer100g": 10.5,
+  "carbsPer100g": 48.4,
+  "fatPer100g": 25.0,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

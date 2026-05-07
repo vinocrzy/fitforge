@@ -1,0 +1,18 @@
+{
+  "id": "F783",
+  "name": "Spinach peanut burfi (Palak aur mungfali ki burfi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 105.4,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 13.6,
+  "fatPer100g": 4.4,
+  "fiberPer100g": 2.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

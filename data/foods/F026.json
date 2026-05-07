@@ -1,0 +1,18 @@
+{
+  "id": "F026",
+  "name": "Raw mango drink (Aam panna)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 35.9,
+  "proteinPer100g": 0.2,
+  "carbsPer100g": 9.0,
+  "fatPer100g": 0.0,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

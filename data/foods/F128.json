@@ -1,0 +1,18 @@
+{
+  "id": "F128",
+  "name": "Sprouted moong pulao",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 113.0,
+  "proteinPer100g": 2.2,
+  "carbsPer100g": 17.5,
+  "fatPer100g": 3.6,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

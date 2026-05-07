@@ -1,0 +1,18 @@
+{
+  "id": "F410",
+  "name": "Chocolate chiffon cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 311.7,
+  "proteinPer100g": 5.8,
+  "carbsPer100g": 37.9,
+  "fatPer100g": 15.8,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

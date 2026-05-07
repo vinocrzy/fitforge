@@ -1,0 +1,18 @@
+{
+  "id": "F454",
+  "name": "Dhokla",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 216.5,
+  "proteinPer100g": 13.4,
+  "carbsPer100g": 30.7,
+  "fatPer100g": 5.3,
+  "fiberPer100g": 4.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

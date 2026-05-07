@@ -1,0 +1,18 @@
+{
+  "id": "F320",
+  "name": "Meringue and rice pudding",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 112.9,
+  "proteinPer100g": 4.8,
+  "carbsPer100g": 14.6,
+  "fatPer100g": 4.1,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

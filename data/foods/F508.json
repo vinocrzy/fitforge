@@ -1,0 +1,18 @@
+{
+  "id": "F508",
+  "name": "Peas kachori (Matar kachori)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 584.7,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 13.2,
+  "fatPer100g": 57.5,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

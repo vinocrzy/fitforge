@@ -1,0 +1,18 @@
+{
+  "id": "F048",
+  "name": "Chicken sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 253.3,
+  "proteinPer100g": 13.1,
+  "carbsPer100g": 25.4,
+  "fatPer100g": 11.7,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

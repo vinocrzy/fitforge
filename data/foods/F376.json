@@ -1,0 +1,18 @@
+{
+  "id": "F376",
+  "name": "Paneer shaslik/tikka",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 93.8,
+  "proteinPer100g": 5.1,
+  "carbsPer100g": 8.0,
+  "fatPer100g": 4.5,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

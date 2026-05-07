@@ -1,0 +1,18 @@
+{
+  "id": "F034",
+  "name": "Hot cocoa",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 90.1,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 9.2,
+  "fatPer100g": 4.6,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

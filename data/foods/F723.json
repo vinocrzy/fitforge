@@ -1,0 +1,18 @@
+{
+  "id": "F723",
+  "name": "Danish luncheon sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 193.8,
+  "proteinPer100g": 9.0,
+  "carbsPer100g": 17.8,
+  "fatPer100g": 10.1,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

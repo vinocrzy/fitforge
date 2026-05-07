@@ -1,0 +1,18 @@
+{
+  "id": "F583",
+  "name": "Jackfruit kofta curry (Kathal ka kofta curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 321.1,
+  "proteinPer100g": 0.8,
+  "carbsPer100g": 3.2,
+  "fatPer100g": 33.8,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F181",
+  "name": "Potato fenugreek (Aloo methi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 135.1,
+  "proteinPer100g": 2.2,
+  "carbsPer100g": 8.5,
+  "fatPer100g": 10.0,
+  "fiberPer100g": 2.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

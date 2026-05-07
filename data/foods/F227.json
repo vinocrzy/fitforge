@@ -1,0 +1,18 @@
+{
+  "id": "F227",
+  "name": "Methi malai paneer",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 195.0,
+  "proteinPer100g": 7.3,
+  "carbsPer100g": 8.2,
+  "fatPer100g": 14.8,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

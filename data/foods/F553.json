@@ -1,0 +1,18 @@
+{
+  "id": "F553",
+  "name": "Indian lamb and egg curry (Nargisi kofta)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 335.8,
+  "proteinPer100g": 3.8,
+  "carbsPer100g": 2.1,
+  "fatPer100g": 34.7,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

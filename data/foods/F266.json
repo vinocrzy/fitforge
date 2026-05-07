@@ -1,0 +1,18 @@
+{
+  "id": "F266",
+  "name": "Waldroff salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 141.8,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 11.0,
+  "fatPer100g": 10.1,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

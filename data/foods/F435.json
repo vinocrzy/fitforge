@@ -1,0 +1,18 @@
+{
+  "id": "F435",
+  "name": "Ginger biscuit (Adarak ke biscuit)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 417.9,
+  "proteinPer100g": 6.0,
+  "carbsPer100g": 58.4,
+  "fatPer100g": 18.3,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

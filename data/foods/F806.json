@@ -1,0 +1,18 @@
+{
+  "id": "F806",
+  "name": "Orange milkshake with ice cream (Narangi milkshake ice cream ke saath)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 67.8,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 9.1,
+  "fatPer100g": 2.7,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

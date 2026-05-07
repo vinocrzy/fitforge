@@ -1,0 +1,18 @@
+{
+  "id": "F213",
+  "name": "Cauliflower musallam (Phoolgobhi musallam)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 58.8,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 4.5,
+  "fatPer100g": 3.5,
+  "fiberPer100g": 3.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

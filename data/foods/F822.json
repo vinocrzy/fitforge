@@ -1,0 +1,18 @@
+{
+  "id": "F822",
+  "name": "Mango vanilla custard",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 147.6,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 18.4,
+  "fatPer100g": 7.0,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

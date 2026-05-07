@@ -1,0 +1,18 @@
+{
+  "id": "F767",
+  "name": "Savoury cheese horns",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 295.1,
+  "proteinPer100g": 5.7,
+  "carbsPer100g": 21.4,
+  "fatPer100g": 20.7,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

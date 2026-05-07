@@ -1,0 +1,18 @@
+{
+  "id": "F679",
+  "name": "Pumpkin coconut burfi (Kaddu aur nariyal ki burfi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 186.2,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 17.0,
+  "fatPer100g": 12.7,
+  "fiberPer100g": 4.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

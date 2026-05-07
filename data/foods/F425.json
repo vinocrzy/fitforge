@@ -1,0 +1,18 @@
+{
+  "id": "F425",
+  "name": "Peanut biscuit",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 401.0,
+  "proteinPer100g": 8.5,
+  "carbsPer100g": 46.7,
+  "fatPer100g": 20.4,
+  "fiberPer100g": 2.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F1022",
+  "name": "Cumin seeds baghar (Jeera baghar/tadka)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 736.8,
+  "proteinPer100g": 3.3,
+  "carbsPer100g": 5.2,
+  "fatPer100g": 78.8,
+  "fiberPer100g": 6.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F716",
+  "name": "Chicken walnut sandwich (Chicken aur akhrot ke sandwich)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 285.8,
+  "proteinPer100g": 12.6,
+  "carbsPer100g": 22.6,
+  "fatPer100g": 16.8,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

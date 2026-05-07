@@ -1,0 +1,18 @@
+{
+  "id": "F797",
+  "name": "Namkeen daliya",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 295.1,
+  "proteinPer100g": 8.3,
+  "carbsPer100g": 49.3,
+  "fatPer100g": 8.0,
+  "fiberPer100g": 8.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

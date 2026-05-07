@@ -1,0 +1,18 @@
+{
+  "id": "F675",
+  "name": "Rasmalai",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 135.5,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 29.2,
+  "fatPer100g": 2.1,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

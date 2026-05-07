@@ -1,0 +1,18 @@
+{
+  "id": "F086",
+  "name": "Khoa and coconut pancake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 272.0,
+  "proteinPer100g": 7.0,
+  "carbsPer100g": 27.3,
+  "fatPer100g": 15.3,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

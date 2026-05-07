@@ -1,0 +1,18 @@
+{
+  "id": "F326",
+  "name": "Date and nut pie",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 322.4,
+  "proteinPer100g": 3.9,
+  "carbsPer100g": 46.9,
+  "fatPer100g": 13.3,
+  "fiberPer100g": 4.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

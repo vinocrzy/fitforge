@@ -1,0 +1,18 @@
+{
+  "id": "F091",
+  "name": "Lentil soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 31.2,
+  "proteinPer100g": 9.7,
+  "carbsPer100g": 3.9,
+  "fatPer100g": 11.7,
+  "fiberPer100g": 2.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

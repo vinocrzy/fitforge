@@ -1,0 +1,18 @@
+{
+  "id": "F411",
+  "name": "Christmas cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 372.9,
+  "proteinPer100g": 5.5,
+  "carbsPer100g": 48.3,
+  "fatPer100g": 16.9,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

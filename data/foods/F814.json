@@ -1,0 +1,18 @@
+{
+  "id": "F814",
+  "name": "Semolina milk drink (Thari kanji)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 44.2,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 6.9,
+  "fatPer100g": 1.4,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

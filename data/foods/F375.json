@@ -1,0 +1,18 @@
+{
+  "id": "F375",
+  "name": "Vegeterian scotch egg",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 681.7,
+  "proteinPer100g": 2.2,
+  "carbsPer100g": 4.6,
+  "fatPer100g": 72.8,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F605",
+  "name": "Ducheese potato",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 140.5,
+  "proteinPer100g": 3.6,
+  "carbsPer100g": 10.9,
+  "fatPer100g": 9.0,
+  "fiberPer100g": 1.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

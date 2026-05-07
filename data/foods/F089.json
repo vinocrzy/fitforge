@@ -1,0 +1,18 @@
+{
+  "id": "F089",
+  "name": "Chicken stock",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 29.9,
+  "proteinPer100g": 3.7,
+  "carbsPer100g": 0.4,
+  "fatPer100g": 1.5,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

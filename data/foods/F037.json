@@ -1,0 +1,18 @@
+{
+  "id": "F037",
+  "name": "Mango milkshake (Aam milkshake)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 56.9,
+  "proteinPer100g": 1.7,
+  "carbsPer100g": 7.2,
+  "fatPer100g": 2.3,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

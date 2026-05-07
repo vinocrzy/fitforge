@@ -1,0 +1,18 @@
+{
+  "id": "F863",
+  "name": "Coconut pickle (Nariyal ka aachar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 517.3,
+  "proteinPer100g": 3.0,
+  "carbsPer100g": 11.5,
+  "fatPer100g": 51.7,
+  "fiberPer100g": 6.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

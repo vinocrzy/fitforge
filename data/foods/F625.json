@@ -1,0 +1,18 @@
+{
+  "id": "F625",
+  "name": "Mayonnaise without eggs",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 329.1,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 4.0,
+  "fatPer100g": 33.8,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F790",
+  "name": "Soya chikki",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 423.7,
+  "proteinPer100g": 7.2,
+  "carbsPer100g": 62.9,
+  "fatPer100g": 15.5,
+  "fiberPer100g": 3.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

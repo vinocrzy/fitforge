@@ -1,0 +1,18 @@
+{
+  "id": "F859",
+  "name": "Pickled mustard greens",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 13.1,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 1.1,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F399",
+  "name": "Hot cheese souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 177.1,
+  "proteinPer100g": 9.2,
+  "carbsPer100g": 5.4,
+  "fatPer100g": 13.2,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

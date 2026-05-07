@@ -1,0 +1,18 @@
+{
+  "id": "F432",
+  "name": "Short bread cookies",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 443.1,
+  "proteinPer100g": 6.0,
+  "carbsPer100g": 64.8,
+  "fatPer100g": 18.0,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

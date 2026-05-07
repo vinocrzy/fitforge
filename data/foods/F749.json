@@ -1,0 +1,18 @@
+{
+  "id": "F749",
+  "name": "Christmas tree biscuit",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 385.6,
+  "proteinPer100g": 5.4,
+  "carbsPer100g": 58.4,
+  "fatPer100g": 15.0,
+  "fiberPer100g": 2.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

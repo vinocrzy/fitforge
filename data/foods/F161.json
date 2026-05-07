@@ -1,0 +1,18 @@
+{
+  "id": "F161",
+  "name": "Dry washed urad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 124.7,
+  "proteinPer100g": 6.8,
+  "carbsPer100g": 15.7,
+  "fatPer100g": 3.5,
+  "fiberPer100g": 4.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F398",
+  "name": "Cheese patties",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 324.0,
+  "proteinPer100g": 7.4,
+  "carbsPer100g": 22.2,
+  "fatPer100g": 22.7,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

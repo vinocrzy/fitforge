@@ -1,0 +1,18 @@
+{
+  "id": "F275",
+  "name": "Mint raita (Pudinay ka raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 77.6,
+  "proteinPer100g": 5.6,
+  "carbsPer100g": 7.6,
+  "fatPer100g": 3.0,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

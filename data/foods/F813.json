@@ -1,0 +1,18 @@
+{
+  "id": "F813",
+  "name": "Nannari sharbat",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 88.8,
+  "proteinPer100g": 0.0,
+  "carbsPer100g": 23.6,
+  "fatPer100g": 0.0,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

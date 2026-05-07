@@ -1,0 +1,18 @@
+{
+  "id": "F382",
+  "name": "Mint and coriander chutney (Pudinay aur dhaniye ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 102.6,
+  "proteinPer100g": 2.8,
+  "carbsPer100g": 21.2,
+  "fatPer100g": 0.5,
+  "fiberPer100g": 4.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

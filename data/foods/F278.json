@@ -1,0 +1,18 @@
+{
+  "id": "F278",
+  "name": "Sweet raita (Meetha raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 99.2,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 17.9,
+  "fatPer100g": 1.8,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

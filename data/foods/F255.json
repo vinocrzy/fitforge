@@ -1,0 +1,18 @@
+{
+  "id": "F255",
+  "name": "Tandoori fish",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 96.0,
+  "proteinPer100g": 11.2,
+  "carbsPer100g": 2.4,
+  "fatPer100g": 4.6,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

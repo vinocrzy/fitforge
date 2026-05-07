@@ -1,0 +1,18 @@
+{
+  "id": "F094",
+  "name": "Cream of green peas soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 127.8,
+  "proteinPer100g": 7.1,
+  "carbsPer100g": 6.8,
+  "fatPer100g": 14.8,
+  "fiberPer100g": 3.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F492",
+  "name": "Cheese soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 41.1,
+  "proteinPer100g": 12.4,
+  "carbsPer100g": 1.9,
+  "fatPer100g": 17.1,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

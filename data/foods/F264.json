@@ -1,0 +1,18 @@
+{
+  "id": "F264",
+  "name": "Mixed vegetable salad with curd sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 60.3,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 7.0,
+  "fatPer100g": 1.5,
+  "fiberPer100g": 3.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

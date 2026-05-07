@@ -1,0 +1,18 @@
+{
+  "id": "F606",
+  "name": "Roast potatoes",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 87.3,
+  "proteinPer100g": 1.5,
+  "carbsPer100g": 14.5,
+  "fatPer100g": 2.4,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

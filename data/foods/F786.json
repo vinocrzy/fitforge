@@ -1,0 +1,18 @@
+{
+  "id": "F786",
+  "name": "Pearl millet mathri (Bajra mathri)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 785.1,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 7.4,
+  "fatPer100g": 83.1,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

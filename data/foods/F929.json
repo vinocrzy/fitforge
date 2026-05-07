@@ -1,0 +1,18 @@
+{
+  "id": "F929",
+  "name": "Whey soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 68.9,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 6.3,
+  "fatPer100g": 3.3,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

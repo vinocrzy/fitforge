@@ -1,0 +1,18 @@
+{
+  "id": "F408",
+  "name": "Fruit Loaf",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 324.2,
+  "proteinPer100g": 5.4,
+  "carbsPer100g": 46.5,
+  "fatPer100g": 13.3,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

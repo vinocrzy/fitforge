@@ -1,0 +1,18 @@
+{
+  "id": "F257",
+  "name": "Russian salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 114.8,
+  "proteinPer100g": 4.3,
+  "carbsPer100g": 6.5,
+  "fatPer100g": 7.8,
+  "fiberPer100g": 2.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F678",
+  "name": "Semolina burfi (Suji/Rava burfi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 348.7,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 47.1,
+  "fatPer100g": 16.9,
+  "fiberPer100g": 2.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

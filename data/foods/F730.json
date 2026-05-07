@@ -1,0 +1,18 @@
+{
+  "id": "F730",
+  "name": "Assorted pastry",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 230.7,
+  "proteinPer100g": 6.8,
+  "carbsPer100g": 32.0,
+  "fatPer100g": 8.9,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

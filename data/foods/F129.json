@@ -1,0 +1,18 @@
+{
+  "id": "F129",
+  "name": "Paneer pulao",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 581.9,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 8.8,
+  "fatPer100g": 59.8,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

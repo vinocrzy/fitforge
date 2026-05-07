@@ -1,0 +1,18 @@
+{
+  "id": "F877",
+  "name": "Cajun chicken",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 184.9,
+  "proteinPer100g": 12.7,
+  "carbsPer100g": 1.9,
+  "fatPer100g": 14.0,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

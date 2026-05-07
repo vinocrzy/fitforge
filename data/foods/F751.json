@@ -1,0 +1,18 @@
+{
+  "id": "F751",
+  "name": "Jelly biscuit",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 404.6,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 55.2,
+  "fatPer100g": 19.3,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

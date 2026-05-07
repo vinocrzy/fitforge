@@ -1,0 +1,18 @@
+{
+  "id": "F507",
+  "name": "Peas poori (Matar ki poori)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 592.8,
+  "proteinPer100g": 3.0,
+  "carbsPer100g": 14.9,
+  "fatPer100g": 57.7,
+  "fiberPer100g": 2.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

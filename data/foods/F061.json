@@ -1,0 +1,18 @@
+{
+  "id": "F061",
+  "name": "Pea potato sandwich (toasted) (Matar aloo ka sandwich)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 164.9,
+  "proteinPer100g": 4.6,
+  "carbsPer100g": 25.2,
+  "fatPer100g": 5.4,
+  "fiberPer100g": 2.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

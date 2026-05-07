@@ -1,0 +1,18 @@
+{
+  "id": "F366",
+  "name": "Fish cutlet (Machli ka cutlet)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 654.6,
+  "proteinPer100g": 2.8,
+  "carbsPer100g": 3.1,
+  "fatPer100g": 70.1,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

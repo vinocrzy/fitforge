@@ -1,0 +1,18 @@
+{
+  "id": "F517",
+  "name": "Split bengal gram dal and vegetable pulao (Channa dal and vegetable pulao)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 116.5,
+  "proteinPer100g": 3.6,
+  "carbsPer100g": 19.7,
+  "fatPer100g": 2.3,
+  "fiberPer100g": 3.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

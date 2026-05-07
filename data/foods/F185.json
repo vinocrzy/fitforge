@@ -1,0 +1,18 @@
+{
+  "id": "F185",
+  "name": "Cauliflower with coconut (Nariyal ke saath phoolgobhi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 132.1,
+  "proteinPer100g": 2.6,
+  "carbsPer100g": 4.0,
+  "fatPer100g": 11.6,
+  "fiberPer100g": 5.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

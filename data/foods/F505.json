@@ -1,0 +1,18 @@
+{
+  "id": "F505",
+  "name": "Gram flour poori (Besan poori)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 697.7,
+  "proteinPer100g": 2.6,
+  "carbsPer100g": 10.9,
+  "fatPer100g": 71.5,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

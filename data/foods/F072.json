@@ -1,0 +1,18 @@
+{
+  "id": "F072",
+  "name": "Wheat flakes",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 112.4,
+  "proteinPer100g": 3.6,
+  "carbsPer100g": 15.6,
+  "fatPer100g": 4.0,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

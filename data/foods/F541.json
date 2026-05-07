@@ -1,0 +1,18 @@
+{
+  "id": "F541",
+  "name": "Rasam with tamarind (Puli rasam/ Chintapandu rasam/ Charu/Saaru)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 26.7,
+  "proteinPer100g": 1.1,
+  "carbsPer100g": 3.4,
+  "fatPer100g": 0.9,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

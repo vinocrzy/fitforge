@@ -1,0 +1,18 @@
+{
+  "id": "F571",
+  "name": "Fish in coconut milk (Nariyal ke doodh ke saath machli)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 86.2,
+  "proteinPer100g": 8.7,
+  "carbsPer100g": 2.7,
+  "fatPer100g": 4.4,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

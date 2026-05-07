@@ -1,0 +1,18 @@
+{
+  "id": "F496",
+  "name": "Cream of potato soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 60.2,
+  "proteinPer100g": 8.1,
+  "carbsPer100g": 6.1,
+  "fatPer100g": 12.0,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

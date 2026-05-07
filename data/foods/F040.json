@@ -1,0 +1,18 @@
+{
+  "id": "F040",
+  "name": "Egg nog",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 97.1,
+  "proteinPer100g": 4.8,
+  "carbsPer100g": 8.1,
+  "fatPer100g": 5.1,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

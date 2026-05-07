@@ -1,0 +1,18 @@
+{
+  "id": "F378",
+  "name": "Spring roll",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 623.9,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 8.6,
+  "fatPer100g": 64.6,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

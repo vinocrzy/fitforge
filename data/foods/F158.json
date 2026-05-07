@@ -1,0 +1,18 @@
+{
+  "id": "F158",
+  "name": "Washed moong dal (Dhuli moong ki dal)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 50.0,
+  "proteinPer100g": 2.7,
+  "carbsPer100g": 5.9,
+  "fatPer100g": 1.7,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

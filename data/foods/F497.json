@@ -1,0 +1,18 @@
+{
+  "id": "F497",
+  "name": "Almond soup (Badam ka soup)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 78.7,
+  "proteinPer100g": 10.1,
+  "carbsPer100g": 3.7,
+  "fatPer100g": 13.8,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F016",
+  "nameLocal": null,
+  "altPortions": [],
+  "isCustom": false,
+  "name": "Bournvita Chocolate Malt Drink",
+  "category": "beverage",
+  "caloriesPer100g": 391.0,
+  "proteinPer100g": 7.5,
+  "carbsPer100g": 80.0,
+  "fatPer100g": 3.5,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "tablespoon",
+    "weightGrams": 20
+  },
+  "source": "manual"
+}

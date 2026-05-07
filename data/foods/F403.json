@@ -1,0 +1,18 @@
+{
+  "id": "F403",
+  "name": "Plain cream cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 353.9,
+  "proteinPer100g": 6.2,
+  "carbsPer100g": 47.2,
+  "fatPer100g": 16.2,
+  "fiberPer100g": 0.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

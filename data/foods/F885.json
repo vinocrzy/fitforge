@@ -1,0 +1,18 @@
+{
+  "id": "F885",
+  "name": "Schezwan chutney",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 205.2,
+  "proteinPer100g": 3.3,
+  "carbsPer100g": 10.8,
+  "fatPer100g": 17.7,
+  "fiberPer100g": 5.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

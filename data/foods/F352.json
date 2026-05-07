@@ -1,0 +1,18 @@
+{
+  "id": "F352",
+  "name": "Spinach pakora/pakoda (Palak pakoda)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 712.6,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 4.7,
+  "fatPer100g": 76.4,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F827",
+  "name": "Chhena poda",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 344.6,
+  "proteinPer100g": 13.7,
+  "carbsPer100g": 33.6,
+  "fatPer100g": 17.9,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

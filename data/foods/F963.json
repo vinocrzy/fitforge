@@ -1,0 +1,18 @@
+{
+  "id": "F963",
+  "name": "Pasta spinach sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 85.5,
+  "proteinPer100g": 1.8,
+  "carbsPer100g": 1.8,
+  "fatPer100g": 7.9,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F1011",
+  "name": "Garam masala",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 254.2,
+  "proteinPer100g": 9.9,
+  "carbsPer100g": 26.2,
+  "fatPer100g": 11.0,
+  "fiberPer100g": 35.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

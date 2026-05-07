@@ -1,0 +1,18 @@
+{
+  "id": "F651",
+  "name": "Peach melba ice cream",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 200.8,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 16.3,
+  "fatPer100g": 14.5,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

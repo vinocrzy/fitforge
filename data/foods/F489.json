@@ -1,0 +1,18 @@
+{
+  "id": "F489",
+  "name": "Green pea soup (Matar ka soup)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 39.8,
+  "proteinPer100g": 11.1,
+  "carbsPer100g": 3.6,
+  "fatPer100g": 12.9,
+  "fiberPer100g": 2.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

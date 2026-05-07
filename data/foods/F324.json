@@ -1,0 +1,18 @@
+{
+  "id": "F324",
+  "name": "Queen of pudding",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 132.9,
+  "proteinPer100g": 5.5,
+  "carbsPer100g": 16.3,
+  "fatPer100g": 5.4,
+  "fiberPer100g": 0.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F202",
+  "name": "Pea kofta curry (Matar kofta curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 595.7,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 4.2,
+  "fatPer100g": 63.4,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

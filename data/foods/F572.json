@@ -1,0 +1,18 @@
+{
+  "id": "F572",
+  "name": "Prawn curry (with coconut) (Jhinga curry)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 109.5,
+  "proteinPer100g": 8.5,
+  "carbsPer100g": 3.1,
+  "fatPer100g": 6.9,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

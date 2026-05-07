@@ -1,0 +1,18 @@
+{
+  "id": "F923",
+  "name": "Semolina cake (Suji/Rava cake)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 374.1,
+  "proteinPer100g": 6.6,
+  "carbsPer100g": 31.3,
+  "fatPer100g": 25.2,
+  "fiberPer100g": 5.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

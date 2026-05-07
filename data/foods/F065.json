@@ -1,0 +1,18 @@
+{
+  "id": "F065",
+  "name": "Classic club sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 200.8,
+  "proteinPer100g": 6.7,
+  "carbsPer100g": 18.5,
+  "fatPer100g": 11.6,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

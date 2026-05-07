@@ -1,0 +1,18 @@
+{
+  "id": "F969",
+  "name": "Short crust pastry",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 422.1,
+  "proteinPer100g": 6.1,
+  "carbsPer100g": 44.7,
+  "fatPer100g": 24.0,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

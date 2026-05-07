@@ -1,8 +1,18 @@
 {
   "id": "F009",
   "name": "Olive Oil",
+  "nameLocal": null,
   "category": "Fats & Oils",
-  "isCustom": false,
-  "per100g": { "calories": 884, "proteinG": 0, "carbsG": 0, "fatG": 100 },
-  "defaultPortion": { "amount": 1, "unit": "tbsp", "weightG": 14 }
+  "caloriesPer100g": 884,
+  "proteinPer100g": 0,
+  "carbsPer100g": 0,
+  "fatPer100g": 100,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "tbsp",
+    "weightGrams": 14
+  },
+  "altPortions": [],
+  "source": "manual",
+  "isCustom": false
 }

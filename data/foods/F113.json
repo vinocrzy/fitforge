@@ -1,0 +1,18 @@
+{
+  "id": "F113",
+  "name": "Sprouted moong parantha/paratha",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 228.6,
+  "proteinPer100g": 4.3,
+  "carbsPer100g": 24.3,
+  "fatPer100g": 12.4,
+  "fiberPer100g": 4.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F303",
+  "name": "Mango ice cream",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 125.7,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 11.1,
+  "fatPer100g": 7.6,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F151",
+  "name": "Bhatura",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 793.2,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 10.7,
+  "fatPer100g": 82.6,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

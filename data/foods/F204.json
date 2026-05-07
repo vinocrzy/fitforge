@@ -1,0 +1,18 @@
+{
+  "id": "F204",
+  "name": "Paneer kofta curry",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 670.9,
+  "proteinPer100g": 2.4,
+  "carbsPer100g": 3.3,
+  "fatPer100g": 72.1,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

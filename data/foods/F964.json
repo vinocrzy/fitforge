@@ -1,0 +1,18 @@
+{
+  "id": "F964",
+  "name": "Pasta cheese sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 149.3,
+  "proteinPer100g": 4.3,
+  "carbsPer100g": 9.0,
+  "fatPer100g": 10.8,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

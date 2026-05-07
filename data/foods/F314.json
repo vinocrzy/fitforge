@@ -1,0 +1,18 @@
+{
+  "id": "F314",
+  "name": "Orange and pineapple cream",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 101.2,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 12.0,
+  "fatPer100g": 5.4,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

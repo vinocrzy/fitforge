@@ -1,0 +1,18 @@
+{
+  "id": "F247",
+  "name": "Chilli chicken",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 198.8,
+  "proteinPer100g": 9.6,
+  "carbsPer100g": 2.9,
+  "fatPer100g": 16.6,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

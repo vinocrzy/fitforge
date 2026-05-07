@@ -1,0 +1,18 @@
+{
+  "id": "F539",
+  "name": "Arhar with spinach (Arhar dal aur palak)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 52.8,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 4.8,
+  "fatPer100g": 2.8,
+  "fiberPer100g": 1.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

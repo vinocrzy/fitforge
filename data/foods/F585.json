@@ -1,0 +1,18 @@
+{
+  "id": "F585",
+  "name": "Mooli bhujia",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 91.2,
+  "proteinPer100g": 1.7,
+  "carbsPer100g": 4.7,
+  "fatPer100g": 7.3,
+  "fiberPer100g": 2.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

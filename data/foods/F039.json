@@ -1,0 +1,18 @@
+{
+  "id": "F039",
+  "name": "Orange milkshake (Narangi milkshake)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 57.4,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 7.1,
+  "fatPer100g": 2.5,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

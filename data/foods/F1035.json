@@ -1,0 +1,18 @@
+{
+  "id": "F1035",
+  "name": "Bengal 5 Spice Blend (Panch Phoran)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 289.8,
+  "proteinPer100g": 18.3,
+  "carbsPer100g": 20.0,
+  "fatPer100g": 22.2,
+  "fiberPer100g": 18.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

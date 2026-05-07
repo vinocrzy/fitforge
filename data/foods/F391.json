@@ -1,0 +1,18 @@
+{
+  "id": "F391",
+  "name": "Apple cinnamon pie",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 258.7,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 33.7,
+  "fatPer100g": 12.2,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

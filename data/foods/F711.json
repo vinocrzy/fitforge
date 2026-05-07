@@ -1,0 +1,18 @@
+{
+  "id": "F711",
+  "name": "Tomato sandwich (grilled)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 189.9,
+  "proteinPer100g": 6.3,
+  "carbsPer100g": 21.3,
+  "fatPer100g": 9.4,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

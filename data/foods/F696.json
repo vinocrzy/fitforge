@@ -1,0 +1,18 @@
+{
+  "id": "F696",
+  "name": "Masala urad dal vada",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 703.8,
+  "proteinPer100g": 4.3,
+  "carbsPer100g": 9.9,
+  "fatPer100g": 71.6,
+  "fiberPer100g": 2.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F830",
+  "name": "Thickened sweetened milk (Rabri)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 102.8,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 10.5,
+  "fatPer100g": 5.3,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

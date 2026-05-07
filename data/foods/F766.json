@@ -1,0 +1,18 @@
+{
+  "id": "F766",
+  "name": "Cream horns",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 408.2,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 23.1,
+  "fatPer100g": 33.6,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

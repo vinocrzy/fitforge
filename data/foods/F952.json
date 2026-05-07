@@ -1,0 +1,18 @@
+{
+  "id": "F952",
+  "name": "Maa chaane ki dal",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 344.7,
+  "proteinPer100g": 19.8,
+  "carbsPer100g": 43.1,
+  "fatPer100g": 9.5,
+  "fiberPer100g": 13.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

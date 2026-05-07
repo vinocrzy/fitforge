@@ -1,0 +1,18 @@
+{
+  "id": "F593",
+  "name": "Crispy okra/Crispy lady's fingers (Karare bhindi)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 657.8,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 4.3,
+  "fatPer100g": 70.4,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

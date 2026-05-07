@@ -1,0 +1,18 @@
+{
+  "id": "F106",
+  "name": "Cold summer garden soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 49.2,
+  "proteinPer100g": 8.6,
+  "carbsPer100g": 2.6,
+  "fatPer100g": 14.1,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

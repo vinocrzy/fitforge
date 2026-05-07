@@ -1,0 +1,18 @@
+{
+  "id": "F274",
+  "name": "Carrot and spinach raita (Gajar aur palak ka raita)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 56.8,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 5.8,
+  "fatPer100g": 2.0,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

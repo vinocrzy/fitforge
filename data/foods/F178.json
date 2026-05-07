@@ -1,0 +1,18 @@
+{
+  "id": "F178",
+  "name": "Potato capsicum (Shimla mirch aloo)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 125.5,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 8.7,
+  "fatPer100g": 9.3,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

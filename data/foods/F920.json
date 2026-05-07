@@ -1,0 +1,18 @@
+{
+  "id": "F920",
+  "name": "Wheat cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 314.6,
+  "proteinPer100g": 4.8,
+  "carbsPer100g": 41.1,
+  "fatPer100g": 15.0,
+  "fiberPer100g": 2.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

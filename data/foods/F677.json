@@ -1,0 +1,18 @@
+{
+  "id": "F677",
+  "name": "Danedar burfi",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 102.7,
+  "proteinPer100g": 3.2,
+  "carbsPer100g": 12.3,
+  "fatPer100g": 4.7,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

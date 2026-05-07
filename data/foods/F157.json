@@ -1,0 +1,18 @@
+{
+  "id": "F157",
+  "name": "Makki ki roti",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 264.0,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 24.2,
+  "fatPer100g": 16.8,
+  "fiberPer100g": 5.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

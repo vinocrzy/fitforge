@@ -1,0 +1,18 @@
+{
+  "id": "F1019",
+  "name": "Green chilli sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 46.1,
+  "proteinPer100g": 1.2,
+  "carbsPer100g": 7.4,
+  "fatPer100g": 0.3,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

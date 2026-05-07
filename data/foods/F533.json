@@ -1,0 +1,18 @@
+{
+  "id": "F533",
+  "name": "Spaghetti with paneer balls and tomato sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 158.5,
+  "proteinPer100g": 4.0,
+  "carbsPer100g": 12.7,
+  "fatPer100g": 10.4,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

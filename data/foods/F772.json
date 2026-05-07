@@ -1,0 +1,18 @@
+{
+  "id": "F772",
+  "name": "Cereal mix",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 120.8,
+  "proteinPer100g": 3.3,
+  "carbsPer100g": 21.8,
+  "fatPer100g": 2.0,
+  "fiberPer100g": 2.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

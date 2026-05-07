@@ -1,0 +1,18 @@
+{
+  "id": "F477",
+  "name": "Indian style egg bhujia (Anda bhujia (Indian style))",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 102.8,
+  "proteinPer100g": 6.1,
+  "carbsPer100g": 3.8,
+  "fatPer100g": 7.0,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

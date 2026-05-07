@@ -1,0 +1,18 @@
+{
+  "id": "F618",
+  "name": "Spring basket salad",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 160.5,
+  "proteinPer100g": 3.4,
+  "carbsPer100g": 11.6,
+  "fatPer100g": 11.3,
+  "fiberPer100g": 3.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

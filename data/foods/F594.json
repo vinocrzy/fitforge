@@ -1,0 +1,18 @@
+{
+  "id": "F594",
+  "name": "Beans foogath",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 105.1,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 3.3,
+  "fatPer100g": 9.2,
+  "fiberPer100g": 4.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F362",
+  "name": "Khasta kachori",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 712.7,
+  "proteinPer100g": 2.5,
+  "carbsPer100g": 12.8,
+  "fatPer100g": 72.3,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

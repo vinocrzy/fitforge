@@ -1,0 +1,18 @@
+{
+  "id": "F575",
+  "name": "Crispy baked fish",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 138.4,
+  "proteinPer100g": 11.0,
+  "carbsPer100g": 9.6,
+  "fatPer100g": 6.4,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

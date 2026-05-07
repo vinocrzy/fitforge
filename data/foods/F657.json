@@ -1,0 +1,18 @@
+{
+  "id": "F657",
+  "name": "Creamy chocolate mousse",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 230.5,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 9.5,
+  "fatPer100g": 18.2,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

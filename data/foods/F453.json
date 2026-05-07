@@ -1,0 +1,18 @@
+{
+  "id": "F453",
+  "name": "Semolina carrot vada (Suji gajar vada)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 699.5,
+  "proteinPer100g": 1.6,
+  "carbsPer100g": 6.5,
+  "fatPer100g": 74.1,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

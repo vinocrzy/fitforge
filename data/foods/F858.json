@@ -1,0 +1,18 @@
+{
+  "id": "F858",
+  "name": "Sweet peach pickle (Aadoo ka achaar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 144.6,
+  "proteinPer100g": 0.5,
+  "carbsPer100g": 37.0,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 1.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

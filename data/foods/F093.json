@@ -1,0 +1,18 @@
+{
+  "id": "F093",
+  "name": "Cream of tomato soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 97.8,
+  "proteinPer100g": 4.6,
+  "carbsPer100g": 3.9,
+  "fatPer100g": 13.1,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

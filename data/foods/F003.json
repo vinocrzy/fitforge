@@ -1,8 +1,18 @@
 {
   "id": "F003",
   "name": "Whole Egg",
-  "category": "Protein",
-  "isCustom": false,
-  "per100g": { "calories": 155, "proteinG": 13, "carbsG": 1.1, "fatG": 11 },
-  "defaultPortion": { "amount": 1, "unit": "piece", "weightG": 60 }
+  "nameLocal": null,
+  "category": "protein-meat-fish",
+  "caloriesPer100g": 155,
+  "proteinPer100g": 13,
+  "carbsPer100g": 1.1,
+  "fatPer100g": 11,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "piece",
+    "weightGrams": 60
+  },
+  "altPortions": [],
+  "source": "manual",
+  "isCustom": false
 }

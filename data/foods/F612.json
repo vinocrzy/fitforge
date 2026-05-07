@@ -1,0 +1,18 @@
+{
+  "id": "F612",
+  "name": "Cauliflower au gratin",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 145.9,
+  "proteinPer100g": 4.5,
+  "carbsPer100g": 9.1,
+  "fatPer100g": 10.2,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F864",
+  "name": "Potato pickle (Aloo ka achaar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 369.1,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 7.9,
+  "fatPer100g": 36.5,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

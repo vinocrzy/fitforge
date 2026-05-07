@@ -1,0 +1,18 @@
+{
+  "id": "F765",
+  "name": "Potato aigrettes",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 530.0,
+  "proteinPer100g": 2.4,
+  "carbsPer100g": 8.0,
+  "fatPer100g": 54.2,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

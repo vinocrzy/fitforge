@@ -1,0 +1,18 @@
+{
+  "id": "F882",
+  "name": "Roasted cauliflower steak",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 78.7,
+  "proteinPer100g": 2.0,
+  "carbsPer100g": 2.0,
+  "fatPer100g": 6.7,
+  "fiberPer100g": 3.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F450",
+  "name": "Pearl millet ladoo (Bajra ladoo)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 319.7,
+  "proteinPer100g": 9.6,
+  "carbsPer100g": 51.0,
+  "fatPer100g": 8.1,
+  "fiberPer100g": 6.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

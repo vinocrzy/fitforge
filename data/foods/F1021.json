@@ -1,0 +1,18 @@
+{
+  "id": "F1021",
+  "name": "Dal moong",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 43.7,
+  "proteinPer100g": 2.2,
+  "carbsPer100g": 4.9,
+  "fatPer100g": 1.6,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

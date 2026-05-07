@@ -1,0 +1,18 @@
+{
+  "id": "F688",
+  "name": "Fish pakora/pakoda",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 577.0,
+  "proteinPer100g": 6.0,
+  "carbsPer100g": 4.6,
+  "fatPer100g": 59.5,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

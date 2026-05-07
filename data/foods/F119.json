@@ -1,0 +1,18 @@
+{
+  "id": "F119",
+  "name": "Spinach poori (Palak poori)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 684.3,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 7.8,
+  "fatPer100g": 71.9,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

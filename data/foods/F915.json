@@ -1,0 +1,18 @@
+{
+  "id": "F915",
+  "name": "Bhel puri",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 509.9,
+  "proteinPer100g": 3.5,
+  "carbsPer100g": 16.5,
+  "fatPer100g": 47.9,
+  "fiberPer100g": 2.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

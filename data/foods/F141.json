@@ -1,0 +1,18 @@
+{
+  "id": "F141",
+  "name": "Macroni cheese pie",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 170.6,
+  "proteinPer100g": 5.9,
+  "carbsPer100g": 21.1,
+  "fatPer100g": 7.5,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F394",
+  "name": "Cream puffs",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 221.3,
+  "proteinPer100g": 4.7,
+  "carbsPer100g": 16.0,
+  "fatPer100g": 15.5,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

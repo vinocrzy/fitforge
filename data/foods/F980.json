@@ -1,0 +1,18 @@
+{
+  "id": "F980",
+  "name": "Spinach soup in milk",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 56.7,
+  "proteinPer100g": 2.9,
+  "carbsPer100g": 4.0,
+  "fatPer100g": 3.2,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

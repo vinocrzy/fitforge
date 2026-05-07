@@ -1,0 +1,18 @@
+{
+  "id": "F015",
+  "nameLocal": null,
+  "altPortions": [],
+  "isCustom": false,
+  "name": "Amul Ghee",
+  "category": "packaged-staple",
+  "caloriesPer100g": 900.0,
+  "proteinPer100g": 0.0,
+  "carbsPer100g": 0.0,
+  "fatPer100g": 99.5,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "tablespoon",
+    "weightGrams": 14
+  },
+  "source": "manual"
+}

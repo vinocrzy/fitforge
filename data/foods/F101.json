@@ -1,0 +1,18 @@
+{
+  "id": "F101",
+  "name": "Chinese cabbage and meat ball soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 484.3,
+  "proteinPer100g": 5.2,
+  "carbsPer100g": 1.4,
+  "fatPer100g": 56.6,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

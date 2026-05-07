@@ -1,0 +1,18 @@
+{
+  "id": "F014",
+  "nameLocal": null,
+  "altPortions": [],
+  "isCustom": false,
+  "name": "Amul Butter",
+  "category": "packaged-staple",
+  "caloriesPer100g": 717.0,
+  "proteinPer100g": 0.5,
+  "carbsPer100g": 0.5,
+  "fatPer100g": 80.0,
+  "fiberPer100g": 0,
+  "defaultPortion": {
+    "unit": "tablespoon",
+    "weightGrams": 14
+  },
+  "source": "manual"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F484",
+  "name": "Meat stock",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 24.5,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 0.0,
+  "fatPer100g": 1.8,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

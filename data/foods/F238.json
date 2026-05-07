@@ -1,0 +1,18 @@
+{
+  "id": "F238",
+  "name": "Mutton do piaza",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 183.3,
+  "proteinPer100g": 9.4,
+  "carbsPer100g": 4.1,
+  "fatPer100g": 14.4,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

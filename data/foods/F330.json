@@ -1,0 +1,18 @@
+{
+  "id": "F330",
+  "name": "Hot chocolate souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 226.1,
+  "proteinPer100g": 6.7,
+  "carbsPer100g": 26.2,
+  "fatPer100g": 11.1,
+  "fiberPer100g": 0.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

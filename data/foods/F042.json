@@ -1,0 +1,18 @@
+{
+  "id": "F042",
+  "name": "Lassi (salted)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 18.8,
+  "proteinPer100g": 1.4,
+  "carbsPer100g": 1.9,
+  "fatPer100g": 0.7,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

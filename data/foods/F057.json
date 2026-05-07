@@ -1,0 +1,18 @@
+{
+  "id": "F057",
+  "name": "Egg and tomato sandwich (Ande aur tamatar ka sandwich)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 222.1,
+  "proteinPer100g": 7.7,
+  "carbsPer100g": 25.9,
+  "fatPer100g": 10.5,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

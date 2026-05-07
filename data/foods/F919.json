@@ -1,0 +1,18 @@
+{
+  "id": "F919",
+  "name": "Banana chips (Kele ke chips)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 665.7,
+  "proteinPer100g": 0.4,
+  "carbsPer100g": 7.3,
+  "fatPer100g": 70.5,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

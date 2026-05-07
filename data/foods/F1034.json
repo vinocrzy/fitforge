@@ -1,0 +1,18 @@
+{
+  "id": "F1034",
+  "name": "Tomato ketchup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 33.1,
+  "proteinPer100g": 0.9,
+  "carbsPer100g": 6.5,
+  "fatPer100g": 0.3,
+  "fiberPer100g": 1.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

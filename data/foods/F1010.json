@@ -1,0 +1,18 @@
+{
+  "id": "F1010",
+  "name": "Tomato puree",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 20.6,
+  "proteinPer100g": 0.8,
+  "carbsPer100g": 3.7,
+  "fatPer100g": 0.2,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

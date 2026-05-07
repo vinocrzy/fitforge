@@ -1,0 +1,18 @@
+{
+  "id": "F722",
+  "name": "Sunset and sunrise open sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 241.3,
+  "proteinPer100g": 8.6,
+  "carbsPer100g": 18.9,
+  "fatPer100g": 15.1,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

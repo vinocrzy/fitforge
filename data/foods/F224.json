@@ -1,0 +1,18 @@
+{
+  "id": "F224",
+  "name": "Al yakhani",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 147.5,
+  "proteinPer100g": 2.9,
+  "carbsPer100g": 4.6,
+  "fatPer100g": 13.1,
+  "fiberPer100g": 1.3,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

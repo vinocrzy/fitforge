@@ -1,0 +1,18 @@
+{
+  "id": "F138",
+  "name": "Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 373.0,
+  "proteinPer100g": 7.5,
+  "carbsPer100g": 65.1,
+  "fatPer100g": 8.5,
+  "fiberPer100g": 5.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

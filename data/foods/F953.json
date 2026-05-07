@@ -1,0 +1,18 @@
+{
+  "id": "F953",
+  "name": "Garlic chickpea soup (Lahasun aur chane ka shoraba)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 89.5,
+  "proteinPer100g": 4.4,
+  "carbsPer100g": 13.9,
+  "fatPer100g": 2.0,
+  "fiberPer100g": 2.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

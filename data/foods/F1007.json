@@ -1,0 +1,18 @@
+{
+  "id": "F1007",
+  "name": "Plum chutney (Aloo bukhara ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 177.1,
+  "proteinPer100g": 0.5,
+  "carbsPer100g": 45.0,
+  "fatPer100g": 0.3,
+  "fiberPer100g": 1.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

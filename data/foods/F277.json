@@ -1,0 +1,18 @@
+{
+  "id": "F277",
+  "name": "Boondi raita",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 687.7,
+  "proteinPer100g": 2.2,
+  "carbsPer100g": 4.0,
+  "fatPer100g": 73.8,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

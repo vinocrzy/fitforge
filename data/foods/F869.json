@@ -1,0 +1,18 @@
+{
+  "id": "F869",
+  "name": "Chicken manchurian",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 142.3,
+  "proteinPer100g": 9.5,
+  "carbsPer100g": 6.1,
+  "fatPer100g": 12.0,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

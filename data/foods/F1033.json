@@ -1,0 +1,18 @@
+{
+  "id": "F1033",
+  "name": "Tomato chutney (Tamatar ki chutney)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 176.1,
+  "proteinPer100g": 1.0,
+  "carbsPer100g": 31.8,
+  "fatPer100g": 6.0,
+  "fiberPer100g": 1.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

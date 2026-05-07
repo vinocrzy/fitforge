@@ -1,0 +1,18 @@
+{
+  "id": "F896",
+  "name": "Masala souffle",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 123.5,
+  "proteinPer100g": 6.4,
+  "carbsPer100g": 8.0,
+  "fatPer100g": 7.4,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

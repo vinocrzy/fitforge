@@ -1,0 +1,18 @@
+{
+  "id": "F709",
+  "name": "Mayonnaise vegetable dip",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 241.3,
+  "proteinPer100g": 3.0,
+  "carbsPer100g": 4.8,
+  "fatPer100g": 23.4,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

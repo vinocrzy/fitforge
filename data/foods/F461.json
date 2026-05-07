@@ -1,0 +1,18 @@
+{
+  "id": "F461",
+  "name": "Jal jeera",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 30.2,
+  "proteinPer100g": 0.4,
+  "carbsPer100g": 6.7,
+  "fatPer100g": 0.3,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

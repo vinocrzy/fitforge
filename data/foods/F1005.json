@@ -1,0 +1,18 @@
+{
+  "id": "F1005",
+  "name": "Mixed vegetable pickle (Sabziyoon ka achaar)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 211.2,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 7.5,
+  "fatPer100g": 19.7,
+  "fiberPer100g": 2.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

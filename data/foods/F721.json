@@ -1,0 +1,18 @@
+{
+  "id": "F721",
+  "name": "Cheese open sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 274.1,
+  "proteinPer100g": 9.8,
+  "carbsPer100g": 28.4,
+  "fatPer100g": 14.2,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

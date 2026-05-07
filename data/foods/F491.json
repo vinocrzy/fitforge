@@ -1,0 +1,18 @@
+{
+  "id": "F491",
+  "name": "Mixed vegetable soup",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 35.7,
+  "proteinPer100g": 8.2,
+  "carbsPer100g": 2.9,
+  "fatPer100g": 11.7,
+  "fiberPer100g": 1.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F359",
+  "name": "Minced meat samosa (Keema ka samosa)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 621.0,
+  "proteinPer100g": 4.4,
+  "carbsPer100g": 6.1,
+  "fatPer100g": 64.3,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

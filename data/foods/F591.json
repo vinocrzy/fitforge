@@ -1,0 +1,18 @@
+{
+  "id": "F591",
+  "name": "Peas brinjal bhartha (Matar baingan bhartha)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 84.5,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 5.0,
+  "fatPer100g": 6.1,
+  "fiberPer100g": 3.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

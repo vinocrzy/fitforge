@@ -1,0 +1,18 @@
+{
+  "id": "F156",
+  "name": "Paneer kaathi roll",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 285.9,
+  "proteinPer100g": 6.9,
+  "carbsPer100g": 20.1,
+  "fatPer100g": 19.6,
+  "fiberPer100g": 2.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

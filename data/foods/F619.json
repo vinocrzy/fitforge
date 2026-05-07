@@ -1,0 +1,18 @@
+{
+  "id": "F619",
+  "name": "Cucumber and yogurt salad (Kheere aur dahi ka salad)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 36.1,
+  "proteinPer100g": 2.1,
+  "carbsPer100g": 4.7,
+  "fatPer100g": 0.9,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

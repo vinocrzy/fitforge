@@ -1,0 +1,18 @@
+{
+  "id": "F878",
+  "name": "Paaner do pyaza",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 127.7,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 3.4,
+  "fatPer100g": 10.9,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

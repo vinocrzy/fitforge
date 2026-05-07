@@ -1,0 +1,18 @@
+{
+  "id": "F060",
+  "name": "Cheese and tomato sandwich (toasted) (Cheese aur tamatar ke sandwich (toasted))",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 224.6,
+  "proteinPer100g": 6.8,
+  "carbsPer100g": 21.4,
+  "fatPer100g": 13.0,
+  "fiberPer100g": 1.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

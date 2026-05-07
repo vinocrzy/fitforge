@@ -1,0 +1,18 @@
+{
+  "id": "F078",
+  "name": "Scrambled egg (Ande ki bhurji)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 156.0,
+  "proteinPer100g": 10.3,
+  "carbsPer100g": 1.4,
+  "fatPer100g": 12.2,
+  "fiberPer100g": 0.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

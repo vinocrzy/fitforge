@@ -1,0 +1,18 @@
+{
+  "id": "F927",
+  "name": "Tutti frutti cake",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 347.7,
+  "proteinPer100g": 4.5,
+  "carbsPer100g": 52.9,
+  "fatPer100g": 12.7,
+  "fiberPer100g": 0.8,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

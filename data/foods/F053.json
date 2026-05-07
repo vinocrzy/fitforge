@@ -1,0 +1,18 @@
+{
+  "id": "F053",
+  "name": "Pin wheel sandwich",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 311.5,
+  "proteinPer100g": 8.8,
+  "carbsPer100g": 14.0,
+  "fatPer100g": 24.9,
+  "fiberPer100g": 0.9,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

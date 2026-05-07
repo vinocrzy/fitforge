@@ -1,0 +1,18 @@
+{
+  "id": "F642",
+  "name": "Vanilla ice cream with egg",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 214.9,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 11.7,
+  "fatPer100g": 17.0,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

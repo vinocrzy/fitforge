@@ -1,0 +1,18 @@
+{
+  "id": "F145",
+  "name": "Spaghetti and cheese balls in tomato sauce",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 508.3,
+  "proteinPer100g": 2.4,
+  "carbsPer100g": 7.8,
+  "fatPer100g": 52.1,
+  "fiberPer100g": 0.6,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

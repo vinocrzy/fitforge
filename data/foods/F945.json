@@ -1,0 +1,18 @@
+{
+  "id": "F945",
+  "name": "Gujarati handvo",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 207.1,
+  "proteinPer100g": 8.2,
+  "carbsPer100g": 31.9,
+  "fatPer100g": 4.8,
+  "fiberPer100g": 5.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

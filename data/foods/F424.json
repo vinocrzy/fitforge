@@ -1,0 +1,18 @@
+{
+  "id": "F424",
+  "name": "Sweet and salty biscuit (Meethay aur namkeen biscuit)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 408.0,
+  "proteinPer100g": 6.2,
+  "carbsPer100g": 45.1,
+  "fatPer100g": 22.4,
+  "fiberPer100g": 1.7,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

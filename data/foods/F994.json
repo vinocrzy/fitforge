@@ -1,0 +1,18 @@
+{
+  "id": "F994",
+  "name": "Pineapple squash (Ananas ka squash)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 195.0,
+  "proteinPer100g": 0.2,
+  "carbsPer100g": 51.3,
+  "fatPer100g": 0.0,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

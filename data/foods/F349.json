@@ -1,0 +1,18 @@
+{
+  "id": "F349",
+  "name": "Onion pakora/pakoda (Pyaaz ke pakode)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 674.6,
+  "proteinPer100g": 1.9,
+  "carbsPer100g": 5.4,
+  "fatPer100g": 71.8,
+  "fiberPer100g": 1.1,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

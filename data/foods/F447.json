@@ -1,0 +1,18 @@
+{
+  "id": "F447",
+  "name": "Sweet split chickpea roti (Sweet channa dal roti/Puranpoli)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 366.6,
+  "proteinPer100g": 9.5,
+  "carbsPer100g": 62.7,
+  "fatPer100g": 7.9,
+  "fiberPer100g": 8.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

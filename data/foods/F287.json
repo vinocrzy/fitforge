@@ -1,0 +1,18 @@
+{
+  "id": "F287",
+  "name": "Cabbage kheer (Pattagobhi ki kheer)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 83.5,
+  "proteinPer100g": 2.9,
+  "carbsPer100g": 9.7,
+  "fatPer100g": 3.8,
+  "fiberPer100g": 0.5,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

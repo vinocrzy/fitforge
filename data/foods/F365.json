@@ -1,0 +1,18 @@
+{
+  "id": "F365",
+  "name": "Peanut cutlet (Mungfali ke cutlet)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 698.8,
+  "proteinPer100g": 2.6,
+  "carbsPer100g": 5.7,
+  "fatPer100g": 74.0,
+  "fiberPer100g": 1.2,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

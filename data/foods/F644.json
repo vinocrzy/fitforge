@@ -1,0 +1,18 @@
+{
+  "id": "F644",
+  "name": "Chocochip ice cream",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 241.4,
+  "proteinPer100g": 4.2,
+  "carbsPer100g": 16.8,
+  "fatPer100g": 17.9,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

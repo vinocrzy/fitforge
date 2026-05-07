@@ -1,0 +1,18 @@
+{
+  "id": "F367",
+  "name": "Paneer potato cutlet (Paneer aloo cutlet)",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 672.9,
+  "proteinPer100g": 2.5,
+  "carbsPer100g": 5.2,
+  "fatPer100g": 71.4,
+  "fiberPer100g": 0.4,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "F705",
+  "name": "Gun powder chutney",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 312.3,
+  "proteinPer100g": 21.6,
+  "carbsPer100g": 47.6,
+  "fatPer100g": 2.7,
+  "fiberPer100g": 14.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

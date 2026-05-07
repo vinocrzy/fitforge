@@ -1,0 +1,18 @@
+{
+  "id": "F868",
+  "name": "Hariyali Fish Tikka",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 150.2,
+  "proteinPer100g": 14.0,
+  "carbsPer100g": 2.2,
+  "fatPer100g": 9.4,
+  "fiberPer100g": 1.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}

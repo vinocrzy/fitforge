@@ -1,0 +1,18 @@
+{
+  "id": "F648",
+  "name": "Coffee ice cream",
+  "nameLocal": null,
+  "category": "gravy-curry",
+  "caloriesPer100g": 150.6,
+  "proteinPer100g": 3.1,
+  "carbsPer100g": 14.1,
+  "fatPer100g": 9.4,
+  "fiberPer100g": 0.0,
+  "defaultPortion": {
+    "unit": "katori",
+    "weightGrams": 150
+  },
+  "altPortions": [],
+  "source": "INDB-2024",
+  "isCustom": false
+}
