@@ -1,4 +1,4 @@
-import { BarcodeScreen } from './BarcodeScreen';
+import { BarcodeScreen } from '@/components/diet/BarcodeScreen';
 
 interface Props {
   searchParams: Promise<{ slot?: string; date?: string }>;

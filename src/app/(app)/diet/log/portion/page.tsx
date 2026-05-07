@@ -1,4 +1,4 @@
-import { PortionPickerScreen } from './PortionPickerScreen';
+import { PortionPickerScreen } from '@/components/diet/PortionPickerScreen';
 
 interface Props {
   searchParams: Promise<{ foodId?: string; slot?: string; date?: string; name?: string; custom?: string }>;

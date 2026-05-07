@@ -1,4 +1,4 @@
-import { BarcodeConfirmScreen } from './BarcodeConfirmScreen';
+import { BarcodeConfirmScreen } from '@/components/diet/BarcodeConfirmScreen';
 
 interface Props {
   searchParams: Promise<{

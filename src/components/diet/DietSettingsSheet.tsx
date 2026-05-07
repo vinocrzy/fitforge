@@ -29,11 +29,11 @@ const ACTIVITY_OPTIONS: Array<{ id: ActivityLevel; label: string; desc: string }
 // ─── DietSettingsSheet ────────────────────────────────────────────
 
 export function DietSettingsSheet({ open, onClose }: DietSettingsSheetProps) {
-  const { dietProfile, quickUpdateProfile, isSavingProfile } = useDietStore(s => ({
-    dietProfile: s.dietProfile,
-    quickUpdateProfile: s.quickUpdateProfile,
-    isSavingProfile: s.isSavingProfile,
-  }));
+  // Individual selectors — object literal selectors create a new ref every render
+  // causing "getServerSnapshot should be cached" infinite loop
+  const dietProfile = useDietStore(s => s.dietProfile);
+  const quickUpdateProfile = useDietStore(s => s.quickUpdateProfile);
+  const isSavingProfile = useDietStore(s => s.isSavingProfile);
 
   const [weightKg, setWeightKg] = useState('');
   const [goalPhase, setGoalPhase] = useState<GoalPhase | ''>('');

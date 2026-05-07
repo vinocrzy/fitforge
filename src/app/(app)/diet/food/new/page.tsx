@@ -1,4 +1,4 @@
-import { CustomFoodForm } from './CustomFoodForm';
+import { CustomFoodForm } from '@/components/diet/CustomFoodForm';
 
 interface Props {
   searchParams: Promise<{ slot?: string; date?: string }>;

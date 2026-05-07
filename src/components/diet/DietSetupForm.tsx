@@ -62,14 +62,11 @@ export function DietSetupForm() {
   const router = useRouter();
   const { user } = useUser();
 
-  const { setupForm, setSetupForm, saveDietProfile, isSavingProfile, profileError } =
-    useDietStore(s => ({
-      setupForm:        s.setupForm,
-      setSetupForm:     s.setSetupForm,
-      saveDietProfile:  s.saveDietProfile,
-      isSavingProfile:  s.isSavingProfile,
-      profileError:     s.profileError,
-    }));
+  const setupForm       = useDietStore(s => s.setupForm);
+  const setSetupForm    = useDietStore(s => s.setSetupForm);
+  const saveDietProfile = useDietStore(s => s.saveDietProfile);
+  const isSavingProfile = useDietStore(s => s.isSavingProfile);
+  const profileError    = useDietStore(s => s.profileError);
 
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
@@ -85,8 +82,8 @@ export function DietSetupForm() {
   }
 
   async function handleSave() {
-    if (!user?.id) return;
-    await saveDietProfile(user.id, setupForm);
+    const userId = user?.id ?? 'guest';
+    await saveDietProfile(userId, setupForm);
     // profileError is set in store on failure
     if (!useDietStore.getState().profileError) {
       router.push('/diet');

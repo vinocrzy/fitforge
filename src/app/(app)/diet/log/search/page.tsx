@@ -1,4 +1,4 @@
-import { FoodSearchScreen } from './FoodSearchScreen';
+import { FoodSearchScreen } from '@/components/diet/FoodSearchScreen';
 
 interface Props {
   searchParams: Promise<{ slot?: string; date?: string }>;
