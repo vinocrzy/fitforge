@@ -6,7 +6,7 @@
 import { nutritionDb } from './pouchdb';
 import type { FoodManifest, FoodLibraryItem } from '@/types';
 
-const META_DOC_ID = '_local/food_library_meta';
+const META_DOC_ID = '_local/food_library_meta_v2';
 
 interface LibraryMeta {
   _id: typeof META_DOC_ID;
@@ -122,9 +122,33 @@ async function deltaSync(manifest: FoodManifest): Promise<void> {
     const newDocs = await Promise.all(
       toUpsert.map(async ({ id }) => {
         const res = await fetch(`/data/foods/${id}.json`);
-        const food: FoodLibraryItem = await res.json();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const raw: any = await res.json();
         const docId = `food_${id}`;
         const existingRev = existingMap.get(docId);
+
+        // Normalise old flat schema → FoodLibraryItem shape
+        const food: FoodLibraryItem = raw.per100g
+          ? (raw as FoodLibraryItem)  // already new schema
+          : {
+              id:   raw.id,
+              name: raw.name,
+              category: raw.category ?? 'Other',
+              isCustom: false,
+              ...(raw.brand ? { brand: raw.brand } : {}),
+              per100g: {
+                calories: raw.caloriesPer100g ?? 0,
+                proteinG: raw.proteinPer100g  ?? 0,
+                carbsG:   raw.carbsPer100g   ?? 0,
+                fatG:     raw.fatPer100g     ?? 0,
+              },
+              defaultPortion: {
+                amount:  1,
+                unit:    raw.defaultPortion?.unit ?? 'g',
+                weightG: raw.defaultPortion?.weightGrams ?? raw.defaultPortion?.weightG ?? 100,
+              },
+            };
+
         return {
           ...food,
           _id: docId,

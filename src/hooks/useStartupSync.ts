@@ -10,6 +10,7 @@ import { useEffect, useRef } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { syncExerciseLibrary } from '@/lib/db/syncExerciseLibrary';
 import { syncFoodLibrary } from '@/lib/db/syncFoodLibrary';
+import { useFoodStore } from '@/store/useFoodStore';
 
 /**
  * Run once on app startup to seed / delta-sync the exercise library
@@ -34,7 +35,9 @@ export function useStartupSync() {
 
     syncFoodLibrary()
       .then(() => {
-        queryClient.invalidateQueries({ queryKey: ['foods'] });
+        // Reload the food store so it picks up freshly-synced PouchDB docs
+        useFoodStore.setState({ libraryItems: [], isLoading: false });
+        useFoodStore.getState().loadLibrary();
       })
       .catch((err) => {
         console.error('[StartupSync] Food library sync failed:', err);

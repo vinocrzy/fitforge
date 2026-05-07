@@ -518,7 +518,7 @@ export function RecipeBuilderScreen() {
                             {food.name}
                           </p>
                           <p style={{ fontSize: 12, color: 'var(--brand-text-2)' }}>
-                            {food.per100g.calories} kcal per 100g
+                            {food.per100g?.calories ?? 0} kcal per 100g
                             {food.brand ? ` \u00b7 ${food.brand}` : ''}
                           </p>
                         </motion.button>

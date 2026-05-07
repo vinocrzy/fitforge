@@ -27,9 +27,34 @@ export const useFoodStore = create<FoodStoreState>()((set, get) => ({
         endkey: 'food_F\uffff',
         include_docs: true,
       });
-      const libraryItems = libResult.rows
-        .map(r => r.doc as FoodLibraryItem)
-        .filter(Boolean);
+      // Normalize old flat schema → FoodLibraryItem (handles docs stored before schema migration)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const libraryItems: FoodLibraryItem[] = libResult.rows
+        .map(r => r.doc as any)
+        .filter(Boolean)
+        .map((raw): FoodLibraryItem | null => {
+          if (raw.per100g) return raw as FoodLibraryItem;
+          if (!raw.caloriesPer100g && raw.caloriesPer100g !== 0) return null;
+          return {
+            id: raw.id,
+            name: raw.name,
+            category: raw.category ?? 'Other',
+            isCustom: false,
+            ...(raw.brand ? { brand: raw.brand } : {}),
+            per100g: {
+              calories: raw.caloriesPer100g ?? 0,
+              proteinG: raw.proteinPer100g  ?? 0,
+              carbsG:   raw.carbsPer100g   ?? 0,
+              fatG:     raw.fatPer100g     ?? 0,
+            },
+            defaultPortion: {
+              amount:  1,
+              unit:    raw.defaultPortion?.unit ?? 'g',
+              weightG: raw.defaultPortion?.weightGrams ?? raw.defaultPortion?.weightG ?? 100,
+            },
+          };
+        })
+        .filter((doc): doc is FoodLibraryItem => doc !== null);
 
       // Load custom items
       const customResult = await nutritionDb.allDocs<FoodItem>({
@@ -37,9 +62,9 @@ export const useFoodStore = create<FoodStoreState>()((set, get) => ({
         endkey: 'food_item_\uffff',
         include_docs: true,
       });
-      const customItems = customResult.rows
+      const customItems: FoodItem[] = customResult.rows
         .map(r => r.doc as FoodItem)
-        .filter(Boolean);
+        .filter((doc): doc is FoodItem => Boolean(doc) && doc.per100g !== undefined);
 
       set({ libraryItems, customItems, isLoading: false });
     } catch (err) {

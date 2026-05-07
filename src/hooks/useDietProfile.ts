@@ -11,11 +11,10 @@ import type { DietProfile } from '@/types';
 
 export function useDietProfile() {
   const { user } = useUser();
-  const userId = user?.id ?? null;
+  const userId = user?.id ?? 'guest';
 
   return useQuery<DietProfile | null>({
     queryKey: ['diet', 'profile', userId],
-    enabled: !!userId,
     queryFn: async () => {
       try {
         return await nutritionDb.get<DietProfile>(`diet_profile_user_${userId}`);

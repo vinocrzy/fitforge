@@ -222,6 +222,12 @@ export function FoodSearchScreen({ slot, date }: Props) {
             <SkeletonRow index={1} />
             <SkeletonRow index={2} />
           </>
+        ) : results.length === 0 && query.trim() === '' ? (
+          <>
+            <SkeletonRow index={0} />
+            <SkeletonRow index={1} />
+            <SkeletonRow index={2} />
+          </>
         ) : results.length === 0 && query.trim() !== '' ? (
           <motion.div
             initial={{ opacity: 0 }}

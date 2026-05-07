@@ -7,14 +7,21 @@ import type { FoodLibraryItem, FoodItem } from '@/types';
 export function useFoodSearch(initialQuery = '') {
   const [query, setQuery] = useState(initialQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
-  const { search, loadLibrary, isLoading, libraryItems, customItems } = useFoodStore();
+  const search       = useFoodStore(s => s.search);
+  const loadLibrary  = useFoodStore(s => s.loadLibrary);
+  const isLoading    = useFoodStore(s => s.isLoading);
+  const libraryCount = useFoodStore(s => s.libraryItems.length);
+  const customCount  = useFoodStore(s => s.customItems.length);
+
+  console.log({loadLibrary});
+  console.log({libraryCount, customCount});
 
   // Load library on first use
   useEffect(() => {
-    if (libraryItems.length === 0 && customItems.length === 0) {
+    if (libraryCount === 0 && customCount === 0) {
       loadLibrary();
     }
-  }, [libraryItems.length, customItems.length, loadLibrary]);
+  }, [libraryCount, customCount, loadLibrary]);
 
   // Debounce query 200 ms
   useEffect(() => {
