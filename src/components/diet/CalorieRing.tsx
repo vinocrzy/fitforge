@@ -75,16 +75,16 @@ export function CalorieRing({ consumed, burned, target, size = 180 }: CalorieRin
               color: isOver ? 'var(--brand-danger)' : 'var(--brand-text)',
             }}
           >
-            {consumed}
+            {Math.round(consumed)}
           </span>
           <span style={{ fontSize: 11, color: 'var(--brand-text-2)' }}>consumed</span>
-          <span style={{ fontSize: 11, color: 'var(--brand-text-3)' }}>of {target} kcal</span>
+          <span style={{ fontSize: 11, color: 'var(--brand-text-3)' }}>of {Math.round(target)} kcal</span>
           {burned > 0 && (
             <span
               className="tabular-nums"
               style={{ fontSize: 10, color: 'var(--brand-text-3)', marginTop: 4 }}
             >
-              −{burned} burn = {net} net
+              −{Math.round(burned)} burn = {Math.round(net)} net
             </span>
           )}
         </div>

@@ -30,6 +30,8 @@ import { useRpeAdvisor } from '@/hooks/useRpeAdvisor';
 import { DayTypeBanner } from '@/components/coaching/DayTypeBanner';
 import { DeloadWeekView } from '@/components/deload/DeloadWeekView';
 import { MyTrainerCard } from '@/components/trainer/MyTrainerCard';
+import { DietWidget } from '@/components/dashboard/DietWidget';
+import { WaterWidget } from '@/components/dashboard/WaterWidget';
 import { useGuestStore } from '@/store/useGuestStore';
 
 // ─── Recovery Meter SVG Ring ──────────────────────────────────────
@@ -510,6 +512,12 @@ export default function DashboardPage() {
         >
           <BodyPartChart workouts={workouts} exercises={libraryExercises} />
         </motion.div>
+
+        {/* Diet & Nutrition Widget */}
+        <DietWidget />
+
+        {/* Water Intake Widget */}
+        <WaterWidget />
 
         {/* Browse Exercises */}
         <motion.div

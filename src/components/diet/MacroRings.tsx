@@ -67,13 +67,17 @@ function MacroRing({ label, consumed, target, color, size = 72, delay = 0 }: Mac
             className="font-bold tabular-nums leading-none"
             style={{ fontSize: 14, color: 'var(--brand-text)' }}
           >
-            {consumed}g
+            {r2(consumed)}g
           </span>
           <span style={{ fontSize: 10, color: 'var(--brand-text-2)' }}>{label}</span>
         </div>
       </div>
     </div>
   );
+}
+
+function r2(n: number): number {
+  return Math.round(n * 100) / 100;
 }
 
 export interface MacroRingsProps {

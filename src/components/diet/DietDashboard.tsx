@@ -128,11 +128,11 @@ function MealEntryRow({ entry, date, onDeleteStart }: MealEntryRowProps) {
             {entry.foodName}
           </p>
           <p className="text-xs mt-0.5" style={{ color: 'var(--brand-text-2)' }}>
-            {entry.portionWeightG}g &middot; P {macros.proteinG}g &middot; C {macros.carbsG}g &middot; F {macros.fatG}g
+            {Math.round(entry.portionWeightG * 100) / 100}g &middot; P {Math.round(macros.proteinG * 100) / 100}g &middot; C {Math.round(macros.carbsG * 100) / 100}g &middot; F {Math.round(macros.fatG * 100) / 100}g
           </p>
         </div>
         <span className="text-sm font-semibold tabular-nums" style={{ color: 'var(--brand-text)' }}>
-          {macros.calories} kcal
+          {Math.round(macros.calories)} kcal
         </span>
       </motion.div>
     </div>
@@ -191,7 +191,7 @@ function MealSlotCard({ slot, entries, date, onDeleteStart, onSaveAsTemplate }: 
             </motion.button>
           )}
           <span className="text-sm tabular-nums" style={{ color: 'var(--brand-text-2)' }}>
-            {slotCalories > 0 ? `${slotCalories} kcal` : ''}
+            {slotCalories > 0 ? `${Math.round(slotCalories)} kcal` : ''}
           </span>
         </div>
       </div>
@@ -391,49 +391,52 @@ export function DietDashboard() {
       }}
     >
       {/* Header */}
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-3 flex items-center justify-between gap-3">
         <h1
-          className="font-black"
+          className="font-black shrink-0"
           style={{ fontSize: 34, color: 'var(--brand-text)', letterSpacing: '-0.04em' }}
         >
           Diet
         </h1>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           <motion.button
             whileTap={{ scale: 0.92 }}
             transition={springSnappy}
             onClick={() => router.push('/diet/report')}
-            className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+            className="glass rounded-xl flex items-center gap-1.5 px-2.5 py-2 shrink-0"
             style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+            aria-label="Nutrition report"
           >
             <Icon name="chart.line.uptrend.xyaxis" size={16} color="var(--brand-text-2)" />
-            Report
+            <span className="hidden sm:inline">Report</span>
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.92 }}
             transition={springSnappy}
             onClick={() => router.push('/diet/recipes')}
-            className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+            className="glass rounded-xl flex items-center gap-1.5 px-2.5 py-2 shrink-0"
             style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+            aria-label="Recipes"
           >
             <Icon name="fork.knife" size={16} color="var(--brand-text-2)" />
-            Recipes
+            <span className="hidden sm:inline">Recipes</span>
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.92 }}
             transition={springSnappy}
             onClick={() => router.push('/diet/templates')}
-            className="glass rounded-xl flex items-center gap-1.5 px-3 py-2"
+            className="glass rounded-xl flex items-center gap-1.5 px-2.5 py-2 shrink-0"
             style={{ color: 'var(--brand-text-2)', fontSize: 13, fontWeight: 600 }}
+            aria-label="Meal templates"
           >
-            <Icon name="list.bullet" size={16} color="var(--brand-text-2)" />
-            Templates
+            <Icon name="list.bullet.rectangle" size={16} color="var(--brand-text-2)" />
+            <span className="hidden sm:inline">Templates</span>
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.92 }}
             transition={springSnappy}
             onClick={() => setIsSettingsOpen(true)}
-            className="glass rounded-xl p-2"
+            className="glass rounded-xl p-2 shrink-0"
             style={{ color: 'var(--brand-text-2)' }}
             aria-label="Diet settings"
           >
@@ -534,7 +537,7 @@ export function DietDashboard() {
                 className="glass-elevated rounded-2xl px-4 py-3 mb-4"
               >
                 <p className="text-sm font-semibold" style={{ color: 'var(--brand-danger)' }}>
-                  You&apos;re {netKcal - targetKcal} kcal over your target today
+                  You&apos;re {Math.round(netKcal - targetKcal)} kcal over your target today
                 </p>
               </motion.div>
             )}
